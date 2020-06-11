@@ -5,7 +5,6 @@ import Home from "./views/Home";
 import Main from "./views/Main/Main";
 
 function App() {
-  console.log(dskfnkdsfn);
   return (
     <BrowserRouter>
       <Switch>
