@@ -10,6 +10,7 @@ const UserContextProvider = ({ children }) => {
     window.localStorage.setItem('USERNAME', newName);
     setName(newName);
   };
+
   return <UserContext.Provider value={{ name, changeName }}>{children}</UserContext.Provider>;
 };
 

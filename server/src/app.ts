@@ -2,14 +2,14 @@ import * as http from 'http';
 import * as dotenv from 'dotenv';
 import * as express from 'express';
 
-import { socketIoWrapper } from './controllers/socket';
+import { socketController } from './controllers/socket';
 // const router = require("./router");
 
 dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
-socketIoWrapper(server);
+socketController(server);
 
 // app.use(router);
 

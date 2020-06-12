@@ -7,8 +7,9 @@ interface UserJoinPayload {
 
 const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, roomId }: UserJoinPayload) => {
   const message = `${name} has joined the room: ${roomId}`;
-  socket.join(roomId);
   console.log(message);
+
+  socket.join(roomId);
   io.to(roomId).emit('FEED', message);
 };
 

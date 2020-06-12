@@ -6,10 +6,11 @@ import { useUserContext } from 'Contexts/UserContext';
 
 const Card = ({ value }) => {
   const { name } = useUserContext();
-  const { roomId } = useParams();
   const sendEstimation = useEmit('USER_VOTED');
+  const { roomId } = useParams();
 
   const onClickHandler = () => sendEstimation({ name, value, roomId });
+
   return (
     <button type="button" onClick={onClickHandler}>
       {value}

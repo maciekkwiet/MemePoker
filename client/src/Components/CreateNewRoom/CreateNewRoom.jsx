@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CreateNewRoom = () => {
   const sessionNumber = Math.round(Math.random() * 100);
+
   return (
     <>
       <Link to={`/room/${sessionNumber}/join`}>
