@@ -1,14 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useEmit, useSocket } from 'socketio-hooks';
+import { useEmit } from 'socketio-hooks';
+
+import { useUserContext } from 'Contexts/UserContext';
 
 const Card = ({ value }) => {
+  const { name } = useUserContext();
   const { roomId } = useParams();
-  const sendEstimation = useEmit('VOTE');
-  useSocket('VOTED', (msg) => console.log(msg));
+  const sendEstimation = useEmit('USER_VOTED');
 
-  const onClickHandler = () => sendEstimation({ name: 'Jon Snow', value, room: roomId });
-
+  const onClickHandler = () => sendEstimation({ name, value, roomId });
   return (
     <button type="button" onClick={onClickHandler}>
       {value}
@@ -16,4 +17,4 @@ const Card = ({ value }) => {
   );
 };
 
-export { Card };
+export default Card;

@@ -1,3 +1,1 @@
-import CreateNewRoom from "./CreateNewRoom";
-
-export default CreateNewRoom;
+export { default } from './CreateNewRoom';

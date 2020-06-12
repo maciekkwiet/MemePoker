@@ -1,12 +1,14 @@
 import * as socketio from 'socket.io';
+import * as http from 'http';
 
-const socketIoWrapper = (server: any): void => {
+import { onUserVote } from '@services/onUserVote';
+import { onUserJoin } from '@services/onUserJoin';
+
+const socketIoWrapper = (server: http.Server): void => {
   const io = socketio(server);
   io.on('connect', (socket: socketio.Socket): void => {
-    socket.on('VOTE', ({ name, value, room }) => {
-      console.log(name, 'has voted', value, 'in room', room);
-      io.emit('VOTED', name + ' has voted ');
-    });
+    socket.on('USER_JOINED', onUserJoin(io, socket));
+    socket.on('USER_VOTED', onUserVote(io, socket));
   });
 };
 
