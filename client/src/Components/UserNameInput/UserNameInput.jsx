@@ -11,7 +11,7 @@ const UserNameInput = () => {
   const history = useHistory();
   const sendName = useEmit('USER_JOINED');
 
-  const onClickHandler = () => {
+  const onSubmitHandler = () => {
     changeName(name);
     sendName({ name, roomId });
     history.push(`/room/${roomId}`);
@@ -19,10 +19,11 @@ const UserNameInput = () => {
   const onInputHandler = ({ target: { value } }) => setName(value);
 
   return (
-    <div>
-      <input type="text" value={name} onInput={onInputHandler} />
-      <button onClick={onClickHandler}>Let estimation begin!</button>
-    </div>
+    <form onSubmit={onSubmitHandler}>
+      <label htmlFor="name">Your name: </label>
+      <input id="name" name="name" type="text" value={name} onInput={onInputHandler} />
+      <button type="submit">Let estimation begin!</button>
+    </form>
   );
 };
 
