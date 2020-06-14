@@ -2,7 +2,7 @@ import * as http from "http";
 import * as dotenv from "dotenv";
 import * as express from "express";
 import * as socketio from "socket.io";
-const mongoose = require("mongoose");
+import * as mongoose from "mongoose";
 
 dotenv.config();
 
