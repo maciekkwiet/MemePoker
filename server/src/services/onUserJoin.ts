@@ -19,7 +19,7 @@ const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => async ({ na
 
   let userInDB = await User.findOne({ name: name, room: roomId });
   if (userInDB) {
-    const message = `${name} is already used`;
+    const message: string = `${name} is already used`;
     console.log(message);
     io.to(roomId).emit('FEED', message);
   } else {
@@ -27,7 +27,7 @@ const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => async ({ na
       name: name,
       room: roomId,
     });
-    const message = `${name} has joined the room: ${roomId}`;
+    const message: string = `${name} has joined the room: ${roomId}`;
     console.log(message);
     socket.join(roomId);
     io.to(roomId).emit('FEED', message);

@@ -12,6 +12,9 @@ const userSchema = new mongoose.Schema({
   room: {
     type: Number,
   },
+  initiator: {
+    type: Boolean,
+  },
 });
 
 const User = mongoose.model('User', userSchema);
