@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema({
   },
   initiator: {
     type: Boolean,
+    default: false,
   },
 });
 
