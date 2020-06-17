@@ -7,7 +7,7 @@ interface UserJoinPayload {
 }
 
 const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => async ({ name, roomId }: UserJoinPayload) => {
-  const createUser = async (data: any) => {
+  const createUser = async (data: UserJoinPayload) => {
     try {
       const user = new User(data);
       await user.save();
@@ -19,13 +19,13 @@ const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => async ({ na
 
   let userInDB = await User.findOne({ name: name, room: roomId });
   if (userInDB) {
-    const message: string = `${name} is already used`;
+    const message: string = `${name} is already created`;
     console.log(message);
     io.to(roomId).emit('FEED', message);
   } else {
     createUser({
       name: name,
-      room: roomId,
+      roomId: roomId,
     });
     const message: string = `${name} has joined the room: ${roomId}`;
     console.log(message);
