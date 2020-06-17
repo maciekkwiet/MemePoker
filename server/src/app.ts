@@ -13,5 +13,12 @@ socketController(server);
 
 // app.use(router);
 
+const dbKey = process.env.DB_KEY;
+
+mongoose
+  .connect(dbKey, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Connected with DB"))
+  .catch(() => console.error("Error with DB"));
+
 const port = process.env.PORT || 4001;
 server.listen(port, () => console.log(`Server listening on port ${port}`));
