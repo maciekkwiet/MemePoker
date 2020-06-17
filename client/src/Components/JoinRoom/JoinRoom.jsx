@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 const JoinRoom = () => {
   const [roomId, setRoomId] = useState('');
+
+  //push to przejście do  kolejnej jstrony
   const { push } = useHistory();
 
   const onInputHandler = ({ target: { value } }) => setRoomId(value);

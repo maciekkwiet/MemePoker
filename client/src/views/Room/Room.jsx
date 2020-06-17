@@ -7,7 +7,7 @@ import { useUserContext } from 'Contexts/UserContext';
 const Room = () => {
   const { name } = useUserContext();
   const { roomId } = useParams();
-
+  //Jeżeli nie ma uczestnia to przekieruj żeby uzytkownik sie wpisał
   if (!name) return <Redirect to={`/room/${roomId}/join`} />;
 
   return (
