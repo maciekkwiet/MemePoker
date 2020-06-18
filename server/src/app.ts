@@ -1,28 +1,17 @@
-import * as http from "http";
-import * as dotenv from "dotenv";
-import * as express from "express";
-import * as socketio from "socket.io";
-import * as mongoose from "mongoose";
+import * as http from 'http';
+import * as dotenv from 'dotenv';
+import * as express from 'express';
+
+import { socketController } from './controllers/socket';
+// const router = require("./router");
 
 dotenv.config();
 
-// const router = require("./router");
-
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+socketController(server);
 
 // app.use(router);
-
-// io.on("connect", (socket) => {
-//   socket.on("sendMessage", (message, callback) => {
-//     const user = getUser(socket.id);
-
-//     io.to(user.room).emit("message", { user: user.name, text: message });
-
-//     callback();
-//   });
-// });
 
 const dbKey = process.env.DB_KEY;
 
