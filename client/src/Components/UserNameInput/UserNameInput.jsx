@@ -7,7 +7,6 @@ import { useUserContext } from 'Contexts/UserContext';
 const UserNameInput = () => {
   const [name, setName] = useState('');
   const { changeName, admins } = useUserContext();
-  const { isAdmin } = admins;
 
   const { roomId } = useParams();
   const history = useHistory();
@@ -16,14 +15,15 @@ const UserNameInput = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    const findroom = admins.findIndex((room) => room.adminroomId === roomId);
-
-    if (~findroom) {
+    const admin = admins.findIndex((user) => user.adminroomId === roomId);
+    if (~admin) {
+      const adminexist = true;
       changeName(name, roomId);
-      sendName({ name, roomId, isAdmin });
+      sendName({ name, roomId, adminexist });
     } else {
+      const adminexist = false;
       changeName(name, roomId);
-      sendName({ name, roomId, isAdmin });
+      sendName({ name, roomId, adminexist });
     }
     history.push(`/room/${roomId}`);
   };

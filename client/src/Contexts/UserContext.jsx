@@ -5,28 +5,29 @@ const UserContextProvider = ({ children }) => {
   const defaultName = window.localStorage.getItem('USERNAME') ?? '';
 
   const [name, setName] = useState(defaultName);
-  const [admins, setAdmin] = useState([{ isAdmin: false, adminroomId: ' ', name: null }]);
+  const [admins, setAdmin] = useState([{ adminExist: false, adminroomId: ' ', name: '' }]);
+
+  const changeAdminName = (Newname, roomId) => {
+    const changeAdmin = admins.find((admin) => admin.adminroomId === roomId);
+    changeAdmin.name = Newname;
+  };
 
   const changeName = (newName = '', roomId) => {
     const existroom = admins.find((admin) => admin.adminroomId === roomId);
-    if (existroom?.isAdmin) {
-      CheckRoom(newName, roomId);
+    if (existroom?.adminExist) {
+      changeAdminName(newName, roomId);
     } else {
       setName(newName);
     }
   };
-  const CheckRoom = (Newname, roomId) => {
-    const ChangeAdmin = admins.find((admin) => admin.adminroomId === roomId);
-    ChangeAdmin.name = Newname;
-  };
 
-  const addAdmin = (isAdmin = false, adminroomId = null, name = ' ') => {
+  const addAdmin = (adminExist = false, adminroomId = null, name = ' ') => {
     admins.map((admin) => {
       if (admin.adminroomId !== adminroomId) {
-        setAdmin([...admins, { isAdmin, adminroomId, name }]);
+        setAdmin([...admins, { adminExist, adminroomId, name }]);
       } else {
         // el.adminroomId = adminroomId;
-        console.log('this room is occupied');
+        console.log('This room is occupied');
       }
     });
   };
