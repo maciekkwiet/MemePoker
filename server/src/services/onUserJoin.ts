@@ -1,7 +1,6 @@
 import * as socketio from 'socket.io';
-import Room from '../models/Room';
+import { Room } from '../models/Room';
 import User from '../models/User';
-//const { User } = require('../models/user');
 
 interface UserJoinPayload {
   name: string;
@@ -17,34 +16,33 @@ const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => async ({
   roomId,
   isAdmin,
 }: UserJoinPayload) => {
-  // sprawdzenie czy taki room juz istnieje jak nie to dopiero wtedy tworzymy nowy pokoj a jak istnieje to tworzymy tylko usera
-  // w activeRooms siedza aktualnie uzyte pokoje(trzeba je zrobic unikalne(obiekt Set?)) i trzeba to porównać z wartościa roomID,
   const newUser = new User(name, null, isAdmin);
-  console.log(User);
+  console.log(newUser);
   if (isRoomCreated(roomId)) {
     rooms.map((room: Room) => {
-      room.users.push(newUser);
+      if (room.roomId == roomId) {
+        //
+        room.users.push(newUser);
+      }
     });
   } else {
-    rooms.map((room: Room) => {
-      activeRooms.push(room.roomId);
-    });
-    const newRoom = new Room(roomId, [newUser]);
+    activeRooms.push(roomId);
+    const newRoom = new Room(roomId, null);
+    newRoom.users.push(newUser);
     rooms.push(newRoom);
   }
+  console.log(rooms);
   const message: string = `${name} has joined the room: ${roomId.toString()}`;
   console.log(message);
   socket.join(roomId.toString());
   io.to(roomId.toString()).emit('FEED', message);
-  console.log(activeRooms, rooms[0].users);
 };
 
-function isRoomCreated(roomId: number) {
-  let checkedId = [];
-  checkedId = activeRooms.filter((id: number) => {
-    id = roomId;
+function isRoomCreated(roomId: number): boolean {
+  let checkedId: Array<number> = [];
+  const param = activeRooms.map((id: number) => {
+    if (id == roomId) checkedId.push(id);
   });
-  //console.log(checkedId);
   if (checkedId.length > 0) return true;
   else return false;
 }
