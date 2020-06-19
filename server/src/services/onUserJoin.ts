@@ -15,18 +15,23 @@ const onUserJoin = (io: socketio.Server, rooms: Rooms, socket: socketio.Socket) 
   isAdmin,
 }: UserJoinPayload) => {
   const newUser = new User(name, null, isAdmin);
+  let message: string = ``;
+  let messageStatus: boolean = true;
   if (rooms.doesRoomExist(roomId)) {
     rooms.rooms.map((room: Room) => {
       if (room.roomId == roomId && !room.doesUserExist(newUser)) {
         room.users.push(newUser);
-      } else console.log('This user is already in room');
+      } else messageStatus = false;
     });
   } else {
     const newRoom = new Room(roomId, null);
     newRoom.users.push(newUser);
     rooms.rooms.push(newRoom);
   }
-  const message: string = `${name} has joined the room: ${roomId.toString()}`;
+
+  messageStatus
+    ? (message = `${name} has joined the room: ${roomId.toString()}`)
+    : (message = `User ${name} is already in room: ${roomId.toString()}`);
   console.log(message);
   socket.join(roomId.toString());
   io.to(roomId.toString()).emit('FEED', message);
