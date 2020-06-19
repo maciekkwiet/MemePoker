@@ -1,4 +1,4 @@
-import User from 'models/User';
+import { User } from 'models/User';
 
 class Room {
   roomId: number;
@@ -6,19 +6,13 @@ class Room {
   constructor(roomId: number, users: User[]) {
     this.roomId = roomId;
     if (!this.users) this.users = [];
+  }
 
-    // this.users.forEach((activeUser) => {});
-    // sprawdzenie czy juz taki jest, jak nie to tworzymy nowego
+  doesUserExist(user: User) {
+    let userExist: boolean = false;
+    const param = this.users.map((existingUser: User) => (existingUser.name == user.name ? (userExist = true) : ''));
+    return userExist;
   }
 }
-// function isUserCreated(user: User) {
-//   let checkedNames = [];
-//   checkedNames = this.users.filter((name: string) => {
-//     id = roomId;
-//   });
-//   //console.log(checkedId);
-//   if (checkedId.length > 0) return true;
-//   else return false;
-// }
 
 export { Room };

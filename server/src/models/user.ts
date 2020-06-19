@@ -8,4 +8,4 @@ class User {
     this.isAdmin = isAdmin;
   }
 }
-export default User;
+export { User };
