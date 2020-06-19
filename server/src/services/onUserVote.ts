@@ -1,4 +1,5 @@
 import * as socketio from 'socket.io';
+import { Rooms } from 'models/Rooms';
 
 const dbKey: any = process.env.DB_KEY;
 
@@ -12,7 +13,7 @@ interface UserVotePayload {
   roomId: string;
 }
 
-const onUserVote = (io: socketio.Server, socket: socketio.Socket) => async ({
+const onUserVote = (io: socketio.Server, rooms: Rooms, socket: socketio.Socket) => async ({
   name,
   value,
   roomId,

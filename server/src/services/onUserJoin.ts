@@ -8,9 +8,8 @@ interface UserJoinPayload {
   roomId: number;
   isAdmin: boolean;
 }
-const rooms = new Rooms(null);
 
-const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => async ({
+const onUserJoin = (io: socketio.Server, rooms: Rooms, socket: socketio.Socket) => async ({
   name,
   roomId,
   isAdmin,

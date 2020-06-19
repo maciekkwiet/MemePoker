@@ -1,5 +1,4 @@
 import { Room } from './Room';
-import { User } from './User';
 
 class Rooms {
   public rooms: Room[];
