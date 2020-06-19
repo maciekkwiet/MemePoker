@@ -10,12 +10,12 @@ class Room {
 
   doesUserExist(user: User) {
     let userExist: boolean = false;
-    const param = this.users.map((existingUser: User) => (existingUser.name == user.name ? (userExist = true) : ''));
+    this.users.map((existingUser: User) => (existingUser.name == user.name ? (userExist = true) : ''));
     return userExist;
   }
 
   changeVote(name: string, value: number) {
-    const param = this.users.map((user: User) => {
+    this.users.map((user: User) => {
       user.name == name ? (user.vote = value) : null;
     });
   }

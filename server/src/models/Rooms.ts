@@ -4,12 +4,13 @@ import { User } from './User';
 class Rooms {
   public rooms: Room[];
   constructor(rooms: Room[]) {
+    this.rooms = rooms;
     if (!this.rooms) this.rooms = [];
   }
 
   doesRoomExist(roomId: number, newUser: User): boolean {
     let roomExist: boolean = false;
-    const param = this.rooms.map((existingRoom: Room) => {
+    this.rooms.map((existingRoom: Room) => {
       existingRoom.roomId == roomId ? (roomExist = true) : null;
     });
     let messageStatus = roomExist ? this.roomExist(roomId, newUser) : this.roomNoExist(roomId, newUser);
@@ -35,7 +36,7 @@ class Rooms {
   }
 
   vote(name: string, value: number, roomId: number) {
-    const param = this.rooms.map((room: Room) => {
+    this.rooms.map((room: Room) => {
       room.roomId == roomId ? room.changeVote(name, value) : null;
     });
   }
