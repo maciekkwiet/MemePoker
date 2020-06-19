@@ -18,10 +18,8 @@ const onUserJoin = (io: socketio.Server, rooms: Rooms, socket: socketio.Socket) 
   let message: string = messageStatus
     ? `${name} has joined the room: ${roomId.toString()}`
     : `User ${name} is already in room: ${roomId.toString()}`;
-  console.log(message);
   socket.join(roomId.toString());
   io.to(roomId.toString()).emit('FEED', message);
-  console.log(rooms.rooms);
 };
 
 export { onUserJoin };

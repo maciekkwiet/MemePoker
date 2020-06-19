@@ -14,7 +14,11 @@ class Room {
     return userExist;
   }
 
-  changeVote(name: string, value: number) {}
+  changeVote(name: string, value: number) {
+    const param = this.users.map((user: User) => {
+      user.name == name ? (user.vote = value) : null;
+    });
+  }
 }
 
 export { Room };

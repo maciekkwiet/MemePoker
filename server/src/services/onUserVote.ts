@@ -1,12 +1,6 @@
 import * as socketio from 'socket.io';
 import { Rooms } from 'models/Rooms';
 
-const dbKey: any = process.env.DB_KEY;
-
-const mongoose = require('mongoose');
-
-const { User } = require('../models/user');
-
 interface UserVotePayload {
   name: string;
   value: number;
@@ -20,7 +14,6 @@ const onUserVote = (io: socketio.Server, rooms: Rooms, socket: socketio.Socket) 
 }: UserVotePayload) => {
   rooms.vote(name, value, roomId);
   const message = `${name} has voted ${value} in the room: ${roomId.toString()}`;
-  console.log(message);
   io.to(roomId.toString()).emit('FEED', message);
 };
 
