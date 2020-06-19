@@ -10,7 +10,7 @@ class Room {
 
   doesUserExist(user: User) {
     let userExist: boolean = false;
-    this.users.map((existingUser: User) => (existingUser.name == user.name ? (userExist = true) : ''));
+    this.users.map((existingUser: User) => (existingUser.name == user.name ? (userExist = true) : null));
     return userExist;
   }
 

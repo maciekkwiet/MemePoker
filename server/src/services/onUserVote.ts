@@ -18,8 +18,3 @@ const onUserVote = (io: socketio.Server, rooms: Rooms, socket: socketio.Socket) 
 };
 
 export { onUserVote };
-
-//redis
-//higherorderfunction
-//higherordercomponent
-//closure
