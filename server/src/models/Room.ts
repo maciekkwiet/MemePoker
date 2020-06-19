@@ -13,6 +13,8 @@ class Room {
     const param = this.users.map((existingUser: User) => (existingUser.name == user.name ? (userExist = true) : ''));
     return userExist;
   }
+
+  changeVote(name: string, value: number) {}
 }
 
 export { Room };

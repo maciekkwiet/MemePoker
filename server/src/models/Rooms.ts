@@ -10,7 +10,7 @@ class Rooms {
   doesRoomExist(roomId: number, newUser: User): boolean {
     let roomExist: boolean = false;
     const param = this.rooms.map((existingRoom: Room) => {
-      existingRoom.roomId == roomId ? (roomExist = true) : '';
+      existingRoom.roomId == roomId ? (roomExist = true) : null;
     });
     let messageStatus = roomExist ? this.roomExist(roomId, newUser) : this.roomNoExist(roomId, newUser);
     return messageStatus;
@@ -32,6 +32,12 @@ class Rooms {
     newRoom.users.push(newUser);
     this.rooms.push(newRoom);
     return true;
+  }
+
+  vote(name: string, value: number, roomId: number) {
+    const param = this.rooms.map((room: Room) => {
+      room.roomId == roomId ? room.changeVote(name, value) : null;
+    });
   }
 }
 export { Rooms };
