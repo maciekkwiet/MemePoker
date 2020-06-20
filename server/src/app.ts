@@ -10,6 +10,7 @@ dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
+const path = require('path');
 socketController(server);
 
 // app.use(router);
@@ -23,3 +24,11 @@ mongoose
 
 const port = process.env.PORT || 4001;
 server.listen(port, () => console.log(`Server listening on port ${port}`));
+
+const publicPath = path.join(__dirname, '../', '/client', '/public');
+app.use(express.static(publicPath));
+
+app.get('/', function (req, res) {
+  const indexPath = path.join(publicPath, 'index.html');
+  res.sendFile(indexPath);
+});
