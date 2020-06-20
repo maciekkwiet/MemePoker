@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
-import { Container, Grid, Typography, CssBaseline, Paper, Button, Avatar, Box } from '@material-ui/core';
+import { Container, Grid, Typography, CssBaseline, Paper, Box } from '@material-ui/core';
 
 import Cards from 'Components/Cards';
 import { useUserContext } from 'Contexts/UserContext';
@@ -8,6 +8,8 @@ import roomStyles from './RoomStyles';
 import TaskNameInput from './TaskNameInput';
 import InfoBox from './InfoBox';
 import UserVotes from './UserVotes';
+import VoteBtn from './VoteBtn';
+import UserBox from './UserBox';
 
 const Room = () => {
   const classes = roomStyles();
@@ -20,21 +22,13 @@ const Room = () => {
   return (
     <Container fixed>
       <CssBaseline />
-      <Grid container spacing={8} className={classes.grid}>
+      <Grid container spacing={5} className={classes.grid}>
         <Grid container item md={8} className={classes.main}>
           <Grid container item xs={12} className={classes.mainTop}>
-            <Grid item sm={10} className={classes.mainTopBox}>
-              <Avatar className={classes.avatarLarge}>{name.charAt(0).toUpperCase()}</Avatar>
-              <Paper elevation={0} className={classes.mainTopBoxPaper} variant="outlined">
-                <Typography display="block" variant="h6">
-                  CHOOSE A MEME!
-                </Typography>
-                <Typography display="block" variant="subtitle2">
-                  You have to choose only one card! Do it quickly :D
-                </Typography>
-              </Paper>
+            <Grid item sm={10}>
+              <UserBox />
             </Grid>
-            <Grid item sm={2} className={classes.mainTopInfoBoxes}>
+            <Grid item container sm={2} className={classes.mainTopInfoBoxes}>
               <InfoBox title="Timer" value="00:22:33" />
               <InfoBox title="Room ID" value={roomId} />
             </Grid>
@@ -51,16 +45,14 @@ const Room = () => {
         <Grid container item md={4}>
           <Grid item xs={12}>
             <Paper className={classes.results}>
-              <Grid container>
-                <Typography variant="h5">Results</Typography>
+              <Grid item container>
+                <Typography className={classes.resultsHeader} component="div" variant="h5">
+                  Results
+                </Typography>
                 <UserVotes />
-                <Box className={classes.resultsBtnWrap} mt="auto">
-                  <Button variant="contained" color="primary" fullWidth>
-                    Show votes
-                  </Button>
-                  <Button variant="contained" color="primary" fullWidth>
-                    Clear votes
-                  </Button>
+                <Box className={classes.resultsBtnWrap}>
+                  <VoteBtn content="Show votes" />
+                  <VoteBtn content="Clear votes" />
                 </Box>
               </Grid>
             </Paper>

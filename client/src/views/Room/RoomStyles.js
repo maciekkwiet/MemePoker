@@ -6,38 +6,23 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey.A400,
     border: `1px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',
+    padding: theme.spacing(2),
+    [theme.breakpoints.down('md')]: {
+      padding: theme.spacing(0.25),
+    },
   },
   main: {
-    // alignItems: 'flex-start',
     alignContent: 'flex-start',
     marginRight: 0,
   },
   mainTop: {
-    boxSizing: 'border-box',
     marginBottom: theme.spacing(2),
-  },
-  mainTopBox: {
-    display: 'flex',
     alignItems: 'center',
-    marginBottom: theme.spacing(2),
-    border: 'none',
-  },
-  mainTopBoxPaper: {
-    padding: theme.spacing(1),
-    borderColor: theme.palette.primary.main,
   },
   mainTopInfoBoxes: {
-    [theme.breakpoints.down('md')]: {
-      width: '100%',
-    },
     '& > div': {
-      marginBottom: '10px',
+      marginBottom: theme.spacing(1),
     },
-  },
-  avatarLarge: {
-    width: theme.spacing(12),
-    height: theme.spacing(12),
-    marginRight: theme.spacing(2),
   },
   cards: {
     backgroundColor: theme.palette.secondary.light,
@@ -52,14 +37,24 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     border: `1px solid ${theme.palette.primary.main}`,
   },
+  resultsHeader: {
+    display: 'inline-block',
+    width: '100%',
+    padding: theme.spacing(0.5, 1),
+    alignSelf: 'flex-start',
+    fontWeight: theme.typography.fontWeightBold,
+    textTransform: 'uppercase',
+    border: `2px solid ${theme.palette.primary.main}`,
+    borderRadius: '5px',
+  },
   resultsBtnWrap: {
     width: '100%',
     marginTop: 'auto',
-    padding: theme.spacing(1),
-    border: `1px solid ${theme.palette.primary.main}`,
+    padding: theme.spacing(1, 1, 0),
+    border: `2px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',
-    '& :last-child': {
-      marginTop: theme.spacing(1),
+    '& button': {
+      marginBottom: theme.spacing(1),
     },
   },
 }));

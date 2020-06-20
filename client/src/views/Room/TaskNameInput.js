@@ -1,21 +1,25 @@
 import React from 'react';
-import { Box, Button, InputLabel, InputBase } from '@material-ui/core';
+import { Box, InputLabel, InputBase, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/styles';
+import SendIcon from '@material-ui/icons/Send';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    width: '100%',
     backgroundColor: theme.palette.primary.main,
     padding: theme.spacing(1, 2),
     display: 'inline-flex',
     flexFlow: 'row nowrap',
     alignItems: 'center',
     borderRadius: '5px',
-    '& :nth-child(n)': {
-      marginRight: theme.spacing(2),
+    '& > label, div': {
+      marginRight: theme.spacing(1),
     },
-    '& :last-child': {
-      marginRight: '0',
+    '& > label': {
+      [theme.breakpoints.down('xs')]: {
+        display: 'none',
+      },
     },
   },
   btn: {
@@ -23,18 +27,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.primary,
   },
 }));
-
-const CustomInput = withStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    color: theme.palette.text.primary,
-    borderRadius: '5px',
-    '& input': {
-      padding: theme.spacing(1),
-      border: 'none',
-    },
-  },
-}))(InputBase);
 
 const CustomLabel = withStyles((theme) => ({
   root: {
@@ -44,15 +36,29 @@ const CustomLabel = withStyles((theme) => ({
   },
 }))(InputLabel);
 
+const CustomInput = withStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.text.primary,
+    borderRadius: '5px',
+    '& > input': {
+      width: '100%',
+      padding: theme.spacing(1),
+      border: 'none',
+      textAlign: 'center',
+    },
+  },
+}))(InputBase);
+
 const TaskNameInput = () => {
   const classes = useStyles();
 
   return (
     <Box className={classes.root}>
-      <CustomLabel>Task name:</CustomLabel>
-      <CustomInput variant="filled" placeholder="Type a task" />
+      <CustomLabel htmlFor="taskName">Task name:</CustomLabel>
+      <CustomInput id="taskName" variant="filled" placeholder="TYPE A TASK" fullWidth />
       <Button className={classes.btn} color="primary" variant="contained">
-        Send
+        <SendIcon />
       </Button>
     </Box>
   );
