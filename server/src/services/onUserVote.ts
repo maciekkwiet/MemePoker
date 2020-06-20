@@ -1,5 +1,5 @@
 import * as socketio from 'socket.io';
-import { Rooms } from 'models/Rooms';
+import { rooms } from 'models/Rooms';
 
 interface UserVotePayload {
   name: string;
@@ -7,13 +7,15 @@ interface UserVotePayload {
   roomId: number;
 }
 
-const onUserVote = (io: socketio.Server, rooms: Rooms, socket: socketio.Socket) => async ({
-  name,
-  value,
-  roomId,
-}: UserVotePayload) => {
-  rooms.vote(name, value, roomId);
-  const message = `${name} has voted ${value} in the room: ${roomId.toString()}`;
+const onUserVote = (io: socketio.Server, socket: socketio.Socket) => ({ name, value, roomId }: UserVotePayload) => {
+  const room = rooms.getRoom(roomId);
+  const user = room.getUser(name);
+
+  if (!user) return console.log(`User ${name} does not belong to room ${room.id}`);
+
+  user.vote = value;
+
+  const message = `${name} has voted in the room: ${roomId.toString()}`;
   io.to(roomId.toString()).emit('FEED', message);
 };
 

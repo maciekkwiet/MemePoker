@@ -1,23 +1,21 @@
 import { User } from 'models/User';
 
 class Room {
-  roomId: number;
-  users: User[];
-  constructor(roomId: number, users: User[]) {
-    this.roomId = roomId;
-    if (!this.users) this.users = [];
+  id: number;
+  private users: User[];
+
+  constructor(id: number) {
+    this.id = id;
+    this.users = [];
   }
 
-  doesUserExist(user: User) {
-    let userExist: boolean = false;
-    this.users.map((existingUser: User) => (existingUser.name == user.name ? (userExist = true) : null));
-    return userExist;
+  getUser(name: string): User | null {
+    return this.users.find(user => user.name === name) ?? null;
   }
 
-  changeVote(name: string, value: number) {
-    this.users.map((user: User) => {
-      user.name == name ? (user.vote = value) : null;
-    });
+  addUser(user: User): void {
+    if (this.getUser(user.name)) return;
+    this.users.push(user);
   }
 }
 

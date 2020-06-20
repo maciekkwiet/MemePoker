@@ -1,11 +1,8 @@
 class User {
-  name: string;
-  vote: number;
-  isAdmin: boolean;
-  constructor(name: string, vote: number, isAdmin: boolean) {
-    this.name = name;
-    this.vote = vote;
-    this.isAdmin = isAdmin;
+  public vote: number | null;
+
+  constructor(public name: string, public isAdmin: boolean) {
+    this.vote = null;
   }
 }
 export { User };

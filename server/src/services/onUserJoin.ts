@@ -1,6 +1,6 @@
 import * as socketio from 'socket.io';
-import { User } from '../models/User';
-import { Rooms } from 'models/Rooms';
+import { User } from 'models/User';
+import { rooms } from 'models/Rooms';
 
 interface UserJoinPayload {
   name: string;
@@ -8,16 +8,14 @@ interface UserJoinPayload {
   isAdmin: boolean;
 }
 
-const onUserJoin = (io: socketio.Server, rooms: Rooms, socket: socketio.Socket) => async ({
-  name,
-  roomId,
-  isAdmin,
-}: UserJoinPayload) => {
-  const newUser = new User(name, null, isAdmin);
-  let messageStatus: Boolean = rooms.doesRoomExist(roomId, newUser);
-  let message: string = messageStatus
-    ? `${name} has joined the room: ${roomId.toString()}`
-    : `User ${name} is already in room: ${roomId.toString()}`;
+const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, roomId, isAdmin }: UserJoinPayload) => {
+  const room = rooms.getRoom(roomId);
+  const user = new User(name, isAdmin);
+
+  room.addUser(user);
+
+  const message = `${name} has joined the room: ${roomId}`;
+
   socket.join(roomId.toString());
   io.to(roomId.toString()).emit('FEED', message);
 };
