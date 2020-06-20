@@ -30,7 +30,9 @@ const UserContextProvider = ({ children }) => {
     window.localStorage.setItem('USER_ROOMS', JSON.stringify(newUserRooms));
   };
 
-  const contextValue = { defaultName, userRooms, upsertRoomInfo };
+  const getUserName = (roomId) => userRooms.find((room) => room.roomId === roomId)?.name;
+
+  const contextValue = { defaultName, upsertRoomInfo, getUserName };
 
   return <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>;
 };
