@@ -8,29 +8,59 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '5px',
   },
   main: {
+    // alignItems: 'flex-start',
+    alignContent: 'flex-start',
     marginRight: 0,
   },
   mainTop: {
     boxSizing: 'border-box',
     marginBottom: theme.spacing(2),
-    display: 'grid',
-    gridTemplateColumns: '80% 20%',
-    gridTemplateRows: 'repeat(2, 1fr)',
-    gap: '1rem 0',
   },
-  userName: {
-    borderColor: theme.palette.primary.main,
+  mainTopBox: {
     display: 'flex',
-    flexDirection: 'row',
     alignItems: 'center',
+    marginBottom: theme.spacing(2),
+    border: 'none',
+  },
+  mainTopBoxPaper: {
+    padding: theme.spacing(1),
+    borderColor: theme.palette.primary.main,
+  },
+  mainTopInfoBoxes: {
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+    },
+    '& > div': {
+      marginBottom: '10px',
+    },
+  },
+  avatarLarge: {
+    width: theme.spacing(12),
+    height: theme.spacing(12),
+    marginRight: theme.spacing(2),
   },
   cards: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.light,
     padding: theme.spacing(2),
+    border: `1px solid ${theme.palette.primary.main}`,
   },
   results: {
     backgroundColor: theme.palette.secondary.main,
     minHeight: '100%',
+    display: 'flex',
+    flexDirection: 'column nowrap',
+    padding: theme.spacing(2),
+    border: `1px solid ${theme.palette.primary.main}`,
+  },
+  resultsBtnWrap: {
+    width: '100%',
+    marginTop: 'auto',
+    padding: theme.spacing(1),
+    border: `1px solid ${theme.palette.primary.main}`,
+    borderRadius: '5px',
+    '& :last-child': {
+      marginTop: theme.spacing(1),
+    },
   },
 }));
 
