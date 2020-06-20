@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-import { useParams, useHistory, Link } from 'react-router-dom';
+import { Link, useLocation, useParams, useHistory } from 'react-router-dom';
 import { useEmit } from 'socketio-hooks';
 
 import { useUserContext } from 'Contexts/UserContext';
 
 const UserNameInput = () => {
-  const { roomId } = useParams();
   const history = useHistory();
+  const { roomId } = useParams();
+  const { state } = useLocation();
 
-  const { defaultName, changeName, userRooms, isUserAdminInTheRoom } = useUserContext();
+  const { defaultName, upsertRoomInfo } = useUserContext();
   const [name, setName] = useState(defaultName);
 
   const emitUserJoined = useEmit('USER_JOINED');
 
+  const isAdmin = state?.isAdmin ?? false;
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    const isAdmin = isUserAdminInTheRoom(roomId);
-
-    changeName(name, roomId);
+    upsertRoomInfo(roomId, name, isAdmin);
     emitUserJoined({ name, roomId, isAdmin });
 
     history.push(`/room/${roomId}`);

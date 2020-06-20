@@ -14,33 +14,23 @@ const UserContextProvider = ({ children }) => {
     setDefaultName(newName);
   };
 
-  const changeRoom = (roomId, name, isAdmin = false) => {
+  const upsertRoomInfo = (roomId, name, isAdmin) => {
     const room = userRooms.find((room) => room.roomId === roomId);
 
-    let newUserRooms;
+    const newUserRooms = [...userRooms];
     if (room) {
       room.name = name;
       room.isAdmin = !!room.isAdmin;
-      newUserRooms = [...userRooms];
     } else {
-      newUserRooms = [...userRooms, { roomId, name, isAdmin }];
+      newUserRooms.push({ roomId, name, isAdmin });
     }
-    window.localStorage.setItem('USER_ROOMS', JSON.stringify(newUserRooms));
-    setUserRooms(newUserRooms);
-  };
 
-  const changeName = (name = '', roomId) => {
-    changeRoom(roomId, name);
     changeDefaultName(name);
+    setUserRooms(newUserRooms);
+    window.localStorage.setItem('USER_ROOMS', JSON.stringify(newUserRooms));
   };
 
-  const isUserAdminInTheRoom = (roomId) => userRooms.some((room) => room.roomId === roomId);
-
-  const setAsAdmin = (roomId) => {
-    changeRoom(roomId, defaultName, true);
-  };
-
-  const contextValue = { defaultName, userRooms, setAsAdmin, changeName, isUserAdminInTheRoom };
+  const contextValue = { defaultName, userRooms, upsertRoomInfo };
 
   return <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>;
 };
