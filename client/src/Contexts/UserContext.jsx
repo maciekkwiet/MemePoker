@@ -1,38 +1,48 @@
 import React, { useState, useContext } from 'react';
+
 const UserContext = React.createContext();
 
 const UserContextProvider = ({ children }) => {
-  const defaultName = window.localStorage.getItem('USERNAME') ?? '';
+  const serializedName = window.localStorage.getItem('DEFAULT_NAME') ?? '';
+  const serializedUserRooms = JSON.parse(window.localStorage.getItem('USER_ROOMS') ?? '[]');
 
-  const [name, setName] = useState(defaultName);
-  const [admins, setAdmin] = useState([{ adminExist: false, adminroomId: ' ', name: '' }]);
+  const [defaultName, setDefaultName] = useState(serializedName);
+  const [userRooms, setUserRooms] = useState(serializedUserRooms);
 
-  const changeAdminName = (Newname, roomId) => {
-    const changeAdmin = admins.find((admin) => admin.adminroomId === roomId);
-    changeAdmin.name = Newname;
+  const changeDefaultName = (newName) => {
+    window.localStorage.setItem('DEFAULT_NAME', newName);
+    setDefaultName(newName);
   };
 
-  const changeName = (newName = '', roomId) => {
-    const existroom = admins.find((admin) => admin.adminroomId === roomId);
-    if (existroom?.adminExist) {
-      changeAdminName(newName, roomId);
+  const changeRoom = (roomId, name, isAdmin = false) => {
+    const room = userRooms.find((room) => room.roomId === roomId);
+
+    let newUserRooms;
+    if (room) {
+      room.name = name;
+      room.isAdmin = !!room.isAdmin;
+      newUserRooms = [...userRooms];
     } else {
-      setName(newName);
+      newUserRooms = [...userRooms, { roomId, name, isAdmin }];
     }
+    window.localStorage.setItem('USER_ROOMS', JSON.stringify(newUserRooms));
+    setUserRooms(newUserRooms);
   };
 
-  const addAdmin = (adminExist = false, adminroomId = null, name = ' ') => {
-    admins.map((admin) => {
-      if (admin.adminroomId !== adminroomId) {
-        setAdmin([...admins, { adminExist, adminroomId, name }]);
-      } else {
-        // el.adminroomId = adminroomId;
-        console.log('This room is occupied');
-      }
-    });
+  const changeName = (name = '', roomId) => {
+    changeRoom(roomId, name);
+    changeDefaultName(name);
   };
 
-  return <UserContext.Provider value={{ name, changeName, admins, addAdmin }}>{children}</UserContext.Provider>;
+  const isUserAdminInTheRoom = (roomId) => userRooms.some((room) => room.roomId === roomId);
+
+  const setAsAdmin = (roomId) => {
+    changeRoom(roomId, defaultName, true);
+  };
+
+  const contextValue = { defaultName, userRooms, setAsAdmin, changeName, isUserAdminInTheRoom };
+
+  return <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>;
 };
 
 const useUserContext = () => {

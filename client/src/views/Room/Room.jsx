@@ -5,10 +5,10 @@ import Cards from 'Components/Cards';
 import { useUserContext } from 'Contexts/UserContext';
 
 const Room = () => {
-  const { name } = useUserContext();
   const { roomId } = useParams();
+  const { defaultName } = useUserContext();
   //Jeżeli nie ma uczestnia to przekieruj żeby uzytkownik sie wpisał
-  if (!name) return <Redirect to={`/room/${roomId}/join`} />;
+  if (!defaultName) return <Redirect to={`/room/${roomId}/join`} />;
 
   return (
     <div>

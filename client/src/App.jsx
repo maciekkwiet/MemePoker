@@ -13,10 +13,10 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/room/:roomId/join">
+        <Route exact path="/room/:roomId/join">
           <RoomJoin />
         </Route>
-        <Route path="/room/:roomId">
+        <Route exact path="/room/:roomId">
           <Room />
         </Route>
         <Route path="/">

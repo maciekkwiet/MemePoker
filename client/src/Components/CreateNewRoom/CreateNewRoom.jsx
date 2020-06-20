@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useUserContext } from '../../Contexts/UserContext';
+import { useUserContext } from 'Contexts/UserContext';
 
 const CreateNewRoom = () => {
-  const sessionNumber = String(Math.round(Math.random() * 100));
-  const { addAdmin } = useUserContext();
+  const sessionId = String(Math.round(Math.random() * 100));
+  const { setAsAdmin } = useUserContext();
 
   return (
     <>
-      <Link to={`/room/${sessionNumber}/join`}>
-        <button onClick={() => addAdmin(true, sessionNumber)}>Create new session</button>
+      <Link to={`/room/${sessionId}/join`}>
+        <button onClick={() => setAsAdmin(sessionId)}>Create new session</button>
       </Link>
     </>
   );
