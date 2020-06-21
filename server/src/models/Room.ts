@@ -17,6 +17,14 @@ class Room {
     if (this.getUser(user.name)) return;
     this.users.push(user);
   }
+
+  doesEveryoneVoted(): boolean {
+    return !this.users.some(user => user.vote === null);
+  }
+
+  getVotes(): Array<Pick<User, 'name' | 'vote'>> {
+    return this.users.map(user => ({ name: user.name, vote: user.vote }));
+  }
 }
 
 export { Room };
