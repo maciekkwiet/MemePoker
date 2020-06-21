@@ -14,8 +14,11 @@ const onUserVote = (io: socketio.Server, socket: socketio.Socket) => ({ name, va
   if (!user) return console.log(`User ${name} does not belong to room ${room.id}`);
 
   user.vote = value;
+  let message: String = '';
+  room.doesEveryoneVoted()
+    ? (message = `Everyone in room ${room.id} voted, votes: ${room.getVotes}`)
+    : (message = `${name} has voted in the room: ${roomId.toString()}`);
 
-  const message = `${name} has voted in the room: ${roomId.toString()}`;
   io.to(roomId.toString()).emit('FEED', message);
 };
 
