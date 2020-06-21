@@ -1,1 +1,3 @@
-export { default } from './Template';
+import Template from './Template';
+
+export default Template;

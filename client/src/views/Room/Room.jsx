@@ -5,11 +5,11 @@ import { Container, Grid, Typography, CssBaseline, Paper, Box } from '@material-
 import Cards from 'Components/Cards';
 import { useUserContext } from 'Contexts/UserContext';
 import roomStyles from './RoomStyles';
-import TaskNameInput from './TaskNameInput';
-import InfoBox from './InfoBox';
-import UserVotes from './UserVotes';
-import VoteBtn from './VoteBtn';
-import UserBox from './UserBox';
+import TaskNameInput from 'Components/TaskNameInput';
+import InfoBox from 'Components/InfoBox';
+import UserVotes from 'Components/UserVotes';
+import VoteBtn from 'Components/VoteButton';
+import UserBox from 'Components/UserBox';
 
 const Room = () => {
   const classes = roomStyles();

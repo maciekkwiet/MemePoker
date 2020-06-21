@@ -1,29 +1,12 @@
 import React from 'react';
 import { Avatar, Paper, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { useUserContext } from 'Contexts/UserContext';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: theme.spacing(2),
-    border: 'none',
-  },
-  paper: {
-    padding: theme.spacing(1),
-    border: `2px solid ${theme.palette.primary.main}`,
-  },
-  avatarLg: {
-    width: theme.spacing(12),
-    height: theme.spacing(12),
-    marginRight: theme.spacing(2),
-  },
-}));
+import { useUserContext } from 'Contexts/UserContext';
+import UserBoxStyles from './UserBoxStyles';
 
 const UserBox = () => {
   const { name } = useUserContext();
-  const classes = useStyles();
+  const classes = UserBoxStyles();
 
   return (
     <div className={classes.root}>

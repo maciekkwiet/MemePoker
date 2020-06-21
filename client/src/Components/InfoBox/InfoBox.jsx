@@ -1,20 +1,10 @@
 import React from 'react';
 import { Paper, Typography, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    border: `2px solid ${theme.palette.primary.main}`,
-    padding: theme.spacing(0.25),
-    textAlign: 'center',
-    '& :first-child': {
-      textTransform: 'uppercase',
-    },
-  },
-}));
+import InfoBoxStyles from './InfoBoxStyles';
 
 const InfoBox = ({ title, value }) => {
-  const classes = useStyles();
+  const classes = InfoBoxStyles();
 
   return (
     <Grid item xs={6} sm={12}>

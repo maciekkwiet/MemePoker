@@ -6,7 +6,7 @@ import './index.css';
 
 import App from './App';
 import { UserContextProvider } from 'Contexts/UserContext';
-import Template from './Components/Template';
+import Template from 'Components/Template';
 
 ReactDOM.render(
   <React.StrictMode>

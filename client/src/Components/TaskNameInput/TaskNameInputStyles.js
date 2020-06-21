@@ -1,10 +1,8 @@
-import React from 'react';
-import { Box, InputLabel, InputBase, Button } from '@material-ui/core';
+import { InputLabel, InputBase } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/styles';
-import SendIcon from '@material-ui/icons/Send';
 
-const useStyles = makeStyles((theme) => ({
+const TaskNameInputStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     backgroundColor: theme.palette.primary.main,
@@ -50,18 +48,4 @@ const CustomInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
-const TaskNameInput = () => {
-  const classes = useStyles();
-
-  return (
-    <Box className={classes.root}>
-      <CustomLabel htmlFor="taskName">Task name:</CustomLabel>
-      <CustomInput id="taskName" variant="filled" placeholder="TYPE A TASK" fullWidth />
-      <Button className={classes.btn} color="primary" variant="contained">
-        <SendIcon />
-      </Button>
-    </Box>
-  );
-};
-
-export default TaskNameInput;
+export { TaskNameInputStyles, CustomLabel, CustomInput };
