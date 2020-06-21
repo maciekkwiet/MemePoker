@@ -1,15 +1,9 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    marginTop: 'auto',
-    padding: theme.spacing(2),
-  },
-}));
+import FooterStyles from './FooterStyles';
 
 const Footer = () => {
-  const classes = useStyles();
+  const classes = FooterStyles();
 
   return <div className={classes.footer}>Footer</div>;
 };

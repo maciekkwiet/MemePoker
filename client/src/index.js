@@ -6,17 +6,14 @@ import './index.css';
 
 import App from './App';
 import { UserContextProvider } from 'Contexts/UserContext';
-import Template from 'Components/Template';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Template>
-      <UserContextProvider>
-        <SocketIOProvider url="/">
-          <App />
-        </SocketIOProvider>
-      </UserContextProvider>
-    </Template>
+    <UserContextProvider>
+      <SocketIOProvider url="/">
+        <App />
+      </SocketIOProvider>
+    </UserContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
