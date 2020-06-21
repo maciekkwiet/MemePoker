@@ -17,14 +17,16 @@ class Room {
     if (this.getUser(user.name)) return;
     this.users.push(user);
   }
+
   doesEveryoneVoted() {
-    let status: boolean = false;
-    this.users.map((user: User) => (user.vote == null ? (status = false) : (status = true)));
+    let status: boolean = true;
+    this.users.map((user: User) => (user.vote == null ? (status = false) : null));
     return status;
   }
+
   getVotes() {
     const votes: Array<object> = [];
-    this.users.map((user: User) => votes.push({ user: user.vote }));
+    this.users.map(user => votes.push({ name: user.name, vote: user.vote }));
     return votes;
   }
 }
