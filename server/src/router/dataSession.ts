@@ -1,8 +1,8 @@
-const express = require('express');
+import * as express from 'express';
 const router = express.Router();
 
-router.get('/', async (req: any, res: any) => {
+router.get('/', async (req: express.Request, res: express.Response) => {
   //xxx
 });
 
-export { router };
+module.exports = router;
