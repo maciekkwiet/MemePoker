@@ -5,6 +5,6 @@ const newSession = require('./newSession');
 const dataSession = require('./dataSession');
 
 router.use('/newSession', newSession);
-router.use('/newSession', dataSession);
+router.use('/dataSession', dataSession);
 
 module.exports = router;

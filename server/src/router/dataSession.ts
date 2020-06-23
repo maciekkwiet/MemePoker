@@ -4,7 +4,8 @@ import { rooms } from 'models/Rooms';
 const router = express.Router();
 
 router.get('/', async (req: express.Request, res: express.Response) => {
-  const room = rooms.getRoom(req.body);
+  const { roomId }: any = req.query;
+  const room = rooms.getRoom(roomId);
   res.json({ room: room });
 });
 
