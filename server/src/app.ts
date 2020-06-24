@@ -6,7 +6,7 @@ import * as mongoose from 'mongoose';
 const cookieParser = require('cookie-parser');
 
 import { socketController } from './controllers/socket';
-const router = require('./router');
+const router = require('./controllers');
 
 dotenv.config();
 
