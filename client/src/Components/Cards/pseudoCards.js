@@ -61,6 +61,16 @@ const pseudoCards = [
     value: '0101',
     img: imgSrc,
   },
+  {
+    id: 13,
+    value: '2222',
+    img: imgSrc,
+  },
+  {
+    id: 14,
+    value: '8',
+    img: imgSrc,
+  },
 ];
 
 export default pseudoCards;
