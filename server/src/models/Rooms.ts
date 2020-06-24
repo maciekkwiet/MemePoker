@@ -4,6 +4,7 @@ class Rooms {
   private readonly rooms: Room[] = [];
 
   getRoom(roomId: number): Room {
+    //Do wywalenia
     const room = this.rooms.find(({ id }) => id === roomId) ?? rooms.createRoom(roomId);
     return room;
   }
