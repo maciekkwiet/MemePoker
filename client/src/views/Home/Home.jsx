@@ -10,7 +10,7 @@ const Home = () => {
       Home View
       <CreateNewRoom />
       <JoinRoom />
-      <RoomNumberInput id={'roomnumber'} placeholder={`room's number`} name={'name'} fullWidth={true} />
+      <RoomNumberInput />
     </div>
   );
 };

@@ -3,19 +3,18 @@ import React from 'react';
 import { FormItem } from './RoomNumberInputStyles';
 import { InputBase } from '@material-ui/core';
 
-const RoomNumberInput = ({ id, placeholder, name, fullWidth }) => {
+const RoomNumberInput = props => {
   const classes = FormItem();
 
   return (
     <>
       <InputBase
         className={classes.inputForm}
-        id={id}
+        id="room"
         variant="outlined"
-        placeholder={placeholder}
+        placeholder="room's number"
         autoComplete="off"
-        name={name}
-        fullWidth={fullWidth}
+        name="roomnumber"
       ></InputBase>
     </>
   );
