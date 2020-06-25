@@ -15,6 +15,7 @@ const RoomNumberInput = props => {
         placeholder="room's number"
         autoComplete="off"
         name="roomnumber"
+        fullWidth
       ></InputBase>
     </>
   );

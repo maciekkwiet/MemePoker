@@ -6,11 +6,22 @@ const HomeStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    margin: '0 3em',
-    justifyContent: 'space-around',
+    margin: '1em 3em',
+    justifyContent: 'center',
   },
-  button: {
-    weight: '50px',
+  item2: {
+    display: 'flex',
+    flexDirection: 'column',
+    margin: '0 1em',
+    width: '50%',
+  },
+  textR: {
+    marginLeft: '1px',
+    textAlign: 'center',
+  },
+  textL: {
+    marginLeft: '120px',
+    textAlign: 'center',
   },
 }));
 

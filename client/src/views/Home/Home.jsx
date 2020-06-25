@@ -8,6 +8,7 @@ import ContainerApp from 'Components/ContainerApp';
 import PromotedText from 'Components/PromotedText/PromotedText.jsx';
 import { Typography } from '@material-ui/core';
 import Votebutton from '../../Components/VoteButton/VoteButton';
+import RoomNumberInpit from '../../Components/RoomInputNumber/RoomNumberInput';
 
 const Home = () => {
   const classes = HomeStyle();
@@ -15,26 +16,31 @@ const Home = () => {
     <>
       <ContainerApp className={classes.root}>
         <div className={classes.headerItem}>
-          <UserBox />
+          <UserBox className={classes.headerItem} />
         </div>
         <div className={classes.item}>
           <PromotedText text={'POINTING SESSION'} />
         </div>
         <div className={classes.item}>
-          <Typography display="block" variant="h6">
-            CREATE NEW SESSION
-          </Typography>
-          <Typography display="block" variant="h6">
-            ADD ROOM'S NUMBER
-          </Typography>
+          <div className={classes.textR}>
+            <Typography display="block" variant="h6">
+              CREATE NEW SESSION
+            </Typography>
+          </div>
+          <div className={classes.textL}>
+            <Typography display="block" variant="h6">
+              ADD ROOM'S NUMBER
+            </Typography>
+          </div>
         </div>
         <div className={classes.item}>
-          <Votebutton content={'test'} />
-          <Votebutton content={'test'} />
-          <Votebutton content={'test'} />
+          <Votebutton content={'START SESSION'} />
+          <div className={classes.item2}>
+            <RoomNumberInpit />
+          </div>
+          <Votebutton content={'JOIN SESSION'} />
         </div>
       </ContainerApp>
-
       <CreateNewRoom />
       <JoinRoom />
     </>
