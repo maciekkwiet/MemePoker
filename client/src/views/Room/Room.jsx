@@ -2,8 +2,8 @@ import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Container, Grid, Typography, CssBaseline, Paper, Box } from '@material-ui/core';
 
-import Cards from 'Components/Cards';
 import { useUserContext } from 'Contexts/UserContext';
+import Cards from 'Components/Cards';
 import roomStyles from './RoomStyles';
 import TaskNameInput from 'Components/TaskNameInput';
 import InfoBox from 'Components/InfoBox';

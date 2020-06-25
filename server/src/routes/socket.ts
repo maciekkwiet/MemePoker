@@ -1,7 +1,7 @@
 import * as socketio from 'socket.io';
 import * as http from 'http';
-import { onUserVote } from '@services/onUserVote';
-import { onUserJoin } from '@services/onUserJoin';
+import { onUserVote } from '@controllers/onUserVote';
+import { onUserJoin } from '@controllers/onUserJoin';
 
 const socketController = (server: http.Server): void => {
   const io = socketio(server);
