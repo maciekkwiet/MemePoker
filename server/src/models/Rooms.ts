@@ -9,19 +9,21 @@ class Rooms {
     return room;
   }
 
-  public createRoom(): Room {
+  createRoom(): Room {
     let uniqueId = this.createRandomId();
-
-    if (this.checkId(uniqueId)) {
-      const room = new Room(uniqueId);
-      this.rooms.push(room);
-      return room;
+    while (this.checkId(uniqueId)) {
+      uniqueId = this.createRandomId();
     }
+    const room = new Room(uniqueId);
+    this.rooms.push(room);
+    return room;
   }
+
   private createRandomId(): number {
-    return Math.floor(Math.random() * 10000);
+    return Math.floor(Math.random() * 9000 + 1000);
   }
-  private checkId(id): boolean {
+
+  private checkId(id: number): boolean {
     let status: boolean = false;
     this.rooms.map(room => {
       room.id == id ? (status = true) : null;
