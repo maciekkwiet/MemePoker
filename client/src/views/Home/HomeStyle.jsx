@@ -5,23 +5,22 @@ const HomeStyles = makeStyles(theme => ({
   item: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
     margin: '1em 3em',
-    justifyContent: 'center',
   },
   item2: {
     display: 'flex',
     flexDirection: 'column',
     margin: '0 1em',
-    width: '50%',
+    width: '100%',
+    justifyContent: 'space-evenly',
   },
   textR: {
-    marginLeft: '1px',
     textAlign: 'center',
+    width: '34%',
   },
   textL: {
-    marginLeft: '120px',
     textAlign: 'center',
+    width: '66%',
   },
 }));
 

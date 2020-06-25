@@ -23,14 +23,10 @@ const Home = () => {
         </div>
         <div className={classes.item}>
           <div className={classes.textR}>
-            <Typography display="block" variant="h6">
-              CREATE NEW SESSION
-            </Typography>
+            <Typography variant="h6">CREATE NEW SESSION</Typography>
           </div>
           <div className={classes.textL}>
-            <Typography display="block" variant="h6">
-              ADD ROOM'S NUMBER
-            </Typography>
+            <Typography variant="h6">ADD ROOM'S NUMBER</Typography>
           </div>
         </div>
         <div className={classes.item}>
