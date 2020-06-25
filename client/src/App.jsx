@@ -1,7 +1,8 @@
 import React from 'react';
+import { CssBaseline } from '@material-ui/core';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useSocket } from 'socketio-hooks';
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/core';
 
 import Home from 'views/Home';
 import Room from 'views/Room';
