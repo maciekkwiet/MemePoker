@@ -10,6 +10,7 @@ import InfoBox from 'Components/InfoBox';
 import UserBox from 'Components/UserBox';
 import ContainerApp from 'Components/ContainerApp';
 import Results from 'Components/Results';
+import Timer from 'Components/Timer';
 
 const Room = () => {
   const classes = RoomStyles();
@@ -26,14 +27,12 @@ const Room = () => {
           <Box className={classes.top} component="div">
             <UserBox />
             <Box className={classes.info}>
-              <InfoBox title="Timer" value="00:22:33" />
+              <Timer />
               <InfoBox title="Room ID" value={roomId} />
             </Box>
           </Box>
           <Paper className={classes.cards}>
-            <Box mb={2}>
-              <TaskNameInput />
-            </Box>
+            <TaskNameInput />
             <Cards />
           </Paper>
         </Grid>
