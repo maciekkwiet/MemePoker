@@ -3,16 +3,16 @@ import { Paper, Typography } from '@material-ui/core';
 
 import InfoBoxStyles from './InfoBoxStyles';
 
-const InfoBox = ({ title, value }) => {
+const InfoBox = props => {
   const classes = InfoBoxStyles();
 
   return (
     <Paper elevation={0} className={classes.root}>
       <Typography component="div" variant="h6">
-        {title}
+        {props.title}
       </Typography>
       <Typography component="div" variant="body2">
-        {value}
+        {props.value}
       </Typography>
     </Paper>
   );
