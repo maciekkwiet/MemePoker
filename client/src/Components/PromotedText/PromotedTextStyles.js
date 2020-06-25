@@ -8,6 +8,7 @@ const PromotedTextStyles = makeStyles(theme => ({
     textAlign: 'center',
     textTransform: 'uppercase',
     textShadow: '2px 2px 4px black',
+    width: '100%',
   },
 }));
 
