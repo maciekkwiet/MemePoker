@@ -16,7 +16,7 @@ const UserBox = () => {
           CHOOSE A MEME!
         </Typography>
         <Typography display="block" variant="subtitle2">
-          You have to choose only one card! Do it quickly :D
+          You have to choose only okkkkkkkkkkkkkkkkkkkkkkkkkkkkkne card! Do it quickly :D
         </Typography>
       </Paper>
     </div>
