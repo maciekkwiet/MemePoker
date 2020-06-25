@@ -4,8 +4,8 @@ class Rooms {
   private readonly rooms: Room[] = [];
 
   getRoom(roomId: number): Room {
-    //Do wywalenia
-    const room = this.rooms.find(({ id }) => id === roomId) ?? rooms.createRoom();
+    const room = this.rooms.find(({ id }) => id === roomId);
+    if (typeof room === 'undefined') throw new Error();
     return room;
   }
 
@@ -23,12 +23,9 @@ class Rooms {
     return Math.floor(Math.random() * 9000 + 1000);
   }
 
-  private checkId(id: number): boolean {
-    let status: boolean = false;
-    this.rooms.map(room => {
-      room.id == id ? (status = true) : null;
-    });
-    return status;
+  private checkId(roomId: number): boolean {
+    const room = this.rooms.find(({ id }) => id === roomId);
+    return typeof room === 'undefined' ? false : true;
   }
 }
 
