@@ -1,26 +1,52 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const HomeStyles = makeStyles(theme => ({
-  headerItem: { marginBottom: '2em' },
-  item: {
+  wrapper: { display: 'flex', flexDirection: 'column' },
+  wrapper__userBox: { marginBottom: '2em' },
+  wrapper__item: {
     display: 'flex',
     flexDirection: 'row',
     margin: '1em 3em',
+    justifyContent: 'space-around',
   },
-  item2: {
+  form__wrapper: {
     display: 'flex',
-    flexDirection: 'column',
-    margin: '0 1em',
-    width: '100%',
-    justifyContent: 'space-evenly',
+    flexDirection: 'row',
   },
-  textR: {
+  wrapper__item__column: {
+    width: '40%',
     textAlign: 'center',
-    width: '34%',
+    justifyContent: 'center',
+    alignContent: 'center',
   },
-  textL: {
-    textAlign: 'center',
-    width: '66%',
+  form__wrapper__input: {
+    width: '40%',
+    marginRight: '1em',
+    marginTop: '2em',
+  },
+  form__wrapper__text: {
+    width: '60%',
+    marginTop: '2em',
+  },
+  button__session: {
+    marginTop: '2em',
+    textDecoration: 'none',
+  },
+  divider: {
+    marginTop: '2em',
+    backgroundColor: theme.palette.primary.main,
+    height: '7em',
+  },
+  input: {
+    '& .MuiFormLabel-root': {
+      textAlign: 'center',
+      color: '#FFFF',
+      border: '#FFFF',
+    },
+    '& .MuiOutlinedInput-notchedOutline': {
+      textAlign: 'center',
+      borderColor: theme.palette.primary.main,
+    },
   },
 }));
 

@@ -6,7 +6,7 @@ const PromotedText = ({ text }) => {
   const classes = PromotedTextStyles();
 
   return (
-    <Paper elevation={3} className={classes.paper} fullWidth>
+    <Paper elevation={3} className={classes.paper}>
       <Typography component="div" variant="h5">
         {text}
       </Typography>
