@@ -7,14 +7,14 @@ import Footer from 'Components/Footer/Footer';
 import theme from '../../theme';
 import TemplateStyles from './TemplateStyles';
 
-const Template = (props) => {
+const Template = props => {
   const classes = TemplateStyles();
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Header />
       <Container className={classes.Cnt}>
-        <Header />
         {props.children}
         <Footer />
       </Container>
