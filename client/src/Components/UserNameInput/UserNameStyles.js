@@ -8,7 +8,7 @@ const UserNameStyles = makeStyles(theme => ({
     marginTop: '2em',
     justifyContent: 'center',
   },
-  test: {
+  root: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

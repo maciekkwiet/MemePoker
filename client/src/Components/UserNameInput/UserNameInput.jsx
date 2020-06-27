@@ -40,7 +40,7 @@ const UserNameInput = () => {
       <ContainerApp>
         <PromotedText text={`JOIN THE MEETING AS...`} />
         <form onSubmit={handleSubmit(onSubmitHandler)} autoComplete="off">
-          <div className={classes.test}>
+          <div className={classes.root}>
             <div>
               <img src={photo1} alt="twitter avatar" className={classes.img} />
             </div>
