@@ -25,27 +25,29 @@ const JoinRoom = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(connectToRoom)} autoComplete="off">
-      <div className={classes.form__wrapper}>
-        <div className={classes.form__wrapper__input}>
-          <TextField
-            className={classes.input}
-            label="ROOM'S NUMBER"
-            variant="outlined"
-            id="room"
-            placeholder="ROOM'S NUMBER"
-            autoComplete="off"
-            name="roomId"
-            inputRef={register}
-            error={!!errors.roomId}
-            size="small"
-          ></TextField>
+    <>
+      <form onSubmit={handleSubmit(connectToRoom)} autoComplete="off">
+        <div className={classes.form__wrapper}>
+          <div className={classes.form__wrapper__input}>
+            <TextField
+              className={classes.input}
+              label="ROOM'S NUMBER"
+              variant="outlined"
+              id="room"
+              placeholder="ROOM'S NUMBER"
+              autoComplete="off"
+              name="roomId"
+              inputRef={register}
+              error={!!errors.roomId}
+              size="small"
+            ></TextField>
+          </div>
+          <div className={classes.form__wrapper__text}>
+            <VoteButton content={'JOIN SESSION'} height={2.8} />
+          </div>
         </div>
-        <div className={classes.form__wrapper__text}>
-          <VoteButton content={'JOIN SESSION'} height={2.8} />
-        </div>
-      </div>
-    </form>
+      </form>
+    </>
   );
 };
 
