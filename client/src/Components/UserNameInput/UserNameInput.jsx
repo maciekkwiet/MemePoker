@@ -45,7 +45,7 @@ const UserNameInput = () => {
               <img src={photo1} alt="twitter avatar" className={classes.img} />
             </div>
             <div className={classes.wrapper}>
-              <div className={classes.wrapper__input}>
+              <div className={classes.wrapperInput}>
                 <TextField
                   label="NAME"
                   variant="outlined"
@@ -59,8 +59,8 @@ const UserNameInput = () => {
                   fullWidth
                 ></TextField>
               </div>
-              <div className={classes.wrapper__button}>
-                <VoteButton content={'JOIN SESSION'} height={2.8} className={classes.wrapper__button} />
+              <div className={classes.wrapperButton}>
+                <VoteButton content={'JOIN SESSION'} height={2.8} className={classes.wrapperButton} />
               </div>
             </div>
             <div>

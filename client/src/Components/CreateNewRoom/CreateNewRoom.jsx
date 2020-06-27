@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import VoteButton from 'Components/VoteButton/index.js';
-import HomeStyle from '../../views/Home/HomeStyle.jsx';
+import CreateNewRoomStyles from './CreateNewRoomStyles';
 
 const CreateNewRoom = () => {
-  const classes = HomeStyle();
+  const classes = CreateNewRoomStyles();
   const sessionNumber = Math.round(Math.random() * 100);
 
   return (
     <>
       <Link to={`/room/${sessionNumber}/join`} style={{ textDecoration: 'none' }}>
-        <div className={classes.button__session}>
+        <div className={classes.buttonSession}>
           <VoteButton content={'START SESSION'} />
         </div>
       </Link>

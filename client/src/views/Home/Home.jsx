@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       <ContainerApp className={classes.wrapper}>
-        <div className={classes.wrapper__userBox}>
+        <div className={classes.wrapperUserBox}>
           <UserBox
             title={'Hello !'}
             value={
@@ -23,16 +23,16 @@ const Home = () => {
             }
           />
         </div>
-        <div className={classes.wrapper__item}>
+        <div className={classes.wrapperItem}>
           <PromotedText text={'POINTING SESSION'} />
         </div>
-        <div className={classes.wrapper__item}>
-          <div className={classes.wrapper__item__column}>
+        <div className={classes.wrapperItem}>
+          <div className={classes.wrapperItemColumn}>
             <Typography variant="h6">CREATE NEW SESSION</Typography>
             <CreateNewRoom />
           </div>
           <Divider orientation="vertical" flexItem className={classes.divider} />
-          <div className={classes.wrapper__item__column}>
+          <div className={classes.wrapperItemColumn}>
             <Typography variant="h6">ADD ROOM'S NUMBER</Typography>
             <JoinRoom />
           </div>

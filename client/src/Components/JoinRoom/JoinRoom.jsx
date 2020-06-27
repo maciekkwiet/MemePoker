@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
-import HomeStyles from '../../views/Home/HomeStyle.jsx';
+import JoinRoomStyles from './JoinRoomStyles';
 import VoteButton from 'Components/VoteButton';
 
 import TextField from '@material-ui/core/TextField';
@@ -14,7 +14,7 @@ const Schema = yup.object().shape({
 });
 
 const JoinRoom = () => {
-  const classes = HomeStyles();
+  const classes = JoinRoomStyles();
   const { register, handleSubmit, errors } = useForm({
     validationSchema: Schema,
   });
@@ -27,8 +27,8 @@ const JoinRoom = () => {
   return (
     <>
       <form onSubmit={handleSubmit(connectToRoom)} autoComplete="off">
-        <div className={classes.form__wrapper}>
-          <div className={classes.form__wrapper__input}>
+        <div className={classes.formWrapper}>
+          <div className={classes.formWrapperInput}>
             <TextField
               className={classes.input}
               label="ROOM'S NUMBER"
@@ -42,7 +42,7 @@ const JoinRoom = () => {
               size="small"
             ></TextField>
           </div>
-          <div className={classes.form__wrapper__text}>
+          <div className={classes.formWrapperText}>
             <VoteButton content={'JOIN SESSION'} height={2.8} />
           </div>
         </div>

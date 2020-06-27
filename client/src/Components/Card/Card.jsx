@@ -4,7 +4,7 @@ import { useEmit } from 'socketio-hooks';
 import { Box } from '@material-ui/core';
 
 import { useUserContext } from 'Contexts/UserContext';
-import CardStyles from './cardStyles';
+import CardStyles from './CardStyles';
 
 const Card = ({ value, img }) => {
   const { name } = useUserContext();

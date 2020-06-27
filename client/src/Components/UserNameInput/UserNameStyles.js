@@ -25,7 +25,7 @@ const UserNameStyles = makeStyles(theme => ({
   },
 
   //class=" MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-outlined"
-  wrapper__input: {
+  wrapperInput: {
     width: '20em',
     display: 'flex',
     marginBottom: '1em',
@@ -45,7 +45,7 @@ const UserNameStyles = makeStyles(theme => ({
       textAlign: 'center',
     },
   },
-  wrapper__button: { width: '20em', justifyContent: 'center' },
+  wrapperButton: { width: '20em', justifyContent: 'center' },
 }));
 
 export default UserNameStyles;
