@@ -7,7 +7,7 @@ import Footer from 'Components/Footer/Footer';
 import theme from '../../theme';
 import TemplateStyles from './TemplateStyles';
 
-const Template = (props) => {
+const Template = props => {
   const classes = TemplateStyles();
 
   return (

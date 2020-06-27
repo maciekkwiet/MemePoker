@@ -10,7 +10,7 @@ import pseudoCards from './pseudoCards';
 const Cards = () => {
   return (
     <Grid item container spacing={2}>
-      {pseudoCards.map((card) => (
+      {pseudoCards.map(card => (
         <Card key={card.id} value={card.value} img={card.img} />
       ))}
     </Grid>
