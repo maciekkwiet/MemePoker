@@ -5,24 +5,27 @@ import { useSocket } from 'socketio-hooks';
 import Home from 'views/Home';
 import Room from 'views/Room';
 import RoomJoin from 'views/RoomJoin';
+import Template from 'Components/Template';
 
 function App() {
   //Only for debug purposes
-  useSocket('FEED', (msg) => console.log(msg));
+  useSocket('FEED', msg => console.log(msg));
 
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/room/:roomId/join">
-          <RoomJoin />
-        </Route>
-        <Route exact path="/room/:roomId">
-          <Room />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      <Template>
+        <Switch>
+          <Route path="/room/:roomId/join">
+            <RoomJoin />
+          </Route>
+          <Route path="/room/:roomId">
+            <Room />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Template>
     </BrowserRouter>
   );
 }
