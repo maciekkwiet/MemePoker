@@ -10,11 +10,12 @@ const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, t
   const room = rooms.getRoom(roomId);
   room.task = task;
 
-  const message = task;
+  room.clearVotes();
 
-  socket.join(roomId.toString());
+  const message = `New task: ${task} in the room: ${roomId}`;
 
   io.to(roomId.toString()).emit('FEED', message);
+  io.to(roomId.toString()).emit('TASK_UPDATED', room.task);
 };
 
 export { onNewTask };
