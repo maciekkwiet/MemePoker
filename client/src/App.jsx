@@ -9,7 +9,7 @@ import Template from 'Components/Template';
 
 function App() {
   //Only for debug purposes
-  useSocket('FEED', (msg) => console.log(msg));
+  useSocket('FEED', msg => console.log(msg));
 
   return (
     <BrowserRouter>

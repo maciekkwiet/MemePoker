@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const UserBoxStyles = makeStyles((theme) => ({
+const UserBoxStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     alignItems: 'center',

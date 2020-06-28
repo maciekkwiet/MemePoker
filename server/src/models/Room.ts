@@ -18,8 +18,12 @@ class Room {
     this.users.push(user);
   }
 
-  doesEveryoneVoted(): boolean {
+  hasEveryoneVoted(): boolean {
     return !this.users.some(user => user.vote === null);
+  }
+
+  getUsers(): User[] {
+    return [...this.users];
   }
 
   getVotes(): Array<Pick<User, 'name' | 'vote'>> {
