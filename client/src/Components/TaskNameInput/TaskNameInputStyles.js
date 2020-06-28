@@ -2,7 +2,7 @@ import { InputLabel, InputBase } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/styles';
 
-const TaskNameInputStyles = makeStyles((theme) => ({
+const TaskNameInputStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     backgroundColor: theme.palette.primary.main,
@@ -26,7 +26,7 @@ const TaskNameInputStyles = makeStyles((theme) => ({
   },
 }));
 
-const CustomLabel = withStyles((theme) => ({
+const CustomLabel = withStyles(theme => ({
   root: {
     color: theme.palette.text.primary,
     fontWeight: theme.typography.fontWeightBold,
@@ -34,7 +34,7 @@ const CustomLabel = withStyles((theme) => ({
   },
 }))(InputLabel);
 
-const CustomInput = withStyles((theme) => ({
+const CustomInput = withStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     color: theme.palette.text.primary,
@@ -44,6 +44,9 @@ const CustomInput = withStyles((theme) => ({
       padding: theme.spacing(1),
       border: 'none',
       textAlign: 'center',
+      '&::placeholder': {
+        fontSize: '0.9em',
+      },
     },
   },
 }))(InputBase);

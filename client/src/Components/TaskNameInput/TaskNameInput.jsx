@@ -8,7 +8,7 @@ const TaskNameInput = () => {
   const classes = TaskNameInputStyles();
 
   return (
-    <Box className={classes.root}>
+    <Box className={classes.root} mb={2}>
       <CustomLabel htmlFor="taskName">Task name:</CustomLabel>
       <CustomInput id="taskName" variant="filled" placeholder="TYPE A TASK" fullWidth />
       <Button className={classes.btn} color="primary" variant="contained">

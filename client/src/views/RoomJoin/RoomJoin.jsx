@@ -1,12 +1,13 @@
 import React from 'react';
 
 import UserNameInput from 'Components/UserNameInput';
+import MainBox from 'Components/MainBox';
 
 const RoomJoin = () => {
   return (
-    <div>
+    <MainBox>
       <UserNameInput />
-    </div>
+    </MainBox>
   );
 };
 

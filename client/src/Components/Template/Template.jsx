@@ -9,11 +9,13 @@ const Template = props => {
   const classes = TemplateStyles();
 
   return (
-    <Container className={classes.Cnt}>
+    <div>
       <Header />
-      {props.children}
-      <Footer />
-    </Container>
+      <Container className={classes.Cnt}>
+        {props.children}
+        <Footer />
+      </Container>
+    </div>
   );
 };
 
