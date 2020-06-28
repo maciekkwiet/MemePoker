@@ -24,8 +24,7 @@ class Rooms {
   }
 
   isRoomFree(): boolean {
-    if (this.rooms.length === 9000) return false;
-    return true;
+    return this.rooms.length === 9000 ? false : true;
   }
 
   private createRandomId(): number {

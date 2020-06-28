@@ -16,7 +16,7 @@ router.get('/', async (req: Request<any, any, any, Query>, res: Response) => {
   res.json({ room });
 });
 
-router.post('/', async (req: Request<any, any, any, Query>, res: Response) => {
+router.post('/', async (res: Response) => {
   const room = rooms.createRoom();
   res.json({ room });
 });
