@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { rooms } from 'models/Rooms';
+import { rooms } from '@models/Rooms';
 
 const router = Router();
 

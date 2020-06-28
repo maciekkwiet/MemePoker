@@ -15,7 +15,8 @@
     "typeRoots": ["./node_modules/@types"],
     "paths": {
       "@controllers/*": ["controllers/*"],
-      "@services/*": ["services/*"]
+      "@services/*": ["services/*"],
+      "@models/*": ["models/*"]
     }
   },
   "exclude": ["node_modules"]
