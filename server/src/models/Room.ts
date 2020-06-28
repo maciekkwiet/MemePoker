@@ -2,10 +2,12 @@ import { User } from '@models/User';
 
 class Room {
   id: number;
+  task: string;
   private users: User[];
 
   constructor(id: number) {
     this.id = id;
+    this.task = '';
     this.users = [];
   }
 
@@ -20,6 +22,10 @@ class Room {
 
   hasEveryoneVoted(): boolean {
     return !this.users.some(user => user.vote === null);
+  }
+
+  clearVotes() {
+    this.users.map(user => (user.vote = null));
   }
 
   getUsers(): User[] {
