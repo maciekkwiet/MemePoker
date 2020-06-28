@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
 import HeaderStyles from './HeaderStyles';
-import Logo from './../../Assets/Images/logo.png';
+import Logo from 'Assets/Images/logo.png';
 
 const Header = () => {
   const classes = HeaderStyles();
