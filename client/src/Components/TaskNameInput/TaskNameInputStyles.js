@@ -44,6 +44,9 @@ const CustomInput = withStyles(theme => ({
       padding: theme.spacing(1),
       border: 'none',
       textAlign: 'center',
+      '&::placeholder': {
+        fontSize: '0.9em',
+      },
     },
   },
 }))(InputBase);

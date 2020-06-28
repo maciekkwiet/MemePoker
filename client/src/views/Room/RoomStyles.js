@@ -1,61 +1,36 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-  grid: {
-    marginTop: theme.spacing(5),
-    backgroundColor: theme.palette.grey.A400,
-    border: `1px solid ${theme.palette.primary.main}`,
-    borderRadius: '5px',
-    padding: theme.spacing(2),
-    [theme.breakpoints.down('md')]: {
-      padding: theme.spacing(0.25),
-    },
-  },
   main: {
     alignContent: 'flex-start',
     marginRight: 0,
   },
-  mainTop: {
+  top: {
+    width: '100%',
+    display: 'grid',
+    gridTemplateColumns: '4fr 1fr',
     marginBottom: theme.spacing(2),
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      gridTemplateColumns: '1fr',
+    },
   },
-  mainTopInfoBoxes: {
-    '& > div': {
-      marginBottom: theme.spacing(1),
+  info: {
+    display: 'flex',
+    flexFlow: 'column wrap',
+    marginLeft: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gridColumnGap: theme.spacing(2),
+      marginLeft: 0,
+      marginTop: theme.spacing(2),
     },
   },
   cards: {
     backgroundColor: theme.palette.secondary.light,
     padding: theme.spacing(2),
     border: `1px solid ${theme.palette.primary.main}`,
-  },
-  results: {
-    backgroundColor: theme.palette.secondary.main,
-    minHeight: '100%',
-    display: 'flex',
-    flexDirection: 'column nowrap',
-    padding: theme.spacing(2),
-    border: `1px solid ${theme.palette.primary.main}`,
-  },
-  resultsHeader: {
-    display: 'inline-block',
-    width: '100%',
-    padding: theme.spacing(0.5, 1),
-    alignSelf: 'flex-start',
-    fontWeight: theme.typography.fontWeightBold,
-    textTransform: 'uppercase',
-    border: `2px solid ${theme.palette.primary.main}`,
-    borderRadius: '5px',
-  },
-  resultsBtnWrap: {
-    width: '100%',
-    marginTop: 'auto',
-    padding: theme.spacing(1, 1, 0),
-    border: `2px solid ${theme.palette.primary.main}`,
-    borderRadius: '5px',
-    '& button': {
-      marginBottom: theme.spacing(1),
-    },
   },
 }));
 

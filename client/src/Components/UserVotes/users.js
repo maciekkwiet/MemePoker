@@ -7,7 +7,7 @@ const users = [
     userName: 'user02',
     voteValue: '1234',
   },
-  {
+  /* {
     userName: 'user03',
     voteValue: '1234',
   },
@@ -18,7 +18,7 @@ const users = [
   {
     userName: 'user05',
     voteValue: '1234',
-  },
+  }, */
 ];
 
 export default users;

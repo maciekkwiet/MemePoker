@@ -4,10 +4,10 @@ const UserBoxStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     alignItems: 'center',
-    marginBottom: theme.spacing(2),
     border: 'none',
   },
   paper: {
+    width: '100%',
     padding: theme.spacing(1),
     border: `2px solid ${theme.palette.primary.main}`,
   },
