@@ -15,10 +15,10 @@ import Timer from 'Components/Timer';
 const Room = () => {
   const classes = RoomStyles();
 
-  const { name } = useUserContext();
+  const { getUserName } = useUserContext();
   const { roomId } = useParams();
 
-  if (!name) return <Redirect to={`/room/${roomId}/join`} />;
+  if (!getUserName(roomId)) return <Redirect to={`/room/${roomId}/join`} />;
 
   return (
     <MainBox>
