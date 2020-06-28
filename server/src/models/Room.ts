@@ -2,10 +2,12 @@ import { User } from 'models/User';
 
 class Room {
   id: number;
+  task: string;
   private users: User[];
 
   constructor(id: number) {
     this.id = id;
+    this.task = '';
     this.users = [];
   }
 
