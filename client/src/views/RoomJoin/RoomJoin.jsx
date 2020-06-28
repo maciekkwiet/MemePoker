@@ -1,13 +1,13 @@
 import React from 'react';
 
 import UserNameInput from 'Components/UserNameInput';
-import ContainerApp from 'Components/ContainerApp';
+import MainBox from 'Components/MainBox';
 
 const RoomJoin = () => {
   return (
-    <ContainerApp>
+    <MainBox>
       <UserNameInput />
-    </ContainerApp>
+    </MainBox>
   );
 };
 

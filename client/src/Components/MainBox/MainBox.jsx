@@ -1,10 +1,10 @@
 import React from 'react';
 import { Paper } from '@material-ui/core';
 
-import ContainerAppStyles from './ContainerAppStyles';
+import MainBoxStyles from './MainBoxStyles';
 
-const ContainerApp = props => {
-  const classes = ContainerAppStyles();
+const MainBox = props => {
+  const classes = MainBoxStyles();
 
   return (
     <Paper elevation={0} variant="outlined" className={classes.root}>
@@ -13,4 +13,4 @@ const ContainerApp = props => {
   );
 };
 
-export default ContainerApp;
+export default MainBox;

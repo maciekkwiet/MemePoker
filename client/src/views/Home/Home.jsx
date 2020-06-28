@@ -2,15 +2,15 @@ import React from 'react';
 
 import CreateNewRoom from 'Components/CreateNewRoom/';
 import JoinRoom from 'Components/JoinRoom/JoinRoom';
-import ContainerApp from 'Components/ContainerApp';
+import MainBox from 'Components/MainBox';
 
 const Home = () => {
   return (
-    <ContainerApp>
+    <MainBox>
       Home View
       <CreateNewRoom />
       <JoinRoom />
-    </ContainerApp>
+    </MainBox>
   );
 };
 

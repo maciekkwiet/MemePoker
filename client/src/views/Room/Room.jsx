@@ -8,7 +8,7 @@ import RoomStyles from './RoomStyles';
 import TaskNameInput from 'Components/TaskNameInput';
 import InfoBox from 'Components/InfoBox';
 import UserBox from 'Components/UserBox';
-import ContainerApp from 'Components/ContainerApp';
+import MainBox from 'Components/MainBox';
 import Results from 'Components/Results';
 import Timer from 'Components/Timer';
 
@@ -21,7 +21,7 @@ const Room = () => {
   if (!name) return <Redirect to={`/room/${roomId}/join`} />;
 
   return (
-    <ContainerApp>
+    <MainBox>
       <Grid container spacing={5}>
         <Grid item xs={12} md={8} className={classes.main}>
           <Box className={classes.top} component="div">
@@ -40,7 +40,7 @@ const Room = () => {
           <Results />
         </Grid>
       </Grid>
-    </ContainerApp>
+    </MainBox>
   );
 };
 

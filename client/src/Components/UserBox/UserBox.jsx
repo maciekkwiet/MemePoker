@@ -4,7 +4,7 @@ import { Avatar, Paper, Typography } from '@material-ui/core';
 import { useUserContext } from 'Contexts/UserContext';
 import UserBoxStyles from './UserBoxStyles';
 
-const UserBox = props => {
+const UserBox = ({ head, text }) => {
   const { name } = useUserContext();
   const classes = UserBoxStyles();
 
@@ -13,10 +13,10 @@ const UserBox = props => {
       <Avatar className={classes.avatarLg}>{name.charAt(0).toUpperCase()}</Avatar>
       <Paper elevation={0} className={classes.paper} variant="outlined">
         <Typography display="block" variant="h6">
-          {props.head}
+          {head}
         </Typography>
         <Typography display="block" variant="subtitle2">
-          {props.text}
+          {text}
         </Typography>
       </Paper>
     </div>
