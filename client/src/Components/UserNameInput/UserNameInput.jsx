@@ -1,29 +1,43 @@
 import React, { useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { Link, useLocation, useParams, useHistory } from 'react-router-dom';
 import { useEmit } from 'socketio-hooks';
 
 import { useUserContext } from 'Contexts/UserContext';
 
 const UserNameInput = () => {
-  const [name, setName] = useState('');
-  const { changeName } = useUserContext();
-  const { roomId } = useParams();
   const history = useHistory();
-  const sendName = useEmit('USER_JOINED');
+  const { roomId } = useParams();
+  const { state } = useLocation();
 
-  const onSubmitHandler = () => {
-    changeName(name);
-    sendName({ name, roomId });
+  const { defaultName, upsertRoomInfo } = useUserContext();
+  const [name, setName] = useState(defaultName);
+
+  const emitUserJoined = useEmit('USER_JOINED');
+
+  const isAdmin = state?.isAdmin ?? false;
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+
+    upsertRoomInfo(roomId, name, isAdmin);
+    emitUserJoined({ name, roomId, isAdmin });
+
     history.push(`/room/${roomId}`);
   };
-  const onInputHandler = ({ target: { value } }) => setName(value);
+
+  const onChangeHandler = ({ target: { value } }) => setName(value);
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <label htmlFor="name">Your name: </label>
-      <input id="name" name="name" type="text" value={name} onInput={onInputHandler} />
-      <button type="submit">Let estimation begin!</button>
-    </form>
+    <>
+      <form onSubmit={(e) => onSubmitHandler(e)}>
+        <label htmlFor="name">Your name: </label>
+        <input id="name" name="name" type="text" value={name} onChange={onChangeHandler} />
+        <button type="submit">Let estimation begin!</button>
+      </form>
+      <Link to="/">
+        <button>Go back</button>
+      </Link>
+    </>
   );
 };
 
