@@ -3,20 +3,29 @@ import { Room } from './Room';
 class Rooms {
   private readonly rooms: Room[] = [];
 
-  getRoom(roomId: number): Room {
+  getRoom(roomId: number): Room | string {
     const room = this.rooms.find(({ id }) => id === roomId);
-    if (typeof room === 'undefined') throw new Error();
+    if (typeof room === 'undefined') return 'No room';
     return room;
   }
 
-  createRoom(): Room {
+  createRoom() {
     let uniqueId = this.createRandomId();
-    while (this.checkId(uniqueId)) {
-      uniqueId = this.createRandomId();
+    if (this.isRoomFree()) {
+      while (this.checkId(uniqueId)) {
+        uniqueId = this.createRandomId();
+      }
+      const room = new Room(uniqueId);
+      this.rooms.push(room);
+      return room;
+    } else {
+      return new Error();
     }
-    const room = new Room(uniqueId);
-    this.rooms.push(room);
-    return room;
+  }
+
+  isRoomFree(): boolean {
+    if (this.rooms.length === 9000) return false;
+    return true;
   }
 
   private createRandomId(): number {
