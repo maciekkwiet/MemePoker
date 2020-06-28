@@ -15,7 +15,6 @@ const Card = ({ value, img }) => {
   const name = getUserName(roomId);
 
   const onClickHandler = () => sendEstimation({ name, value, roomId });
-
   return (
     <Box className={classes.root}>
       <img src={img} alt={value} />

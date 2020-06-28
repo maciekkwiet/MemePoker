@@ -1,23 +1,53 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+
+import JoinRoomStyles from './JoinRoomStyles';
+import VoteButton from 'Components/VoteButton';
+
+import TextField from '@material-ui/core/TextField';
+
+const yup = require('yup');
+
+const Schema = yup.object().shape({
+  roomId: yup.number().required(),
+});
 
 const JoinRoom = () => {
-  const [roomId, setRoomId] = useState('');
-
-  //push to przejście do  kolejnej jstrony
+  const classes = JoinRoomStyles();
+  const { register, handleSubmit, errors } = useForm({
+    validationSchema: Schema,
+  });
   const { push } = useHistory();
 
-  const onInputHandler = ({ target: { value } }) => setRoomId(value);
-
-  const connectToRoom = () => {
+  const connectToRoom = ({ roomId }) => {
     push(`/room/${roomId}/join`);
   };
 
   return (
-    <form onSubmit={connectToRoom}>
-      <label htmlFor="roomId">Type room name to join</label>
-      <input name="roomId" id="roomId" type="text" value={roomId} onChange={onInputHandler} />
-    </form>
+    <>
+      <form onSubmit={handleSubmit(connectToRoom)} autoComplete="off">
+        <div className={classes.formWrapper}>
+          <div className={classes.formWrapperInput}>
+            <TextField
+              className={classes.input}
+              label="ROOM'S NUMBER"
+              variant="outlined"
+              id="room"
+              placeholder="ROOM'S NUMBER"
+              autoComplete="off"
+              name="roomId"
+              inputRef={register}
+              error={!!errors.roomId}
+              size="small"
+            ></TextField>
+          </div>
+          <div className={classes.formWrapperText}>
+            <VoteButton content={'JOIN SESSION'} height={2.8} />
+          </div>
+        </div>
+      </form>
+    </>
   );
 };
 
