@@ -7,11 +7,12 @@ import { useUserContext } from 'Contexts/UserContext';
 import cardStyles from './CardStyles';
 
 const Card = ({ value, img }) => {
-  const { name } = useUserContext();
+  const { getUserName } = useUserContext();
   const sendEstimation = useEmit('USER_VOTED');
   const { roomId } = useParams();
 
   const classes = cardStyles();
+  const name = getUserName(roomId);
 
   const onClickHandler = () => sendEstimation({ name, value, roomId });
 
