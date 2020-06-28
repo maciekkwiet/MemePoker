@@ -13,8 +13,8 @@ const Template = props => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Header />
       <Container className={classes.Cnt}>
-        <Header />
         {props.children}
         <Footer />
       </Container>
