@@ -7,11 +7,11 @@ import TextField from '@material-ui/core/TextField';
 
 import { useUserContext } from 'Contexts/UserContext';
 import PromotedText from 'Components/PromotedText/PromotedText';
-import ContainerApp from 'Components/ContainerApp';
+import MainBox from 'Components/MainBox';
 import UserNameStyles from './UserNameStyles';
 import VoteButton from 'Components/VoteButton';
-import photo1 from '../../assets/pngfind.com-meme-faces-png-13834.png';
-import photo2 from '../../assets/pngfind.com-memes-png-401574.png';
+import photo1 from 'Assets/pngfind.com-meme-faces-png-13834.png';
+import photo2 from 'Assets/pngfind.com-memes-png-401574.png';
 
 const yup = require('yup');
 
@@ -20,7 +20,7 @@ const Schema = yup.object().shape({
 });
 const UserNameInput = () => {
   const classes = UserNameStyles();
-  const { changeName } = useUserContext();
+  const { upsertRoomInfo } = useUserContext();
   const { roomId } = useParams();
   const history = useHistory();
   const sendName = useEmit('USER_JOINED');
@@ -30,14 +30,14 @@ const UserNameInput = () => {
   });
 
   const onSubmitHandler = ({ name }) => {
-    changeName(name);
+    upsertRoomInfo(roomId, name);
     sendName({ name, roomId });
     history.push(`/room/${roomId}`);
   };
 
   return (
     <>
-      <ContainerApp>
+      <MainBox>
         <PromotedText text={`JOIN THE MEETING AS...`} />
         <form onSubmit={handleSubmit(onSubmitHandler)} autoComplete="off">
           <div className={classes.root}>
@@ -68,7 +68,7 @@ const UserNameInput = () => {
             </div>
           </div>
         </form>
-      </ContainerApp>
+      </MainBox>
     </>
   );
 };

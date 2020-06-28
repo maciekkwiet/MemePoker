@@ -4,7 +4,7 @@ import HomeStyle from './HomeStyle';
 import UserBox from '../../Components/UserBox/UserBox';
 import CreateNewRoom from 'Components/CreateNewRoom/';
 import JoinRoom from 'Components/JoinRoom/JoinRoom';
-import ContainerApp from 'Components/ContainerApp';
+import MainBox from 'Components/MainBox';
 import PromotedText from 'Components/PromotedText';
 
 import { Typography } from '@material-ui/core';
@@ -14,15 +14,8 @@ const Home = () => {
   const classes = HomeStyle();
   return (
     <>
-      <ContainerApp className={classes.wrapper}>
-        <div className={classes.wrapperUserBox}>
-          <UserBox
-            title={'Hello !'}
-            value={
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages"
-            }
-          />
-        </div>
+      <MainBox className={classes.wrapper}>
+        <div className={classes.wrapperUserBox}></div>
         <div className={classes.wrapperItem}>
           <PromotedText text={'POINTING SESSION'} />
         </div>
@@ -37,7 +30,7 @@ const Home = () => {
             <JoinRoom />
           </div>
         </div>
-      </ContainerApp>
+      </MainBox>
     </>
   );
 };
