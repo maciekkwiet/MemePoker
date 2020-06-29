@@ -1,5 +1,5 @@
 import * as socketio from 'socket.io';
-import { rooms } from 'models/Rooms';
+import { rooms } from '@models/Rooms';
 
 interface NewTask {
   task: string;
@@ -8,6 +8,9 @@ interface NewTask {
 
 const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, task }: NewTask) => {
   const room = rooms.getRoom(roomId);
+
+  if (typeof room === 'string') return console.error(room);
+
   room.task = task;
 
   room.clearVotes();
