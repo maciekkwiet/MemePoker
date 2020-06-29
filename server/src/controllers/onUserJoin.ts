@@ -13,6 +13,8 @@ const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, ro
   const user = new User(name, isAdmin);
   const room = rooms.getRoom(roomId);
 
+  if (typeof room === 'string') return console.error(room);
+
   const message = `${name} has joined the room: ${roomId}`;
   room.addUser(user);
 
