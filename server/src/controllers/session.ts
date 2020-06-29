@@ -16,8 +16,9 @@ router.get('/', async (req: Request<any, any, any, Query>, res: Response) => {
   res.json({ room });
 });
 
-router.post('/', async () => {
-  //Kod na stworzenie nowej sesji
+router.post('/', async (req: Request, res: Response) => {
+  const room = rooms.createRoom();
+  res.json({ room });
 });
 
 export { router as sessionController };
