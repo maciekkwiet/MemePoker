@@ -37,38 +37,36 @@ const UserNameInput = () => {
 
   return (
     <>
-      <MainBox>
-        <PromotedText text={`JOIN THE MEETING AS...`} />
-        <form onSubmit={handleSubmit(onSubmitHandler)} autoComplete="off">
-          <div className={classes.root}>
-            <div>
-              <img src={photo1} alt="twitter avatar" className={classes.img} />
+      <PromotedText text={`JOIN THE MEETING AS...`} />
+      <form onSubmit={handleSubmit(onSubmitHandler)} autoComplete="off">
+        <div className={classes.root}>
+          <div>
+            <img src={photo1} alt="twitter avatar" className={classes.img} />
+          </div>
+          <div className={classes.wrapper}>
+            <div className={classes.wrapperInput}>
+              <TextField
+                label="NAME"
+                variant="outlined"
+                id="name"
+                placeholder="NAME"
+                autoComplete="off"
+                name="name"
+                inputRef={register}
+                error={!!errors.name}
+                size="small"
+                fullWidth
+              ></TextField>
             </div>
-            <div className={classes.wrapper}>
-              <div className={classes.wrapperInput}>
-                <TextField
-                  label="NAME"
-                  variant="outlined"
-                  id="name"
-                  placeholder="NAME"
-                  autoComplete="off"
-                  name="name"
-                  inputRef={register}
-                  error={!!errors.name}
-                  size="small"
-                  fullWidth
-                ></TextField>
-              </div>
-              <div className={classes.wrapperButton}>
-                <VoteButton content={'JOIN SESSION'} height={2.8} className={classes.wrapperButton} />
-              </div>
-            </div>
-            <div>
-              <img src={photo2} alt="twitter avatar" className={classes.img} />
+            <div className={classes.wrapperButton}>
+              <VoteButton content={'JOIN SESSION'} height={2.8} className={classes.wrapperButton} />
             </div>
           </div>
-        </form>
-      </MainBox>
+          <div>
+            <img src={photo2} alt="twitter avatar" className={classes.img} />
+          </div>
+        </div>
+      </form>
     </>
   );
 };
