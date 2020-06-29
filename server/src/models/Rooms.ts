@@ -19,7 +19,7 @@ class Rooms {
       this.rooms.push(room);
       return room;
     } else {
-      return new Error();
+      return new Error('All rooms are busy');
     }
   }
 
@@ -32,8 +32,7 @@ class Rooms {
   }
 
   private checkId(roomId: number): boolean {
-    const room = this.rooms.find(({ id }) => id === roomId);
-    return typeof room === 'undefined' ? false : true;
+    return this.rooms.some(({ id }) => id === roomId) ? true : false;
   }
 }
 
