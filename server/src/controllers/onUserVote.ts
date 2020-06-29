@@ -1,5 +1,5 @@
 import * as socketio from 'socket.io';
-import { rooms } from 'models/Rooms';
+import { rooms } from '@models/Rooms';
 
 interface UserVotePayload {
   name: string;

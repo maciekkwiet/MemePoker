@@ -1,65 +1,46 @@
 import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
-import { Container, Grid, Typography, CssBaseline, Paper, Box } from '@material-ui/core';
+import { Grid, Paper, Box } from '@material-ui/core';
 
-import { useUserContext } from 'Contexts/UserContext';
 import Cards from 'Components/Cards';
-import roomStyles from './RoomStyles';
+import { useUserContext } from 'Contexts/UserContext';
+import RoomStyles from './RoomStyles';
 import TaskNameInput from 'Components/TaskNameInput';
 import InfoBox from 'Components/InfoBox';
-import UserVotes from 'Components/UserVotes';
-import VoteBtn from 'Components/VoteButton';
 import UserBox from 'Components/UserBox';
+import MainBox from 'Components/MainBox';
+import Results from 'Components/Results';
+import Timer from 'Components/Timer';
 
 const Room = () => {
-  const classes = roomStyles();
+  const classes = RoomStyles();
 
-  const { name } = useUserContext();
+  const { getUserName } = useUserContext();
   const { roomId } = useParams();
 
-  if (!name) return <Redirect to={`/room/${roomId}/join`} />;
+  if (!getUserName(roomId)) return <Redirect to={`/room/${roomId}/join`} />;
 
   return (
-    <Container fixed>
-      <CssBaseline />
-      <Grid container spacing={5} className={classes.grid}>
-        <Grid container item md={8} className={classes.main}>
-          <Grid container item xs={12} className={classes.mainTop}>
-            <Grid item sm={10}>
-              <UserBox />
-            </Grid>
-            <Grid item container sm={2} className={classes.mainTopInfoBoxes}>
-              <InfoBox title="Timer" value="00:22:33" />
+    <MainBox>
+      <Grid container spacing={5}>
+        <Grid item xs={12} md={8} className={classes.main}>
+          <Box className={classes.top} component="div">
+            <UserBox head="CHOOSE A MEME!" text="You have to choose only one card! Do it quickly :D" />
+            <Box className={classes.info}>
+              <Timer />
               <InfoBox title="Room ID" value={roomId} />
-            </Grid>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper className={classes.cards}>
-              <Box mb={2}>
-                <TaskNameInput />
-              </Box>
-              <Cards />
-            </Paper>
-          </Grid>
+            </Box>
+          </Box>
+          <Paper className={classes.cards}>
+            <TaskNameInput />
+            <Cards />
+          </Paper>
         </Grid>
-        <Grid container item md={4}>
-          <Grid item xs={12}>
-            <Paper className={classes.results}>
-              <Grid item container>
-                <Typography className={classes.resultsHeader} component="div" variant="h5">
-                  Results
-                </Typography>
-                <UserVotes />
-                <Box className={classes.resultsBtnWrap}>
-                  <VoteBtn content="Show votes" />
-                  <VoteBtn content="Clear votes" />
-                </Box>
-              </Grid>
-            </Paper>
-          </Grid>
+        <Grid item xs={12} md={4}>
+          <Results />
         </Grid>
       </Grid>
-    </Container>
+    </MainBox>
   );
 };
 

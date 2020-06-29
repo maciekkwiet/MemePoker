@@ -1,7 +1,7 @@
 import * as socketio from 'socket.io';
 
-import { User } from 'models/User';
-import { rooms } from 'models/Rooms';
+import { User } from '@models/User';
+import { rooms } from '@models/Rooms';
 
 interface UserJoinPayload {
   name: string;

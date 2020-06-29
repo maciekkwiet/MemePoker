@@ -1,8 +1,9 @@
 import { makeStyles } from '@material-ui/styles';
 
-const UserVotesStyles = makeStyles((theme) => ({
+const UserVotesStyles = makeStyles(theme => ({
   root: {
     width: '100%',
+    marginBottom: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
   },
