@@ -9,6 +9,7 @@ interface UserVotePayload {
 
 const onUserVote = (io: socketio.Server, socket: socketio.Socket) => ({ name, value, roomId }: UserVotePayload) => {
   const room = rooms.getRoom(roomId);
+  if (typeof room === 'string') return console.error(room);
   const user = room.getUser(name);
 
   if (!user) return console.log(`User ${name} does not belong to room ${room.id}`);
