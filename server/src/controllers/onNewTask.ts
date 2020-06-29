@@ -11,14 +11,18 @@ const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, t
 
   if (typeof room === 'string') return console.error(room);
 
-  room.task = task;
+  const roomAdmin = room.getAdmin();
 
-  room.clearVotes();
+  if (roomAdmin?.admin.socket === socket.id) {
+    room.task = task;
 
-  const message = `New task: ${task} in the room: ${roomId}`;
+    room.clearVotes();
 
-  io.to(roomId.toString()).emit('FEED', message);
-  io.to(roomId.toString()).emit('TASK_UPDATED', room.task);
+    const message = `New task: ${task} in the room: ${roomId}`;
+
+    io.to(roomId.toString()).emit('FEED', message);
+    io.to(roomId.toString()).emit('TASK_UPDATED', room.task);
+  }
 };
 
 export { onNewTask };
