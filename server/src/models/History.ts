@@ -7,7 +7,7 @@ class History {
     this.history.push(historyElement);
   }
   getRoomHistory(roomId: number) {
-    const roomHistory = this.history.find(historyElement => historyElement.roomid === roomId);
+    const roomHistory = this.history.filter(historyElement => historyElement.roomid === roomId);
     if (typeof roomHistory === 'undefined') return 'No History';
     return roomHistory;
   }

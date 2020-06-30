@@ -6,9 +6,8 @@ import { HistoryElement } from '@models/HistoryElement';
 const onSubmitEstimation = (io: socketio.Server, socket: socketio.Socket) => (roomId: number) => {
   const room = rooms.getRoom(roomId);
   if (typeof room === 'string') return console.error(room);
-  history.addHistoryElement(new HistoryElement(room));
 
-  // dodanie rooma do historii
+  history.addHistoryElement(new HistoryElement(room));
 
   room.clearVotes();
   room.task = '';

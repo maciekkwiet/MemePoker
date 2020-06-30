@@ -1,5 +1,7 @@
 import * as socketio from 'socket.io';
 import { rooms } from '@models/Rooms';
+import { history } from '@models/History';
+import { HistoryElement } from '@models/HistoryElement';
 
 interface UserVotePayload {
   name: string;
@@ -19,7 +21,7 @@ const onUserVote = (io: socketio.Server, socket: socketio.Socket) => ({ name, va
   let message: string;
 
   if (room.hasEveryoneVoted()) {
-    // dodanie taska do historii
+    history.addHistoryElement(new HistoryElement(room));
 
     message = `Everyone in room ${room.id} voted, votes: ${JSON.stringify(room.getVotes())}`;
 
