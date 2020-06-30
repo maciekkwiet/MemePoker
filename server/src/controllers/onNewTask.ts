@@ -7,18 +7,20 @@ interface NewTask {
 }
 
 const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, task }: NewTask) => {
-  const room = rooms.getRoom(roomId);
+  try {
+    const room = rooms.getRoom(roomId);
 
-  if (typeof room === 'string') return console.error(room);
+    room.task = task;
 
-  room.task = task;
+    room.clearVotes();
 
-  room.clearVotes();
+    const message = `New task: ${task} in the room: ${roomId}`;
 
-  const message = `New task: ${task} in the room: ${roomId}`;
-
-  io.to(roomId.toString()).emit('FEED', message);
-  io.to(roomId.toString()).emit('TASK_UPDATED', room.task);
+    io.to(roomId.toString()).emit('FEED', message);
+    io.to(roomId.toString()).emit('TASK_UPDATED', room.task);
+  } catch (ex) {
+    console.error(ex);
+  }
 };
 
 export { onNewTask };
