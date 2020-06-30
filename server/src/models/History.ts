@@ -1,15 +1,17 @@
+import { HistoryElement } from './HistoryElement';
+
 class History {
-  roomid: number;
-  task: string;
-  votes: number[];
+  private readonly history: HistoryElement[] = [];
 
-  constructor(id: number) {
-    this.roomid = id;
-    this.task = '';
-    this.votes = [];
+  addHistoryElement(historyElement: HistoryElement) {
+    this.history.push(historyElement);
   }
-
-  add() {}
+  getRoomHistory(roomId: number) {
+    const roomHistory = this.history.find(historyElement => historyElement.roomid === roomId);
+    if (typeof roomHistory === 'undefined') return 'No History';
+    return roomHistory;
+  }
 }
 
-export { History };
+const history = new History();
+export { history };
