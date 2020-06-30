@@ -1,13 +1,14 @@
 import { User } from '@models/User';
+import { Task } from '@models/Task';
 
 class Room {
   id: number;
-  task: string;
+  task: Task;
   private users: User[];
 
   constructor(id: number) {
     this.id = id;
-    this.task = '';
+    this.task = new Task('');
     this.users = [];
   }
 

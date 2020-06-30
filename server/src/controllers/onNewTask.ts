@@ -11,7 +11,7 @@ const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, t
 
   if (typeof room === 'string') return console.error(room);
 
-  room.task = task;
+  room.task.task = task;
 
   room.clearVotes();
 
