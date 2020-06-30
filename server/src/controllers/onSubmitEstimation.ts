@@ -1,24 +1,16 @@
 import * as socketio from 'socket.io';
 import { rooms } from '@models/Rooms';
 
-// interface UserVotePayload {
-//   name: string;
-//   value: number;
-//   roomId: number;
-// }
-
 const onSubmitEstimation = (io: socketio.Server, socket: socketio.Socket) => (roomId: number) => {
   const room = rooms.getRoom(roomId);
   if (typeof room === 'string') return console.error(room);
-  //const user = room.getUser(name);
 
-  //if (!user) return console.log(`User ${name} does not belong to room ${room.id}`);
+  // dodanie rooma do historii
 
-  //user.vote = value;
+  room.clearVotes();
+  room.task = '';
 
-  let message: string;
-
-  io.to(roomId.toString()).emit('USER_VOTED', user);
+  const message: string = 'The task was saved in history';
 
   io.to(roomId.toString()).emit('FEED', message);
 };

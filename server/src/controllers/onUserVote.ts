@@ -19,6 +19,8 @@ const onUserVote = (io: socketio.Server, socket: socketio.Socket) => ({ name, va
   let message: string;
 
   if (room.hasEveryoneVoted()) {
+    // dodanie taska do historii
+
     message = `Everyone in room ${room.id} voted, votes: ${JSON.stringify(room.getVotes())}`;
 
     io.to(roomId.toString()).emit('CARDS_REVEALED', room.getVotes());
