@@ -2,12 +2,10 @@ import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useEmit } from 'socketio-hooks';
 import { useForm } from 'react-hook-form';
-
 import TextField from '@material-ui/core/TextField';
 
 import { useUserContext } from 'Contexts/UserContext';
 import PromotedText from 'Components/PromotedText/PromotedText';
-import MainBox from 'Components/MainBox';
 import UserNameStyles from './UserNameStyles';
 import VoteButton from 'Components/VoteButton';
 import photo1 from 'Assets/pngfind.com-meme-faces-png-13834.png';
@@ -18,15 +16,19 @@ const yup = require('yup');
 const Schema = yup.object().shape({
   name: yup.string().required(),
 });
+
 const UserNameInput = () => {
   const classes = UserNameStyles();
-  const { upsertRoomInfo } = useUserContext();
+  const { defaultName, upsertRoomInfo } = useUserContext();
   const { roomId } = useParams();
   const history = useHistory();
   const sendName = useEmit('USER_JOINED');
 
   const { register, handleSubmit, errors } = useForm({
     validationSchema: Schema,
+    defaultValues: {
+      name: defaultName,
+    },
   });
 
   const onSubmitHandler = ({ name }) => {

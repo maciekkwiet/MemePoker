@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CardsStyles from './CardsStyles';
-import { pseudoCards } from './pseudoCards';
+import { cardsSchema } from './cardsSchema';
 import Card from 'Components/Card';
 
 //To oczywiście będzie trzeba zastąpić
@@ -12,8 +12,8 @@ const Cards = () => {
 
   return (
     <div className={classes.root}>
-      {pseudoCards.map(({ value, img }) => (
-        <Card value={value} img={img} />
+      {cardsSchema.map(({ id, ...rest }) => (
+        <Card key={id} {...rest} />
       ))}
     </div>
   );
