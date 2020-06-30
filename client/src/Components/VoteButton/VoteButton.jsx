@@ -8,7 +8,7 @@ const VoteBtn = ({ content, height }) => {
   const classes = VoteButtonStyles(theme, height);
 
   return (
-    <Button className={classes.root} variant="contained" color="primary" fullWidth type="submit">
+    <Button className={classes.root} variant="contained" color="primary" fullWidth type="submit" onClick={() => {}}>
       {content}
     </Button>
   );
