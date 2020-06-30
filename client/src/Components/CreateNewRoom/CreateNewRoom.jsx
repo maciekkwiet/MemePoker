@@ -1,42 +1,26 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { Button } from '@material-ui/core';
 
 import VoteButton from 'Components/VoteButton/index.js';
 import CreateNewRoomStyles from './CreateNewRoomStyles';
 
 const CreateNewRoom = () => {
-  const [roomNumber, setroomNumber] = useState(null);
+  const history = useHistory();
   const classes = CreateNewRoomStyles();
-  const CreateNewRoom = async () => {
+  const getRoomNumber = async () => {
     try {
-      console.log('1');
-      const posttest = await axios.get('api/session');
-      setroomNumber(posttest.id);
-    } catch (ex) {
-      console.error(ex);
+      const currentRoom = await axios.post('/api/session');
+      history.push(`/room/${currentRoom.data.room.id}/join`, { isAdmin: true });
+    } catch (e) {
+      console.error(e);
     }
   };
-
   return (
     <>
-      <Link to={`/room/${roomNumber}/join`} style={{ textDecoration: 'none' }}>
-        <div className={classes.buttonSession}>
-          <Button
-            className={classes.root}
-            variant="contained"
-            color="primary"
-            fullWidth
-            type="submit"
-            onClick={() => {
-              CreateNewRoom();
-            }}
-          >
-            TEST
-          </Button>
-        </div>
-      </Link>
+      <div className={classes.buttonSession}>
+        <VoteButton content={'START SESSION'} btnFunction={getRoomNumber}></VoteButton>
+      </div>
     </>
   );
 };

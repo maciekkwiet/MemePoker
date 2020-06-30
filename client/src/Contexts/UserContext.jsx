@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 
 const UserContext = React.createContext();
-
 const UserContextProvider = ({ children }) => {
   const serializedName = window.localStorage.getItem('DEFAULT_NAME') ?? '';
   const serializedUserRooms = JSON.parse(window.sessionStorage.getItem('USER_ROOMS') ?? '[]');
