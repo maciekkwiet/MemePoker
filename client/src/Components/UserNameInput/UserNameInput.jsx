@@ -7,7 +7,6 @@ import TextField from '@material-ui/core/TextField';
 
 import { useUserContext } from 'Contexts/UserContext';
 import PromotedText from 'Components/PromotedText/PromotedText';
-import MainBox from 'Components/MainBox';
 import UserNameStyles from './UserNameStyles';
 import VoteButton from 'Components/VoteButton';
 import photo1 from 'Assets/pngfind.com-meme-faces-png-13834.png';

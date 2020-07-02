@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const CardStyles = makeStyles(() => ({
+const cardStyles = makeStyles(() => ({
   root: {
     textAlign: 'center',
     '& img': {
@@ -9,4 +9,4 @@ const CardStyles = makeStyles(() => ({
   },
 }));
 
-export default CardStyles;
+export default cardStyles;

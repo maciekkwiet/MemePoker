@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Grid, Paper, Box } from '@material-ui/core';
 
@@ -11,9 +11,14 @@ import UserBox from 'Components/UserBox';
 import MainBox from 'Components/MainBox';
 import Results from 'Components/Results';
 import Timer from 'Components/Timer';
+import { RoomContext } from '../../Contexts/RoomContext';
 
 const Room = () => {
   const classes = RoomStyles();
+
+  const context = useContext(RoomContext); //create context
+  const { response } = context; // des. state from context
+  console.log(response);
 
   const { getUserName } = useUserContext();
   const { roomId } = useParams();
