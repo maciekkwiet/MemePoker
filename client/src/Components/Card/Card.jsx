@@ -1,25 +1,33 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEmit } from 'socketio-hooks';
-import { Box } from '@material-ui/core';
+import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core';
 
 import { useUserContext } from 'Contexts/UserContext';
-import CardStyles from './CardStyles';
+import cardStyles from './CardStyles';
 
-const Card = ({ value, img }) => {
-  const { name } = useUserContext();
+const MemeCard = ({ value, img }) => {
+  const { getUserName } = useUserContext();
   const sendEstimation = useEmit('USER_VOTED');
   const { roomId } = useParams();
-  const classes = CardStyles();
+  const classes = cardStyles();
+
+  const name = getUserName(roomId);
+
   const onClickHandler = () => sendEstimation({ name, value, roomId });
+
   return (
-    <Box className={classes.root}>
-      <img src={img} alt={value} />
-      <button type="button" onClick={onClickHandler}>
-        {value}
-      </button>
-    </Box>
+    <Card className={classes.main} variant="outlined">
+      <CardActionArea onClick={onClickHandler}>
+        <CardMedia className={classes.media} component="img" alt={value} src={img} height="50" />
+        <CardContent className={classes.content}>
+          <Typography className={classes.contentText} variant="body2">
+            {value}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 };
 
-export default Card;
+export default MemeCard;

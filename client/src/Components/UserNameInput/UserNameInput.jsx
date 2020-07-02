@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useEmit } from 'socketio-hooks';
 import { useForm } from 'react-hook-form';
-
 import TextField from '@material-ui/core/TextField';
 
 import { useUserContext } from 'Contexts/UserContext';
@@ -17,15 +16,19 @@ const yup = require('yup');
 const Schema = yup.object().shape({
   name: yup.string().required(),
 });
+
 const UserNameInput = () => {
   const classes = UserNameStyles();
-  const { upsertRoomInfo } = useUserContext();
+  const { defaultName, upsertRoomInfo } = useUserContext();
   const { roomId } = useParams();
   const history = useHistory();
   const sendName = useEmit('USER_JOINED');
 
   const { register, handleSubmit, errors } = useForm({
     validationSchema: Schema,
+    defaultValues: {
+      name: defaultName,
+    },
   });
 
   const onSubmitHandler = ({ name }) => {
