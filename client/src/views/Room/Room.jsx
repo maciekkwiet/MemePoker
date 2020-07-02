@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Grid, Paper, Box } from '@material-ui/core';
-
 import Cards from 'Components/Cards';
 import { useUserContext } from 'Contexts/UserContext';
 import RoomStyles from './RoomStyles';
@@ -15,11 +14,8 @@ import { RoomContext } from '../../Contexts/RoomContext';
 
 const Room = () => {
   const classes = RoomStyles();
-
   const context = useContext(RoomContext); //context initialization
-  const { response, getData } = context; // des. state from context
-
-  console.log(response);
+  const { getData } = context; // des. state from context
   const { getUserName } = useUserContext();
   const { roomId } = useParams();
 
