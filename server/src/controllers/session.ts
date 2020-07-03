@@ -8,13 +8,13 @@ interface Query {
 }
 
 router.get('/', async (req: Request<any, any, any, Query>, res: Response) => {
-  const { roomId } = req.query;
+  let { roomId } = req.query;
 
-  let integer = typeof roomId === 'string' ? parseInt(roomId, 10) : null;
+  roomId = typeof roomId === 'string' ? parseInt(roomId, 10) : roomId;
 
-  if (typeof integer !== 'number') return res.status(400).json({ error: 'Invalid parameter' });
+  if (typeof roomId !== 'number') return res.status(400).json({ error: 'Invalid parameter' });
 
-  const room = rooms.getRoom(integer);
+  const room = rooms.getRoom(roomId);
   res.json({ room });
 });
 
