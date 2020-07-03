@@ -16,7 +16,7 @@ const TaskNameInput = () => {
     const task = e.target.taskName.value;
     roomId = parseInt(roomId, 10);
     sendTask({ roomId, task });
-    // e.target.reset();
+    e.target.reset();
   };
 
   return (
