@@ -7,9 +7,10 @@ interface NewTask {
 }
 
 const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, task }: NewTask) => {
-  const test = parseInt(roomId, 10);
-
-  const room = rooms.getRoom(test);
+  const room = rooms.getRoom(roomId);
+  console.log(roomId);
+  console.log(task);
+  console.log(room);
   if (typeof room === 'string') return console.error(room);
   room.task = task;
 
