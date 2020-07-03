@@ -9,12 +9,11 @@ import { TaskNameInputStyles, CustomLabel, CustomInput } from './TaskNameInputSt
 const TaskNameInput = () => {
   const classes = TaskNameInputStyles();
   const sendTask = useEmit('NEW_TASK');
-  let { roomId } = useParams();
+  const { roomId } = useParams();
 
   const onSubmitHandler = e => {
     e.preventDefault();
     const task = e.target.taskName.value;
-    roomId = parseInt(roomId, 10);
     sendTask({ roomId, task });
     e.target.reset();
   };

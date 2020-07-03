@@ -7,9 +7,12 @@ interface NewTask {
 }
 
 const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, task }: NewTask) => {
-  const room = rooms.getRoom(roomId);
+  const test = parseInt(roomId, 10);
+  const room = rooms.getRoom(test);
+
   if (typeof room === 'string') return console.error(room);
   room.task = task;
+
   room.clearVotes();
 
   const message = `New task: ${task} in the room: ${roomId}`;
