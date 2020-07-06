@@ -4,7 +4,7 @@ class Rooms {
   private readonly rooms: Room[] = [];
 
   getRoom(roomId: number): Room | string {
-    const room = this.rooms.find(({ id }) => id === roomId);
+    const room = this.rooms.find(({ id }) => id == roomId);
     if (typeof room === 'undefined') return 'No room';
     return room;
   }
