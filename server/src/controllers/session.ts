@@ -10,9 +10,7 @@ interface Query {
 router.get('/', async (req: Request<any, any, any, Query>, res: Response) => {
   try {
     const { roomId } = req.query;
-
     if (typeof roomId !== 'number') return res.status(400).json({ error: 'Invalid parameter' });
-
     const room = rooms.getRoom(roomId);
     res.json({ room });
   } catch (ex) {
