@@ -1,7 +1,6 @@
 import React from 'react';
 
 import HomeStyle from './HomeStyle';
-import UserBox from '../../Components/UserBox/UserBox';
 import CreateNewRoom from 'Components/CreateNewRoom/';
 import JoinRoom from 'Components/JoinRoom/JoinRoom';
 import MainBox from 'Components/MainBox';
