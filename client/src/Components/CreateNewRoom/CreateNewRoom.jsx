@@ -10,9 +10,7 @@ const CreateNewRoom = () => {
   const classes = CreateNewRoomStyles();
   const getRoomNumber = async () => {
     try {
-      console.log('2');
       const currentRoom = await axios.post('/api/session');
-      console.log(currentRoom);
       history.push(`/room/${currentRoom.data.room.id}/join`, { isAdmin: true });
     } catch (e) {
       console.error(e);
