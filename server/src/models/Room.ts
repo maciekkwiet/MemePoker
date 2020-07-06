@@ -41,7 +41,7 @@ class Room {
     return this.task;
   }
   setTask(title: string): void {
-    if (!title) throw exception;
+    if (!title) throw new Error('Task title is empty');
     this.task = new Task(title);
   }
 }
