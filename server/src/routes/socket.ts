@@ -12,7 +12,7 @@ const socketController = (server: http.Server): void => {
     socket.on('USER_JOINED', onUserJoin(io, socket));
     socket.on('USER_VOTED', onUserVote(io, socket));
     socket.on('NEW_TASK', onNewTask(io, socket));
-    socket.on('SUBMIT TASK', onSubmitEstimation(io, socket));
+    socket.on('SUBMIT_ESTIMATION', onSubmitEstimation(io, socket));
   });
 };
 
