@@ -15,8 +15,8 @@ class Room {
     return this.users.find(user => user.name === name) ?? null;
   }
 
-  getAdmin() {
-    return this.users.find(user => user.admin.isAdmin === true) ?? null;
+  getAdmin(): User | null {
+    return this.users.find(user => user.isAdmin === true) ?? null;
   }
 
   addUser(user: User): void {
@@ -39,8 +39,6 @@ class Room {
   getVotes(): Array<Pick<User, 'name' | 'vote'>> {
     return this.users.map(user => ({ name: user.name, vote: user.vote }));
   }
-
-  isAdmin() {}
 }
 
 export { Room };

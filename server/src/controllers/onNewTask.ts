@@ -13,7 +13,7 @@ const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, t
 
   const roomAdmin = room.getAdmin();
 
-  if (roomAdmin?.admin.socket === socket.id) {
+  if (roomAdmin?.socket === socket.id) {
     room.task = task;
 
     room.clearVotes();

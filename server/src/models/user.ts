@@ -1,18 +1,10 @@
-interface Admin {
-  isAdmin: boolean;
-  socket: string | null;
-}
-
 class User {
   public vote: number | null;
-  public admin: Admin;
+  public socket: string | null;
 
-  constructor(public name: string, isAdmin: boolean) {
+  constructor(public name: string, public isAdmin: boolean) {
     this.vote = null;
-    this.admin = {
-      isAdmin: isAdmin,
-      socket: null,
-    };
+    this.socket = null;
   }
 }
 export { User };

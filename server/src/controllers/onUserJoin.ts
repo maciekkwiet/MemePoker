@@ -11,7 +11,7 @@ interface UserJoinPayload {
 
 const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, roomId, isAdmin }: UserJoinPayload) => {
   const user = new User(name, isAdmin);
-  user.admin.socket = socket.id;
+  user.socket = socket.id;
   const room = rooms.getRoom(roomId);
 
   if (typeof room === 'string') return console.error(room);
