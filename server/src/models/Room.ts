@@ -1,5 +1,4 @@
 import { User } from '@models/User';
-import { exception } from 'console';
 
 class Room {
   id: number;
@@ -17,7 +16,7 @@ class Room {
   }
 
   addUser(user: User): void {
-    if (this.getUser(user.name)) throw exception;
+    if (this.getUser(user.name)) throw new Error('This user nam already exists in room');
     this.users.push(user);
   }
 
