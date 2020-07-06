@@ -1,9 +1,10 @@
 import { User } from '@models/User';
 import { Task } from '@models/Task';
+import { exception } from 'console';
 
 class Room {
   id: number;
-  task: Task;
+  private task: Task;
   private users: User[];
 
   constructor(id: number) {
@@ -35,6 +36,13 @@ class Room {
 
   getVotes(): Array<Pick<User, 'name' | 'vote'>> {
     return this.users.map(user => ({ name: user.name, vote: user.vote }));
+  }
+  getTask(): Task {
+    return this.task;
+  }
+  setTask(title: string): void {
+    if (!title) throw exception;
+    this.task = new Task(title);
   }
 }
 

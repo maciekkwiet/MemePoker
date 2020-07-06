@@ -1,13 +1,10 @@
 class Task {
-  private timeStart: number;
+  public readonly timeStamp: number;
+  public title: string;
 
-  constructor(public task: string) {
-    this.task = task;
-    this.timeStart = new Date().getTime();
-  }
-
-  getTimeStamp() {
-    return new Date().getTime() - this.timeStart;
+  constructor(title: string) {
+    this.title = title;
+    this.timeStamp = new Date().getTime();
   }
 }
 export { Task };
