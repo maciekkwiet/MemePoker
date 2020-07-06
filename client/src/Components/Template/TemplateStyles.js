@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const TemplateStyles = makeStyles(theme => ({
-  Cnt: {
+  root: {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
