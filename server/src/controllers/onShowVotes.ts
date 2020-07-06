@@ -5,7 +5,7 @@ const onShowVotes = (io: socketio.Server, socket: socketio.Socket) => (roomId: n
   const room = rooms.getRoom(roomId);
   if (typeof room === 'string') return console.error(room);
 
-  const message = `Votes: ${JSON.stringify(room.getVotes())}`;
+  const message = `Votes: ${JSON.stringify(room.getVotes())} in room ${room.id}`;
 
   io.to(roomId.toString()).emit('ROOM_VOTES', room.getVotes());
 
