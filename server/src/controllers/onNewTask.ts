@@ -12,6 +12,11 @@ const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, t
 
     room.task = task;
 
+  const roomAdmin = room.getAdmin();
+
+  if (roomAdmin?.socket === socket.id) {
+    room.task = task;
+
     room.clearVotes();
 
     const message = `New task: ${task} in the room: ${roomId}`;
