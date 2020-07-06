@@ -1,12 +1,13 @@
 import { Room } from './Room';
-import { exception } from 'console';
 
 class Rooms {
   private readonly rooms: Room[] = [];
 
   getRoom(roomId: number): Room {
-    const room = this.rooms.find(({ id }) => id === roomId);
-    if (typeof room === 'undefined') throw exception;
+    console.log(this.rooms);
+    console.log(roomId, typeof roomId);
+    const room = this.rooms.find(({ id }) => id == roomId);
+    if (typeof room === 'undefined') throw new Error('Room not found');
     return room;
   }
 
