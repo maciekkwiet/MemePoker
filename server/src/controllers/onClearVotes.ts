@@ -12,7 +12,7 @@ const onClearVotes = (io: socketio.Server, socket: socketio.Socket) => (roomId: 
 
   io.to(roomId.toString()).emit('FEED', message);
 
-  io.to(roomId.toString()).emit('CLEARED_VOTES');
+  io.to(roomId.toString()).emit('CLEARED_VOTES', room.getVotes());
 };
 
 export { onClearVotes };
