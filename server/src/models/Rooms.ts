@@ -3,9 +3,9 @@ import { Room } from './Room';
 class Rooms {
   private readonly rooms: Room[] = [];
 
-  getRoom(roomId: number): Room | string {
-    const room = this.rooms.find(({ id }) => id === roomId);
-    if (typeof room === 'undefined') return 'No room';
+  getRoom(roomId: number): Room {
+    const room = this.rooms.find(({ id }) => id == roomId);
+    if (typeof room === 'undefined') throw new Error('Room not found');
     return room;
   }
 

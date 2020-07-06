@@ -7,9 +7,10 @@ interface NewTask {
 }
 
 const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, task }: NewTask) => {
-  const room = rooms.getRoom(roomId);
+  try {
+    const room = rooms.getRoom(roomId);
 
-  if (typeof room === 'string') return console.error(room);
+    room.task = task;
 
   const roomAdmin = room.getAdmin();
 
@@ -22,6 +23,8 @@ const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, t
 
     io.to(roomId.toString()).emit('FEED', message);
     io.to(roomId.toString()).emit('TASK_UPDATED', room.task);
+  } catch (ex) {
+    console.error(ex);
   }
 };
 

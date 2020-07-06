@@ -10,6 +10,9 @@ interface UserJoinPayload {
 }
 
 const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, roomId, isAdmin }: UserJoinPayload) => {
+  
+  try {
+  
   const user = new User(name, socket.id, isAdmin);
   const room = rooms.getRoom(roomId);
 
@@ -22,6 +25,10 @@ const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, ro
 
   io.to(roomId.toString()).emit('USER_JOINED', room.getUsers());
   io.to(roomId.toString()).emit('FEED', message);
+
+  } catch (ex) {
+    console.error(ex);
+  }
 };
 
 export { onUserJoin };
