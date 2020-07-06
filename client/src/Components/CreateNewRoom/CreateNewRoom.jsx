@@ -8,6 +8,7 @@ import CreateNewRoomStyles from './CreateNewRoomStyles';
 const CreateNewRoom = () => {
   const history = useHistory();
   const classes = CreateNewRoomStyles();
+
   const getRoomNumber = async () => {
     try {
       const currentRoom = await axios.post('/api/session');

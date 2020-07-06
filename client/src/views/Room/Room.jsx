@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Grid, Paper, Box } from '@material-ui/core';
-
 import Cards from 'Components/Cards';
 import { useUserContext } from 'Contexts/UserContext';
 import RoomStyles from './RoomStyles';
@@ -11,12 +10,18 @@ import UserBox from 'Components/UserBox';
 import MainBox from 'Components/MainBox';
 import Results from 'Components/Results';
 import Timer from 'Components/Timer';
+import { RoomContext } from '../../Contexts/RoomContext';
 
 const Room = () => {
   const classes = RoomStyles();
-
+  const context = useContext(RoomContext); //context initialization
+  const { getData } = context; // des. state from context
   const { getUserName } = useUserContext();
   const { roomId } = useParams();
+
+  useEffect(() => {
+    getData(roomId);
+  }, []);
 
   if (!getUserName(roomId)) return <Redirect to={`/room/${roomId}/join`} />;
 
