@@ -1,4 +1,5 @@
 import { User } from '@models/User';
+import { exception } from 'console';
 
 class Room {
   id: number;
@@ -16,7 +17,7 @@ class Room {
   }
 
   addUser(user: User): void {
-    if (this.getUser(user.name)) return;
+    if (this.getUser(user.name)) throw exception;
     this.users.push(user);
   }
 
