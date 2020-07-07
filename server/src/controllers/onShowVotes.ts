@@ -3,7 +3,6 @@ import { rooms } from '@models/Rooms';
 
 const onShowVotes = (io: socketio.Server, socket: socketio.Socket) => (roomId: string) => {
   try {
-    console.log(roomId, typeof roomId);
     const room = rooms.getRoom(roomId);
 
     const message = `Votes: ${JSON.stringify(room.getVotes())} in room ${room.id}`;
