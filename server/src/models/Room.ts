@@ -16,8 +16,12 @@ class Room {
     return this.users.find(user => user.name === name) ?? null;
   }
 
+  getAdmin(): User | null {
+    return this.users.find(user => user.isAdmin === true) ?? null;
+  }
+
   addUser(user: User): void {
-    if (this.getUser(user.name)) return;
+    if (this.getUser(user.name)) throw new Error('This user nam already exists in room');
     this.users.push(user);
   }
 
