@@ -5,6 +5,7 @@ const onSubmitEstimation = (io: socketio.Server, socket: socketio.Socket) => (ro
   try {
     const room = rooms.getRoom(roomId);
 
+    room.archiveTask();
     room.clearVotes();
 
     const message: string = 'The task was saved in history';
