@@ -36,6 +36,5 @@ class Rooms {
   }
 }
 
-//Temporary solution
 const rooms = new Rooms();
 export { rooms };

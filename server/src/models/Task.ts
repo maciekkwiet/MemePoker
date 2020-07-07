@@ -1,5 +1,5 @@
 class Task {
-  public readonly timeStamp: number;
+  public timeStamp: number;
   public title: string;
 
   constructor(title: string) {
