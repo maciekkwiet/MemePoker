@@ -9,6 +9,7 @@ const RoomContextProvider = ({ children }) => {
   const getData = async roomId => {
     try {
       const currentRoom = await axios.get(`/api/session?roomId=${roomId}`);
+      // console.log(currentRoom.data);
       setResponse(currentRoom.data);
     } catch (e) {
       console.error(e);
