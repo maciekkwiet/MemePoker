@@ -14,7 +14,6 @@ const UserBox = () => {
   const { roomId } = useParams();
 
   useEffect(() => {
-    // console.log(response?.room.task.title);
     const taskTitle = response?.room.task.title;
 
     if (response !== null && taskTitle !== '') setTask(taskTitle);
