@@ -15,7 +15,7 @@ const Results = () => {
   const sendVotes = useEmit('SHOW_VOTES');
 
   const onClickHandler = () => {
-    sendVotes({ roomId });
+    sendVotes(roomId);
     console.log({ userRooms });
     console.log({ roomId });
   };
