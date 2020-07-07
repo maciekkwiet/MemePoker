@@ -19,7 +19,7 @@ class Rooms {
       this.rooms.push(room);
       return room;
     } else {
-      return new Error('All rooms are busy');
+      throw new Error('All rooms are busy');
     }
   }
 

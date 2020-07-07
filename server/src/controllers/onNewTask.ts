@@ -10,20 +10,15 @@ const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, t
   try {
     const room = rooms.getRoom(roomId);
 
-
-   
-
-  const roomAdmin = room.getAdmin();
-
-  if (roomAdmin?.socket === socket.id) {
-     room.setTask(task);
+    const roomAdmin = room.getAdmin(socket.id);
+    room.setTask(task);
 
     room.clearVotes();
 
     const message = `New task: ${task} in the room: ${roomId}`;
 
     io.to(roomId.toString()).emit('FEED', message);
-    io.to(roomId.toString()).emit('TASK_UPDATED', room.task);
+    io.to(roomId.toString()).emit('TASK_UPDATED', room.getTask());
   } catch (ex) {
     console.error(ex);
   }

@@ -10,22 +10,16 @@ interface UserJoinPayload {
 }
 
 const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, roomId, isAdmin }: UserJoinPayload) => {
-  
   try {
-  
-  const user = new User(name, socket.id, isAdmin);
-  const room = rooms.getRoom(roomId);
+    const user = new User(name, socket.id, isAdmin);
+    const room = rooms.getRoom(roomId);
+    const message = `${name} has joined the room: ${roomId}`;
+    room.addUser(user);
 
-  if (typeof room === 'string') return console.error(room);
+    socket.join(roomId.toString());
 
-  const message = `${name} has joined the room: ${roomId}`;
-  room.addUser(user);
-
-  socket.join(roomId.toString());
-
-  io.to(roomId.toString()).emit('USER_JOINED', room.getUsers());
-  io.to(roomId.toString()).emit('FEED', message);
-
+    io.to(roomId.toString()).emit('USER_JOINED', room.getUsers());
+    io.to(roomId.toString()).emit('FEED', message);
   } catch (ex) {
     console.error(ex);
   }
