@@ -1,13 +1,14 @@
 import { User } from '@models/User';
+import { Task } from '@models/Task';
 
 class Room {
   id: number;
-  task: string;
+  private task: Task;
   private users: User[];
 
   constructor(id: number) {
     this.id = id;
-    this.task = '';
+    this.task = new Task('');
     this.users = [];
   }
 
@@ -38,6 +39,13 @@ class Room {
 
   getVotes(): Array<Pick<User, 'name' | 'vote'>> {
     return this.users.map(user => ({ name: user.name, vote: user.vote }));
+  }
+  getTask(): Task {
+    return this.task;
+  }
+  setTask(title: string): void {
+    if (!title) throw new Error('Task title is empty');
+    this.task = new Task(title);
   }
 }
 
