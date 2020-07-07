@@ -2,12 +2,12 @@ import { User } from '@models/User';
 import { Task } from '@models/Task';
 
 class Room {
-  id: number;
+  id: string;
   private task: Task;
   private users: User[];
   private history: Task[];
 
-  constructor(id: number) {
+  constructor(id: string) {
     this.id = id;
     this.task = new Task('');
     this.users = [];

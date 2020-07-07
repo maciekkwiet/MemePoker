@@ -5,7 +5,7 @@ import { rooms } from '@models/Rooms';
 
 interface UserJoinPayload {
   name: string;
-  roomId: number;
+  roomId: string;
   isAdmin: boolean;
 }
 
@@ -18,8 +18,8 @@ const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, ro
 
     socket.join(roomId.toString());
 
-    io.to(roomId.toString()).emit('USER_JOINED', room.getUsers());
-    io.to(roomId.toString()).emit('FEED', message);
+    io.to(roomId).emit('USER_JOINED', room.getUsers());
+    io.to(roomId).emit('FEED', message);
   } catch (ex) {
     console.error(ex);
   }

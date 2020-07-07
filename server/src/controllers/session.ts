@@ -4,13 +4,13 @@ import { rooms } from '@models/Rooms';
 const router = Router();
 
 interface Query {
-  roomId?: number;
+  roomId?: string;
 }
 
 router.get('/', async (req: Request<any, any, any, Query>, res: Response) => {
   try {
     const { roomId } = req.query;
-    if (typeof roomId !== 'number') return res.status(400).json({ error: 'Invalid parameter' });
+    if (typeof roomId !== 'string') return res.status(400).json({ error: 'Invalid parameter' });
     const room = rooms.getRoom(roomId);
     res.json({ room });
   } catch (ex) {
