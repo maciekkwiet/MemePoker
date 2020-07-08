@@ -12,16 +12,24 @@ const Results = () => {
   const classes = ResultsStyles();
   const { roomId } = useParams();
   const { userRooms } = useUserContext();
-  const sendVotes = useEmit('SHOW_VOTES');
+  const sendVotesShow = useEmit('SHOW_VOTES');
+  const sendVotesClear = useEmit('CLEAR_VOTES');
 
-  const onClickHandler = () => {
+  const onClickHandlerShow = () => {
     userRooms.forEach(room => {
       if (room.roomId === roomId && room.isAdmin === true) {
-        sendVotes(roomId);
+        sendVotesShow(roomId);
       }
     });
   };
 
+  const onClickHandlerClear = () => {
+    userRooms.forEach(room => {
+      if (room.roomId === roomId && room.isAdmin === true) {
+        sendVotesClear(roomId);
+      }
+    });
+  };
   return (
     <Paper className={classes.root}>
       <Typography className={classes.header} component="div" variant="h5">
@@ -29,8 +37,8 @@ const Results = () => {
       </Typography>
       <UserVotes />
       <Box className={classes.btnWrap}>
-        <VoteBtn content="Show votes" btnFunction={onClickHandler} />
-        <VoteBtn content="Clear votes" />
+        <VoteBtn content="Show votes" btnFunction={onClickHandlerShow} />
+        <VoteBtn content="Clear votes" btnFunction={onClickHandlerClear} />
       </Box>
     </Paper>
   );
