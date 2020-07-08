@@ -27,6 +27,7 @@ const Results = () => {
     userRooms.forEach(room => {
       if (room.roomId === roomId && room.isAdmin === true) {
         sendVotesClear(roomId);
+        console.log('test');
       }
     });
   };
