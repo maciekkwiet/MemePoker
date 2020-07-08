@@ -48,13 +48,16 @@ class Room {
   getVotes(): Array<Pick<User, 'name' | 'vote'>> {
     return this.users.map(user => ({ name: user.name, vote: user.vote }));
   }
+
   getTask(): Task {
     return this.task;
   }
+
   setTask(title: string): void {
     if (!title) throw new Error('Task title is empty');
     this.task = new Task(title);
   }
+
   archiveTask() {
     this.history.push(this.task);
   }
