@@ -1,4 +1,5 @@
 import React from 'react';
+import { useUserContext } from 'Contexts/UserContext';
 import { Paper, Typography, Box } from '@material-ui/core';
 import { useEmit } from 'socketio-hooks';
 import { useParams } from 'react-router-dom';
@@ -6,7 +7,6 @@ import { useParams } from 'react-router-dom';
 import UserVotes from 'Components/UserVotes';
 import VoteBtn from 'Components/VoteButton';
 import ResultsStyles from './ResultsStyles';
-import { useUserContext } from 'Contexts/UserContext';
 
 const Results = () => {
   const classes = ResultsStyles();
@@ -15,9 +15,11 @@ const Results = () => {
   const sendVotes = useEmit('SHOW_VOTES');
 
   const onClickHandler = () => {
-    sendVotes({ roomId });
-    console.log({ userRooms });
-    console.log({ roomId });
+    userRooms.forEach(room => {
+      if (room.roomId === roomId && room.isAdmin === true) {
+        sendVotes(roomId);
+      }
+    });
   };
 
   return (

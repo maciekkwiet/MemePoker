@@ -26,7 +26,6 @@ const UserContextProvider = ({ children }) => {
 
     changeDefaultName(name);
     setUserRooms(newUserRooms);
-    window.sessionStorage.setItem('USER_ROOMS', JSON.stringify(newUserRooms));
   };
 
   const getUserName = roomId => userRooms.find(room => room.roomId === roomId)?.name;
