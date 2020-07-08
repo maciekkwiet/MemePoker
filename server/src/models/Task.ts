@@ -2,7 +2,7 @@ import { User } from '@models/User';
 
 class Task {
   private timeStamp: number;
-  public title: string;
+  public readonly title: string;
   private votes: Array<Pick<User, 'name' | 'vote'>>;
   private estimationTime: number | null;
   private finalResult: number | null;
