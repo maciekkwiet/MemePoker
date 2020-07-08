@@ -14,7 +14,7 @@ const UserBox = ({ head, text }) => {
 
   return (
     <div className={classes.root}>
-      <Avatar className={classes.avatarLg}>{name.charAt(0).toUpperCase()}</Avatar>
+      {/* <Avatar className={classes.avatarLg}>{name.charAt(0).toUpperCase()}</Avatar> */}
       <Paper elevation={0} className={classes.paper} variant="outlined">
         <Typography display="block" variant="h6">
           {head}

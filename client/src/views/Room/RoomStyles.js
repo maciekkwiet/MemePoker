@@ -8,9 +8,13 @@ const useStyles = makeStyles(theme => ({
   top: {
     width: '100%',
     display: 'grid',
-    gridTemplateColumns: '4fr 1fr',
+    gridTemplateColumns: '4fr 1fr 1fr',
+    gridColumnGap: theme.spacing(1),
+    /* display: 'flex',
+    alignItems: 'stretch',
+    alignContent: 'stretch',
+    justifyContent: 'center', */
     marginBottom: theme.spacing(2),
-    alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       gridTemplateColumns: '1fr',
     },
