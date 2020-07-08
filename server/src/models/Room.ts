@@ -59,6 +59,7 @@ class Room {
   }
 
   archiveTask() {
+    this.task.setEstimationTime();
     this.history.push(this.task);
   }
 }
