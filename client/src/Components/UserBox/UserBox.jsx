@@ -17,10 +17,9 @@ const UserBox = () => {
     const taskTitle = response?.room.task.title;
 
     if (response !== null && taskTitle !== '') setTask(taskTitle);
-  }, [response, task]);
+  }, [response]);
 
   useSocket('TASK_UPDATED', task => {
-    console.log(task, 'task has been updated');
     setTask(task.title);
   });
 
