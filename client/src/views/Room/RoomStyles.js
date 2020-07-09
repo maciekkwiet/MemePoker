@@ -10,14 +10,7 @@ const useStyles = makeStyles(theme => ({
     display: 'grid',
     gridTemplateColumns: '4fr 1fr 1fr',
     gridColumnGap: theme.spacing(1),
-    /* display: 'flex',
-    alignItems: 'stretch',
-    alignContent: 'stretch',
-    justifyContent: 'center', */
     marginBottom: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
-      gridTemplateColumns: '1fr',
-    },
   },
   info: {
     display: 'flex',

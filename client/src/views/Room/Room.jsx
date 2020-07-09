@@ -32,10 +32,8 @@ const Room = () => {
           <Navigation />
           <Box className={classes.top} component="div">
             <UserBox head="CHOOSE A MEME!" text="You have to choose only one card! Do it quickly :D" />
-            {/* <Box className={classes.info}> */}
             <Timer />
-            <InfoBox title="Room ID" value={roomId} />
-            {/* </Box> */}
+            <InfoBox title="Room ID" value={roomId} padding={0.25} />
           </Box>
           <Paper className={classes.cards}>
             <TaskNameInput />
