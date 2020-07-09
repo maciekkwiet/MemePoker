@@ -6,9 +6,6 @@ const InfoBoxStyles = makeStyles(theme => ({
     padding: theme.spacing(0.25),
     textAlign: 'center',
     marginBottom: theme.spacing(1),
-    '& :first-child': {
-      textTransform: 'uppercase',
-    },
   },
 }));
 

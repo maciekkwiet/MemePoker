@@ -32,7 +32,7 @@ const Room = () => {
             <UserBox head="CHOOSE A MEME!" text="You have to choose only one card! Do it quickly :D" />
             <Box className={classes.info}>
               <Timer />
-              <InfoBox title="Room ID" value={roomId} />
+              <InfoBox title="ROOM ID" value={roomId} padding={0.25} />
             </Box>
           </Box>
           <Paper className={classes.cards}>
