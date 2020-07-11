@@ -22,7 +22,6 @@ const onUserVote = (io: socketio.Server, socket: socketio.Socket) => ({ name, va
       message = `Everyone in room ${room.id} voted, votes: ${JSON.stringify(room.getVotes())}`;
 
       io.to(roomId.toString()).emit('CARDS_REVEALED', room.getVotes());
-      io.to(roomId.toString()).emit('USER_VOTED', user);
     } else {
       message = `${name} has voted in the room: ${roomId}`;
 
