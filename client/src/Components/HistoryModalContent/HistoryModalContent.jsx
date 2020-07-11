@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Box, Typography, IconButton } from '@material-ui/core';
+import { Box, Typography, IconButton, Container } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
 import MainBox from 'Components/MainBox';
@@ -8,8 +8,8 @@ import { withStyles } from '@material-ui/styles';
 
 const HistoryModalContent = withStyles(historyModalContentStyles)(({ forwardedRef, children, onClose, classes }) => {
   return (
-    <div className={classes.root}>
-      <MainBox innerRef={forwardedRef}>
+    <Container maxWidth="md" className={classes.root}>
+      <MainBox innerRef={forwardedRef} padding={2}>
         <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon />
         </IconButton>
@@ -18,7 +18,7 @@ const HistoryModalContent = withStyles(historyModalContentStyles)(({ forwardedRe
         </Typography>
         <Box>{children}</Box>
       </MainBox>
-    </div>
+    </Container>
   );
 });
 
