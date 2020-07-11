@@ -1,7 +1,14 @@
 class User {
-  public vote: number | null;
+  readonly socket: string;
+  readonly name: string;
+  readonly isAdmin: boolean;
 
-  constructor(public name: string, public isAdmin: boolean) {
+  vote: number | null;
+
+  constructor(name: string, id: string, isAdmin: boolean) {
+    this.name = name;
+    this.socket = id;
+    this.isAdmin = isAdmin;
     this.vote = null;
   }
 }

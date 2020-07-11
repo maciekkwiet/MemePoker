@@ -3,9 +3,7 @@ import { Room } from './Room';
 class Rooms {
   private readonly rooms: Room[] = [];
 
-  getRoom(roomId: number): Room {
-    console.log(this.rooms);
-    console.log(roomId, typeof roomId);
+  getRoom(roomId: string): Room {
     const room = this.rooms.find(({ id }) => id == roomId);
     if (typeof room === 'undefined') throw new Error('Room not found');
     return room;
@@ -21,7 +19,7 @@ class Rooms {
       this.rooms.push(room);
       return room;
     } else {
-      return new Error('All rooms are busy');
+      throw new Error('All rooms are busy');
     }
   }
 
@@ -29,15 +27,14 @@ class Rooms {
     return this.rooms.length === 9000 ? false : true;
   }
 
-  private createRandomId(): number {
-    return Math.floor(Math.random() * 9000 + 1000);
+  private createRandomId(): string {
+    return Math.floor(Math.random() * 9000 + 1000).toString(10);
   }
 
-  private checkId(roomId: number): boolean {
+  private checkId(roomId: string): boolean {
     return this.rooms.some(({ id }) => id === roomId) ? true : false;
   }
 }
 
-//Temporary solution
 const rooms = new Rooms();
 export { rooms };
