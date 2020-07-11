@@ -14,14 +14,14 @@ const UserBox = () => {
   const { roomId } = useParams();
 
   useEffect(() => {
-    const taskTitle = response?.room.task.title;
+    if (response) {
+      const { title } = response.room.task;
 
-    if (response !== null && taskTitle !== '') setTask(taskTitle);
+      if (title) setTask(title);
+    }
   }, [response]);
 
-  useSocket('TASK_UPDATED', task => {
-    setTask(task.title);
-  });
+  useSocket('TASK_UPDATED', ({ title }) => setTask(title));
 
   const classes = UserBoxStyles();
   const name = getUserName(roomId);
