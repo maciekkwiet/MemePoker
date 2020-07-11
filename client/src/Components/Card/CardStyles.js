@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const cardStyles = makeStyles(theme => ({
+const CardStyles = makeStyles(theme => ({
   main: {
     backgroundColor: 'black',
     padding: 5,
@@ -30,4 +30,4 @@ const cardStyles = makeStyles(theme => ({
   },
 }));
 
-export default cardStyles;
+export default CardStyles;

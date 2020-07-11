@@ -4,13 +4,13 @@ import { useEmit } from 'socketio-hooks';
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core';
 
 import { useUserContext } from 'Contexts/UserContext';
-import cardStyles from './CardStyles';
+import CardStyles from './CardStyles';
 
 const MemeCard = ({ value, img }) => {
   const { getUserName } = useUserContext();
   const sendEstimation = useEmit('USER_VOTED');
   const { roomId } = useParams();
-  const classes = cardStyles();
+  const classes = CardStyles();
 
   const name = getUserName(roomId);
 
