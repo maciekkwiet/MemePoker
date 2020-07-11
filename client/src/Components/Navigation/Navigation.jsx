@@ -4,13 +4,16 @@ import ShareIcon from '@material-ui/icons/Share';
 
 import navigationStyles from './NavigationStyles';
 import HistoryBox from 'Components/HistoryBox';
+import HistoryElement from 'HistoryElement/HistoryElement';
 
 const Navigation = () => {
   const classes = navigationStyles();
 
   return (
     <Box className={classes.root}>
-      <HistoryBox />
+      <HistoryBox>
+        <HistoryElement />
+      </HistoryBox>
       <Chip label="Url" icon={<ShareIcon />} color="primary" clickable={true} />
     </Box>
   );

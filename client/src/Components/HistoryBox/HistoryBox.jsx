@@ -1,13 +1,11 @@
-import React, { useState, forwardRef } from 'react';
-import { Modal, Box, Chip, Paper } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Modal, Box, Chip } from '@material-ui/core';
 import HistoryIcon from '@material-ui/icons/History';
 
-// import ChipButton from 'Components/ChipButton';
-import MainBox from 'Components/MainBox';
-import InfoBox from 'Components/InfoBox';
-import Timer from 'Components/Timer';
+import historyBoxStyles from './HistoryBoxStyles';
+import ModalContent from 'Components/ModalContent/';
 
-const HistoryBox = () => {
+const HistoryBox = props => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -18,18 +16,13 @@ const HistoryBox = () => {
     setOpen(false);
   };
 
-  const SomeContent = forwardRef((props, ref) => (
-    <MainBox {...props} innerRef={ref}>
-      <InfoBox title="History" value={<Timer />} align="left" />
-    </MainBox>
-  ));
+  const classes = historyBoxStyles();
 
   return (
     <Box display="inline-block">
       <Chip label="History" icon={<HistoryIcon />} color="primary" onClick={handleOpen} />
-
-      <Modal open={open} onClose={handleClose}>
-        <SomeContent />
+      <Modal open={open} onClose={handleClose} className={classes.root}>
+        <ModalContent>{props.children}</ModalContent>
       </Modal>
     </Box>
   );
