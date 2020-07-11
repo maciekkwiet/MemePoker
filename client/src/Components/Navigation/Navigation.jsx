@@ -4,7 +4,7 @@ import ShareIcon from '@material-ui/icons/Share';
 
 import navigationStyles from './NavigationStyles';
 import HistoryBox from 'Components/HistoryBox';
-import HistoryElement from 'HistoryElement/HistoryElement';
+import HistoryElement from 'Components/HistoryElement';
 
 const Navigation = () => {
   const classes = navigationStyles();

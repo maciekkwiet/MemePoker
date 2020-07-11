@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Modal, Box, Chip } from '@material-ui/core';
+import { Modal, Box, Chip, Dialog, Typography, IconButton } from '@material-ui/core';
 import HistoryIcon from '@material-ui/icons/History';
+import CloseIcon from '@material-ui/icons/Close';
 
 import historyBoxStyles from './HistoryBoxStyles';
-import ModalContent from 'Components/ModalContent/';
+import HistoryModalContent from 'Components/HistoryModalContent/';
 
-const HistoryBox = props => {
+const HistoryBox = ({ children }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -21,8 +22,8 @@ const HistoryBox = props => {
   return (
     <Box display="inline-block">
       <Chip label="History" icon={<HistoryIcon />} color="primary" onClick={handleOpen} />
-      <Modal open={open} onClose={handleClose} className={classes.root}>
-        <ModalContent>{props.children}</ModalContent>
+      <Modal open={open} className={classes.root}>
+        <HistoryModalContent onClose={handleClose}>{children}</HistoryModalContent>
       </Modal>
     </Box>
   );

@@ -6,12 +6,7 @@ const userBoxStyles = makeStyles(theme => ({
     flexFlow: 'column nowrap',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  closeButton: {
-    position: 'absolute',
-    right: theme.spacing(1),
-    top: theme.spacing(1),
-    color: theme.palette.secondary.contrastText,
+    position: 'relative',
   },
 }));
 
