@@ -1,20 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography, Avatar } from '@material-ui/core';
-
+import { useRoomContext } from 'Contexts/RoomContext';
 import UserVotesStyles from './UserVotesStyles';
 import { useSocket } from 'socketio-hooks';
 
 const UserVotes = () => {
   const classes = UserVotesStyles();
+  const { response } = useRoomContext();
   const [users, setUsers] = useState([]);
   const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);
 
+  useEffect(() => {
+    if (response) {
+      const { users } = response.room;
+      setUsers(users);
+    }
+  }, [response]);
   useSocket('USER_JOINED', users => {
     setUsers(users);
   });
   useSocket('USER_VOTED', userVoted => {
-    const newUsers = users.map(x => {
-      return x.name === userVoted.name ? userVoted : x;
+    const newUsers = users.map(user => {
+      return user.name === userVoted.name ? userVoted : user;
     });
     setUsers(newUsers);
   });
