@@ -7,66 +7,33 @@ import { useSocket } from 'socketio-hooks';
 const UserVotes = () => {
   const classes = UserVotesStyles();
   const [users, setUsers] = useState([]);
-  const [usersVoted, setUserVoted] = useState([]);
-
-  // const users = [
-  //   {
-  //     name: 'user01',
-  //     vote: '1234',
-  //   },
-  //   {
-  //     name: 'user02',
-  //     vote: '1234',
-  //   },
-  //   {
-  //     name: 'user03',
-  //     vote: '1234',
-  //   },
-  //   {
-  //     name: 'user04',
-  //     vote: '1234',
-  //   },
-  //   {
-  //     name: 'user05',
-  //     vote: '1234',
-  //   },
-  // ];
-
-  // const usersVoted = [
-  //   {
-  //     name: 'user01',
-  //     vote: '1234',
-  //   },
-  //   {
-  //     name: 'user03',
-  //     vote: '1234',
-  //   },
-  //   {
-  //     name: 'user05',
-  //     vote: '1234',
-  //   },
-  // ];
+  const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);
 
   useSocket('USER_JOINED', users => {
     setUsers(users);
   });
-  useSocket('USER_VOTED', user => {
-    setUserVoted(user);
+  useSocket('USER_VOTED', userVoted => {
+    setHasEveryoneVoted(false);
+    const newUsers = users.map(x => {
+      return x.name === userVoted.name ? userVoted : x;
+    });
+    setUsers(newUsers);
   });
-  let hasVoted = user => {
-    return usersVoted.some(el => el.name === user.name);
-  };
+  useSocket('CARDS_REVEALED', users => {
+    setHasEveryoneVoted(true);
+    setUsers(users);
+  });
 
   return (
     <Box className={classes.root}>
       {users.map(user => (
         <Box key={user.name} className={classes.item}>
-          <Box className={hasVoted(user) ? classes.userInfoVoted : classes.userInfo}>
+          <Box className={user.vote ? classes.userInfoVoted : classes.userInfo}>
             <Avatar>{user.name.charAt(0).toUpperCase()}</Avatar>
-            <Typography>{hasVoted(user) ? <b>{user.name} - [Voted]</b> : user.name}</Typography>
+            <Typography>{user.vote ? <b>{user.name} - [Voted]</b> : user.name}</Typography>
           </Box>
           <Box>
-            <Typography>{user.vote}</Typography>
+            <Typography>{hasEveryoneVoted ? user.vote : ''}</Typography>
           </Box>
         </Box>
       ))}

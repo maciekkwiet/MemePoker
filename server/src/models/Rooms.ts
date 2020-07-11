@@ -3,9 +3,11 @@ import { Room } from './Room';
 class Rooms {
   private readonly rooms: Room[] = [];
 
-  getRoom(roomId: number): Room | string {
+  getRoom(roomId: number): Room {
+    console.log(this.rooms);
+    console.log(roomId, typeof roomId);
     const room = this.rooms.find(({ id }) => id == roomId);
-    if (typeof room === 'undefined') return 'No room';
+    if (typeof room === 'undefined') throw new Error('Room not found');
     return room;
   }
 

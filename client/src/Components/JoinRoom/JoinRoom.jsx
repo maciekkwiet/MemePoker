@@ -18,8 +18,8 @@ const JoinRoom = () => {
   const { register, handleSubmit, errors } = useForm({
     validationSchema: Schema,
   });
-  const { push } = useHistory();
 
+  const { push } = useHistory();
   const connectToRoom = ({ roomId }) => {
     push(`/room/${roomId}/join`);
   };
