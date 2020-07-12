@@ -3,26 +3,44 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import LinkIcon from '@material-ui/icons/Link';
 import CopyURLStyles from './CopyURLStyles';
 import Chip from '@material-ui/core/Chip';
-import LinkOffIcon from '@material-ui/icons/LinkOff';
+import Popover from '@material-ui/core/Popover';
+import Typography from '@material-ui/core/Typography';
 
 const CopyURL = () => {
   const classes = CopyURLStyles();
   const url = window.location.href;
-  const [copyLink, setCopyLink] = useState('false');
 
-  const changeState = () => {
-    copyLink === 'false' ? setCopyLink('true') : setCopyLink('false');
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+    setTimeout(handleClose, 2000);
+  };
+
+  const open = Boolean(anchorEl);
   return (
     <>
       <CopyToClipboard text={url}>
         <div className={classes.wrapperButton}>
-          {copyLink === 'false' ? (
-            <Chip icon={<LinkIcon />} label="Copy link text" onClick={changeState} />
-          ) : (
-            <Chip icon={<LinkOffIcon />} label="The link was copied" disabled />
-          )}
+          <Chip icon={<LinkIcon />} label={url} onClick={handleClick} />
+          <Popover
+            open={open}
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'center',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+          >
+            <Typography>The link has been copied to clipboard</Typography>
+          </Popover>
         </div>
       </CopyToClipboard>
     </>
