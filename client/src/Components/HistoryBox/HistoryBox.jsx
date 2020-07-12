@@ -22,7 +22,7 @@ const HistoryBox = () => {
   return (
     <Box display="inline-block">
       <Chip label="History" icon={<HistoryIcon />} color="primary" onClick={handleOpen} />
-      <Modal open={open} className={classes.root}>
+      <Modal open={open} className={classes.root} onClose={handleClose}>
         <HistoryModalContent onClose={handleClose}>
           <HistoryElement />
         </HistoryModalContent>
