@@ -26,7 +26,7 @@ const CopyURL = () => {
     <>
       <CopyToClipboard text={url}>
         <div className={classes.wrapperButton}>
-          <Chip icon={<LinkIcon />} label={url} onClick={handleClick} />
+          <Chip icon={<LinkIcon />} label={url} onClick={handleClick} color="primary" />
           <Popover
             open={open}
             anchorEl={anchorEl}
@@ -39,7 +39,7 @@ const CopyURL = () => {
               horizontal: 'center',
             }}
           >
-            <Typography>The link has been copied to clipboard</Typography>
+            <Typography className={classes.root}>The link has been copied to clipboard</Typography>
           </Popover>
         </div>
       </CopyToClipboard>
