@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Avatar } from '@material-ui/core';
+import { useSocket } from 'socketio-hooks';
+
 import { useRoomContext } from 'Contexts/RoomContext';
 import UserVotesStyles from './UserVotesStyles';
-import { useSocket } from 'socketio-hooks';
 
 const UserVotes = () => {
   const classes = UserVotesStyles();
@@ -20,9 +21,7 @@ const UserVotes = () => {
     setUsers(users);
   });
   useSocket('USER_VOTED', userVoted => {
-    const newUsers = users.map(user => {
-      return user.name === userVoted.name ? userVoted : user;
-    });
+    const newUsers = users.map(user => (user.name === userVoted.name ? userVoted : user));
     setUsers(newUsers);
   });
   useSocket('CARDS_REVEALED', users => {
