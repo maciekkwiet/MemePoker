@@ -1,4 +1,4 @@
-import { Analysis } from '@models/Analysis';
+import { Analysis } from '@services/Analysis';
 export interface Result {
   name: string;
   vote: number | null;
@@ -43,10 +43,6 @@ class Task {
       if (vote.vote !== null) voteValues.push(vote.vote);
     });
     this.Analysis = new Analysis(voteValues);
-  }
-  getAnalysis(): Analysis | null {
-    this.analyzeResults();
-    return this.Analysis;
   }
 }
 export { Task };
