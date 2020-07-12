@@ -6,7 +6,7 @@ import historyBoxStyles from './HistoryBoxStyles';
 import HistoryModalContent from 'Components/HistoryModalContent/';
 import HistoryElement from 'Components/HistoryElement/HistoryElement';
 
-const HistoryBox = ({ children }) => {
+const HistoryBox = () => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
