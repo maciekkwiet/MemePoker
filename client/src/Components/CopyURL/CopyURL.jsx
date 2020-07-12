@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import LinkIcon from '@material-ui/icons/Link';
 import CopyURLStyles from './CopyURLStyles';
@@ -8,7 +7,6 @@ import LinkOffIcon from '@material-ui/icons/LinkOff';
 
 const CopyURL = () => {
   const classes = CopyURLStyles();
-  const location = useLocation();
   const url = window.location.href;
   const [copyLink, setCopyLink] = useState('false');
 
