@@ -21,4 +21,4 @@ const useRoomContext = () => {
   return roomContext;
 };
 
-export { useRoomContext, RoomContextProvider, RoomContext };
+export { RoomContextProvider, useRoomContext, RoomContext };
