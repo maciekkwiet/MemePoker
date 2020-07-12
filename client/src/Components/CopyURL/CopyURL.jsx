@@ -12,7 +12,6 @@ const CopyURL = () => {
 
   const changeState = () => {
     copyLink === 'false' ? setCopyLink('true') : setCopyLink('false');
-    console.log(copyLink);
   };
 
   return (
