@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
 import { useEmit } from 'socketio-hooks';
 import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
@@ -21,6 +21,7 @@ const UserNameInput = () => {
   const classes = UserNameStyles();
   const { defaultName, upsertRoomInfo } = useUserContext();
   const { roomId } = useParams();
+  const { state } = useLocation();
   const history = useHistory();
   const sendName = useEmit('USER_JOINED');
 
@@ -32,7 +33,7 @@ const UserNameInput = () => {
   });
 
   const onSubmitHandler = ({ name }) => {
-    upsertRoomInfo(roomId, name);
+    upsertRoomInfo(roomId, name, state?.isAdmin);
     sendName({ name, roomId });
     history.push(`/room/${roomId}`);
   };
