@@ -11,6 +11,7 @@ import MainBox from 'Components/MainBox';
 import Results from 'Components/Results';
 import Timer from 'Components/Timer';
 import { useRoomContext } from 'Contexts/RoomContext';
+import Navigation from 'Components/Navigation';
 
 const Room = () => {
   const classes = RoomStyles();
@@ -28,12 +29,11 @@ const Room = () => {
     <MainBox>
       <Grid container spacing={3}>
         <Grid item xs={12} md={8} className={classes.main}>
+          <Navigation />
           <Box className={classes.top} component="div">
             <UserBox />
-            <Box className={classes.info}>
-              <Timer />
-              <InfoBox title="Room ID" value={roomId} />
-            </Box>
+            <Timer />
+            <InfoBox title="ROOM ID" value={roomId} padding={0.25} />
           </Box>
           <Paper className={classes.cards}>
             <TaskNameInput />
