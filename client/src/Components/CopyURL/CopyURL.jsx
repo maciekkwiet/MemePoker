@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import LinkIcon from '@material-ui/icons/Link';
-import CopyURLStyles from './CopyURLStyles';
 import Chip from '@material-ui/core/Chip';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
+import CopyURLStyles from './CopyURLStyles';
 
 const CopyURL = () => {
   const classes = CopyURLStyles();
@@ -21,14 +21,13 @@ const CopyURL = () => {
     setTimeout(handleClose, 2000);
   };
 
-  const open = Boolean(anchorEl);
   return (
     <>
       <CopyToClipboard text={url}>
         <div className={classes.wrapperButton}>
           <Chip icon={<LinkIcon />} label={url} onClick={handleClick} color="primary" />
           <Popover
-            open={open}
+            open={Boolean(anchorEl)}
             anchorEl={anchorEl}
             anchorOrigin={{
               vertical: 'bottom',

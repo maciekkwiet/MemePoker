@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Chip } from '@material-ui/core';
-import ShareIcon from '@material-ui/icons/Share';
+import { Box } from '@material-ui/core';
+import CopyUrl from '../CopyURL/CopyURL';
 
 import navigationStyles from './NavigationStyles';
 import HistoryBox from 'Components/HistoryBox';
@@ -11,7 +11,7 @@ const Navigation = () => {
   return (
     <Box className={classes.root}>
       <HistoryBox />
-      <Chip label="Url" icon={<ShareIcon />} color="primary" clickable={true} />
+      <CopyUrl />
     </Box>
   );
 };
