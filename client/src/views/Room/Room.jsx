@@ -30,10 +30,8 @@ const Room = () => {
         <Grid item xs={12} md={8} className={classes.main}>
           <Box className={classes.top} component="div">
             <UserBox />
-            <Box className={classes.info}>
-              <Timer />
-              <InfoBox title="Room ID" value={roomId} />
-            </Box>
+            <Timer />
+            <InfoBox title="ROOM ID" value={roomId} padding={0.25} />
           </Box>
           <Paper className={classes.cards}>
             <TaskNameInput />
