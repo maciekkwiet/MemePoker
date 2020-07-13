@@ -12,6 +12,7 @@ import Results from 'Components/Results';
 import Timer from 'Components/Timer';
 import { useRoomContext } from 'Contexts/RoomContext';
 import Navigation from 'Components/Navigation';
+import CopyURL from '../../Components/CopyURL/CopyURL';
 
 const Room = () => {
   const classes = RoomStyles();
@@ -43,6 +44,7 @@ const Room = () => {
         <Grid item xs={12} md={4}>
           <Results />
         </Grid>
+        <CopyURL />
       </Grid>
     </MainBox>
   );
