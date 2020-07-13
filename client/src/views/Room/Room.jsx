@@ -29,11 +29,9 @@ const Room = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} md={8} className={classes.main}>
           <Box className={classes.top} component="div">
-            <UserBox head="CHOOSE A MEME!" text="You have to choose only one card! Do it quickly :D" />
-            <Box className={classes.info}>
-              <Timer />
-              <InfoBox title="Room ID" value={roomId} />
-            </Box>
+            <UserBox />
+            <Timer />
+            <InfoBox title="ROOM ID" value={roomId} padding={0.25} />
           </Box>
           <Paper className={classes.cards}>
             <TaskNameInput />

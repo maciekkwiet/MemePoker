@@ -10,7 +10,8 @@ const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, t
   try {
     const room = rooms.getRoom(roomId);
 
-    const roomAdmin = room.getAdmin(socket.id);
+    room.getAdmin(socket.id);
+
     room.setTask(task);
 
     room.clearVotes();
