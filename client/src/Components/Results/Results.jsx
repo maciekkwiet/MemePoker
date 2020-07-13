@@ -20,8 +20,8 @@ const Results = () => {
     sendVotesShow(roomId);
   };
 
-  const onClickHandler = () => {
-    sendVotes(roomId);
+  const onClickHandlerClear = () => {
+    sendVotesClear(roomId);
   };
 
   return (
