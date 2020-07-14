@@ -33,6 +33,16 @@ const UserVotes = () => {
     setUsers(users);
   });
 
+  useSocket('ROOM_VOTES', users => {
+    setHasEveryoneVoted(true);
+    setUsers(users);
+  });
+
+  useSocket('CLEARED_VOTES', users => {
+    setHasEveryoneVoted(false);
+    setUsers(users);
+  });
+
   return (
     <Box className={classes.root}>
       {users.map(user => (
