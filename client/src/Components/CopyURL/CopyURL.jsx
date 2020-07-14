@@ -8,7 +8,7 @@ import CopyURLStyles from './CopyURLStyles';
 
 const CopyURL = () => {
   const classes = CopyURLStyles();
-  const url = 'invite others';
+  const url = window.location.href;
 
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -25,7 +25,7 @@ const CopyURL = () => {
     <>
       <CopyToClipboard text={url}>
         <div className={classes.wrapperButton}>
-          <Chip icon={<LinkIcon />} label={url} onClick={handleClick} color="primary" />
+          <Chip icon={<LinkIcon />} label="Invite others" onClick={handleClick} color="primary" />
           <Popover
             open={Boolean(anchorEl)}
             anchorEl={anchorEl}
