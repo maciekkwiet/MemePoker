@@ -8,7 +8,7 @@ import CopyURLStyles from './CopyURLStyles';
 
 const CopyURL = () => {
   const classes = CopyURLStyles();
-  const url = window.location.href;
+  const url = 'invite others';
 
   const [anchorEl, setAnchorEl] = useState(null);
 
