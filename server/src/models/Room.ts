@@ -3,9 +3,9 @@ import { Task } from '@models/Task';
 
 class Room {
   id: string;
+  history: Task[];
   private task: Task;
   private users: User[];
-  private history: Task[];
 
   constructor(id: string) {
     this.id = id;
@@ -27,10 +27,21 @@ class Room {
   }
 
   addUser(user: User): void {
-    const name = user.name;
+    let userName = user.name;
+    let numberUser = 0;
 
-    if (this.users.find(user => user.name === name)) throw new Error('This user nam already exists in room');
+    while (this.isTaken(userName)) {
+      numberUser++;
+      userName = user.name + `(${numberUser})`;
+    }
+
+    user.name = userName;
     this.users.push(user);
+  }
+
+  private isTaken(userName: string): boolean {
+    if (this.users.find(user => user.name === userName)) return true;
+    return false;
   }
 
   hasEveryoneVoted(): boolean {
@@ -58,7 +69,7 @@ class Room {
     this.task = new Task(title);
   }
 
-  archiveTask() {
+  archiveTask(): void {
     this.history.push(this.task);
   }
 }
