@@ -22,6 +22,15 @@ const UserVotesStyles = makeStyles(theme => ({
       marginRight: theme.spacing(2),
     },
   },
+  userInfoVoted: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    '& > div': {
+      marginRight: theme.spacing(2),
+    },
+    color: theme.palette.primary.main,
+  },
 }));
 
 export default UserVotesStyles;
