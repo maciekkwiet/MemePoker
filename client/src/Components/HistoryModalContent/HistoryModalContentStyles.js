@@ -1,7 +1,10 @@
 const historyModalContentStyles = theme => ({
   root: {
     position: 'relative',
+    /* height: '80vh',
+    overflowY: 'scroll', */
   },
+  container: {},
   closeButton: {
     position: 'absolute',
     right: theme.spacing(3),

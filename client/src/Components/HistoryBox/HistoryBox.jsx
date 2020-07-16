@@ -25,6 +25,10 @@ const HistoryBox = () => {
       <Modal open={open} className={classes.root} onClose={handleClose}>
         <HistoryModalContent onClose={handleClose}>
           <HistoryElement />
+          <HistoryElement />
+          <HistoryElement />
+          <HistoryElement />
+          <HistoryElement />
         </HistoryModalContent>
       </Modal>
     </Box>
