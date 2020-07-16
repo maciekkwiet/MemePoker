@@ -34,6 +34,7 @@ const Room = () => {
             <UserBox />
             <Timer />
             <InfoBox title="ROOM ID" value={roomId} padding={0.25} />
+
           </Box>
           <Paper className={classes.cards}>
             <TaskNameInput />
