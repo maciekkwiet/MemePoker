@@ -24,7 +24,6 @@ const UserVotes = () => {
   }, [response]);
   useSocket('USER_JOINED', users => {
     setUsers(users);
-    console.log(isAdmin);
   });
   useSocket('USER_VOTED', userVoted => {
     const newUsers = users.map(user => (user.name === userVoted.name ? userVoted : user));
