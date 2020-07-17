@@ -4,7 +4,7 @@ import * as express from 'express';
 import * as mongoose from 'mongoose';
 import * as cookieParser from 'cookie-parser';
 
-import { socketController } from './routes/socket';
+import { socketRouter } from './routes/socket';
 import { router } from 'routes';
 
 dotenv.config();
@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
-socketController(server);
+socketRouter(server);
 
 const dbKey = process.env.DB_KEY;
 

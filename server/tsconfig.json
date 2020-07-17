@@ -16,7 +16,9 @@
     "paths": {
       "@controllers/*": ["controllers/*"],
       "@services/*": ["services/*"],
-      "@models/*": ["models/*"]
+      "@models/*": ["models/*"],
+      "@middleware/*": ["middleware/*"],
+      "@typings*": ["typings/index.ts"]
     }
   },
   "exclude": ["node_modules"]

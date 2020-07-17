@@ -1,20 +1,13 @@
-import * as socketio from 'socket.io';
-import { rooms } from '@models/Rooms';
+import { EventHandler, AuthPayload } from '@typings*';
 
-const onClearVotes = (io: socketio.Server, socket: socketio.Socket) => (roomId: string) => {
-  try {
-    const room = rooms.getRoom(roomId);
+const onClearVotes: EventHandler<AuthPayload> = ({ io }, { room }) => {
+  room.clearVotes();
 
-    room.clearVotes();
+  const message = `All votes in room ${room.id} have been reset`;
 
-    const message = `All votes in room ${room.id} have been reset`;
+  io.to(room.id).emit('FEED', message);
 
-    io.to(roomId).emit('FEED', message);
-
-    io.to(roomId).emit('CLEARED_VOTES', room.getUsers());
-  } catch (ex) {
-    console.error(ex);
-  }
+  io.to(room.id).emit('CLEARED_VOTES', room.getUsers());
 };
 
 export { onClearVotes };

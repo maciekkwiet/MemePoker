@@ -1,36 +1,25 @@
-import * as socketio from 'socket.io';
-import { rooms } from '@models/Rooms';
+import { EventHandler, UserVotePayload } from '@typings';
 
-interface UserVotePayload {
-  name: string;
-  value: number;
-  roomId: string;
-}
+const onUserVote: EventHandler<UserVotePayload> = ({ io }, { value, room, user }) => {
+  let message: string;
 
-const onUserVote = (io: socketio.Server, socket: socketio.Socket) => ({ name, value, roomId }: UserVotePayload) => {
-  try {
-    const room = rooms.getRoom(roomId);
-    const user = room.getUser(name);
+  console.log({ value, room, user });
 
-    user.vote = value;
+  user.vote = value;
 
-    let message: string;
+  if (room.hasEveryoneVoted()) {
+    room.archiveTask();
 
-    if (room.hasEveryoneVoted()) {
-      room.archiveTask();
+    message = `Everyone in room ${room.id} voted, votes: ${JSON.stringify(room.getVotes())}`;
 
-      message = `Everyone in room ${room.id} voted, votes: ${JSON.stringify(room.getVotes())}`;
+    io.to(room.id).emit('CARDS_REVEALED', room.getVotes());
+  } else {
+    message = `${user.name} has voted in the room: ${room.id}`;
 
-      io.to(roomId).emit('CARDS_REVEALED', room.getVotes());
-    } else {
-      message = `${name} has voted in the room: ${roomId}`;
-
-      io.to(roomId).emit('USER_VOTED', user);
-    }
-
-    io.to(roomId).emit('FEED', message);
-  } catch (ex) {
-    console.error(ex);
+    io.to(room.id).emit('USER_VOTED', user);
   }
+
+  io.to(room.id).emit('FEED', message);
 };
+
 export { onUserVote };
