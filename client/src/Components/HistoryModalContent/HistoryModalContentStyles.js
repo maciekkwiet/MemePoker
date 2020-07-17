@@ -8,6 +8,7 @@ const historyModalContentStyles = makeStyles(theme => ({
     width: '60%',
     height: '80vh',
     padding: theme.spacing(2),
+    overflow: 'auto',
     border: `1px solid ${theme.palette.primary.main}`,
     outline: 'none',
     [theme.breakpoints.down('md')]: {

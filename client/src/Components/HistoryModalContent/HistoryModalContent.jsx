@@ -8,25 +8,17 @@ import {
   TableRow,
   TableBody,
   Box,
-  Tabs,
+  Paper,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
 import { historyModalContentStyles, HeadTableCell } from './HistoryModalContentStyles';
-import { withStyles } from '@material-ui/styles';
 
 const HistoryModalContent = ({ children, onClose, forwardedRef, modalTitle }) => {
   const classes = historyModalContentStyles();
 
   return (
-    <Tabs
-      innerRef={forwardedRef}
-      className={classes.root}
-      orientation="vertical"
-      variant="scrollable"
-      value={false}
-      scrollButtons="off"
-    >
+    <Paper className={classes.root}>
       <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
         <CloseIcon />
       </IconButton>
@@ -46,7 +38,7 @@ const HistoryModalContent = ({ children, onClose, forwardedRef, modalTitle }) =>
           <TableBody>{children}</TableBody>
         </Table>
       </TableContainer>
-    </Tabs>
+    </Paper>
   );
 };
 
