@@ -26,8 +26,12 @@ const StyledTableCell = withStyles(theme => ({
 
 const StyledTableRow = withStyles(theme => ({
   root: {
+    borderBottom: `1px solid ${theme.palette.grey[600]}`,
     '&:nth-of-type(odd)': {
       backgroundColor: theme.palette.grey[800],
+    },
+    '&:last-of-type': {
+      borderBottom: 'none',
     },
   },
 }))(TableRow);

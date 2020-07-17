@@ -15,34 +15,39 @@ import {
 import CloseIcon from '@material-ui/icons/Close';
 
 import MainBox from 'Components/MainBox';
-import historyModalContentStyles from './HistoryModalContentStyles';
+import { historyModalContentStyles, HeadTableCell } from './HistoryModalContentStyles';
 import { withStyles } from '@material-ui/styles';
 
 const HistoryModalContent = withStyles(historyModalContentStyles)(({ forwardedRef, children, onClose, classes }) => {
   return (
-    <Container maxWidth="md" className={classes.root}>
-      <MainBox innerRef={forwardedRef} padding={2} className={classes.container}>
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-          <CloseIcon />
-        </IconButton>
-        <Typography variant="h6" component="h2" gutterBottom>
-          History
-        </Typography>
-        <TableContainer component={Box}>
-          <Table size="small">
-            <TableHead>
-              <TableRow>
-                <TableCell></TableCell>
-                <TableCell>Title</TableCell>
-                <TableCell>Final Result</TableCell>
-                <TableCell>Estimation time</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>{children}</TableBody>
-          </Table>
-        </TableContainer>
-      </MainBox>
-    </Container>
+    <Tabs
+      innerRef={forwardedRef}
+      className={classes.root}
+      orientation="vertical"
+      variant="scrollable"
+      value={false}
+      scrollButtons="off"
+    >
+      <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+        <CloseIcon />
+      </IconButton>
+      <Typography variant="h6" component="h2" className={classes.title}>
+        History
+      </Typography>
+      <TableContainer component={Box}>
+        <Table size="small" className={classes.table}>
+          <TableHead>
+            <TableRow>
+              <HeadTableCell></HeadTableCell>
+              <HeadTableCell>Title</HeadTableCell>
+              <HeadTableCell>Final Result</HeadTableCell>
+              <HeadTableCell>Estimation time</HeadTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>{children}</TableBody>
+        </Table>
+      </TableContainer>
+    </Tabs>
   );
 });
 

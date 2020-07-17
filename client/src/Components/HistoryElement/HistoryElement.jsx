@@ -4,26 +4,28 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 import { historyElementStyles, StyledTableCell, StyledTableRow } from './HistoryElementStyles';
+import theme from 'theme';
 
 const HistoryElement = () => {
   const [open, setOpen] = useState(false);
   const classes = historyElementStyles();
+  const mainCellPadding = theme.spacing(1);
 
   return (
     <Fragment>
       <StyledTableRow>
-        <StyledTableCell>
+        <StyledTableCell style={{ padding: mainCellPadding }}>
           <IconButton className={classes.arrowIcon} aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </StyledTableCell>
-        <StyledTableCell>Task name</StyledTableCell>
-        <StyledTableCell>4</StyledTableCell>
-        <StyledTableCell>3m 15s</StyledTableCell>
+        <StyledTableCell style={{ padding: mainCellPadding }}>Task name</StyledTableCell>
+        <StyledTableCell style={{ padding: mainCellPadding }}>4</StyledTableCell>
+        <StyledTableCell style={{ padding: mainCellPadding }}>3m 15s</StyledTableCell>
       </StyledTableRow>
       <TableRow>
         <StyledTableCell colSpan={4}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Collapse in={open} unmountOnExit>
             <Box my={2}>
               <Box className={classes.analysis}>
                 <Box>
