@@ -24,6 +24,15 @@ const StyledTableCell = withStyles(theme => ({
   },
 }))(TableCell);
 
+const MainTableCell = withStyles(theme => ({
+  root: {
+    borderBottom: 'none',
+    '&.MuiTableCell-sizeSmall': {
+      padding: theme.spacing(1),
+    },
+  },
+}))(TableCell);
+
 const StyledTableRow = withStyles(theme => ({
   root: {
     borderBottom: `1px solid ${theme.palette.grey[600]}`,
@@ -36,4 +45,4 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-export { StyledTableRow, StyledTableCell, historyElementStyles };
+export { StyledTableRow, StyledTableCell, MainTableCell, historyElementStyles };

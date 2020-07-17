@@ -14,7 +14,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import { historyModalContentStyles, HeadTableCell } from './HistoryModalContentStyles';
 
-const HistoryModalContent = ({ children, onClose, forwardedRef, modalTitle }) => {
+const HistoryModalContent = ({ children, onClose, modalTitle }) => {
   const classes = historyModalContentStyles();
 
   return (
@@ -43,4 +43,3 @@ const HistoryModalContent = ({ children, onClose, forwardedRef, modalTitle }) =>
 };
 
 export default forwardRef((props, ref) => <HistoryModalContent {...props} forwardedRef={ref} />);
-// export default HistoryModalContent;

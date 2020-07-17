@@ -1,28 +1,25 @@
 import React, { useState, Fragment } from 'react';
 import { Collapse, Box, Typography, IconButton, Table, TableRow, TableBody } from '@material-ui/core';
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
-import { historyElementStyles, StyledTableCell, StyledTableRow } from './HistoryElementStyles';
-import theme from 'theme';
+import { historyElementStyles, StyledTableCell, StyledTableRow, MainTableCell } from './HistoryElementStyles';
 
-const HistoryElement = props => {
-  const { title, finalResult, estimationTime, analysis, results } = props;
+const HistoryElement = ({ title, finalResult, estimationTime, analysis, results }) => {
   const [open, setOpen] = useState(false);
   const classes = historyElementStyles();
-  const mainCellPadding = theme.spacing(1);
 
   return (
     <Fragment>
       <StyledTableRow>
-        <StyledTableCell style={{ padding: mainCellPadding }}>
+        <MainTableCell>
           <IconButton className={classes.arrowIcon} aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
-            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+            {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </IconButton>
-        </StyledTableCell>
-        <StyledTableCell style={{ padding: mainCellPadding }}>{title}</StyledTableCell>
-        <StyledTableCell style={{ padding: mainCellPadding }}>{finalResult}</StyledTableCell>
-        <StyledTableCell style={{ padding: mainCellPadding }}>{estimationTime}</StyledTableCell>
+        </MainTableCell>
+        <MainTableCell>{title}</MainTableCell>
+        <MainTableCell>{finalResult}</MainTableCell>
+        <MainTableCell>{estimationTime}</MainTableCell>
       </StyledTableRow>
       <TableRow>
         <StyledTableCell colSpan={4}>
