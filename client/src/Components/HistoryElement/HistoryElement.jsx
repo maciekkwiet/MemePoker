@@ -1,12 +1,13 @@
 import React, { useState, Fragment } from 'react';
-import { Collapse, Box, Typography, IconButton, Table, TableRow, TableCell, TableBody } from '@material-ui/core';
+import { Collapse, Box, Typography, IconButton, Table, TableRow, TableBody } from '@material-ui/core';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 import { historyElementStyles, StyledTableCell, StyledTableRow } from './HistoryElementStyles';
 import theme from 'theme';
 
-const HistoryElement = () => {
+const HistoryElement = props => {
+  const { title, finalResult, estimationTime, analysis, results } = props;
   const [open, setOpen] = useState(false);
   const classes = historyElementStyles();
   const mainCellPadding = theme.spacing(1);
@@ -19,9 +20,9 @@ const HistoryElement = () => {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </StyledTableCell>
-        <StyledTableCell style={{ padding: mainCellPadding }}>Task name</StyledTableCell>
-        <StyledTableCell style={{ padding: mainCellPadding }}>4</StyledTableCell>
-        <StyledTableCell style={{ padding: mainCellPadding }}>3m 15s</StyledTableCell>
+        <StyledTableCell style={{ padding: mainCellPadding }}>{title}</StyledTableCell>
+        <StyledTableCell style={{ padding: mainCellPadding }}>{finalResult}</StyledTableCell>
+        <StyledTableCell style={{ padding: mainCellPadding }}>{estimationTime}</StyledTableCell>
       </StyledTableRow>
       <TableRow>
         <StyledTableCell colSpan={4}>
@@ -30,15 +31,15 @@ const HistoryElement = () => {
               <Box className={classes.analysis}>
                 <Box>
                   <Typography component="div">Average:</Typography>
-                  <Typography component="div">3.5</Typography>
+                  <Typography component="div">{analysis?.average}</Typography>
                 </Box>
                 <Box>
                   <Typography component="div">Median:</Typography>
-                  <Typography component="div">4.0</Typography>
+                  <Typography component="div">{analysis?.median}</Typography>
                 </Box>
                 <Box>
                   <Typography component="div">Standard deviation:</Typography>
-                  <Typography component="div">5.5</Typography>
+                  <Typography component="div">{analysis?.standardDeviation}</Typography>
                 </Box>
               </Box>
             </Box>
@@ -48,18 +49,12 @@ const HistoryElement = () => {
               </Typography>
               <Table size="small">
                 <TableBody>
-                  <StyledTableRow>
-                    <StyledTableCell>username</StyledTableCell>
-                    <StyledTableCell>vote</StyledTableCell>
-                  </StyledTableRow>
-                  <StyledTableRow>
-                    <StyledTableCell>username</StyledTableCell>
-                    <StyledTableCell>vote</StyledTableCell>
-                  </StyledTableRow>
-                  <StyledTableRow>
-                    <StyledTableCell>username</StyledTableCell>
-                    <StyledTableCell>vote</StyledTableCell>
-                  </StyledTableRow>
+                  {results.map(result => (
+                    <StyledTableRow key={result.userId}>
+                      <StyledTableCell>{result.username}</StyledTableCell>
+                      <StyledTableCell>{result.vote}</StyledTableCell>
+                    </StyledTableRow>
+                  ))}
                 </TableBody>
               </Table>
             </Box>

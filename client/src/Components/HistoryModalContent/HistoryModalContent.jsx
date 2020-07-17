@@ -2,23 +2,22 @@ import React, { forwardRef } from 'react';
 import {
   Typography,
   IconButton,
-  Container,
   Table,
   TableContainer,
   TableHead,
   TableRow,
-  TableCell,
   TableBody,
   Box,
   Tabs,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-import MainBox from 'Components/MainBox';
 import { historyModalContentStyles, HeadTableCell } from './HistoryModalContentStyles';
 import { withStyles } from '@material-ui/styles';
 
-const HistoryModalContent = withStyles(historyModalContentStyles)(({ forwardedRef, children, onClose, classes }) => {
+const HistoryModalContent = ({ children, onClose, forwardedRef, modalTitle }) => {
+  const classes = historyModalContentStyles();
+
   return (
     <Tabs
       innerRef={forwardedRef}
@@ -32,7 +31,7 @@ const HistoryModalContent = withStyles(historyModalContentStyles)(({ forwardedRe
         <CloseIcon />
       </IconButton>
       <Typography variant="h6" component="h2" className={classes.title}>
-        History
+        {modalTitle}
       </Typography>
       <TableContainer component={Box}>
         <Table size="small" className={classes.table}>
@@ -49,6 +48,7 @@ const HistoryModalContent = withStyles(historyModalContentStyles)(({ forwardedRe
       </TableContainer>
     </Tabs>
   );
-});
+};
 
 export default forwardRef((props, ref) => <HistoryModalContent {...props} forwardedRef={ref} />);
+// export default HistoryModalContent;

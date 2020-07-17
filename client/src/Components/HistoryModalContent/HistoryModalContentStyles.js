@@ -1,7 +1,7 @@
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { TableCell } from '@material-ui/core';
 
-const historyModalContentStyles = theme => ({
+const historyModalContentStyles = makeStyles(theme => ({
   root: {
     position: 'relative',
     backgroundColor: theme.palette.grey.A400,
@@ -20,14 +20,14 @@ const historyModalContentStyles = theme => ({
   },
   closeButton: {
     position: 'absolute',
-    right: theme.spacing(3),
+    right: theme.spacing(1),
     top: theme.spacing(0),
     color: theme.palette.primary.main,
   },
   title: {
     marginTop: theme.spacing(1),
   },
-});
+}));
 
 const HeadTableCell = withStyles(theme => ({
   root: {

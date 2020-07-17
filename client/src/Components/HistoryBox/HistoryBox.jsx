@@ -5,6 +5,7 @@ import HistoryIcon from '@material-ui/icons/History';
 import historyBoxStyles from './HistoryBoxStyles';
 import HistoryModalContent from 'Components/HistoryModalContent/';
 import HistoryElement from 'Components/HistoryElement/HistoryElement';
+import tasks from './pseudoData';
 
 const HistoryBox = () => {
   const [open, setOpen] = useState(false);
@@ -23,12 +24,10 @@ const HistoryBox = () => {
     <Box display="inline-block">
       <Chip label="History" icon={<HistoryIcon />} color="primary" onClick={handleOpen} />
       <Modal open={open} className={classes.root} onClose={handleClose}>
-        <HistoryModalContent onClose={handleClose}>
-          <HistoryElement />
-          <HistoryElement />
-          <HistoryElement />
-          <HistoryElement />
-          <HistoryElement />
+        <HistoryModalContent onClose={handleClose} modalTitle="History">
+          {tasks.map(({ id, ...rest }) => {
+            return <HistoryElement key={id} {...rest} />;
+          })}
         </HistoryModalContent>
       </Modal>
     </Box>
