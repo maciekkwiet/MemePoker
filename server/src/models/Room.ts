@@ -1,5 +1,5 @@
 import { User } from '@models/User';
-import { Task } from '@models/Task';
+import { Task, Result } from '@models/Task';
 
 class Room {
   id: string;
@@ -45,7 +45,7 @@ class Room {
     return [...this.users];
   }
 
-  getVotes(): Array<Pick<User, 'name' | 'vote'>> {
+  getVotes(): Result[] {
     return this.users.map(user => ({ name: user.name, vote: user.vote }));
   }
 
@@ -59,6 +59,7 @@ class Room {
   }
 
   archiveTask() {
+    this.task.setEstimationTime();
     this.history.push(this.task);
   }
 }
