@@ -22,7 +22,7 @@ const HistoryModalContent = ({ children, onClose, modalTitle }) => {
       <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
         <CloseIcon />
       </IconButton>
-      <Typography variant="h6" component="h2" className={classes.title}>
+      <Typography variant="h6" component="h2">
         {modalTitle}
       </Typography>
       <TableContainer component={Box}>

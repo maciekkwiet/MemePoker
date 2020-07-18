@@ -22,11 +22,8 @@ const historyModalContentStyles = makeStyles(theme => ({
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
-    top: theme.spacing(0),
+    top: theme.spacing(0.75),
     color: theme.palette.primary.main,
-  },
-  title: {
-    marginTop: theme.spacing(1),
   },
 }));
 
