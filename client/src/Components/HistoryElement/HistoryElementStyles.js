@@ -27,9 +27,6 @@ const StyledTableCell = withStyles(theme => ({
 const MainTableCell = withStyles(theme => ({
   root: {
     borderBottom: 'none',
-    '&.MuiTableCell-sizeSmall': {
-      // padding: theme.spacing(1),
-    },
   },
 }))(TableCell);
 

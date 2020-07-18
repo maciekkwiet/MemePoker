@@ -10,9 +10,9 @@ const HistoryElement = ({ title, finalResult, estimationTime, analysis, results 
   const classes = historyElementStyles();
 
   let date = new Date(estimationTime * 1000);
-  const minutes = '0' + date.getMinutes();
-  const seconds = '0' + date.getSeconds();
-  var convertedTime = `${minutes.substr(-2)}m ${seconds.substr(-2)}s`;
+  const minutes = `0 ${date.getMinutes()}`;
+  const seconds = `0 ${date.getSeconds()}`;
+  const convertedTime = `${minutes.substr(-2)}m ${seconds.substr(-2)}s`;
 
   return (
     <Fragment>
@@ -33,15 +33,15 @@ const HistoryElement = ({ title, finalResult, estimationTime, analysis, results 
               <Box className={classes.analysis}>
                 <Box>
                   <Typography component="div">Average:</Typography>
-                  <Typography component="div">{analysis?.average}</Typography>
+                  <Typography component="div">{analysis.average}</Typography>
                 </Box>
                 <Box>
                   <Typography component="div">Median:</Typography>
-                  <Typography component="div">{analysis?.median}</Typography>
+                  <Typography component="div">{analysis.median}</Typography>
                 </Box>
                 <Box>
                   <Typography component="div">Standard deviation:</Typography>
-                  <Typography component="div">{analysis?.standardDeviation}</Typography>
+                  <Typography component="div">{analysis.standardDeviation}</Typography>
                 </Box>
               </Box>
             </Box>
