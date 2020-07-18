@@ -6,7 +6,7 @@ import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@mater
 import { useUserContext } from 'Contexts/UserContext';
 import cardStyles from './CardStyles';
 
-const MemeCard = ({ value, img, selected }) => {
+const MemeCard = ({ value, img, selected, clearSelect }) => {
   const { getUserName } = useUserContext();
   const sendEstimation = useEmit('USER_VOTED');
   const { roomId } = useParams();
@@ -16,8 +16,9 @@ const MemeCard = ({ value, img, selected }) => {
 
   const name = getUserName(roomId);
 
-  const onClickHandler = e => {
+  const onClickHandler = () => {
     sendEstimation({ name, value, roomId });
+    clearSelect();
     setSelect(true);
   };
 
