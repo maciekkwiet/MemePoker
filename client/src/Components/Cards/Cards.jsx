@@ -10,7 +10,7 @@ const Cards = () => {
   return (
     <div className={classes.root}>
       {cardsSchema.map(({ id, ...rest }) => (
-        <Card key={id} {...rest} />
+        <Card key={id} {...rest} selected={false} />
       ))}
     </div>
   );

@@ -5,7 +5,7 @@ const cardStyles = makeStyles(theme => ({
     backgroundColor: 'black',
     padding: 5,
   },
-  maintwo: {
+  selected: {
     backgroundColor: 'yellow',
     padding: 5,
   },
