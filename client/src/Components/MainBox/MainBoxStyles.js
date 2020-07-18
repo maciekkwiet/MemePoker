@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const mainBoxStyles = makeStyles(theme => ({
   root: {
+    maxHeight: '60vh',
     backgroundColor: theme.palette.grey.A400,
     marginBottom: theme.spacing(4),
     borderColor: theme.palette.primary.main,

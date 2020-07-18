@@ -7,7 +7,7 @@ const UserVotesStyles = makeStyles(theme => ({
   },
   isNotAdmin: {
     width: '100%',
-    height: '18rem',
+    height: '30.5vh',
     paddingLeft: theme.spacing(1),
     marginBottom: theme.spacing(3),
     display: 'flex',
@@ -15,7 +15,7 @@ const UserVotesStyles = makeStyles(theme => ({
   },
   isAdmin: {
     width: '100%',
-    height: '15rem',
+    height: '25.5vh',
     paddingLeft: theme.spacing(1),
     marginBottom: theme.spacing(2),
     display: 'flex',
