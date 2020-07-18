@@ -9,6 +9,11 @@ const HistoryElement = ({ title, finalResult, estimationTime, analysis, results 
   const [open, setOpen] = useState(false);
   const classes = historyElementStyles();
 
+  let date = new Date(estimationTime * 1000);
+  const minutes = '0' + date.getMinutes();
+  const seconds = '0' + date.getSeconds();
+  var convertedTime = `${minutes.substr(-2)}m ${seconds.substr(-2)}s`;
+
   return (
     <Fragment>
       <StyledTableRow>
@@ -19,7 +24,7 @@ const HistoryElement = ({ title, finalResult, estimationTime, analysis, results 
         </MainTableCell>
         <MainTableCell>{title}</MainTableCell>
         <MainTableCell>{finalResult}</MainTableCell>
-        <MainTableCell>{estimationTime}</MainTableCell>
+        <MainTableCell>{convertedTime}</MainTableCell>
       </StyledTableRow>
       <TableRow>
         <StyledTableCell colSpan={4}>
