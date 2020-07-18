@@ -28,6 +28,10 @@ const historyModalContentStyles = makeStyles(theme => ({
   title: {
     marginTop: theme.spacing(1),
   },
+  headerTitle: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
 }));
 
 const HeadTableCell = withStyles(theme => ({
