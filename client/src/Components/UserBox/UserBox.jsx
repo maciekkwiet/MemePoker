@@ -9,16 +9,16 @@ import InfoBox from 'Components/InfoBox';
 const UserBox = () => {
   const [task, setTask] = useState('waiting for first task');
   const { getUserName } = useUserContext();
-  const { response } = useRoomContext();
+  const { room } = useRoomContext();
   const { roomId } = useParams();
 
   useEffect(() => {
-    if (response) {
-      const { title } = response.room.task;
+    if (room) {
+      const { title } = room.task;
 
       if (title) setTask(title);
     }
-  }, [response]);
+  }, [room]);
 
   useSocket('TASK_UPDATED', ({ title }) => setTask(title));
 

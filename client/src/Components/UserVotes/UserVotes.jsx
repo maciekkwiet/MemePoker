@@ -7,27 +7,31 @@ import UserVotesStyles from './UserVotesStyles';
 
 const UserVotes = () => {
   const classes = UserVotesStyles();
-  const { response } = useRoomContext();
+  const { room } = useRoomContext();
   const [users, setUsers] = useState([]);
   const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);
 
   useEffect(() => {
-    if (response) {
-      const { users } = response.room;
+    if (room) {
+      const { users } = room;
       setUsers(users);
     }
-  }, [response]);
+  }, [room]);
+
   useSocket('USER_JOINED', users => {
     setUsers(users);
   });
+
   useSocket('USER_VOTED', userVoted => {
     const newUsers = users.map(user => (user.name === userVoted.name ? userVoted : user));
     setUsers(newUsers);
   });
+
   useSocket('CARDS_REVEALED', users => {
     setHasEveryoneVoted(true);
     setUsers(users);
   });
+
   useSocket('CLEAR_VOTES', users => {
     setHasEveryoneVoted(false);
     setUsers(users);

@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import * as yup from 'yup';
 
 import { useUserContext } from 'Contexts/UserContext';
+import { useRoomContext } from 'Contexts/RoomContext';
 import PromotedText from 'Components/PromotedText/PromotedText';
 import VoteButton from 'Components/VoteButton';
 import UserNameStyles from './UserNameStyles';
@@ -18,11 +19,12 @@ const Schema = yup.object().shape({
 
 const UserNameInput = () => {
   const classes = UserNameStyles();
-  const { defaultName, upsertRoomInfo } = useUserContext();
+  const { updateRoomInfo } = useRoomContext();
+  const { defaultName, saveToken } = useUserContext();
   const { roomId } = useParams();
   const { state } = useLocation();
   const history = useHistory();
-  const sendName = useEmit('USER_JOIN');
+  const joinRoom = useEmit('USER_JOIN');
 
   const { register, handleSubmit, errors } = useForm({
     validationSchema: Schema,
@@ -32,9 +34,9 @@ const UserNameInput = () => {
   });
 
   const onSubmitHandler = ({ name }) => {
-    upsertRoomInfo(roomId, name, state?.isAdmin);
-    sendName({ name, roomId }, data => {
-      console.log(data);
+    joinRoom({ name, roomId, isAdmin: state?.isAdmin }, ({ room, token }) => {
+      saveToken(token);
+      updateRoomInfo(room);
       history.push(`/room/${roomId}`);
     });
   };
