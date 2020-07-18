@@ -8,7 +8,7 @@ const UserVotesStyles = makeStyles(theme => ({
   isNotAdmin: {
     width: '100%',
     height: '30.5vh',
-    paddingLeft: theme.spacing(1),
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(3),
     display: 'flex',
     flexDirection: 'column',
@@ -16,13 +16,15 @@ const UserVotesStyles = makeStyles(theme => ({
   isAdmin: {
     width: '100%',
     height: '25.5vh',
-    paddingLeft: theme.spacing(1),
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
   },
   item: {
-    padding: theme.spacing(1, 0),
+    backgroundColor: theme.palette.secondary.main,
+    margin: theme.spacing(0, 1, 1, 1),
+    padding: theme.spacing(1, 1, 1, 0),
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -33,7 +35,7 @@ const UserVotesStyles = makeStyles(theme => ({
     flexDirection: 'row',
     alignItems: 'center',
     '& > div': {
-      marginRight: theme.spacing(2),
+      margin: theme.spacing(0, 1, 0, 1),
     },
   },
   userInfoVoted: {
@@ -41,7 +43,7 @@ const UserVotesStyles = makeStyles(theme => ({
     flexDirection: 'row',
     alignItems: 'center',
     '& > div': {
-      marginRight: theme.spacing(2),
+      margin: theme.spacing(0, 1, 0, 1),
     },
     color: theme.palette.primary.main,
   },
