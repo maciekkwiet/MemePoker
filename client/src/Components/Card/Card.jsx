@@ -1,21 +1,15 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core';
 
-import { useUserContext } from 'Contexts/UserContext';
 import cardStyles from './CardStyles';
 import { useBackend } from 'hooks/useBackend';
 
 const MemeCard = ({ value, img }) => {
   const classes = cardStyles();
 
-  const { getUserName } = useUserContext();
-  const { roomId } = useParams();
   const sendEstimation = useBackend('USER_VOTE');
 
-  const name = getUserName(roomId);
-
-  const onClickHandler = () => sendEstimation({ name, value, roomId });
+  const onClickHandler = () => sendEstimation({ value });
 
   return (
     <Card className={classes.main} variant="outlined">

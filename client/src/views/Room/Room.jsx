@@ -22,11 +22,11 @@ const Room = () => {
   const { roomId } = useParams();
   const reconnectUser = useBackend('USER_RECONNECT');
 
-  if (!room) {
-    if (token) {
-      reconnectUser({ token }, data => updateRoomInfo(data));
-      return <p>Reconnecting...</p>;
-    } else return <Redirect to={`/room/${roomId}/join`} />;
+  if (!room && token) {
+    reconnectUser({ token }, data => updateRoomInfo(data));
+    return <p>Reconnecting...</p>;
+  } else if (!room) {
+    return <Redirect to={`/room/${roomId}/join`} />;
   }
 
   return (

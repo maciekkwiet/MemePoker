@@ -11,7 +11,7 @@ export const auth: Middlewere = ([eventName, payload], next) => {
     const decoded: any = jwt.verify(token, process.env.JWT_SECRET ?? '');
 
     const room = rooms.getRoom(decoded?.roomId);
-    const user = room.getUser(decoded?.username);
+    const user = room.getUser(decoded?.user.name);
 
     payload.room = room;
     payload.user = user;

@@ -18,9 +18,11 @@ const Schema = yup.object().shape({
 });
 
 const UserNameInput = () => {
+  const defaultName = window.localStorage.getItem('DEFAULT_NAME') ?? '';
+
   const classes = UserNameStyles();
   const { updateRoomInfo } = useRoomContext();
-  const { defaultName, saveToken } = useUserContext();
+  const { saveToken } = useUserContext();
   const { roomId } = useParams();
   const { state } = useLocation();
   const history = useHistory();
@@ -34,7 +36,8 @@ const UserNameInput = () => {
   });
 
   const onSubmitHandler = ({ name }) => {
-    console.log(name);
+    window.localStorage.setItem('DEFAULT_NAME', name);
+
     joinRoom({ name, roomId, isAdmin: state?.isAdmin }, ({ room, token }) => {
       saveToken(token);
       updateRoomInfo(room);

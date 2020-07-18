@@ -1,6 +1,5 @@
 import React from 'react';
 import { Paper, Typography, Box } from '@material-ui/core';
-import { useParams } from 'react-router-dom';
 
 import { useBackend } from 'hooks/useBackend';
 import { useUserContext } from 'Contexts/UserContext';
@@ -10,18 +9,17 @@ import ResultsStyles from './ResultsStyles';
 
 const Results = () => {
   const classes = ResultsStyles();
-  const { roomId } = useParams();
   const sendVotesShow = useBackend('SHOW_VOTES');
   const sendVotesClear = useBackend('CLEAR_VOTES');
   const { getUser } = useUserContext();
-  const { isAdmin } = getUser(roomId);
+  const { isAdmin } = getUser();
 
   const onClickHandlerShow = () => {
-    sendVotesShow(roomId);
+    sendVotesShow();
   };
 
   const onClickHandlerClear = () => {
-    sendVotesClear(roomId);
+    sendVotesClear();
   };
 
   return (

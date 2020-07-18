@@ -10,7 +10,7 @@ const onUserJoin: EventHandler<UserJoinPayload> = ({ io, socket }, { name, roomI
   const message = `${name} has joined the room: ${roomId}`;
   room.addUser(user);
 
-  const token = jwt.sign({ username: user.name, roomId }, process.env.JWT_SECRET ?? '');
+  const token = jwt.sign({ user, roomId }, process.env.JWT_SECRET ?? '');
 
   socket.join(roomId);
   if (callback) callback({ room, token });
