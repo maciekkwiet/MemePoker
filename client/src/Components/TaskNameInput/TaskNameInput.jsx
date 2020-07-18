@@ -17,7 +17,7 @@ const TaskNameInput = () => {
   const onSubmitHandler = e => {
     e.preventDefault();
     const task = e.target.taskName.value;
-    sendTask({ roomId, task });
+    sendTask({ task });
     e.target.reset();
   };
 
@@ -25,7 +25,14 @@ const TaskNameInput = () => {
     <form onSubmit={onSubmitHandler}>
       <Box className={classes.root} mb={2}>
         <CustomLabel htmlFor="taskName">Task name:</CustomLabel>
-        <CustomInput id="taskName" name="taskName" variant="filled" placeholder="TYPE A TASK" fullWidth />
+        <CustomInput
+          id="taskName"
+          name="taskName"
+          variant="filled"
+          placeholder="TYPE A TASK"
+          fullWidth
+          autoComplete="off"
+        />
         <Button className={classes.btn} color="primary" variant="contained" type="submit">
           <SendIcon />
         </Button>

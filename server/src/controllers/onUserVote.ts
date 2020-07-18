@@ -3,8 +3,6 @@ import { EventHandler, UserVotePayload } from '@typings';
 const onUserVote: EventHandler<UserVotePayload> = ({ io }, { value, room, user }) => {
   let message: string;
 
-  console.log({ value, room, user });
-
   user.vote = value;
 
   if (room.hasEveryoneVoted()) {

@@ -1,5 +1,3 @@
-import * as socketio from 'socket.io';
-import { rooms } from '@models/Rooms';
 import { EventHandler, NewTaskPayload } from '@typings*';
 
 const onNewTask: EventHandler<NewTaskPayload> = ({ io, socket }, { task, room }) => {

@@ -1,5 +1,3 @@
-import * as socketio from 'socket.io';
-import { rooms } from '@models/Rooms';
 import { AuthPayload, EventHandler } from '@typings*';
 
 const onSubmitEstimation: EventHandler<AuthPayload> = ({ io }, { room }) => {
