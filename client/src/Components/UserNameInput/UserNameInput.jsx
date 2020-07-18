@@ -3,15 +3,14 @@ import { useParams, useHistory, useLocation } from 'react-router-dom';
 import { useEmit } from 'socketio-hooks';
 import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
+import * as yup from 'yup';
 
 import { useUserContext } from 'Contexts/UserContext';
 import PromotedText from 'Components/PromotedText/PromotedText';
-import UserNameStyles from './UserNameStyles';
 import VoteButton from 'Components/VoteButton';
+import UserNameStyles from './UserNameStyles';
 import photo1 from 'Assets/pngfind.com-meme-faces-png-13834.png';
 import photo2 from 'Assets/pngfind.com-memes-png-401574.png';
-
-const yup = require('yup');
 
 const Schema = yup.object().shape({
   name: yup.string().required(),
@@ -23,7 +22,7 @@ const UserNameInput = () => {
   const { roomId } = useParams();
   const { state } = useLocation();
   const history = useHistory();
-  const sendName = useEmit('USER_JOINED');
+  const sendName = useEmit('USER_JOIN');
 
   const { register, handleSubmit, errors } = useForm({
     validationSchema: Schema,
@@ -34,9 +33,10 @@ const UserNameInput = () => {
 
   const onSubmitHandler = ({ name }) => {
     upsertRoomInfo(roomId, name, state?.isAdmin);
-    sendName({ name, roomId });
-    history.push(`/room/${roomId}`);
-    console.log();
+    sendName({ name, roomId }, data => {
+      console.log(data);
+      history.push(`/room/${roomId}`);
+    });
   };
 
   return (

@@ -17,7 +17,7 @@ const socketRouter = (server: http.Server): void => {
   io.on('connect', (socket: socketio.Socket): void => {
     socket.use(auth);
 
-    socket.on('USER_JOINED', onUserJoin(io, socket));
+    socket.on('USER_JOIN', eventHandlerWrapper({ io, socket }, onUserJoin));
     socket.on('USER_VOTED', eventHandlerWrapper({ io, socket }, onUserVote));
     socket.on('NEW_TASK', eventHandlerWrapper({ io, socket }, onNewTask));
     socket.on('SUBMIT_ESTIMATION', eventHandlerWrapper({ io, socket }, onSubmitEstimation));
