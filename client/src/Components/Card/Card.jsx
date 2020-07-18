@@ -1,16 +1,17 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useEmit } from 'socketio-hooks';
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core';
 
 import { useUserContext } from 'Contexts/UserContext';
 import cardStyles from './CardStyles';
+import { useBackend } from 'hooks/useBackend';
 
 const MemeCard = ({ value, img }) => {
-  const { getUserName } = useUserContext();
-  const sendEstimation = useEmit('USER_VOTED');
-  const { roomId } = useParams();
   const classes = cardStyles();
+
+  const { getUserName } = useUserContext();
+  const { roomId } = useParams();
+  const sendEstimation = useBackend('USER_VOTE');
 
   const name = getUserName(roomId);
 

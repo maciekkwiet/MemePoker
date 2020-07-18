@@ -7,6 +7,7 @@ import UserVotesStyles from './UserVotesStyles';
 
 const UserVotes = () => {
   const classes = UserVotesStyles();
+
   const { room } = useRoomContext();
   const [users, setUsers] = useState([]);
   const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);

@@ -34,6 +34,7 @@ const UserNameInput = () => {
   });
 
   const onSubmitHandler = ({ name }) => {
+    console.log(name);
     joinRoom({ name, roomId, isAdmin: state?.isAdmin }, ({ room, token }) => {
       saveToken(token);
       updateRoomInfo(room);

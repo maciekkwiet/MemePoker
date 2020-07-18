@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Grid, Paper, Box } from '@material-ui/core';
-import { useEmit } from 'socketio-hooks';
 
+import { useBackend } from 'hooks/useBackend';
 import { useRoomContext } from 'Contexts/RoomContext';
 import { useUserContext } from 'Contexts/UserContext';
 import Cards from 'Components/Cards';
@@ -20,7 +20,7 @@ const Room = () => {
   const { token } = useUserContext();
   const { room, updateRoomInfo } = useRoomContext();
   const { roomId } = useParams();
-  const reconnectUser = useEmit('USER_RECONNECT');
+  const reconnectUser = useBackend('USER_RECONNECT');
 
   if (!room) {
     if (token) {

@@ -4,9 +4,6 @@ import CardsStyles from './CardsStyles';
 import { cardsSchema } from './cardsSchema';
 import Card from 'Components/Card';
 
-//To oczywiście będzie trzeba zastąpić
-// const bonifacyNumbers = [1, 2, 3, 5, 8, 13, 21, 34];
-
 const Cards = () => {
   const classes = CardsStyles();
 

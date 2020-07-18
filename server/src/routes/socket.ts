@@ -20,7 +20,7 @@ const socketRouter = (server: http.Server): void => {
 
     socket.on('USER_JOIN', eventHandlerWrapper({ io, socket }, onUserJoin));
     socket.on('USER_RECONNECT', eventHandlerWrapper({ io, socket }, onUserReconnect));
-    socket.on('USER_VOTED', eventHandlerWrapper({ io, socket }, onUserVote));
+    socket.on('USER_VOTE', eventHandlerWrapper({ io, socket }, onUserVote));
     socket.on('NEW_TASK', eventHandlerWrapper({ io, socket }, onNewTask));
     socket.on('SUBMIT_ESTIMATION', eventHandlerWrapper({ io, socket }, onSubmitEstimation));
     socket.on('CLEAR_VOTES', eventHandlerWrapper({ io, socket }, onClearVotes));

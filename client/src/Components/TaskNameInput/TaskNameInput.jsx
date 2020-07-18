@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Button } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
-import { useEmit } from 'socketio-hooks';
 import { useParams } from 'react-router-dom';
 import { useUserContext } from 'Contexts/UserContext';
 
+import { useBackend } from 'hooks/useBackend';
 import { TaskNameInputStyles, CustomLabel, CustomInput } from './TaskNameInputStyles';
 
 const TaskNameInput = () => {
@@ -12,7 +12,7 @@ const TaskNameInput = () => {
   const { roomId } = useParams();
   const { isAdmin } = getUser(roomId);
   const classes = TaskNameInputStyles();
-  const sendTask = useEmit('NEW_TASK');
+  const sendTask = useBackend('NEW_TASK');
 
   const onSubmitHandler = e => {
     e.preventDefault();

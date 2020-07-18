@@ -1,10 +1,11 @@
 import { EventHandler, AuthPayload } from '@typings*';
 
-const onUserReconnect: EventHandler<AuthPayload> = ({ io, socket }, { user, room }, callback) => {
-  const message = `${user} has joined the room: ${room.id}`;
-  console.log('onUserReconnect', socket.id);
+const onUserReconnect: EventHandler<AuthPayload> = ({ io, socket }, { user, room }, responseCallback) => {
+  const message = `${user.name} has reconnected to the room: ${room.id}`;
+
   socket.join(room.id);
-  if (callback) callback(room);
+
+  if (responseCallback) responseCallback(room);
 
   io.to(room.id).emit('FEED', message);
 };
