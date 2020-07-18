@@ -4,6 +4,7 @@ import CreateNewRoom from 'Components/CreateNewRoom/';
 import JoinRoom from 'Components/JoinRoom/JoinRoom';
 import MainBox from 'Components/MainBox';
 import PromotedText from 'Components/PromotedText';
+import TaskEstimatedBox from 'Components/TaskEstimatedBox/TaskEstimatedBox';
 
 import { Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
