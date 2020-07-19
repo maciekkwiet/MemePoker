@@ -29,7 +29,7 @@ const Results = () => {
       <Typography className={classes.header} component="div" variant="h5">
         Results
       </Typography>
-      <UserVotes />
+      <UserVotes className={classes.votes} />
       {isAdmin && (
         <Box className={classes.btnWrap}>
           <VoteBtn content="Show votes" btnFunction={onClickHandlerShow} />

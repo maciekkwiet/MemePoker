@@ -49,10 +49,10 @@ const UserVotes = () => {
   });
 
   return (
-    <Tabs orientation="vertical" variant="scrollable" value={false} scrollButtons="off" className={classes.tab}>
+    <div className={classes.root}>
       <Box className={users.map(user => (isAdmin ? classes.isAdmin : classes.isNotAdmin))}>
         {users.map(user => (
-          <Paper key={user.name} className={classes.item} elevation="4">
+          <Paper key={user.name} className={classes.item} elevation={4}>
             <Box className={user.vote ? classes.userInfoVoted : classes.userInfo}>
               <Avatar>{user.name.charAt(0).toUpperCase()}</Avatar>
               <Typography>{user.vote ? <b>{user.name} - [Voted]</b> : user.name}</Typography>
@@ -63,7 +63,7 @@ const UserVotes = () => {
           </Paper>
         ))}
       </Box>
-    </Tabs>
+    </div>
   );
 };
 

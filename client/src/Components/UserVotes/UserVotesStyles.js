@@ -1,13 +1,15 @@
 import { makeStyles } from '@material-ui/styles';
 
 const UserVotesStyles = makeStyles(theme => ({
-  tab: {
+  root: {
     border: `2px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',
+    marginBottom: theme.spacing(2),
+    overflowY: 'auto',
   },
   isNotAdmin: {
     width: '100%',
-    height: '30.5vh',
+    height: '28.5vh',
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(3),
     display: 'flex',
@@ -15,7 +17,7 @@ const UserVotesStyles = makeStyles(theme => ({
   },
   isAdmin: {
     width: '100%',
-    height: '25.5vh',
+    height: '24vh',
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(2),
     display: 'flex',
