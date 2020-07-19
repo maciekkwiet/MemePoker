@@ -1,14 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-  mainBox: {
-    maxHeight: '100%',
-  },
-  grid: {
-    maxHeight: '100%',
-  },
   main: {
-    maxHeight: '100%',
     alignContent: 'flex-start',
     marginRight: 0,
   },
@@ -35,9 +28,6 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.light,
     padding: theme.spacing(2),
     border: `1px solid ${theme.palette.primary.main}`,
-  },
-  results: {
-    minHeight: '100%',
   },
 }));
 

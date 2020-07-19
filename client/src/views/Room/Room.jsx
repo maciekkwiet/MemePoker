@@ -26,8 +26,8 @@ const Room = () => {
   if (!getUserName(roomId)) return <Redirect to={`/room/${roomId}/join`} />;
 
   return (
-    <MainBox className={classes.mainBox}>
-      <Grid container spacing={3} className={classes.grid}>
+    <MainBox>
+      <Grid container spacing={3}>
         <Grid item xs={12} md={8} className={classes.main}>
           <Navigation />
           <Box className={classes.top} component="div">
@@ -40,7 +40,7 @@ const Room = () => {
             <Cards />
           </Paper>
         </Grid>
-        <Grid className={classes.results} item xs={12} md={4}>
+        <Grid item xs={12} md={4}>
           <Results />
         </Grid>
       </Grid>

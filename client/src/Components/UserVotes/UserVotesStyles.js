@@ -1,27 +1,25 @@
 import { makeStyles } from '@material-ui/styles';
 
 const UserVotesStyles = makeStyles(theme => ({
-  root: {
-    border: `2px solid ${theme.palette.primary.main}`,
-    borderRadius: '5px',
-    marginBottom: theme.spacing(2),
-    overflowY: 'auto',
-  },
   isNotAdmin: {
     width: '100%',
-    height: '28.5vh',
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(3),
+    height: '32vh',
     display: 'flex',
     flexDirection: 'column',
+    border: `2px solid ${theme.palette.primary.main}`,
+    borderRadius: '5px',
+    overflowY: 'auto',
+    paddingTop: theme.spacing(1),
   },
   isAdmin: {
     width: '100%',
-    height: '24vh',
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(2),
+    height: '27vh',
     display: 'flex',
     flexDirection: 'column',
+    border: `2px solid ${theme.palette.primary.main}`,
+    borderRadius: '5px',
+    overflowY: 'auto',
+    paddingTop: theme.spacing(1),
   },
   item: {
     backgroundColor: theme.palette.secondary.main,
