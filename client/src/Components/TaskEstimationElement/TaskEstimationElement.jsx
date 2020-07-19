@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -8,8 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import { Collapse, Box } from '@material-ui/core';
+import TaskEstimationElementStyles from './TaskEstimationElementStyles';
+import Box from '@material-ui/core/Box';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -32,28 +32,30 @@ const StyledTableRow = withStyles(theme => ({
 function createData(median, average, standardDeviation) {
   return { median, average, standardDeviation };
 }
-
+const results = [
+  {
+    id: 1,
+    userId: 123,
+    username: 'piotrek',
+    vote: 5,
+  },
+  {
+    id: 2,
+    userId: 124,
+    username: 'jan',
+    vote: 3,
+  },
+  {
+    id: 3,
+    userId: 125,
+    username: 'adam',
+    vote: 1,
+  },
+];
 const rows = [createData(10, 159, 6.0)];
 
-const useStyles = makeStyles(theme => ({
-  taskVotes: {
-    margin: theme.spacing(0, 1),
-  },
-  title: { padding: theme.spacing(1, 1) },
-  taskVotesTekst: {
-    margin: theme.spacing(1, 1),
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: ' center',
-    padding: theme.spacing('1', '1'),
-  },
-  taskVotesUser: { color: '#7FFF00' },
-  taskVotes: { color: '	#9400D3' },
-  box: { padding: theme.spacing(2, 2) },
-}));
-
 const TaskEstimationElement = () => {
-  const classes = useStyles();
+  const classes = TaskEstimationElementStyles();
 
   return (
     <>
@@ -76,41 +78,21 @@ const TaskEstimationElement = () => {
             ))}
           </TableBody>
         </Table>
-        <TableRow>
-          <StyledTableCell colSpan={4}>
-            <Collapse unmountOnExit>
-              <Box my={2}>
-                <Box className={classes.analysis}>
-                  <Box>
-                    <Typography component="div">Average:</Typography>
-                    <Typography component="div">test</Typography>
-                  </Box>
-                  <Box>
-                    <Typography component="div">Median:</Typography>
-                    <Typography component="div">test</Typography>
-                  </Box>
-                  <Box>
-                    <Typography component="div">Standard deviation:</Typography>
-                    <Typography component="div">test</Typography>
-                  </Box>
-                </Box>
-              </Box>
-              <Box my={2}>
-                <Typography variant="button" gutterBottom component="div">
-                  Votes:
-                </Typography>
-                <Table size="small">
-                  <TableBody>
-                    <StyledTableRow>
-                      <StyledTableCell>xxxx</StyledTableCell>
-                      <StyledTableCell>xxxx</StyledTableCell>
-                    </StyledTableRow>
-                  </TableBody>
-                </Table>
-              </Box>
-            </Collapse>
-          </StyledTableCell>
-        </TableRow>
+        <Box my={2}>
+          <Typography className={classes.votesTitle} variant="button" gutterBottom component="div">
+            Votes:
+          </Typography>
+          <Table size="small">
+            <TableBody>
+              {results.map(result => (
+                <StyledTableRow key={result.userId}>
+                  <StyledTableCell align="left">{result.username}</StyledTableCell>
+                  <StyledTableCell align="right">{result.vote}</StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Box>
       </TableContainer>
     </>
   );
