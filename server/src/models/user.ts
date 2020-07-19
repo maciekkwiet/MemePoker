@@ -1,6 +1,6 @@
 class User {
-  readonly socket: string;
   readonly name: string;
+  readonly socket: string;
   readonly isAdmin: boolean;
 
   vote: number | null;
