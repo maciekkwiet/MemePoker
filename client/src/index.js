@@ -9,6 +9,7 @@ import { UserContextProvider } from 'Contexts/UserContext';
 import { RoomContextProvider } from 'Contexts/RoomContext';
 
 ReactDOM.render(
+
   <RoomContextProvider>
     <UserContextProvider>
       <SocketIOProvider url="/">
@@ -16,5 +17,6 @@ ReactDOM.render(
       </SocketIOProvider>
     </UserContextProvider>
   </RoomContextProvider>,
+
   document.getElementById('root')
 );

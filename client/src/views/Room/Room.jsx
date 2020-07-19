@@ -12,6 +12,7 @@ import Results from 'Components/Results';
 import Timer from 'Components/Timer';
 import { useRoomContext } from 'Contexts/RoomContext';
 import Navigation from 'Components/Navigation';
+import TaskEstimatedBox from 'Components/TaskEstimatedBox';
 
 const Room = () => {
   const classes = RoomStyles();
@@ -44,6 +45,7 @@ const Room = () => {
           <Results />
         </Grid>
       </Grid>
+      <TaskEstimatedBox />
     </MainBox>
   );
 };

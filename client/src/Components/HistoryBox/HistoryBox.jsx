@@ -21,6 +21,7 @@ const HistoryBox = () => {
     <Box display="inline-block">
       <Chip label="History" icon={<HistoryIcon />} color="primary" onClick={handleOpen} />
       <Dialog open={open} onClose={handleClose} scroll="paper" fullWidth={true} maxWidth="md">
+
         <HistoryModalContent onClose={handleClose} modalTitle="History">
           {tasks.map(({ id, ...rest }) => (
             <HistoryElement key={id} {...rest} />

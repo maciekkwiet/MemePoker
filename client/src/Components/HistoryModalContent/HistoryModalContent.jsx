@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+
 import {
   IconButton,
   Table,
@@ -19,6 +20,7 @@ const HistoryModalContent = ({ children, onClose, modalTitle }) => {
 
   return (
     <>
+
       <DialogTitle>{modalTitle}</DialogTitle>
       <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
         <CloseIcon />
@@ -39,6 +41,7 @@ const HistoryModalContent = ({ children, onClose, modalTitle }) => {
         </TableContainer>
       </DialogContent>
     </>
+
   );
 };
 
