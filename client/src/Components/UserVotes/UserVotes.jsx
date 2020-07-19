@@ -20,15 +20,14 @@ const UserVotes = () => {
   useSocket('USER_JOINED', users => {
     setUsers(users);
   });
+
   useSocket('USER_VOTED', userVoted => {
     const newUsers = users.map(user => (user.name === userVoted.name ? userVoted : user));
     setUsers(newUsers);
   });
-  useSocket('CARDS_REVEALED', users => {
-    setHasEveryoneVoted(true);
-    setUsers(users);
-  });
-  useSocket('CLEARED_VOTES', users => {
+
+
+  useSocket('CLEAR_VOTES', users => {
     setHasEveryoneVoted(false);
     setUsers(users);
   });
