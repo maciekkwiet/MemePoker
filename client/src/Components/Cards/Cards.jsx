@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useSocket } from 'socketio-hooks';
+
 
 import CardsStyles from './CardsStyles';
 import { cardsSchema } from './cardsSchema';
@@ -7,18 +9,21 @@ import Card from 'Components/Card';
 const Cards = () => {
   const classes = CardsStyles();
 
-  const [clear, setClear] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
 
-  const clearSelect = () => {
-    console.log('wywolana');
-    // dlaczego to sie nie chce przerenderować?
-    setClear(!clear);
+  const selectCard = id => {
+    setSelectedCard(id);
   };
+
+  useSocket('CLEARED_VOTES', () => {
+    setSelectedCard(null);
+  });
 
   return (
     <div className={classes.root}>
-      {cardsSchema.map(({ id, ...rest }) => (
-        <Card key={id} {...rest} selected={clear} clearSelect={clearSelect} />
+      {cardsSchema.map(card => (
+        <Card key={card.id} {...card} selected={selectedCard === card.id} selectCard={selectCard} />
+
       ))}
     </div>
   );

@@ -8,6 +8,8 @@ const cardStyles = makeStyles(theme => ({
   selected: {
     backgroundColor: 'yellow',
     padding: 5,
+    transform: 'scale(1.2)',
+
   },
   media: {
     backgroundColor: '#FFFF',

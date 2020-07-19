@@ -1,4 +1,5 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
+
 import { Collapse, Box, Typography, IconButton, Table, TableRow, TableBody } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
@@ -15,8 +16,9 @@ const HistoryElement = ({ title, finalResult, estimationTime, analysis, results 
   const convertedTime = `${minutes.substr(-2)}m ${seconds.substr(-2)}s`;
 
   return (
-    <Fragment>
-      <StyledTableRow>
+    <>
+      <StyledTableRow onClick={() => setOpen(!open)}>
+
         <MainTableCell>
           <IconButton className={classes.arrowIcon} aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
             {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
@@ -63,7 +65,8 @@ const HistoryElement = ({ title, finalResult, estimationTime, analysis, results 
           </Collapse>
         </StyledTableCell>
       </TableRow>
-    </Fragment>
+    </>
+
   );
 };
 
