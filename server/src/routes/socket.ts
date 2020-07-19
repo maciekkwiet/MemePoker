@@ -6,8 +6,6 @@ import { onNewTask } from '@controllers/onNewTask';
 import { onSubmitEstimation } from '@controllers/onSubmitEstimation';
 import { onClearVotes } from '@controllers/onClearVotes';
 import { onShowVotes } from '@controllers/onShowVotes';
-import { onReassignedResult } from '@controllers/onReassignedResult';
-import { onVoteAnalysis } from '@controllers/onVoteAnalysis';
 
 const socketController = (server: http.Server): void => {
   const io = socketio(server);
@@ -19,8 +17,6 @@ const socketController = (server: http.Server): void => {
     socket.on('SUBMIT_ESTIMATION', onSubmitEstimation(io, socket));
     socket.on('CLEAR_VOTES', onClearVotes(io, socket));
     socket.on('SHOW_VOTES', onShowVotes(io, socket));
-    socket.on('RESULT_REASSIGNED', onReassignedResult(io, socket));
-    socket.on('VOTE_ANALYZED', onVoteAnalysis(io, socket));
   });
 };
 
