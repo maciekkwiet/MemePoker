@@ -6,7 +6,7 @@ const onShowVotes = (io: socketio.Server, socket: socketio.Socket) => (roomId: s
     const room = rooms.getRoom(roomId);
     const message = `Votes: ${JSON.stringify(room.getVotes())} in room ${room.id}`;
     room.getTask().analyzeResults();
-    io.to(roomId).emit('ROOM_VOTES', room.getTask());
+    io.to(roomId).emit('CARDS_REVEALED', room.getTask());
     io.to(roomId).emit('FEED', message);
   } catch (ex) {
     console.error(ex);
