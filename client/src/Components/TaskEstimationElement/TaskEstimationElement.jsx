@@ -9,14 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-
-import Timeline from '@material-ui/lab/Timeline';
-import TimelineItem from '@material-ui/lab/TimelineItem';
-import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
-import TimelineConnector from '@material-ui/lab/TimelineConnector';
-import TimelineContent from '@material-ui/lab/TimelineContent';
-import TimelineDot from '@material-ui/lab/TimelineDot';
-import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+import { Collapse, Box } from '@material-ui/core';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -83,6 +76,41 @@ const TaskEstimationElement = () => {
             ))}
           </TableBody>
         </Table>
+        <TableRow>
+          <StyledTableCell colSpan={4}>
+            <Collapse unmountOnExit>
+              <Box my={2}>
+                <Box className={classes.analysis}>
+                  <Box>
+                    <Typography component="div">Average:</Typography>
+                    <Typography component="div">test</Typography>
+                  </Box>
+                  <Box>
+                    <Typography component="div">Median:</Typography>
+                    <Typography component="div">test</Typography>
+                  </Box>
+                  <Box>
+                    <Typography component="div">Standard deviation:</Typography>
+                    <Typography component="div">test</Typography>
+                  </Box>
+                </Box>
+              </Box>
+              <Box my={2}>
+                <Typography variant="button" gutterBottom component="div">
+                  Votes:
+                </Typography>
+                <Table size="small">
+                  <TableBody>
+                    <StyledTableRow>
+                      <StyledTableCell>xxxx</StyledTableCell>
+                      <StyledTableCell>xxxx</StyledTableCell>
+                    </StyledTableRow>
+                  </TableBody>
+                </Table>
+              </Box>
+            </Collapse>
+          </StyledTableCell>
+        </TableRow>
       </TableContainer>
     </>
   );
