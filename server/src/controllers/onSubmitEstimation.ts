@@ -11,7 +11,7 @@ const onSubmitEstimation = (io: socketio.Server, socket: socketio.Socket) => (ro
     const message: string = 'The task was saved in history';
 
     io.to(roomId).emit('FEED', message);
-    io.to(roomId).emit('HISTORY', room.history);
+    io.to(roomId).emit('TASK_ARCHIVED', room.history);
   } catch (ex) {
     console.error(ex);
   }

@@ -26,17 +26,19 @@ class Room {
     return roomAdmin;
   }
 
-  addUser(user: User): void {
-    let userName = user.name;
+  addUser(name: string, socket: string, isAdmin: boolean): User {
+    let userName = name;
     let numberUser = 0;
 
     while (this.isTaken(userName)) {
       numberUser++;
-      userName = user.name + `(${numberUser})`;
+      userName = name + '(' + numberUser + ')';
     }
 
-    user.name = userName;
+    name = userName;
+    const user = new User(name, socket, isAdmin);
     this.users.push(user);
+    return user;
   }
 
   private isTaken(userName: string): boolean {

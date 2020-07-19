@@ -1,5 +1,5 @@
 class User {
-  name: string;
+  readonly name: string;
   readonly socket: string;
   readonly isAdmin: boolean;
 
