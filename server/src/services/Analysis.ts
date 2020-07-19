@@ -15,7 +15,7 @@ class Analysis {
   }
   countStandardDeviation(array: number[]) {
     const squareDiffs = array.map(function (value) {
-      const diff = value - this.average;
+      const diff = value - array.reduce((a, b) => a + b, 0) / array.length;
       const sqrDiff = diff * diff;
       return sqrDiff;
     });
