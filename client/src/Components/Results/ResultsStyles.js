@@ -29,7 +29,6 @@ const ResultsStyles = makeStyles(theme => ({
     '& button': {
       marginBottom: theme.spacing(1),
     },
-    votes: {},
   },
 }));
 
