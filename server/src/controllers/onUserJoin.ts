@@ -1,6 +1,4 @@
 import * as socketio from 'socket.io';
-
-import { User } from '@models/User';
 import { rooms } from '@models/Rooms';
 
 interface UserJoinPayload {
@@ -11,10 +9,9 @@ interface UserJoinPayload {
 
 const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, roomId, isAdmin }: UserJoinPayload) => {
   try {
-    const user = new User(name, socket.id, isAdmin);
     const room = rooms.getRoom(roomId);
-    const message = `${name} has joined the room: ${roomId}`;
-    room.addUser(user);
+    const user = room.addUser(name, socket.id, isAdmin);
+    const message = `${user.name} has joined the room: ${roomId}`;
 
     socket.join(roomId.toString());
 
