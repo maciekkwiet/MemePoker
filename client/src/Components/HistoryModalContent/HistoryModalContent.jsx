@@ -1,25 +1,45 @@
 import React, { forwardRef } from 'react';
-import { Box, Typography, IconButton, Container } from '@material-ui/core';
+import {
+  IconButton,
+  Table,
+  TableContainer,
+  TableHead,
+  TableRow,
+  TableBody,
+  Box,
+  DialogContent,
+  DialogTitle,
+} from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-import MainBox from 'Components/MainBox';
-import historyModalContentStyles from './HistoryModalContentStyles';
-import { withStyles } from '@material-ui/styles';
+import { historyModalContentStyles, HeadTableCell } from './HistoryModalContentStyles';
 
-const HistoryModalContent = withStyles(historyModalContentStyles)(({ forwardedRef, children, onClose, classes }) => {
+const HistoryModalContent = ({ children, onClose, modalTitle }) => {
+  const classes = historyModalContentStyles();
+
   return (
-    <Container maxWidth="md" className={classes.root}>
-      <MainBox innerRef={forwardedRef} padding={2}>
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-          <CloseIcon />
-        </IconButton>
-        <Typography variant="h6" component="h2" gutterBottom>
-          History
-        </Typography>
-        <Box>{children}</Box>
-      </MainBox>
-    </Container>
+    <>
+      <DialogTitle>{modalTitle}</DialogTitle>
+      <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+        <CloseIcon />
+      </IconButton>
+      <DialogContent className={classes.root}>
+        <TableContainer component={Box}>
+          <Table size="small">
+            <TableHead>
+              <TableRow>
+                <HeadTableCell></HeadTableCell>
+                <HeadTableCell>Title</HeadTableCell>
+                <HeadTableCell>Final Result</HeadTableCell>
+                <HeadTableCell>Estimation time</HeadTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>{children}</TableBody>
+          </Table>
+        </TableContainer>
+      </DialogContent>
+    </>
   );
-});
+};
 
 export default forwardRef((props, ref) => <HistoryModalContent {...props} forwardedRef={ref} />);
