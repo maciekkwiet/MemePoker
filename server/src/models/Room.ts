@@ -2,14 +2,14 @@ import { User } from '@models/User';
 import { Task } from '@models/Task';
 
 class Room {
-  id: string;
+  readonly id: string;
   private task: Task;
-  private users: User[];
-  private history: Task[];
+  private readonly users: User[];
+  private readonly history: Task[];
 
   constructor(id: string) {
     this.id = id;
-    this.task = new Task('');
+    this.task = new Task('Waiting for first task to estimate...');
     this.users = [];
     this.history = [];
   }
@@ -20,10 +20,8 @@ class Room {
     return user;
   }
 
-  getAdmin(id: string): User | null {
-    const roomAdmin = this.users.find(user => user.isAdmin === true) ?? null;
-    if (roomAdmin?.socket === id) throw new Error('This user is admin in different room');
-    return roomAdmin;
+  isAdmin(name: string): Boolean {
+    return this.users.some(user => user.isAdmin === true && user.name === name);
   }
 
   addUser(user: User): void {
