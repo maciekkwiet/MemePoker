@@ -1,4 +1,4 @@
-import React, { forwardRef, Fragment } from 'react';
+import React, { forwardRef } from 'react';
 import {
   IconButton,
   Table,
@@ -18,7 +18,7 @@ const HistoryModalContent = ({ children, onClose, modalTitle }) => {
   const classes = historyModalContentStyles();
 
   return (
-    <Fragment>
+    <>
       <DialogTitle>{modalTitle}</DialogTitle>
       <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
         <CloseIcon />
@@ -38,7 +38,7 @@ const HistoryModalContent = ({ children, onClose, modalTitle }) => {
           </Table>
         </TableContainer>
       </DialogContent>
-    </Fragment>
+    </>
   );
 };
 
