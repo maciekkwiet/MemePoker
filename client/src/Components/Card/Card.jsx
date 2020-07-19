@@ -1,33 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useEmit, useSocket } from 'socketio-hooks';
+import { useEmit } from 'socketio-hooks';
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core';
 
 import { useUserContext } from 'Contexts/UserContext';
 import cardStyles from './CardStyles';
 
-const MemeCard = ({ value, img, selected, clearSelect }) => {
+const MemeCard = ({ value, img, selected, selectCard, id }) => {
   const { getUserName } = useUserContext();
   const sendEstimation = useEmit('USER_VOTED');
   const { roomId } = useParams();
   const classes = cardStyles();
 
-  const [select, setSelect] = useState(selected);
-
   const name = getUserName(roomId);
 
   const onClickHandler = () => {
     sendEstimation({ name, value, roomId });
-    clearSelect();
-    setSelect(true);
+    selectCard(id);
   };
 
-  useSocket('CLEARED_VOTES', () => {
-    setSelect(false);
-  });
-
   return (
-    <Card className={select ? classes.selected : classes.main} variant="outlined">
+    <Card className={selected ? classes.selected : classes.main} variant="outlined">
       <CardActionArea onClick={onClickHandler}>
         <CardMedia className={classes.media} component="img" alt={value} src={img} height="50" />
         <CardContent className={classes.content}>
