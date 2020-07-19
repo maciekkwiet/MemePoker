@@ -43,7 +43,7 @@ class Task {
       if (vote.vote !== null) voteValues.push(vote.vote);
     });
     this.Analysis = new Analysis(voteValues);
+    console.log(this.Analysis);
   }
 }
 export { Task };
-

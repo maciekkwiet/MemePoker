@@ -5,6 +5,7 @@ class Analysis {
 
   constructor(array: number[]) {
     this.average = array.reduce((a, b) => a + b, 0) / array.length;
+    console.log(this.average, array);
     this.median = this.countMedian(array);
     this.standardDeviation = this.countStandardDeviation(array);
   }
@@ -15,7 +16,7 @@ class Analysis {
   }
   countStandardDeviation(array: number[]) {
     const squareDiffs = array.map(function (value) {
-      const diff = value - this.average;
+      const diff = value - array.reduce((a, b) => a + b, 0) / array.length;
       const sqrDiff = diff * diff;
       return sqrDiff;
     });
