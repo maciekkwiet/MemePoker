@@ -6,10 +6,8 @@ import { useRoomContext } from 'Contexts/RoomContext';
 import { useSocket } from 'socketio-hooks';
 import InfoBox from 'Components/InfoBox';
 
-const UserBox = () => {
-  const [task, setTask] = useState('waiting for first task');
+const UserBox = ({ head, text }) => {
   const { getUserName } = useUserContext();
-  const { response } = useRoomContext();
   const { roomId } = useParams();
 
   useEffect(() => {
