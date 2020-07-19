@@ -5,6 +5,10 @@ const cardStyles = makeStyles(theme => ({
     backgroundColor: 'black',
     padding: 5,
   },
+  selected: {
+    backgroundColor: 'yellow',
+    padding: 5,
+  },
   media: {
     backgroundColor: '#FFFF',
     marginBottom: '5px',

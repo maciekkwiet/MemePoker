@@ -28,18 +28,13 @@ const UserVotes = () => {
     setHasEveryoneVoted(true);
     setUsers(users);
   });
-  useSocket('CLEAR_VOTES', users => {
+  useSocket('CLEARED_VOTES', users => {
     setHasEveryoneVoted(false);
     setUsers(users);
   });
 
   useSocket('ROOM_VOTES', users => {
     setHasEveryoneVoted(true);
-    setUsers(users);
-  });
-
-  useSocket('CLEARED_VOTES', users => {
-    setHasEveryoneVoted(false);
     setUsers(users);
   });
 
