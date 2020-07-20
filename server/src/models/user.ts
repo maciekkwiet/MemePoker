@@ -10,6 +10,7 @@ class User {
     this.socket = id;
     this.isAdmin = isAdmin;
     this.vote = null;
+    console.log('test');
   }
 }
 export { User };
