@@ -49,7 +49,7 @@ const UserVotes = () => {
   });
 
   return (
-    <Box className={users.map(user => (isAdmin ? classes.isAdmin : classes.isNotAdmin))}>
+    <Box className={isAdmin ? classes.isAdmin : classes.isNotAdmin}>
       {users.map(user => (
         <Paper key={user.name} className={classes.item} elevation={4}>
           <Box className={user.vote ? classes.userInfoVoted : classes.userInfo}>
