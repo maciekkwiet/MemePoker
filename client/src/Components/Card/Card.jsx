@@ -14,7 +14,10 @@ const MemeCard = ({ value, img }) => {
 
   const name = getUserName(roomId);
 
-  const onClickHandler = () => sendEstimation({ name, value, roomId });
+  const onClickHandler = () => {
+    sendEstimation({ name, value, roomId });
+    console.log('name', name);
+  };
 
   return (
     <Card className={classes.main} variant="outlined">

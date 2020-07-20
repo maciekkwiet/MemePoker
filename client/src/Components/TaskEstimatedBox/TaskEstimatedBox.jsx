@@ -3,28 +3,33 @@ import { Modal, Box } from '@material-ui/core';
 import TaskEstimatedBoxStyles from './TaskEstimatedBoxStyles';
 import TaskEstimatedChart from 'Components/TaskEstimatedChart/TaskEstimatedChart';
 import TaskEstimationElement from 'Components/TaskEstimationElement/TaskEstimationElement';
+import { useSocket } from 'socketio-hooks';
 
 const TaskEstimatedBox = () => {
-  const [open, setOpen] = useState(true);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
+  const [open, setOpen] = useState(false);
+  const [taskName, setTaskName] = useState();
+  const [userVoted, setUserVoted] = useState([]);
+  console.log('open', open);
   const handleClose = () => {
     setOpen(false);
   };
+
+  useSocket('ROOM_VOTES', user => {
+    setOpen(true);
+    setUserVoted([...user]);
+    console.log('dupa2cca', userVoted);
+    console.log('dupa2ccb', user);
+  });
+
+  useSocket('TASK_UPDATED', ({ title }) => setTaskName(title));
 
   const classes = TaskEstimatedBoxStyles();
 
   return (
     <Box display="inline-block">
       <Modal open={open} className={classes.root} onClose={handleClose}>
-        <TaskEstimatedChart onClose={handleClose} modalTitle="Task Name">
-          {/* {tasks.map(({ id, ...rest }) => {
-            return <HistoryElement key={id} {...rest} />;
-          })} */}
-          <TaskEstimationElement />
+        <TaskEstimatedChart onClose={handleClose} modalTitle={taskName}>
+          <TaskEstimationElement users={userVoted} />
         </TaskEstimatedChart>
       </Modal>
     </Box>

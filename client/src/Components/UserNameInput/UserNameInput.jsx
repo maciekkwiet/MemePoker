@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
-import { useEmit } from 'socketio-hooks';
+import { useEmit, useSocket } from 'socketio-hooks';
 import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
 
@@ -19,7 +19,7 @@ const Schema = yup.object().shape({
 
 const UserNameInput = () => {
   const classes = UserNameStyles();
-  const { defaultName, upsertRoomInfo } = useUserContext();
+  const { defaultName, upsertRoomInfo, getUserName } = useUserContext();
   const { roomId } = useParams();
   const { state } = useLocation();
   const history = useHistory();
@@ -35,9 +35,16 @@ const UserNameInput = () => {
   const onSubmitHandler = ({ name }) => {
     upsertRoomInfo(roomId, name, state?.isAdmin);
     sendName({ name, roomId });
+    console.log(name);
     history.push(`/room/${roomId}`);
-    console.log();
+    getUserName(roomId);
   };
+
+  useSocket('USER_JOIN', xxxxx => {
+    // setHasEveryoneVoted(true);
+    // setUsers(users);
+    console.log('XXXX');
+  });
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Paper, Typography, Box } from '@material-ui/core';
 import { useEmit } from 'socketio-hooks';
 import { useParams } from 'react-router-dom';
@@ -7,6 +7,7 @@ import { useUserContext } from 'Contexts/UserContext';
 import UserVotes from 'Components/UserVotes';
 import VoteBtn from 'Components/VoteButton';
 import ResultsStyles from './ResultsStyles';
+import { useSocket } from 'socketio-hooks';
 
 const Results = () => {
   const classes = ResultsStyles();
@@ -27,7 +28,7 @@ const Results = () => {
   return (
     <Paper className={classes.root}>
       <Typography className={classes.header} component="div" variant="h5">
-        Results
+        TEST
       </Typography>
       <UserVotes />
       {isAdmin && (

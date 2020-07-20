@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -8,15 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-
-import Timeline from '@material-ui/lab/Timeline';
-import TimelineItem from '@material-ui/lab/TimelineItem';
-import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
-import TimelineConnector from '@material-ui/lab/TimelineConnector';
-import TimelineContent from '@material-ui/lab/TimelineContent';
-import TimelineDot from '@material-ui/lab/TimelineDot';
-import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+import TaskEstimationElementStyles from './TaskEstimationElementStyles';
+import Box from '@material-ui/core/Box';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -39,28 +32,30 @@ const StyledTableRow = withStyles(theme => ({
 function createData(median, average, standardDeviation) {
   return { median, average, standardDeviation };
 }
-
+const results = [
+  {
+    id: 1,
+    userId: 123,
+    username: 'piotrek',
+    vote: 5,
+  },
+  {
+    id: 2,
+    userId: 124,
+    username: 'jan',
+    vote: 3,
+  },
+  {
+    id: 3,
+    userId: 125,
+    username: 'adam',
+    vote: 1,
+  },
+];
 const rows = [createData(10, 159, 6.0)];
 
-const useStyles = makeStyles(theme => ({
-  taskVotes: {
-    margin: theme.spacing(0, 1),
-  },
-  title: { padding: theme.spacing(1, 1) },
-  taskVotesTekst: {
-    margin: theme.spacing(1, 1),
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: ' center',
-    padding: theme.spacing('1', '1'),
-  },
-  taskVotesUser: { color: '#7FFF00' },
-  taskVotes: { color: '	#9400D3' },
-  box: { padding: theme.spacing(2, 2) },
-}));
-
-const TaskEstimationElement = () => {
-  const classes = useStyles();
+const TaskEstimationElement = ({ users }) => {
+  const classes = TaskEstimationElementStyles();
 
   return (
     <>
@@ -83,6 +78,21 @@ const TaskEstimationElement = () => {
             ))}
           </TableBody>
         </Table>
+        <Box my={2}>
+          <Typography className={classes.votesTitle} variant="button" gutterBottom component="div">
+            Votes:
+          </Typography>
+          <Table size="small">
+            <TableBody>
+              {users.map(user => (
+                <StyledTableRow>
+                  <StyledTableCell align="left">{user.name}</StyledTableCell>
+                  <StyledTableCell align="right">{user.vote}</StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Box>
       </TableContainer>
     </>
   );
