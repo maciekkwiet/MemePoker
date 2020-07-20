@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Avatar, Tabs, Paper } from '@material-ui/core';
+import { Box, Typography, Avatar, Paper } from '@material-ui/core';
 import { useSocket } from 'socketio-hooks';
 import { useParams } from 'react-router-dom';
 
@@ -22,25 +22,24 @@ const UserVotes = () => {
       setUsers(users);
     }
   }, [response]);
+
   useSocket('USER_JOINED', users => {
     setUsers(users);
   });
+
   useSocket('USER_VOTED', userVoted => {
     const newUsers = users.map(user => (user.name === userVoted.name ? userVoted : user));
     setUsers(newUsers);
   });
-  useSocket('CARDS_REVEALED', users => {
-    setHasEveryoneVoted(true);
-    setUsers(users);
-  });
+
   useSocket('CLEAR_VOTES', users => {
     setHasEveryoneVoted(false);
     setUsers(users);
   });
 
-  useSocket('ROOM_VOTES', users => {
+  useSocket('ROOM_VOTES', ({ votes }) => {
     setHasEveryoneVoted(true);
-    setUsers(users);
+    setUsers(votes);
   });
 
   useSocket('CLEARED_VOTES', users => {
@@ -48,6 +47,7 @@ const UserVotes = () => {
     setUsers(users);
   });
 
+  console.log(users);
   return (
     <Box className={isAdmin ? classes.isAdmin : classes.isNotAdmin}>
       {users.map(user => (

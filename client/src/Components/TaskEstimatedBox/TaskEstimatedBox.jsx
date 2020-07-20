@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import { Modal, Box } from '@material-ui/core';
 import TaskEstimatedBoxStyles from './TaskEstimatedBoxStyles';
-import TaskEstimatedChart from 'Components/TaskEstimatedChart/TaskEstimatedChart';
-import TaskEstimationElement from 'Components/TaskEstimationElement/TaskEstimationElement';
+import TaskEstimatedChart from 'Components/TaskEstimatedChart';
+import TaskEstimationElement from 'Components/TaskEstimationElement';
 
 const TaskEstimatedBox = () => {
-  const [open, setOpen] = useState(true);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  const classes = TaskEstimatedBoxStyles();
+  const [open, setOpen] = useState(false);
 
   const handleClose = () => {
     setOpen(false);
   };
-
-  const classes = TaskEstimatedBoxStyles();
 
   return (
     <Box display="inline-block">

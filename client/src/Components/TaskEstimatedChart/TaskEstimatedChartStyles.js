@@ -15,7 +15,7 @@ const TaskEstimatedChartStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  button: { justifyContent: 'center', textAlign: 'right', justifyContent: 'center' },
+  button: { justifyContent: 'center', textAlign: 'right' },
   root: {
     position: 'relative',
     backgroundColor: theme.palette.grey.A400,

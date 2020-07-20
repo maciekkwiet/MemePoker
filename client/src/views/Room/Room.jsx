@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Grid, Paper, Box } from '@material-ui/core';
+
 import Cards from 'Components/Cards';
 import { useUserContext } from 'Contexts/UserContext';
 import RoomStyles from './RoomStyles';
@@ -16,7 +17,7 @@ import TaskEstimatedBox from 'Components/TaskEstimatedBox';
 
 const Room = () => {
   const classes = RoomStyles();
-  const { getData } = useRoomContext(); // des. state from context
+  const { getData } = useRoomContext();
   const { getUserName } = useUserContext();
   const { roomId } = useParams();
 

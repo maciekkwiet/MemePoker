@@ -1,22 +1,12 @@
-import React, { useState } from 'react';
+import React, { forwardRef } from 'react';
 import TextField from '@material-ui/core/TextField';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import Grid from '@material-ui/core/Grid';
 
-import {
-  Typography,
-  IconButton,
-  Table,
-  TableContainer,
-  TableHead,
-  TableRow,
-  TableBody,
-  Box,
-  Paper,
-} from '@material-ui/core';
+import { Typography, IconButton, Table, TableContainer, TableBody, Box, Paper } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-import { TaskEstimatedChartStyles, HeadTableCell } from './TaskEstimatedChartStyles';
+import { TaskEstimatedChartStyles } from './TaskEstimatedChartStyles';
 
 const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
   const classes = TaskEstimatedChartStyles();
@@ -44,7 +34,6 @@ const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
               </div>
             </Grid>
             <Grid item xs={1} className={classes.button}>
-              {' '}
               <IconButton color="primary" aria-label="add to shopping cart" fullWidth>
                 <AddBoxIcon />
               </IconButton>
@@ -66,4 +55,4 @@ const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
   );
 };
 
-export default TaskEstimatedChart;
+export default forwardRef((props, ref) => <TaskEstimatedChart {...props} forwardedRef={ref} />);
