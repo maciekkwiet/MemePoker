@@ -31,10 +31,10 @@ const JoinRoom = () => {
           <div className={classes.formWrapperInput}>
             <TextField
               className={classes.input}
-              label="ROOM'S NUMBER"
+              label="ROOM NUMBER"
               variant="outlined"
               id="room"
-              placeholder="ROOM'S NUMBER"
+              placeholder="ROOM NUMBER"
               autoComplete="off"
               name="roomId"
               inputRef={register}

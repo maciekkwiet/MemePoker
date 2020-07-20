@@ -30,8 +30,9 @@ const UserContextProvider = ({ children }) => {
   };
 
   const getUserName = roomId => userRooms.find(room => room.roomId === roomId)?.name;
+  const getUser = roomId => userRooms.find(room => room.roomId === roomId);
 
-  const contextValue = { defaultName, upsertRoomInfo, getUserName, userRooms };
+  const contextValue = { defaultName, upsertRoomInfo, getUser, getUserName, userRooms };
 
   return <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>;
 };

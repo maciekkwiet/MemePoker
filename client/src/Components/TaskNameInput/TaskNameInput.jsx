@@ -3,13 +3,16 @@ import { Box, Button } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import { useEmit } from 'socketio-hooks';
 import { useParams } from 'react-router-dom';
+import { useUserContext } from 'Contexts/UserContext';
 
 import { TaskNameInputStyles, CustomLabel, CustomInput } from './TaskNameInputStyles';
 
 const TaskNameInput = () => {
+  const { getUser } = useUserContext();
+  const { roomId } = useParams();
+  const { isAdmin } = getUser(roomId);
   const classes = TaskNameInputStyles();
   const sendTask = useEmit('NEW_TASK');
-  const { roomId } = useParams();
 
   const onSubmitHandler = e => {
     e.preventDefault();
@@ -18,7 +21,7 @@ const TaskNameInput = () => {
     e.target.reset();
   };
 
-  return (
+  return isAdmin ? (
     <form onSubmit={onSubmitHandler}>
       <Box className={classes.root} mb={2}>
         <CustomLabel htmlFor="taskName">Task name:</CustomLabel>
@@ -28,6 +31,8 @@ const TaskNameInput = () => {
         </Button>
       </Box>
     </form>
+  ) : (
+    <div></div>
   );
 };
 

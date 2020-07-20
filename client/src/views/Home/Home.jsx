@@ -1,5 +1,4 @@
 import React from 'react';
-
 import HomeStyle from './HomeStyle';
 import CreateNewRoom from 'Components/CreateNewRoom/';
 import JoinRoom from 'Components/JoinRoom/JoinRoom';
