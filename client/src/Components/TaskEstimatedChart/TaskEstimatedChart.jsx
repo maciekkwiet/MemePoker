@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import { useEmit } from 'socketio-hooks';
 import Grid from '@material-ui/core/Grid';
-import VoteButton from '../VoteButton/VoteButton';
+import Button from '@material-ui/core/Button';
+import { useParams } from 'react-router-dom';
 
 import { Typography, IconButton, Table, TableContainer, TableBody, Box, Paper } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
@@ -9,6 +11,21 @@ import CloseIcon from '@material-ui/icons/Close';
 import { TaskEstimatedChartStyles } from './TaskEstimatedChartStyles';
 
 const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
+  const sendTask = useEmit('NEW_TASK');
+  const sendVotesClear = useEmit('CLEAR_VOTES');
+  const { roomId } = useParams();
+  const onHandleClick = e => {
+    e.preventDefault();
+    const task = e.target.result.value;
+    sendTask({ task });
+    e.target.reset();
+    console.log(task);
+  };
+  const onClickHandlerClear = () => {
+    sendVotesClear(roomId);
+    console.log(roomId);
+  };
+
   const classes = TaskEstimatedChartStyles();
   return (
     <>
@@ -21,7 +38,7 @@ const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
               </Typography>
             </Grid>
             <Grid item xs={2}>
-              <form onSubmit={'ADD FUNCTION'} autoComplete="off" className={classes.formWrapper}>
+              <form onSubmit={onHandleClick} autoComplete="off" className={classes.formWrapper}>
                 <div className={classes.wrapperInput}>
                   <TextField
                     label="Result"
@@ -34,13 +51,17 @@ const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
                   ></TextField>
                 </div>
                 <div>
-                  <VoteButton content={'ADD'} height={1.0} className={classes.button} />
+                  <Button className={classes.button} color="primary" variant="contained" type="submit">
+                    ADD
+                  </Button>
                 </div>
               </form>
             </Grid>
             <Grid item xs={3} className={classes.button}>
               {' '}
-              <VoteButton content={'REMOVE'} height={1.0} className={classes.button} />
+              <Button className={classes.button} color="primary" variant="contained" onClick={onClickHandlerClear}>
+                CLEAR
+              </Button>
             </Grid>
             <Grid item xs={1}>
               <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>

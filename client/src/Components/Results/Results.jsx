@@ -7,7 +7,6 @@ import { useUserContext } from 'Contexts/UserContext';
 import UserVotes from 'Components/UserVotes';
 import VoteBtn from 'Components/VoteButton';
 import ResultsStyles from './ResultsStyles';
-import { useSocket } from 'socketio-hooks';
 
 const Results = () => {
   const classes = ResultsStyles();

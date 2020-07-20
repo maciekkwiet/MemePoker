@@ -9,7 +9,6 @@ const TaskEstimatedBox = () => {
   const [open, setOpen] = useState(false);
   const [taskName, setTaskName] = useState();
   const [userVoted, setUserVoted] = useState([]);
-  console.log('open', open);
   const handleClose = () => {
     setOpen(false);
   };
