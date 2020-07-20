@@ -10,14 +10,19 @@ const TaskEstimatedBox = () => {
   const [open, setOpen] = useState(false);
   const [taskName, setTaskName] = useState();
   const [userVoted, setUserVoted] = useState([]);
+  const [resultsAnalysis, setresultsAnalysis] = useState({});
   const handleClose = () => {
     setOpen(false);
   };
 
-
-  useSocket('ROOM_VOTES', user => {
+  useSocket('ROOM_VOTES', ({ votes }) => {
     setOpen(true);
-    setUserVoted([...user]);
+    setUserVoted([...votes]);
+  });
+  useSocket('ROOM_VOTES', ({ task }) => {
+    console.log('analiza0,', task.Analysis);
+
+    setresultsAnalysis(task.Analysis);
   });
 
   useSocket('TASK_UPDATED', ({ title }) => setTaskName(title));
@@ -27,9 +32,8 @@ const TaskEstimatedBox = () => {
   return (
     <Box display="inline-block">
       <Modal open={open} className={classes.root} onClose={handleClose}>
-
         <TaskEstimatedChart onClose={handleClose} modalTitle={taskName}>
-          <TaskEstimationElement users={userVoted} />
+          <TaskEstimationElement users={userVoted} resultsAnalysis={resultsAnalysis} />
         </TaskEstimatedChart>
       </Modal>
     </Box>
