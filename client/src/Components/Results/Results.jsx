@@ -11,8 +11,7 @@ const Results = () => {
   const classes = ResultsStyles();
   const sendVotesShow = useBackend('SHOW_VOTES');
   const sendVotesClear = useBackend('CLEAR_VOTES');
-  const { getUser } = useUserContext();
-  const { isAdmin } = getUser();
+  const { isAdmin } = useUserContext().user;
 
   const onClickHandlerShow = () => {
     sendVotesShow();

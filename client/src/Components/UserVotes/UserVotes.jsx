@@ -11,8 +11,7 @@ const UserVotes = () => {
   const { room } = useRoomContext();
   const [users, setUsers] = useState(room.users);
   const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);
-  const { getUser } = useUserContext();
-  const { isAdmin } = getUser();
+  const { isAdmin } = useUserContext().user;
 
   useSocket('USER_JOINED', users => {
     setUsers(users);
