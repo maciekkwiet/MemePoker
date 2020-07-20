@@ -14,7 +14,7 @@ const Cards = () => {
     setSelectedCard(id);
   };
 
-  useSocket('CLEARED_VOTES', () => {
+  useSocket('VOTES_CLEARED', () => {
     setSelectedCard(null);
   });
 

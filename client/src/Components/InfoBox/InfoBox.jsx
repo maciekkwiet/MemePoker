@@ -6,7 +6,6 @@ import InfoBoxStyles from './InfoBoxStyles';
 
 const InfoBox = ({ title, value, align = 'center', padding = 1 }) => {
   const classes = InfoBoxStyles();
-
   return (
     <Paper elevation={0} className={classes.root} style={{ padding: theme.spacing(padding) }}>
       <Typography component="div" variant="h6" align={align}>

@@ -11,7 +11,7 @@ const onNewTask: EventHandler<NewTaskPayload> = ({ io }, { user, room, task }) =
 
   io.to(room.id).emit('FEED', message);
   io.to(room.id).emit('TASK_UPDATED', room.getTask());
-  io.to(room.id).emit('CLEAR_VOTES', room.getUsers());
+  io.to(room.id).emit('VOTES_CLEARED', room.getUsers());
 };
 
 export { onNewTask };

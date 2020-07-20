@@ -1,6 +1,5 @@
 import * as jwt from 'jsonwebtoken';
 
-import { User } from '@models/User';
 import { rooms } from '@models/Rooms';
 import { EventHandler, UserJoinPayload } from '@typings*';
 

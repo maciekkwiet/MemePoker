@@ -7,7 +7,7 @@ const onClearVotes: EventHandler<AuthPayload> = ({ io }, { room }) => {
 
   io.to(room.id).emit('FEED', message);
 
-  io.to(room.id).emit('CLEARED_VOTES', room.getUsers());
+  io.to(room.id).emit('VOTES_CLEARED', room.getUsers());
 };
 
 export { onClearVotes };
