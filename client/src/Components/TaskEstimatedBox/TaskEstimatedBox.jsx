@@ -13,7 +13,7 @@ const TaskEstimatedBox = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
+  s;
   useSocket('ROOM_VOTES', user => {
     setOpen(true);
     setUserVoted([...user]);
