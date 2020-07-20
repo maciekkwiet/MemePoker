@@ -1,9 +1,4 @@
-import { AuthPayload, EventHandler } from '@typings*';
-
-interface EstimationResult extends AuthPayload {
-  result: string;
-  roomId: string;
-}
+import { EstimationResult, EventHandler } from '@typings*';
 
 const onSubmitEstimation: EventHandler<EstimationResult> = ({ io, socket }, { room, result }) => {
   room.getAdmin(socket.id);

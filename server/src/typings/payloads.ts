@@ -20,3 +20,8 @@ export interface UserVotePayload extends AuthPayload {
 export interface NewTaskPayload extends AuthPayload {
   task: string;
 }
+
+export interface EstimationResult extends AuthPayload {
+  result: string;
+  roomId: string;
+}

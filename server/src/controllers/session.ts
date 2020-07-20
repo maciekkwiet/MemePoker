@@ -1,13 +1,9 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
 import { rooms } from '@models/Rooms';
 
 const router = Router();
 
-interface Query {
-  roomId?: string;
-}
-
-router.post('/', async (req: Request, res: Response) => {
+router.post('/', async (req, res) => {
   try {
     const room = rooms.createRoom();
     res.json({ room });
