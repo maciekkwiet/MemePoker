@@ -33,3 +33,4 @@ const HistoryBox = () => {
 };
 
 export default HistoryBox;
+

@@ -20,6 +20,7 @@ const MemeCard = ({ value, img, selected, selectCard, id }) => {
   const onClickHandler = () => {
     sendEstimation({ name, value, roomId });
     selectCard(id);
+
   };
 
   return (

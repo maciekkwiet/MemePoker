@@ -1,53 +1,70 @@
-import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import AddBoxIcon from '@material-ui/icons/AddBox';
-import Grid from '@material-ui/core/Grid';
 
-import {
-  Typography,
-  IconButton,
-  Table,
-  TableContainer,
-  TableHead,
-  TableRow,
-  TableBody,
-  Box,
-  Paper,
-} from '@material-ui/core';
+import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import { useEmit } from 'socketio-hooks';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import { useParams } from 'react-router-dom';
+
+import { Typography, IconButton, Table, TableContainer, TableBody, Box, Paper } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-import { TaskEstimatedChartStyles, HeadTableCell } from './TaskEstimatedChartStyles';
+import { TaskEstimatedChartStyles } from './TaskEstimatedChartStyles';
 
 const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
+  const sendTask = useEmit('NEW_TASK');
+  const sendVotesClear = useEmit('CLEAR_VOTES');
+  const { roomId } = useParams();
+  const onHandleClick = e => {
+    e.preventDefault();
+    const task = e.target.result.value;
+    sendTask({ task });
+    e.target.reset();
+    console.log(task);
+  };
+  const onClickHandlerClear = () => {
+    sendVotesClear(roomId);
+    console.log(roomId);
+  };
+
   const classes = TaskEstimatedChartStyles();
   return (
     <>
       <Paper className={classes.root}>
         <div className={classes.headerTitle}>
           <Grid container className={classes.input}>
-            <Grid className={classes.title} item xs={8}>
+
+            <Grid className={classes.title} item xs={3}>
               <Typography variant="h6" component="h2" className={classes.title}>
                 {modalTitle}
               </Typography>
             </Grid>
             <Grid item xs={2}>
-              <div className={classes.wrapperInput}>
-                <TextField
-                  label="Result"
-                  variant="outlined"
-                  id="result"
-                  autoComplete="off"
-                  name="result"
-                  size="small"
-                  fullWidth
-                ></TextField>
-              </div>
+
+              <form onSubmit={onHandleClick} autoComplete="off" className={classes.formWrapper}>
+                <div className={classes.wrapperInput}>
+                  <TextField
+                    label="Result"
+                    variant="outlined"
+                    id="result"
+                    autoComplete="off"
+                    name="result"
+                    size="small"
+                    fullWidth
+                  ></TextField>
+                </div>
+                <div>
+                  <Button className={classes.button} color="primary" variant="contained" type="submit">
+                    ADD
+                  </Button>
+                </div>
+              </form>
             </Grid>
-            <Grid item xs={1} className={classes.button}>
+            <Grid item xs={3} className={classes.button}>
               {' '}
-              <IconButton color="primary" aria-label="add to shopping cart" fullWidth>
-                <AddBoxIcon />
-              </IconButton>
+              <Button className={classes.button} color="primary" variant="contained" onClick={onClickHandlerClear}>
+                CLEAR
+              </Button>
             </Grid>
             <Grid item xs={1}>
               <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>

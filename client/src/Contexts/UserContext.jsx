@@ -22,6 +22,7 @@ const UserContextProvider = ({ children }) => {
       room.isAdmin = !!room.isAdmin;
     } else {
       newUserRooms.push({ roomId, name, isAdmin });
+      console.log('name context', name);
     }
 
     changeDefaultName(name);
@@ -30,6 +31,8 @@ const UserContextProvider = ({ children }) => {
   };
 
   const getUserName = roomId => userRooms.find(room => room.roomId === roomId)?.name;
+  console.log('dupa', userRooms);
+
   const getUser = roomId => userRooms.find(room => room.roomId === roomId);
 
   const contextValue = { defaultName, upsertRoomInfo, getUser, getUserName, userRooms };

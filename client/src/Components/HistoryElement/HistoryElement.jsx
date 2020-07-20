@@ -71,3 +71,4 @@ const HistoryElement = ({ title, finalResult, estimationTime, analysis, results 
 };
 
 export default HistoryElement;
+

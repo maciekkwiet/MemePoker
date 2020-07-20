@@ -8,6 +8,7 @@ const historyModalContentStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: {
       height: '90vh',
     },
+
   },
   closeButton: {
     position: 'absolute',
@@ -15,6 +16,7 @@ const historyModalContentStyles = makeStyles(theme => ({
     top: theme.spacing(0.75),
     color: theme.palette.primary.main,
   },
+
 }));
 
 const HeadTableCell = withStyles(theme => ({

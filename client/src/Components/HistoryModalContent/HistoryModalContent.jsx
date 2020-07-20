@@ -46,3 +46,4 @@ const HistoryModalContent = ({ children, onClose, modalTitle }) => {
 };
 
 export default forwardRef((props, ref) => <HistoryModalContent {...props} forwardedRef={ref} />);
+
