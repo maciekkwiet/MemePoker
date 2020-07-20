@@ -1,4 +1,3 @@
-
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { useEmit } from 'socketio-hooks';
@@ -31,53 +30,43 @@ const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
   return (
     <>
       <Paper className={classes.root}>
-        <div className={classes.headerTitle}>
-          <Grid container className={classes.input}>
+        <Typography variant="h6" component="h2" className={classes.title}>
+          {modalTitle}
+        </Typography>
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+          <CloseIcon />
+        </IconButton>
 
-            <Grid className={classes.title} item xs={3}>
-              <Typography variant="h6" component="h2" className={classes.title}>
-                {modalTitle}
-              </Typography>
-            </Grid>
-            <Grid item xs={2}>
-
-              <form onSubmit={onHandleClick} autoComplete="off" className={classes.formWrapper}>
-                <div className={classes.wrapperInput}>
-                  <TextField
-                    label="Result"
-                    variant="outlined"
-                    id="result"
-                    autoComplete="off"
-                    name="result"
-                    size="small"
-                    fullWidth
-                  ></TextField>
-                </div>
-                <div>
-                  <Button className={classes.button} color="primary" variant="contained" type="submit">
-                    ADD
-                  </Button>
-                </div>
-              </form>
-            </Grid>
-            <Grid item xs={3} className={classes.button}>
-              {' '}
-              <Button className={classes.button} color="primary" variant="contained" onClick={onClickHandlerClear}>
-                CLEAR
-              </Button>
-            </Grid>
-            <Grid item xs={1}>
-              <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-                <CloseIcon />
-              </IconButton>
-            </Grid>
-          </Grid>
-        </div>
         <TableContainer component={Box}>
           <Table size="small" className={classes.table}>
             <TableBody>{children}</TableBody>
           </Table>
         </TableContainer>
+        <div className={classes.wrapper}>
+          <form onSubmit={onHandleClick} autoComplete="off" className={classes.wrapperInput}>
+            <div>
+              {' '}
+              <TextField
+                label="Final estimation"
+                variant="outlined"
+                id="result"
+                autoComplete="off"
+                name="result"
+                size="small"
+                className={classes.wrapperInput}
+              ></TextField>{' '}
+            </div>
+            <div>
+              {' '}
+              <Button className={classes.button} color="primary" variant="contained" onClick={onClickHandlerClear}>
+                REESTIMATE
+              </Button>{' '}
+              <Button className={classes.button} color="primary" variant="contained" type="submit">
+                SUBMIT
+              </Button>
+            </div>
+          </form>
+        </div>
       </Paper>
     </>
   );
