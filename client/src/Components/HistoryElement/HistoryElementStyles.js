@@ -16,6 +16,8 @@ const historyElementStyles = makeStyles(theme => ({
 
 const StyledTableCell = withStyles(theme => ({
   root: {
+    width: '100%',
+
     borderBottom: 'none',
     '&.MuiTableCell-sizeSmall': {
       paddingTop: 0,
@@ -27,9 +29,7 @@ const StyledTableCell = withStyles(theme => ({
 const MainTableCell = withStyles(theme => ({
   root: {
     borderBottom: 'none',
-    '&.MuiTableCell-sizeSmall': {
-      padding: theme.spacing(1),
-    },
+
   },
 }))(TableCell);
 

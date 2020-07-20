@@ -1,3 +1,4 @@
+
 import { User } from '@models/User';
 import { Task } from '@models/Task';
 
@@ -71,7 +72,8 @@ class Room {
     this.task = new Task(title);
   }
 
-  archiveTask(): void {
+  archiveTask() {
+    this.task.setEstimationTime();
     this.history.push(this.task);
   }
 }

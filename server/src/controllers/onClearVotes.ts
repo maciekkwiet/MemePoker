@@ -8,7 +8,6 @@ const onClearVotes = (io: socketio.Server, socket: socketio.Socket) => (roomId: 
     room.clearVotes();
 
     const message = `All votes in room ${room.id} have been reset`;
-
     io.to(roomId).emit('FEED', message);
 
     io.to(roomId).emit('CLEARED_VOTES', room.getUsers());

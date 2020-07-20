@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const TaskEstimatedElementStyles = makeStyles(theme => ({
+
   root: {
     display: 'flex',
     flexFlow: 'column nowrap',

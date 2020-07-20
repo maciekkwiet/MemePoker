@@ -8,6 +8,7 @@ const TaskEstimatedBoxStyles = makeStyles(theme => ({
     alignItems: 'center',
     position: 'relative',
   },
+
   headerTitle: {
     display: 'flex',
     flexDirection: 'row',

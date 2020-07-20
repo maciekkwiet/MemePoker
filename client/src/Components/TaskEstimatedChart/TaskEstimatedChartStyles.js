@@ -11,6 +11,7 @@ const TaskEstimatedChartStyles = makeStyles(theme => ({
     color: '#FFFF',
     fontSize: '30px',
   },
+
   input: { margin: theme.spacing(2) },
   button: { width: '20px' },
   formWrapper: { display: 'flex', flexDirection: 'row' },

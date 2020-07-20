@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
+
 import {
-  Typography,
   IconButton,
   Table,
   TableContainer,
@@ -8,7 +8,8 @@ import {
   TableRow,
   TableBody,
   Box,
-  Paper,
+  DialogContent,
+  DialogTitle,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -18,28 +19,31 @@ const HistoryModalContent = ({ children, onClose, modalTitle }) => {
   const classes = historyModalContentStyles();
 
   return (
-    <Paper className={classes.root}>
+    <>
+
+      <DialogTitle>{modalTitle}</DialogTitle>
       <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
         <CloseIcon />
       </IconButton>
-      <Typography variant="h6" component="h2" className={classes.title}>
-        {modalTitle}
-      </Typography>
-      <TableContainer component={Box}>
-        <Table size="small" className={classes.table}>
-          <TableHead>
-            <TableRow>
-              <HeadTableCell></HeadTableCell>
-              <HeadTableCell>Title</HeadTableCell>
-              <HeadTableCell>Final Result</HeadTableCell>
-              <HeadTableCell>Estimation time</HeadTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>{children}</TableBody>
-        </Table>
-      </TableContainer>
-    </Paper>
+      <DialogContent className={classes.root}>
+        <TableContainer component={Box}>
+          <Table size="small">
+            <TableHead>
+              <TableRow>
+                <HeadTableCell></HeadTableCell>
+                <HeadTableCell>Title</HeadTableCell>
+                <HeadTableCell>Final Result</HeadTableCell>
+                <HeadTableCell>Estimation time</HeadTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>{children}</TableBody>
+          </Table>
+        </TableContainer>
+      </DialogContent>
+    </>
+
   );
 };
 
 export default forwardRef((props, ref) => <HistoryModalContent {...props} forwardedRef={ref} />);
+

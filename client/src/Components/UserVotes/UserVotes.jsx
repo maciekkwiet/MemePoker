@@ -19,28 +19,24 @@ const UserVotes = () => {
   }, [response]);
   useSocket('USER_JOINED', users => {
     setUsers(users);
-    console.log(users);
   });
 
   useSocket('USER_VOTED', userVoted => {
     const newUsers = users.map(user => (user.name === userVoted.name ? userVoted : user));
     setUsers(newUsers);
-    console.log(newUsers);
-  });
-
-  useSocket('CLEAR_VOTES', users => {
-    setHasEveryoneVoted(false);
-    setUsers(users);
-  });
-
-  useSocket('ROOM_VOTES', users => {
-    setHasEveryoneVoted(true);
-    setUsers(users);
   });
 
   useSocket('CLEARED_VOTES', users => {
+
     setHasEveryoneVoted(false);
     setUsers(users);
+  });
+
+
+  useSocket('ROOM_VOTES', ({ votes }) => {
+    setHasEveryoneVoted(true);
+    setUsers(votes);
+
   });
 
   return (
@@ -61,3 +57,4 @@ const UserVotes = () => {
 };
 
 export default UserVotes;
+

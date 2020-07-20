@@ -15,7 +15,7 @@ const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, ro
 
     socket.join(roomId.toString());
 
-    io.to(roomId).emit('USER_JOIN', room.getUsers());
+    io.to(roomId).emit('USER_JOINED', room.getUsers());
     io.to(roomId).emit('FEED', message);
   } catch (ex) {
     console.error(ex);
@@ -23,3 +23,4 @@ const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, ro
 };
 
 export { onUserJoin };
+

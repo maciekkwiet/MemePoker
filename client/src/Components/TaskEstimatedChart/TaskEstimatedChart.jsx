@@ -1,3 +1,4 @@
+
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { useEmit } from 'socketio-hooks';
@@ -32,12 +33,14 @@ const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
       <Paper className={classes.root}>
         <div className={classes.headerTitle}>
           <Grid container className={classes.input}>
+
             <Grid className={classes.title} item xs={3}>
               <Typography variant="h6" component="h2" className={classes.title}>
                 {modalTitle}
               </Typography>
             </Grid>
             <Grid item xs={2}>
+
               <form onSubmit={onHandleClick} autoComplete="off" className={classes.formWrapper}>
                 <div className={classes.wrapperInput}>
                   <TextField
