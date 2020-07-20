@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Paper, Typography, Box } from '@material-ui/core';
 import { useEmit } from 'socketio-hooks';
 import { useParams } from 'react-router-dom';

@@ -33,8 +33,6 @@ function createData(median, average, standardDeviation) {
   return { median, average, standardDeviation };
 }
 
-const rows = [createData(10, 159, 6.0)];
-
 const TaskEstimationElement = ({ users, resultsAnalysis }) => {
   const classes = TaskEstimationElementStyles();
 
