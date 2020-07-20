@@ -1,4 +1,3 @@
-
 import * as socketio from 'socket.io';
 import { rooms } from '@models/Rooms';
 
@@ -21,7 +20,7 @@ const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, t
 
     io.to(roomId).emit('FEED', message);
     io.to(roomId).emit('TASK_UPDATED', room.getTask());
-    io.to(roomId).emit('CLEAR_VOTES', room.getUsers());
+    io.to(roomId).emit('CLEARED_VOTES', room.getUsers());
   } catch (ex) {
     console.error(ex);
   }
