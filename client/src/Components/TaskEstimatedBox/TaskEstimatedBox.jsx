@@ -17,8 +17,6 @@ const TaskEstimatedBox = () => {
   useSocket('ROOM_VOTES', user => {
     setOpen(true);
     setUserVoted([...user]);
-    console.log('dupa2cca', userVoted);
-    console.log('dupa2ccb', user);
   });
 
   useSocket('TASK_UPDATED', ({ title }) => setTaskName(title));

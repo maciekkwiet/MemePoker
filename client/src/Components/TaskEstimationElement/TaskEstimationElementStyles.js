@@ -8,6 +8,11 @@ const TaskEstimatedElementStyles = makeStyles(theme => ({
     alignItems: 'center',
     position: 'relative',
   },
+
+  votesTitle: {
+    marginLeft: theme.spacing(2),
+    fontSize: '20px',
+  },
 }));
 
 export default TaskEstimatedElementStyles;

@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
-import AddBoxIcon from '@material-ui/icons/AddBox';
 import Grid from '@material-ui/core/Grid';
+import VoteButton from '../VoteButton/VoteButton';
 
-import {
-  Typography,
-  IconButton,
-  Table,
-  TableContainer,
-  TableHead,
-  TableRow,
-  TableBody,
-  Box,
-  Paper,
-} from '@material-ui/core';
+import { Typography, IconButton, Table, TableContainer, TableBody, Box, Paper } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-import { TaskEstimatedChartStyles, HeadTableCell } from './TaskEstimatedChartStyles';
+import { TaskEstimatedChartStyles } from './TaskEstimatedChartStyles';
 
 const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
   const classes = TaskEstimatedChartStyles();
@@ -25,29 +15,32 @@ const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
       <Paper className={classes.root}>
         <div className={classes.headerTitle}>
           <Grid container className={classes.input}>
-            <Grid className={classes.title} item xs={8}>
+            <Grid className={classes.title} item xs={3}>
               <Typography variant="h6" component="h2" className={classes.title}>
                 {modalTitle}
               </Typography>
             </Grid>
             <Grid item xs={2}>
-              <div className={classes.wrapperInput}>
-                <TextField
-                  label="Result"
-                  variant="outlined"
-                  id="result"
-                  autoComplete="off"
-                  name="result"
-                  size="small"
-                  fullWidth
-                ></TextField>
-              </div>
+              <form onSubmit={'ADD FUNCTION'} autoComplete="off" className={classes.formWrapper}>
+                <div className={classes.wrapperInput}>
+                  <TextField
+                    label="Result"
+                    variant="outlined"
+                    id="result"
+                    autoComplete="off"
+                    name="result"
+                    size="small"
+                    fullWidth
+                  ></TextField>
+                </div>
+                <div>
+                  <VoteButton content={'ADD'} height={1.0} className={classes.button} />
+                </div>
+              </form>
             </Grid>
-            <Grid item xs={1} className={classes.button}>
+            <Grid item xs={3} className={classes.button}>
               {' '}
-              <IconButton color="primary" aria-label="add to shopping cart" fullWidth>
-                <AddBoxIcon />
-              </IconButton>
+              <VoteButton content={'REMOVE'} height={1.0} className={classes.button} />
             </Grid>
             <Grid item xs={1}>
               <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>

@@ -13,7 +13,7 @@ import Box from '@material-ui/core/Box';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.primary.main,
     color: theme.palette.common.white,
   },
   body: {
@@ -32,26 +32,6 @@ const StyledTableRow = withStyles(theme => ({
 function createData(median, average, standardDeviation) {
   return { median, average, standardDeviation };
 }
-const results = [
-  {
-    id: 1,
-    userId: 123,
-    username: 'piotrek',
-    vote: 5,
-  },
-  {
-    id: 2,
-    userId: 124,
-    username: 'jan',
-    vote: 3,
-  },
-  {
-    id: 3,
-    userId: 125,
-    username: 'adam',
-    vote: 1,
-  },
-];
 const rows = [createData(10, 159, 6.0)];
 
 const TaskEstimationElement = ({ users }) => {
