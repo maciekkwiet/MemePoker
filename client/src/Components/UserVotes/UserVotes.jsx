@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Avatar } from '@material-ui/core';
+import { Box, Typography, Avatar, Paper } from '@material-ui/core';
 import { useSocket } from 'socketio-hooks';
+import { useParams } from 'react-router-dom';
 
 import { useRoomContext } from 'Contexts/RoomContext';
 import UserVotesStyles from './UserVotesStyles';
+import { useUserContext } from 'Contexts/UserContext';
 
 const UserVotes = () => {
   const classes = UserVotesStyles();
-
   const { room } = useRoomContext();
   const [users, setUsers] = useState([]);
   const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);
+  const { getUser } = useUserContext();
+  const { isAdmin } = getUser();
 
   useEffect(() => {
     if (room) {
@@ -28,19 +31,14 @@ const UserVotes = () => {
     setUsers(newUsers);
   });
 
-  useSocket('CARDS_REVEALED', users => {
-    setHasEveryoneVoted(true);
-    setUsers(users);
-  });
-
   useSocket('CLEAR_VOTES', users => {
     setHasEveryoneVoted(false);
     setUsers(users);
   });
 
-  useSocket('ROOM_VOTES', users => {
+  useSocket('ROOM_VOTES', ({ votes }) => {
     setHasEveryoneVoted(true);
-    setUsers(users);
+    setUsers(votes);
   });
 
   useSocket('CLEARED_VOTES', users => {
@@ -49,9 +47,9 @@ const UserVotes = () => {
   });
 
   return (
-    <Box className={classes.root}>
+    <Box className={isAdmin ? classes.isAdmin : classes.isNotAdmin}>
       {users.map(user => (
-        <Box key={user.name} className={classes.item}>
+        <Paper key={user.name} className={classes.item} elevation={4}>
           <Box className={user.vote ? classes.userInfoVoted : classes.userInfo}>
             <Avatar>{user.name.charAt(0).toUpperCase()}</Avatar>
             <Typography>{user.vote ? <b>{user.name} - [Voted]</b> : user.name}</Typography>
@@ -59,7 +57,7 @@ const UserVotes = () => {
           <Box>
             <Typography>{hasEveryoneVoted ? user.vote : ''}</Typography>
           </Box>
-        </Box>
+        </Paper>
       ))}
     </Box>
   );

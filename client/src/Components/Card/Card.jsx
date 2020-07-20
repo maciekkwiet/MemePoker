@@ -4,15 +4,17 @@ import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@mater
 import cardStyles from './CardStyles';
 import { useBackend } from 'hooks/useBackend';
 
-const MemeCard = ({ value, img }) => {
+const MemeCard = ({ value, img, selected, selectCard, id }) => {
   const classes = cardStyles();
-
   const sendEstimation = useBackend('USER_VOTE');
 
-  const onClickHandler = () => sendEstimation({ value });
+  const onClickHandler = () => {
+    sendEstimation({ value });
+    selectCard(id);
+  };
 
   return (
-    <Card className={classes.main} variant="outlined">
+    <Card className={selected ? classes.selected : classes.main} variant="outlined">
       <CardActionArea onClick={onClickHandler}>
         <CardMedia className={classes.media} component="img" alt={value} src={img} height="50" />
         <CardContent className={classes.content}>

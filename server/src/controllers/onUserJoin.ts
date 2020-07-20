@@ -5,10 +5,9 @@ import { rooms } from '@models/Rooms';
 import { EventHandler, UserJoinPayload } from '@typings*';
 
 const onUserJoin: EventHandler<UserJoinPayload> = ({ io, socket }, { name, roomId, isAdmin }, callback) => {
-  const user = new User(name, socket.id, isAdmin);
   const room = rooms.getRoom(roomId);
   const message = `${name} has joined the room: ${roomId}`;
-  room.addUser(user);
+  const user = room.addUser(name, socket.id, isAdmin);
 
   const token = jwt.sign({ user, roomId }, process.env.JWT_SECRET ?? '');
 

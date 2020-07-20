@@ -2,14 +2,14 @@ import { User } from '@models/User';
 import { Task } from '@models/Task';
 
 class Room {
-  readonly id: string;
+  id: string;
+  history: Task[];
   private task: Task;
-  private readonly users: User[];
-  private readonly history: Task[];
+  private users: User[];
 
   constructor(id: string) {
     this.id = id;
-    this.task = new Task('Waiting for first task to estimate...');
+    this.task = new Task('');
     this.users = [];
     this.history = [];
   }
@@ -20,15 +20,30 @@ class Room {
     return user;
   }
 
-  isAdmin(name: string): Boolean {
-    return this.users.some(user => user.isAdmin === true && user.name === name);
+  getAdmin(id: string): User | null {
+    const roomAdmin = this.users.find(user => user.isAdmin === true) ?? null;
+    if (roomAdmin?.socket === id) throw new Error('This user is admin in different room');
+    return roomAdmin;
   }
 
-  addUser(user: User): void {
-    const name = user.name;
+  addUser(name: string, socket: string, isAdmin: boolean): User {
+    let userName = name;
+    let numberUser = 0;
 
-    if (this.users.find(user => user.name === name)) throw new Error('This user nam already exists in room');
+    while (this.isTaken(userName)) {
+      numberUser++;
+      userName = name + '(' + numberUser + ')';
+    }
+
+    name = userName;
+    const user = new User(name, socket, isAdmin);
     this.users.push(user);
+    return user;
+  }
+
+  private isTaken(userName: string): boolean {
+    if (this.users.find(user => user.name === userName)) return true;
+    return false;
   }
 
   hasEveryoneVoted(): boolean {
@@ -57,6 +72,7 @@ class Room {
   }
 
   archiveTask() {
+    this.task.setEstimationTime();
     this.history.push(this.task);
   }
 }

@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Grid, Paper, Box } from '@material-ui/core';
 
-import { useBackend } from 'hooks/useBackend';
-import { useRoomContext } from 'Contexts/RoomContext';
-import { useUserContext } from 'Contexts/UserContext';
+import RoomStyles from './RoomStyles';
 import Cards from 'Components/Cards';
 import TaskNameInput from 'Components/TaskNameInput';
 import InfoBox from 'Components/InfoBox';
@@ -13,7 +11,10 @@ import MainBox from 'Components/MainBox';
 import Results from 'Components/Results';
 import Timer from 'Components/Timer';
 import Navigation from 'Components/Navigation';
-import RoomStyles from './RoomStyles';
+import TaskEstimatedBox from 'Components/TaskEstimatedBox';
+import { useRoomContext } from 'Contexts/RoomContext';
+import { useUserContext } from 'Contexts/UserContext';
+import { useBackend } from 'hooks/useBackend';
 
 const Room = () => {
   const classes = RoomStyles();
@@ -48,6 +49,7 @@ const Room = () => {
           <Results />
         </Grid>
       </Grid>
+      <TaskEstimatedBox />
     </MainBox>
   );
 };

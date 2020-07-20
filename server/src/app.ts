@@ -25,7 +25,7 @@ if (dbKey) {
   console.log(`Enviroment variable 'DB_KEY' not set. Cannot connect to DataBase`);
 }
 
-const port = process.env.PORT || 4001;
+const port = process.env.PORT || 4000;
 server.listen(port, () => console.log(`Server listening on port ${port}`));
 
 app.use(express.json({ limit: '50mb' }));

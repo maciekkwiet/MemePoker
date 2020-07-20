@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSocket } from 'socketio-hooks';
 
 import CardsStyles from './CardsStyles';
 import { cardsSchema } from './cardsSchema';
@@ -7,10 +8,20 @@ import Card from 'Components/Card';
 const Cards = () => {
   const classes = CardsStyles();
 
+  const [selectedCard, setSelectedCard] = useState(null);
+
+  const selectCard = id => {
+    setSelectedCard(id);
+  };
+
+  useSocket('CLEARED_VOTES', () => {
+    setSelectedCard(null);
+  });
+
   return (
     <div className={classes.root}>
-      {cardsSchema.map(({ id, ...rest }) => (
-        <Card key={id} {...rest} />
+      {cardsSchema.map(card => (
+        <Card key={card.id} {...card} selected={selectedCard === card.id} selectCard={selectCard} />
       ))}
     </div>
   );

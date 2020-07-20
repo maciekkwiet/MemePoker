@@ -1,7 +1,7 @@
 import { EventHandler, NewTaskPayload } from '@typings*';
 
 const onNewTask: EventHandler<NewTaskPayload> = ({ io }, { user, room, task }) => {
-  if (!room.isAdmin(user.name)) throw new Error(`User ${user.name} is not authorized to add new task in room ${room}`);
+  if (!user.isAdmin) throw new Error(`User ${user.name} is not authorized to add new task in room ${room}`);
 
   room.setTask(task);
 
