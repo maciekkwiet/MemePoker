@@ -1,28 +1,15 @@
-import * as socketio from 'socket.io';
-import { rooms } from '@models/Rooms';
+import { EstimationResult, EventHandler } from '@typings*';
 
-interface EstimationResult {
-  result: string;
-  roomId: string;
-}
+const onSubmitEstimation: EventHandler<EstimationResult> = ({ io, socket }, { room, result }) => {
+  room.getAdmin(socket.id);
+  room.getTask().reassignFinalResult(Number(result));
+  room.archiveTask();
+  room.clearVotes();
 
-const onSubmitEstimation = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, result }: EstimationResult) => {
-  try {
-    const room = rooms.getRoom(roomId);
+  const message: string = 'The task was saved in history';
 
-    room.getAdmin(socket.id);
-    room.getTask().reassignFinalResult(Number(result));
-
-    room.archiveTask();
-    room.clearVotes();
-
-    const message: string = 'The task was saved in history';
-
-    io.to(roomId).emit('FEED', message);
-    io.to(roomId).emit('TASK_ARCHIVED', room.history);
-    io.to(roomId).emit('ESTIMATION_SUBMITTED', room.getTask());
-  } catch (ex) {
-    console.error(ex);
-  }
+  io.to(room.id).emit('FEED', message);
+  io.to(room.id).emit('TASK_ARCHIVED', room.history);
+  io.to(room.id).emit('ESTIMATION_SUBMITTED', room.getTask());
 };
 export { onSubmitEstimation };

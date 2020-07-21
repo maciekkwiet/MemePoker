@@ -1,8 +1,7 @@
 import React from 'react';
 import { Paper, Typography, Box } from '@material-ui/core';
-import { useEmit } from 'socketio-hooks';
-import { useParams } from 'react-router-dom';
 
+import { useBackend } from 'hooks/useBackend';
 import { useUserContext } from 'Contexts/UserContext';
 import UserVotes from 'Components/UserVotes';
 import VoteBtn from 'Components/VoteButton';
@@ -10,18 +9,16 @@ import ResultsStyles from './ResultsStyles';
 
 const Results = () => {
   const classes = ResultsStyles();
-  const { roomId } = useParams();
-  const sendVotesShow = useEmit('SHOW_VOTES');
-  const sendVotesClear = useEmit('CLEAR_VOTES');
-  const { getUser } = useUserContext();
-  const { isAdmin } = getUser(roomId);
+  const sendVotesShow = useBackend('SHOW_VOTES');
+  const sendVotesClear = useBackend('CLEAR_VOTES');
+  const { isAdmin } = useUserContext().user;
 
   const onClickHandlerShow = () => {
-    sendVotesShow(roomId);
+    sendVotesShow();
   };
 
   const onClickHandlerClear = () => {
-    sendVotesClear(roomId);
+    sendVotesClear();
   };
 
   return (

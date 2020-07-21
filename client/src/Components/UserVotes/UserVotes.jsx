@@ -1,27 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Box, Typography, Avatar, Paper } from '@material-ui/core';
 import { useSocket } from 'socketio-hooks';
-import { useParams } from 'react-router-dom';
 
-import { useRoomContext } from 'Contexts/RoomContext';
 import UserVotesStyles from './UserVotesStyles';
+import { useRoomContext } from 'Contexts/RoomContext';
 import { useUserContext } from 'Contexts/UserContext';
 
 const UserVotes = () => {
   const classes = UserVotesStyles();
-  const { response } = useRoomContext();
-  const [users, setUsers] = useState([]);
+  const { room } = useRoomContext();
+  const [users, setUsers] = useState(room.users);
   const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);
-  const { roomId } = useParams();
-  const { getUser } = useUserContext();
-  const { isAdmin } = getUser(roomId);
-
-  useEffect(() => {
-    if (response) {
-      const { users } = response.room;
-      setUsers(users);
-    }
-  }, [response]);
+  const { isAdmin } = useUserContext().user;
 
   useSocket('USER_JOINED', users => {
     setUsers(users);
@@ -32,7 +22,7 @@ const UserVotes = () => {
     setUsers(newUsers);
   });
 
-  useSocket('CLEAR_VOTES', users => {
+  useSocket('VOTES_CLEARED', users => {
     setHasEveryoneVoted(false);
     setUsers(users);
   });
@@ -42,12 +32,6 @@ const UserVotes = () => {
     setUsers(votes);
   });
 
-  useSocket('CLEARED_VOTES', users => {
-    setHasEveryoneVoted(false);
-    setUsers(users);
-  });
-
-  console.log(users);
   return (
     <Box className={isAdmin ? classes.isAdmin : classes.isNotAdmin}>
       {users.map(user => (

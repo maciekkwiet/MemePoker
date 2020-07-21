@@ -1,29 +1,17 @@
-import * as socketio from 'socket.io';
-import { rooms } from '@models/Rooms';
+import { EventHandler, NewTaskPayload } from '@typings*';
 
-interface NewTask {
-  task: string;
-  roomId: string;
-}
+const onNewTask: EventHandler<NewTaskPayload> = ({ io }, { user, room, task }) => {
+  if (!user.isAdmin) throw new Error(`User ${user.name} is not authorized to add new task in room ${room}`);
 
-const onNewTask = (io: socketio.Server, socket: socketio.Socket) => ({ roomId, task }: NewTask) => {
-  try {
-    const room = rooms.getRoom(roomId);
+  room.setTask(task);
 
-    room.getAdmin(socket.id);
+  room.clearVotes();
 
-    room.setTask(task);
+  const message = `New task: ${task} in the room: ${room.id}`;
 
-    room.clearVotes();
-
-    const message = `New task: ${task} in the room: ${roomId}`;
-
-    io.to(roomId).emit('FEED', message);
-    io.to(roomId).emit('TASK_UPDATED', room.getTask());
-    io.to(roomId).emit('CLEARED_VOTES', room.getUsers());
-  } catch (ex) {
-    console.error(ex);
-  }
+  io.to(room.id).emit('FEED', message);
+  io.to(room.id).emit('TASK_UPDATED', room.getTask());
+  io.to(room.id).emit('VOTES_CLEARED', room.getUsers());
 };
 
 export { onNewTask };

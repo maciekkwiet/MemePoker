@@ -1,25 +1,20 @@
-import * as socketio from 'socket.io';
+import * as jwt from 'jsonwebtoken';
+
 import { rooms } from '@models/Rooms';
+import { EventHandler, UserJoinPayload } from '@typings*';
 
-interface UserJoinPayload {
-  name: string;
-  roomId: string;
-  isAdmin: boolean;
-}
+const onUserJoin: EventHandler<UserJoinPayload> = ({ io, socket }, { name, roomId, isAdmin }, callback) => {
+  const room = rooms.getRoom(roomId);
+  const message = `${name} has joined the room: ${roomId}`;
+  const user = room.addUser(name, socket.id, isAdmin);
 
-const onUserJoin = (io: socketio.Server, socket: socketio.Socket) => ({ name, roomId, isAdmin }: UserJoinPayload) => {
-  try {
-    const room = rooms.getRoom(roomId);
-    const user = room.addUser(name, socket.id, isAdmin);
-    const message = `${user.name} has joined the room: ${roomId}`;
+  const token = jwt.sign({ user, roomId }, process.env.JWT_SECRET ?? '');
 
-    socket.join(roomId.toString());
+  socket.join(roomId);
+  if (callback) callback({ room, token });
 
-    io.to(roomId).emit('USER_JOINED', room.getUsers());
-    io.to(roomId).emit('FEED', message);
-  } catch (ex) {
-    console.error(ex);
-  }
+  io.to(roomId).emit('USER_JOINED', room.getUsers());
+  io.to(roomId).emit('FEED', message);
 };
 
 export { onUserJoin };

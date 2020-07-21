@@ -1,31 +1,34 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { Grid, Paper, Box } from '@material-ui/core';
 
-import Cards from 'Components/Cards';
-import { useUserContext } from 'Contexts/UserContext';
 import RoomStyles from './RoomStyles';
+import Cards from 'Components/Cards';
 import TaskNameInput from 'Components/TaskNameInput';
 import InfoBox from 'Components/InfoBox';
-import UserBox from 'Components/UserBox';
+import TaskBox from 'Components/TaskBox';
 import MainBox from 'Components/MainBox';
 import Results from 'Components/Results';
 import Timer from 'Components/Timer';
-import { useRoomContext } from 'Contexts/RoomContext';
 import Navigation from 'Components/Navigation';
 import TaskEstimatedBox from 'Components/TaskEstimatedBox';
+import { useRoomContext } from 'Contexts/RoomContext';
+import { useUserContext } from 'Contexts/UserContext';
+import { useBackend } from 'hooks/useBackend';
 
 const Room = () => {
   const classes = RoomStyles();
-  const { getData } = useRoomContext();
-  const { getUserName } = useUserContext();
+  const { token } = useUserContext();
+  const { room, updateRoomInfo } = useRoomContext();
   const { roomId } = useParams();
+  const reconnectUser = useBackend('USER_RECONNECT');
 
-  useEffect(() => {
-    getData(roomId);
-  }, []);
-
-  if (!getUserName(roomId)) return <Redirect to={`/room/${roomId}/join`} />;
+  if (!room && token) {
+    reconnectUser({ token }, data => updateRoomInfo(data));
+    return <p>Reconnecting...</p>;
+  } else if (!room) {
+    return <Redirect to={`/room/${roomId}/join`} />;
+  }
 
   return (
     <MainBox>
@@ -33,7 +36,7 @@ const Room = () => {
         <Grid item xs={12} md={8} className={classes.main}>
           <Navigation />
           <Box className={classes.top} component="div">
-            <UserBox />
+            <TaskBox />
             <Timer />
             <InfoBox title="ROOM ID" value={roomId} padding={0.25} />
           </Box>

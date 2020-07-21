@@ -1,4 +1,3 @@
-
 import { User } from '@models/User';
 import { Task } from '@models/Task';
 
@@ -10,7 +9,7 @@ class Room {
 
   constructor(id: string) {
     this.id = id;
-    this.task = new Task('');
+    this.task = new Task('Waiting for first task...');
     this.users = [];
     this.history = [];
   }

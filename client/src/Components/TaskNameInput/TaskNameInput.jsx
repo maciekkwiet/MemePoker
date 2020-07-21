@@ -1,38 +1,42 @@
 import React from 'react';
 import { Box, Button } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
-import { useEmit } from 'socketio-hooks';
-import { useParams } from 'react-router-dom';
 import { useUserContext } from 'Contexts/UserContext';
 
+import { useBackend } from 'hooks/useBackend';
 import { TaskNameInputStyles, CustomLabel, CustomInput } from './TaskNameInputStyles';
 
 const TaskNameInput = () => {
-  const { getUser } = useUserContext();
-  const { roomId } = useParams();
-  const { isAdmin } = getUser(roomId);
+  const { user } = useUserContext();
   const classes = TaskNameInputStyles();
-  const sendTask = useEmit('NEW_TASK');
+  const sendTask = useBackend('NEW_TASK');
 
   const onSubmitHandler = e => {
     e.preventDefault();
     const task = e.target.taskName.value;
-    sendTask({ roomId, task });
+    sendTask({ task });
     e.target.reset();
   };
 
-  return isAdmin ? (
+  if (!user.isAdmin) return null;
+
+  return (
     <form onSubmit={onSubmitHandler}>
       <Box className={classes.root} mb={2}>
         <CustomLabel htmlFor="taskName">Task name:</CustomLabel>
-        <CustomInput id="taskName" name="taskName" variant="filled" placeholder="TYPE A TASK" fullWidth />
+        <CustomInput
+          id="taskName"
+          name="taskName"
+          variant="filled"
+          placeholder="TYPE A TASK"
+          fullWidth
+          autoComplete="off"
+        />
         <Button className={classes.btn} color="primary" variant="contained" type="submit">
           <SendIcon />
         </Button>
       </Box>
     </form>
-  ) : (
-    <div></div>
   );
 };
 
