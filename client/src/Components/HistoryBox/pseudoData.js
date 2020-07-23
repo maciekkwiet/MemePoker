@@ -21,7 +21,7 @@ const tasks = [
     ],
     estimationTime: 1595013972,
     finalResult: 45.5,
-    analysis: {
+    Analysis: {
       average: 4.5,
       median: 5.5,
       standardDeviation: 6.3,
@@ -49,7 +49,7 @@ const tasks = [
     ],
     estimationTime: 1595013972,
     finalResult: 4.5,
-    analysis: {
+    Analysis: {
       average: 4.5,
       median: 5.5,
       standardDeviation: 10.3,
@@ -77,7 +77,7 @@ const tasks = [
     ],
     estimationTime: 1595013972,
     finalResult: 13,
-    analysis: {
+    Analysis: {
       average: 14.5,
       median: 55.5,
       standardDeviation: 6.3,
