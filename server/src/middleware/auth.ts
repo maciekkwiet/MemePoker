@@ -18,6 +18,9 @@ export const auth: Middlewere = ([eventName, payload], next) => {
 
     return next();
   } catch (ex) {
+    // trzeba ta linijke wykonać, ale zeby ja wykonac trzeba jakos dojść do io
+    //io.to(socket.id).emit('EXCEPTION', ex);
+    // logger
     console.log('Authentication middlewere error:');
     console.error(ex);
   }

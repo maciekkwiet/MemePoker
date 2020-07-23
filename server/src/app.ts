@@ -3,8 +3,6 @@ import * as dotenv from 'dotenv';
 import * as express from 'express';
 import * as mongoose from 'mongoose';
 import * as cookieParser from 'cookie-parser';
-import * as fs from 'fs';
-import * as morgan from 'morgan';
 
 import { socketRouter } from './routes/socket';
 import { router } from 'routes';
