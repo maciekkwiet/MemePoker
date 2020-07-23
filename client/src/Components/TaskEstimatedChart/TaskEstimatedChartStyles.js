@@ -21,20 +21,10 @@ const TaskEstimatedChartStyles = makeStyles(theme => ({
   root: {
     position: 'relative',
     backgroundColor: theme.palette.grey.A400,
-    width: '60%',
-    height: '80vh',
     padding: theme.spacing(4),
-    overflow: 'auto',
-    border: `1px solid ${theme.palette.primary.main}`,
     outline: 'none',
   },
-  closeButton: {
-    position: 'absolute',
-    right: theme.spacing(1),
-    top: theme.spacing(0),
-    marginBottom: theme.spacing(4),
-    color: theme.palette.primary.main,
-  },
+
   wrapperInput: {
     marginTop: '1em',
     '& .MuiFormLabel-root': {
