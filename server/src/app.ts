@@ -33,17 +33,3 @@ server.listen(port, () => console.log(`Server listening on port ${port}`));
 app.use(express.json({ limit: '50mb' }));
 app.use(cookieParser());
 app.use(router);
-
-if (process.env.NODE_ENV == 'production') {
-  let accessLogStream = fs.createWriteStream(__dirname + '/logs/' + 'access.log', { flags: 'a' });
-  app.use(
-    morgan('dev', {
-      skip: function (req, res) {
-        return res.statusCode < 400;
-      },
-      stream: accessLogStream,
-    })
-  );
-} else {
-  app.use(morgan('dev'));
-}
