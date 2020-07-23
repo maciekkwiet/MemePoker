@@ -10,6 +10,7 @@ const TaskEstimatedElementStyles = makeStyles(theme => ({
   },
   votesTitle: {
     marginLeft: theme.spacing(2),
+    marginTop: theme.spacing(2),
     fontSize: '20px',
   },
 }));
