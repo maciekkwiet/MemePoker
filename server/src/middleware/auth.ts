@@ -2,6 +2,7 @@ import * as jwt from 'jsonwebtoken';
 
 import { rooms } from '@models/Rooms';
 import { Middlewere, TokenPayload } from '@typings';
+import { log } from '../logger/opts';
 
 export const auth: Middlewere = ([eventName, payload], next) => {
   try {
@@ -19,9 +20,7 @@ export const auth: Middlewere = ([eventName, payload], next) => {
     return next();
   } catch (ex) {
     // trzeba ta linijke wykonać, ale zeby ja wykonac trzeba jakos dojść do io
-    //io.to(socket.id).emit('EXCEPTION', ex);
-    // logger
-    console.log('Authentication middlewere error:');
-    console.error(ex);
+    // io.to(socket.id).emit('EXCEPTION', ex);
+    log.info(ex);
   }
 };
