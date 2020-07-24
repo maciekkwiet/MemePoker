@@ -4,7 +4,7 @@ import { rooms } from '@models/Rooms';
 import { Middlewere, TokenPayload } from '@typings';
 import { log } from '../logger/opts';
 
-export const auth: Middlewere = ([eventName, payload], next) => {
+export const auth: Middlewere = ctx => ([eventName, payload], next) => {
   try {
     if (eventName === 'USER_JOIN') return next(); // if user is just joining don't use this middlewere
     const { token } = payload;
@@ -19,8 +19,7 @@ export const auth: Middlewere = ([eventName, payload], next) => {
 
     return next();
   } catch (ex) {
-    // trzeba ta linijke wykonać, ale zeby ja wykonac trzeba jakos dojść do io
-    // io.to(socket.id).emit('EXCEPTION', 'AUTHORIZATION ERROR' + ex);
+    ctx.io.to(ctx.socket.id).emit('EXCEPTION', 'AUTHORIZATION ERROR' + ex);
     log.info(ex);
   }
 };
