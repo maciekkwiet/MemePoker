@@ -1,20 +1,18 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const TaskEstimatedElementStyles = makeStyles(theme => ({
-  taskVotes: {
-    margin: theme.spacing(0, 1),
-    color: '	#9400D3',
-  },
-  votesTitle: { margin: theme.spacing(0, 2) },
-  title: { padding: theme.spacing(1, 1) },
-  taskVotesTekst: {
-    margin: theme.spacing(1, 1),
+  root: {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: ' center',
-    padding: theme.spacing('1', '1'),
+    flexFlow: 'column nowrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
   },
-  taskVotesUser: { color: '#7FFF00' },
-  box: { padding: theme.spacing(2, 2) },
+
+  votesTitle: {
+    marginLeft: theme.spacing(2),
+    fontSize: '20px',
+  },
 }));
+
 export default TaskEstimatedElementStyles;
