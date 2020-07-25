@@ -26,7 +26,6 @@ const HomeStyles = makeStyles(theme => ({
     marginTop: '2em',
   },
   divider: {
-    root: { backgroundColor: theme.palette.primary.main },
     marginTop: '2em',
     backgroundColor: theme.palette.primary.main,
     height: '7em',

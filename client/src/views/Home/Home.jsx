@@ -24,7 +24,7 @@ const Home = () => {
             <Typography variant="h6">CREATE NEW SESSION</Typography>
             <CreateNewRoom />
           </div>
-          <Divider orientation="vertical" className={classes.divider} />
+          <Divider orientation="vertical" flexItem className={classes.divider} />
           <div className={classes.wrapperItemColumn}>
             <Typography variant="h6">ADD ROOM'S NUMBER</Typography>
             <JoinRoom />
