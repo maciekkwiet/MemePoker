@@ -32,8 +32,6 @@ const HomeStyles = makeStyles(theme => ({
     '& .MuiDivider-root': {
       backgroundColor: 'red',
     },
-
-    backgroundColor: 'red',
   },
 }));
 
