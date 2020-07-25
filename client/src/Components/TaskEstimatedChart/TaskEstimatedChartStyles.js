@@ -2,47 +2,41 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { TableCell } from '@material-ui/core';
 
 const TaskEstimatedChartStyles = makeStyles(theme => ({
-  headerTitle: {
-    alignItems: 'center',
+  wrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    textAlign: 'center',
   },
   title: {
     textAlign: 'left',
     justifyContent: 'center',
     color: '#FFFF',
     fontSize: '30px',
+    margin: theme.spacing(2),
   },
-  input: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  button: { justifyContent: 'center', textAlign: 'right' },
+
+  button: { width: '15vh', margin: theme.spacing(2) },
+
   root: {
     position: 'relative',
     backgroundColor: theme.palette.grey.A400,
     width: '60%',
     height: '80vh',
-    padding: theme.spacing(2),
+    padding: theme.spacing(4),
     overflow: 'auto',
     border: `1px solid ${theme.palette.primary.main}`,
     outline: 'none',
-    [theme.breakpoints.down('md')]: {
-      width: '90%',
-      height: '90vh',
-    },
-  },
-  table: {
-    margin: theme.spacing(3, 0),
   },
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
     top: theme.spacing(0),
+    marginBottom: theme.spacing(4),
     color: theme.palette.primary.main,
   },
   wrapperInput: {
-    width: '8em',
-    display: 'flex',
-    marginBottom: '1em',
+    marginTop: '1em',
     '& .MuiFormLabel-root': {
       textAlign: 'center',
       color: '#FFFF',
@@ -55,7 +49,6 @@ const TaskEstimatedChartStyles = makeStyles(theme => ({
     },
     '& .MuiInputBase-input': {
       textAlign: 'center',
-      width: '20px',
     },
     '& .MuiInputLabel-outlined': {
       textAlign: 'center',

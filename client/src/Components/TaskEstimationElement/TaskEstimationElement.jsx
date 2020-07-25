@@ -13,7 +13,7 @@ import Box from '@material-ui/core/Box';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.primary.main,
     color: theme.palette.common.white,
   },
   body: {
@@ -32,30 +32,11 @@ const StyledTableRow = withStyles(theme => ({
 function createData(median, average, standardDeviation) {
   return { median, average, standardDeviation };
 }
-const results = [
-  {
-    id: 1,
-    userId: 123,
-    username: 'piotrek',
-    vote: 5,
-  },
-  {
-    id: 2,
-    userId: 124,
-    username: 'jan',
-    vote: 3,
-  },
-  {
-    id: 3,
-    userId: 125,
-    username: 'adam',
-    vote: 1,
-  },
-];
-const rows = [createData(10, 159, 6.0)];
 
-const TaskEstimationElement = () => {
+const TaskEstimationElement = ({ users, resultsAnalysis }) => {
   const classes = TaskEstimationElementStyles();
+
+  const rows = [createData(resultsAnalysis.median, resultsAnalysis.average, resultsAnalysis.standardDeviation)];
 
   return (
     <>
@@ -84,10 +65,10 @@ const TaskEstimationElement = () => {
           </Typography>
           <Table size="small">
             <TableBody>
-              {results.map(result => (
-                <StyledTableRow key={result.userId}>
-                  <StyledTableCell align="left">{result.username}</StyledTableCell>
-                  <StyledTableCell align="right">{result.vote}</StyledTableCell>
+              {users.map(user => (
+                <StyledTableRow>
+                  <StyledTableCell align="left">{user.name}</StyledTableCell>
+                  <StyledTableCell align="right">{user.vote}</StyledTableCell>
                 </StyledTableRow>
               ))}
             </TableBody>

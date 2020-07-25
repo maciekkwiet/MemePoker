@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Typography, Avatar, Paper } from '@material-ui/core';
 import { useSocket } from 'socketio-hooks';
-
 import UserVotesStyles from './UserVotesStyles';
 import { useRoomContext } from 'Contexts/RoomContext';
 import { useUserContext } from 'Contexts/UserContext';

@@ -28,13 +28,12 @@ const HomeStyles = makeStyles(theme => ({
 
   divider: {
     marginTop: '2em',
-    backgroundColor: theme.palette.primary.main,
     height: '7em',
-    [theme.breakpoints.down('sm')]: {
-      height: '17em',
-      marginLeft: '2em',
-      marginRight: '2em',
+    '& .MuiDivider-root': {
+      backgroundColor: 'red',
     },
+
+    backgroundColor: 'red',
   },
 }));
 
