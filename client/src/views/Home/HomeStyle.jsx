@@ -1,4 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/styles';
+import { Divider } from '@material-ui/core';
 
 const HomeStyles = makeStyles(theme => ({
   wrapper: { display: 'flex', flexDirection: 'column' },
@@ -38,4 +40,17 @@ const HomeStyles = makeStyles(theme => ({
   },
 }));
 
-export default HomeStyles;
+const CustomDivider = withStyles(theme => ({
+  root: {
+    marginTop: '2em',
+    backgroundColor: theme.palette.primary.main,
+    height: '7em',
+    [theme.breakpoints.down('sm')]: {
+      height: '17em',
+      marginLeft: '2em',
+      marginRight: '2em',
+    },
+  },
+}))(Divider);
+
+export { HomeStyles, CustomDivider };
