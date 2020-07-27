@@ -7,6 +7,7 @@ const eventHandlerWrapper: EventHandlerWrapper = (ctx, handler) => (payload, cal
   } catch (ex) {
     ctx.io.to(ctx.socket.id).emit('EXCEPTION', ex);
     log.info(ex);
+    console.log('error');
   }
 };
 export { eventHandlerWrapper };

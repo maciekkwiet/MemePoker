@@ -1,0 +1,938 @@
+2020-07-27 21:40:05.772 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:07.940 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:08.978 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:09.468 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:09.661 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:10.145 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:10.369 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:10.746 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:10.981 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:11.183 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:11.370 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:40:23.159 INFO  Room not found
+{}
+Error: Room not found
+    at Rooms.getRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:8:44)
+    at onUserJoin (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/onUserJoin.ts:7:22)
+    at Socket.<anonymous> (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/middleware/eventHandlerWrapper.ts:6:5)
+    at Socket.emit (events.js:315:20)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:528:12
+    at processTicksAndRejections (internal/process/task_queues.js:79:11) 
+2020-07-27 21:41:10.268 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:35.290 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:36.193 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:36.377 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:36.556 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:36.741 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:36.923 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:37.123 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:37.317 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:37.483 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:37.657 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:37.839 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:38.011 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:38.222 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:38.387 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:38.590 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:38.756 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:39.008 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:39.174 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:42:39.489 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:43:33.309 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 21:44:18.789 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:06:44.415 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:12:02.239 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:15:39.792 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:15:43.275 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:15:46.072 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:16:34.774 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:17:32.642 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:17:49.976 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:18:12.995 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:21:47.905 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:43:03.450 INFO  Room not found
+{}
+Error: Room not found
+    at Rooms.getRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:8:44)
+    at Array.<anonymous> (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/middleware/auth.ts:14:24)
+    at run (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:559:11)
+    at Socket.run (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:571:3)
+    at Socket.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:531:8)
+    at Socket.onevent (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:364:8)
+    at Socket.onpacket (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:324:12)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/client.js:214:16
+    at processTicksAndRejections (internal/process/task_queues.js:79:11) 
+2020-07-27 22:43:04.683 INFO  Room not found
+{}
+Error: Room not found
+    at Rooms.getRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:8:44)
+    at Array.<anonymous> (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/middleware/auth.ts:14:24)
+    at run (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:559:11)
+    at Socket.run (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:571:3)
+    at Socket.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:531:8)
+    at Socket.onevent (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:364:8)
+    at Socket.onpacket (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:324:12)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/client.js:214:16
+    at processTicksAndRejections (internal/process/task_queues.js:79:11) 
+2020-07-27 22:44:21.321 INFO  Room not found
+{}
+Error: Room not found
+    at Rooms.getRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:8:44)
+    at Array.<anonymous> (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/middleware/auth.ts:14:24)
+    at run (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:559:11)
+    at Socket.run (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:571:3)
+    at Socket.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:531:8)
+    at Socket.onevent (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:364:8)
+    at Socket.onpacket (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/socket.js:324:12)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/socket.io/lib/client.js:214:16
+    at processTicksAndRejections (internal/process/task_queues.js:79:11) 
+2020-07-27 22:46:40.339 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:50:02.352 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:52:00.589 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
+2020-07-27 22:54:12.814 INFO  All rooms are busy
+{}
+Error: All rooms are busy
+    at Rooms.createRoom (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/models/Rooms.ts:22:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/src/controllers/session.ts:9:24
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:174:3)
+    at router (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:317:13)
+    at /mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/mnt/c/Users/tbula/desktop/webdev/meme-poker/server/node_modules/express/lib/router/index.js:275:10) 
