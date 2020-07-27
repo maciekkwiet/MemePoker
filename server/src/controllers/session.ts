@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { rooms } from '@models/Rooms';
-import { log } from '../services/logger';
+import { log } from '@services/logger';
 
 const router = Router();
 

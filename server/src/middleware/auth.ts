@@ -2,7 +2,7 @@ import * as jwt from 'jsonwebtoken';
 
 import { rooms } from '@models/Rooms';
 import { Middlewere, TokenPayload } from '@typings';
-import { log } from '../services/logger';
+import { log } from '@services/logger';
 
 export const auth: Middlewere = ctx => ([eventName, payload], next) => {
   try {

@@ -1,5 +1,5 @@
 import { EventHandlerWrapper } from 'typings';
-import { log } from '../services/logger';
+import { log } from '@services/logger';
 
 const eventHandlerWrapper: EventHandlerWrapper = (ctx, handler) => (payload, callback) => {
   try {
