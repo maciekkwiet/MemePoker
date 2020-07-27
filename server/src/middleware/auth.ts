@@ -2,8 +2,9 @@ import * as jwt from 'jsonwebtoken';
 
 import { rooms } from '@models/Rooms';
 import { Middlewere, TokenPayload } from '@typings';
+import { log } from '@services/logger';
 
-export const auth: Middlewere = ([eventName, payload], next) => {
+export const auth: Middlewere = ctx => ([eventName, payload], next) => {
   try {
     if (eventName === 'USER_JOIN') return next(); // if user is just joining don't use this middlewere
     const { token } = payload;
@@ -18,7 +19,7 @@ export const auth: Middlewere = ([eventName, payload], next) => {
 
     return next();
   } catch (ex) {
-    console.log('Authentication middlewere error:');
-    console.error(ex);
+    ctx.io.to(ctx.socket.id).emit('EXCEPTION', 'AUTHORIZATION ERROR' + ex);
+    log.info(ex);
   }
 };
