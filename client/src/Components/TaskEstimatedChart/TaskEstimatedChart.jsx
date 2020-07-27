@@ -7,6 +7,7 @@ import { TaskEstimatedChartStyles } from './TaskEstimatedChartStyles';
 
 const TaskEstimatedChart = ({ onClose }) => {
   const classes = TaskEstimatedChartStyles();
+
   const sendVotesShow = useBackend('SUBMIT_ESTIMATION');
   const sendVotesClear = useBackend('CLEAR_VOTES');
   const { isAdmin } = useUserContext().user;

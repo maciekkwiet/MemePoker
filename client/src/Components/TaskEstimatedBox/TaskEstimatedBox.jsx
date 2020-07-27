@@ -9,36 +9,38 @@ import CloseIcon from '@material-ui/icons/Close';
 import { useSocket } from 'socketio-hooks';
 
 const TaskEstimatedBox = () => {
+  const classes = TaskEstimatedBoxStyles();
+
   const [open, setOpen] = useState(false);
-  const [taskName, setTaskName] = useState();
-  const [userVoted, setUserVoted] = useState([]);
-  const [resultsAnalysis, setresultsAnalysis] = useState({});
+  const [taskName, setTaskName] = useState({});
+
   const sendVotesClear = useBackend('CLEAR_VOTES');
+
   const handleClose = () => {
     setOpen(false);
   };
 
-  useSocket('ROOM_VOTES', ({ votes, task }) => {
+  useSocket('ROOM_VOTES', ({ task }) => {
+    setTaskName(task);
     setOpen(true);
-    setUserVoted([...votes]);
-    setresultsAnalysis(task.Analysis);
   });
 
-  useSocket('TASK_UPDATED', ({ title }) => setTaskName(title));
-  const classes = TaskEstimatedBoxStyles();
   const onClickHandlerClear = () => {
     sendVotesClear();
     setOpen(false);
   };
-
   return (
     <Dialog open={open} onClose={onClickHandlerClear} scroll="paper" fullWidth={true} maxWidth="md">
       <DialogContent className={classes.root}>
         <IconButton aria-label="close" onClick={onClickHandlerClear} className={classes.closeButton}>
           <CloseIcon />
         </IconButton>
-        <DialogTitle>{taskName}</DialogTitle>
-        <TaskEstimationElement users={userVoted} resultsAnalysis={resultsAnalysis} onClose={onClickHandlerClear} />
+        <DialogTitle>{taskName.title}</DialogTitle>
+        <TaskEstimationElement
+          users={taskName.results}
+          resultsAnalysis={taskName.analysis}
+          onClose={onClickHandlerClear}
+        />
         <TaskEstimatedChart onClose={handleClose} />
       </DialogContent>
     </Dialog>
