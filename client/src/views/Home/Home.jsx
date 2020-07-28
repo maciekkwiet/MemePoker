@@ -1,15 +1,15 @@
 import React from 'react';
-import HomeStyle from './HomeStyle';
 import CreateNewRoom from 'Components/CreateNewRoom/';
 import JoinRoom from 'Components/JoinRoom/JoinRoom';
 import MainBox from 'Components/MainBox';
 import PromotedText from 'Components/PromotedText';
 import WelcomeBox from 'Components/WelcomeBox';
 import { Typography } from '@material-ui/core';
-import Divider from '@material-ui/core/Divider';
+
+import { HomeStyles, CustomDivider } from './HomeStyle';
 
 const Home = () => {
-  const classes = HomeStyle();
+  const classes = HomeStyles();
   return (
     <>
       <MainBox className={classes.wrapper}>
@@ -24,7 +24,7 @@ const Home = () => {
             <Typography variant="h6">CREATE NEW SESSION</Typography>
             <CreateNewRoom />
           </div>
-          <Divider orientation="vertical" flexItem className={classes.divider} />
+          <CustomDivider orientation="vertical" flexItem />
           <div className={classes.wrapperItemColumn}>
             <Typography variant="h6">ADD ROOM'S NUMBER</Typography>
             <JoinRoom />

@@ -16,7 +16,7 @@ const socketRouter = (server: http.Server): void => {
   const io = socketio(server);
 
   io.on('connect', (socket: socketio.Socket): void => {
-    socket.use(auth);
+    socket.use(auth({ io, socket }));
 
     socket.on('USER_JOIN', eventHandlerWrapper({ io, socket }, onUserJoin));
     socket.on('USER_RECONNECT', eventHandlerWrapper({ io, socket }, onUserReconnect));
