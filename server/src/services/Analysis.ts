@@ -1,26 +1,23 @@
-import { type } from 'os';
-
 class Analysis {
   average: number;
   median: number;
   standardDeviation: number;
 
-  constructor(array: string[]) {
-    const fitered = this.checkArray(array);
-
+  constructor(voteValues: string[]) {
+    const fitered = this.checkArray(voteValues);
     this.average = this.countAverage(fitered);
     this.median = this.countMedian(fitered);
     this.standardDeviation = this.countStandardDeviation(fitered);
   }
-  countMedian(array: number[]) {
+  private countMedian(array: number[]) {
     const mid = Math.floor(array.length / 2),
       nums = [...array].sort((a, b) => a - b);
     return array.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
   }
-  countStandardDeviation(array: number[]) {
-    const avg = this.countAverage(array);
-    const squareDiffs = array.map(function (value) {
-      const diff = value - avg;
+  private countStandardDeviation(array: number[]) {
+    console.log('odchylenie this', this);
+    const squareDiffs = array.map(value => {
+      const diff = value - this.average;
       const sqrDiff = diff * diff;
       return sqrDiff;
     });
@@ -28,18 +25,13 @@ class Analysis {
     const stdDev = Math.sqrt(avgSquareDiff);
     return stdDev;
   }
-  countAverage(array: number[]) {
+  private countAverage(array: number[]) {
     let sum = array.reduce((sum, x) => sum + x);
     const avg = sum / array.length;
     return avg;
   }
-  checkArray(array: string[]): number[] {
-    const checked = array
-      .map(i => parseInt(i, 10))
-      .filter(i => {
-        return i >= 0;
-      });
-    return checked;
+  private checkArray(voteValues: string[]): number[] {
+    return voteValues.map(i => parseInt(i, 10)).filter(i => i >= 0);
   }
 }
 export { Analysis };
