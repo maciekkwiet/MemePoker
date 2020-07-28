@@ -12,17 +12,17 @@ const TaskEstimatedBox = () => {
   const classes = TaskEstimatedBoxStyles();
 
   const [open, setOpen] = useState(false);
-  const [taskName, setTaskName] = useState({});
+  const [task, setTask] = useState(null);
 
   const sendVotesClear = useBackend('CLEAR_VOTES');
-
   const handleClose = () => {
     setOpen(false);
   };
 
   useSocket('ROOM_VOTES', ({ task }) => {
-    setTaskName(task);
+    setTask(task);
     setOpen(true);
+    console.log({ task });
   });
 
   const onClickHandlerClear = () => {
@@ -35,12 +35,8 @@ const TaskEstimatedBox = () => {
         <IconButton aria-label="close" onClick={onClickHandlerClear} className={classes.closeButton}>
           <CloseIcon />
         </IconButton>
-        <DialogTitle>{taskName.title}</DialogTitle>
-        <TaskEstimationElement
-          users={taskName.results}
-          resultsAnalysis={taskName.analysis}
-          onClose={onClickHandlerClear}
-        />
+        <DialogTitle>{task?.title}</DialogTitle>
+        <TaskEstimationElement users={task?.results} resultsAnalysis={task?.analysis} onClose={onClickHandlerClear} />
         <TaskEstimatedChart onClose={handleClose} />
       </DialogContent>
     </Dialog>
