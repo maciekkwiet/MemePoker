@@ -1,3 +1,3 @@
-import TaskEstimatedChart from './TaskEstimatedBox';
+import TaskEstimatedChart from './TaskEstimatedChart';
 
 export default TaskEstimatedChart;

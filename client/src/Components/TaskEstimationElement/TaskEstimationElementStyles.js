@@ -4,13 +4,13 @@ const TaskEstimatedElementStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexFlow: 'column nowrap',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'right',
+    alignItems: 'right',
     position: 'relative',
   },
-
   votesTitle: {
     marginLeft: theme.spacing(2),
+    marginTop: theme.spacing(2),
     fontSize: '20px',
   },
 }));
