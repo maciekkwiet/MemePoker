@@ -4,15 +4,20 @@ import axios from 'axios';
 
 import VoteButton from 'Components/VoteButton/index.js';
 import CreateNewRoomStyles from './CreateNewRoomStyles';
+import { useRoomContext } from 'Contexts/RoomContext';
 
 const CreateNewRoom = () => {
   const history = useHistory();
   const classes = CreateNewRoomStyles();
+  const { setErrorMsg } = useRoomContext();
 
   const getRoomNumber = async () => {
     try {
       const currentRoom = await axios.post('/api/session');
-      history.push(`/room/${currentRoom.data.room.id}/join`, { isAdmin: true });
+      if (currentRoom.data?.room?.id) history.push(`/room/${currentRoom.data.room.id}/join`, { isAdmin: true });
+      else {
+        setErrorMsg('Error : ' + currentRoom.data);
+      }
     } catch (e) {
       console.error(e);
     }
