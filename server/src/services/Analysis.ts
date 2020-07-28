@@ -1,21 +1,26 @@
 class Analysis {
-  average: number;
-  median: number;
-  standardDeviation: number;
+  average: number | string;
+  median: number | string;
+  standardDeviation: number | string;
 
   constructor(voteValues: string[]) {
     const fitered = this.checkArray(voteValues);
-    this.average = this.countAverage(fitered);
-    this.median = this.countMedian(fitered);
-    this.standardDeviation = this.countStandardDeviation(fitered);
+    if (fitered.length > 0) {
+      this.average = this.countAverage(fitered);
+      this.median = this.countMedian(fitered);
+      this.standardDeviation = this.countStandardDeviation(fitered);
+    } else {
+      this.average = 'Unable to calculate';
+      this.median = 'Unable to calculate';
+      this.standardDeviation = 'Unable to calculate';
+    }
   }
-  private countMedian(array: number[]) {
+  private countMedian(array: number[]): number {
     const mid = Math.floor(array.length / 2),
       nums = [...array].sort((a, b) => a - b);
     return array.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
   }
   private countStandardDeviation(array: number[]) {
-    console.log('odchylenie this', this);
     const squareDiffs = array.map(value => {
       const diff = value - this.average;
       const sqrDiff = diff * diff;
