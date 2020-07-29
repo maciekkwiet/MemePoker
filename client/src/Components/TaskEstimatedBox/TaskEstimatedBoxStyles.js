@@ -7,6 +7,17 @@ const TaskEstimatedBoxStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
+    padding: theme.spacing(4),
+  },
+  headerTitle: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  closeButton: {
+    position: 'absolute',
+    right: theme.spacing(1),
+    top: theme.spacing(0.75),
+    color: theme.palette.primary.main,
   },
 }));
 

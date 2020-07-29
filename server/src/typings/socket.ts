@@ -9,7 +9,7 @@ export type EventHandlerWrapper = (
   handler: EventHandler<unknown>
 ) => (payload: unknown, callback?: ResponseCallback) => void;
 
-export type Middlewere = (packet: SocketIO.Packet, next: (err?: any) => void) => void;
+export type Middlewere = (context: Context) => (packet: SocketIO.Packet, next: (err?: any) => void) => void;
 
 export interface Context {
   io: SocketIO.Server;

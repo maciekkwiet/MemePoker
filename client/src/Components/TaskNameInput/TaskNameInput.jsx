@@ -8,8 +8,8 @@ import { TaskNameInputStyles, CustomLabel, CustomInput } from './TaskNameInputSt
 
 const TaskNameInput = () => {
   const { user } = useUserContext();
-  const classes = TaskNameInputStyles();
   const sendTask = useBackend('NEW_TASK');
+  const classes = TaskNameInputStyles();
 
   const onSubmitHandler = e => {
     e.preventDefault();

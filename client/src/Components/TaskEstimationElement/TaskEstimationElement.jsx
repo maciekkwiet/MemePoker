@@ -13,7 +13,7 @@ import Box from '@material-ui/core/Box';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.primary.main,
     color: theme.palette.common.white,
   },
   body: {
@@ -29,32 +29,7 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-function createData(median, average, standardDeviation) {
-  return { median, average, standardDeviation };
-}
-const results = [
-  {
-    id: 1,
-    userId: 123,
-    username: 'piotrek',
-    vote: 5,
-  },
-  {
-    id: 2,
-    userId: 124,
-    username: 'jan',
-    vote: 3,
-  },
-  {
-    id: 3,
-    userId: 125,
-    username: 'adam',
-    vote: 1,
-  },
-];
-const rows = [createData(10, 159, 6.0)];
-
-const TaskEstimationElement = () => {
+const TaskEstimationElement = ({ users, resultsAnalysis }) => {
   const classes = TaskEstimationElementStyles();
 
   return (
@@ -69,13 +44,11 @@ const TaskEstimationElement = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map(row => (
-              <StyledTableRow key={row.name}>
-                <StyledTableCell align="center">{row.median}</StyledTableCell>
-                <StyledTableCell align="center">{row.average}</StyledTableCell>
-                <StyledTableCell align="center">{row.standardDeviation}</StyledTableCell>
-              </StyledTableRow>
-            ))}
+            <StyledTableRow>
+              <StyledTableCell align="center">{resultsAnalysis.median}</StyledTableCell>
+              <StyledTableCell align="center">{resultsAnalysis.average}</StyledTableCell>
+              <StyledTableCell align="center">{resultsAnalysis.standardDeviation}</StyledTableCell>
+            </StyledTableRow>
           </TableBody>
         </Table>
         <Box my={2}>
@@ -84,10 +57,10 @@ const TaskEstimationElement = () => {
           </Typography>
           <Table size="small">
             <TableBody>
-              {results.map(result => (
-                <StyledTableRow key={result.userId}>
-                  <StyledTableCell align="left">{result.username}</StyledTableCell>
-                  <StyledTableCell align="right">{result.vote}</StyledTableCell>
+              {users?.map(user => (
+                <StyledTableRow key={user.name}>
+                  <StyledTableCell align="left">{user.name}</StyledTableCell>
+                  <StyledTableCell align="right">{user.vote}</StyledTableCell>
                 </StyledTableRow>
               ))}
             </TableBody>
@@ -97,4 +70,5 @@ const TaskEstimationElement = () => {
     </>
   );
 };
+
 export default TaskEstimationElement;

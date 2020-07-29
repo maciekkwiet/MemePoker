@@ -1,3 +1,3 @@
-import TaskEstimationElement from './TaskEstimationElement';
+import TaskEstimatedElement from './TaskEstimatedElement';
 
-export default TaskEstimationElement;
+export default TaskEstimatedElement;

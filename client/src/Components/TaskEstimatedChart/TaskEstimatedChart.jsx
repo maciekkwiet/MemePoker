@@ -1,58 +1,62 @@
 import React, { forwardRef } from 'react';
-import TextField from '@material-ui/core/TextField';
-import AddBoxIcon from '@material-ui/icons/AddBox';
-import Grid from '@material-ui/core/Grid';
-
-import { Typography, IconButton, Table, TableContainer, TableBody, Box, Paper } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
-
+import { useSocket } from 'socketio-hooks';
+import { useBackend } from 'hooks/useBackend';
+import { useUserContext } from 'Contexts/UserContext';
+import { TextField, Button } from '@material-ui/core';
 import { TaskEstimatedChartStyles } from './TaskEstimatedChartStyles';
 
-const TaskEstimatedChart = ({ children, onClose, modalTitle }) => {
+const TaskEstimatedChart = ({ onClose }) => {
   const classes = TaskEstimatedChartStyles();
+
+  const sendVotesShow = useBackend('SUBMIT_ESTIMATION');
+  const sendVotesClear = useBackend('CLEAR_VOTES');
+  const { isAdmin } = useUserContext().user;
+
+  useSocket('VOTES_CLEARED', () => {
+    onClose();
+  });
+
+  const onHandleClick = e => {
+    e.preventDefault();
+    const task = e.target.result.value;
+    sendVotesShow({ task });
+    sendVotesClear();
+    onClose();
+  };
+
+  const onClickHandlerClear = () => {
+    sendVotesClear();
+  };
+
   return (
     <>
-      <Paper className={classes.root}>
-        <div className={classes.headerTitle}>
-          <Grid container className={classes.input}>
-            <Grid className={classes.title} item xs={8}>
-              <Typography variant="h6" component="h2" className={classes.title}>
-                {modalTitle}
-              </Typography>
-            </Grid>
-            <Grid item xs={2}>
-              <div className={classes.wrapperInput}>
-                <TextField
-                  label="Result"
-                  variant="outlined"
-                  id="result"
-                  autoComplete="off"
-                  name="result"
-                  size="small"
-                  fullWidth
-                ></TextField>
-              </div>
-            </Grid>
-            <Grid item xs={1} className={classes.button}>
-              <IconButton color="primary" aria-label="add to shopping cart" fullWidth>
-                <AddBoxIcon />
-              </IconButton>
-            </Grid>
-            <Grid item xs={1}>
-              <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-                <CloseIcon />
-              </IconButton>
-            </Grid>
-          </Grid>
+      {isAdmin && (
+        <div className={classes.wrapper}>
+          <form onSubmit={onHandleClick} autoComplete="off" className={classes.wrapperInput}>
+            <div>
+              {' '}
+              <TextField
+                label="Final estimation"
+                variant="outlined"
+                id="result"
+                autoComplete="off"
+                name="result"
+                size="small"
+                className={classes.wrapperInput}
+              ></TextField>{' '}
+            </div>
+            <div>
+              <Button className={classes.button} color="primary" variant="contained" onClick={onClickHandlerClear}>
+                REESTIMATE
+              </Button>{' '}
+              <Button className={classes.button} color="primary" variant="contained" type="submit">
+                SUBMIT
+              </Button>
+            </div>
+          </form>
         </div>
-        <TableContainer component={Box}>
-          <Table size="small" className={classes.table}>
-            <TableBody>{children}</TableBody>
-          </Table>
-        </TableContainer>
-      </Paper>
+      )}
     </>
   );
 };
-
 export default forwardRef((props, ref) => <TaskEstimatedChart {...props} forwardedRef={ref} />);

@@ -10,7 +10,7 @@ class Task {
   private results: Result[];
   private estimationTime: number | null;
   private finalResult: number | null;
-  private Analysis: Analysis | null;
+  private analysis: Analysis | null;
 
   constructor(title: string) {
     this.title = title;
@@ -18,7 +18,7 @@ class Task {
     this.results = [];
     this.estimationTime = null;
     this.finalResult = null;
-    this.Analysis = null;
+    this.analysis = null;
   }
 
   setResults(votes: Result[]): void {
@@ -40,10 +40,9 @@ class Task {
   analyzeResults(): void {
     const voteValues: number[] = [];
     this.results.forEach(vote => {
-      if (vote.vote !== null) voteValues.push(vote.vote);
+      if (vote.vote !== null && vote.vote > 0) voteValues.push(vote.vote);
     });
-    this.Analysis = new Analysis(voteValues);
+    this.analysis = new Analysis(voteValues);
   }
 }
 export { Task };
-
