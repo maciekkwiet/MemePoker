@@ -22,7 +22,6 @@ const TaskEstimatedBox = () => {
   useSocket('ROOM_VOTES', ({ task }) => {
     setTask(task);
     setOpen(true);
-    console.log({ task });
   });
 
   const onClickHandlerClear = () => {

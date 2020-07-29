@@ -7,7 +7,9 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 import { historyElementStyles, StyledTableCell, StyledTableRow, MainTableCell } from './HistoryElementStyles';
 
-const HistoryElement = ({ title, finalResult, estimationTime, Analysis, results }) => {
+const HistoryElement = ({ title, finalResult, estimationTime, analysis, results }) => {
+  console.log(finalResult); //null
+
   const [open, setOpen] = useState(false);
   const classes = historyElementStyles();
 
@@ -32,15 +34,15 @@ const HistoryElement = ({ title, finalResult, estimationTime, Analysis, results 
               <Box className={classes.analysis}>
                 <Box>
                   <Typography component="div">Average:</Typography>
-                  <Typography component="div">{Analysis.average}</Typography>
+                  <Typography component="div">{analysis.average}</Typography>
                 </Box>
                 <Box>
                   <Typography component="div">Median:</Typography>
-                  <Typography component="div">{Analysis.median}</Typography>
+                  <Typography component="div">{analysis.median}</Typography>
                 </Box>
                 <Box>
                   <Typography component="div">Standard deviation:</Typography>
-                  <Typography component="div">{Analysis.standardDeviation}</Typography>
+                  <Typography component="div">{analysis.standardDeviation}</Typography>
                 </Box>
               </Box>
             </Box>
