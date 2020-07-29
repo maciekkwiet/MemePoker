@@ -22,7 +22,6 @@ const HistoryBox = () => {
 
   useSocket('TASK_ARCHIVED', tasks => {
     setHistory(tasks);
-    console.log(tasks);
   });
 
   return (

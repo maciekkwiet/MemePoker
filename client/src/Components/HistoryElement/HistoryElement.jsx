@@ -11,7 +11,7 @@ const HistoryElement = ({ title, finalResult, estimationTime, Analysis, results 
   const [open, setOpen] = useState(false);
   const classes = historyElementStyles();
 
-  let formattedTime = format(new Date(estimationTime), "mm'm' ss's'");
+  const formattedTime = format(new Date(estimationTime), "mm'm' ss's'");
 
   return (
     <>
