@@ -8,8 +8,6 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import { historyElementStyles, StyledTableCell, StyledTableRow, MainTableCell } from './HistoryElementStyles';
 
 const HistoryElement = ({ title, finalResult, estimationTime, analysis, results }) => {
-  console.log(finalResult); //null
-
   const [open, setOpen] = useState(false);
   const classes = historyElementStyles();
 

@@ -18,8 +18,8 @@ const TaskEstimatedChart = ({ onClose }) => {
 
   const onHandleClick = e => {
     e.preventDefault();
-    const task = e.target.result.value;
-    sendVotesShow({ task });
+    const result = e.target.result.value;
+    sendVotesShow({ result });
     sendVotesClear();
     onClose();
   };
