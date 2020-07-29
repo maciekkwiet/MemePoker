@@ -3,7 +3,7 @@ class Analysis {
   median: number | string;
   standardDeviation: number | string;
 
-  constructor(voteValues: string[]) {
+  constructor(voteValues: any[]) {
     const fitered = this.checkArray(voteValues);
     if (fitered.length > 0) {
       this.average = this.countAverage(fitered);
@@ -22,7 +22,8 @@ class Analysis {
   }
   private countStandardDeviation(array: number[]) {
     const squareDiffs = array.map(value => {
-      const diff = value - this.average;
+      const avg = this.average as number;
+      const diff = value - avg;
       const sqrDiff = diff * diff;
       return sqrDiff;
     });
