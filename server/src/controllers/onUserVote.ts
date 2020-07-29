@@ -6,8 +6,6 @@ const onUserVote: EventHandler<UserVotePayload> = ({ io }, { value, room, user }
   user.vote = value;
 
   if (room.hasEveryoneVoted()) {
-    room.archiveTask();
-
     room.getTask().setResults(room.getVotes());
     room.getTask().analyzeResults();
     message = `Everyone in room ${room.id} voted, votes: ${JSON.stringify(room.getVotes())}`;

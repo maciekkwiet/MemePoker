@@ -22,7 +22,7 @@ class Room {
 
   getAdmin(id: string): User | null {
     const roomAdmin = this.users.find(user => user.isAdmin === true) ?? null;
-    if (roomAdmin?.socket === id) throw new Error('This user is admin in different room');
+    // if (roomAdmin?.socket === id) throw new Error('This user is admin in different room');
     return roomAdmin;
   }
 
