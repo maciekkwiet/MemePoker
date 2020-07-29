@@ -3,12 +3,11 @@ class Analysis {
   median: number | string;
   standardDeviation: number | string;
 
-  constructor(voteValues: string[]) {
-    const fitered = this.checkArray(voteValues);
-    if (fitered.length > 0) {
-      this.average = this.countAverage(fitered);
-      this.median = this.countMedian(fitered);
-      this.standardDeviation = this.countStandardDeviation(fitered);
+  constructor(voteValues: number[]) {
+    if (voteValues) {
+      this.average = this.countAverage(voteValues);
+      this.median = this.countMedian(voteValues);
+      this.standardDeviation = this.countStandardDeviation(voteValues);
     } else {
       this.average = 'Unable to calculate';
       this.median = 'Unable to calculate';
@@ -34,9 +33,6 @@ class Analysis {
     let sum = array.reduce((sum, x) => sum + x);
     const avg = sum / array.length;
     return avg;
-  }
-  private checkArray(voteValues: string[]): number[] {
-    return voteValues.map(i => parseInt(i, 10)).filter(i => i >= 0);
   }
 }
 export { Analysis };

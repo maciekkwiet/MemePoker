@@ -40,7 +40,7 @@ class Task {
   analyzeResults(): void {
     const voteValues: number[] = [];
     this.results.forEach(vote => {
-      if (vote.vote !== null) voteValues.push(vote.vote);
+      if (vote.vote !== null && vote.vote > 0) voteValues.push(vote.vote);
     });
     this.analysis = new Analysis(voteValues);
   }
