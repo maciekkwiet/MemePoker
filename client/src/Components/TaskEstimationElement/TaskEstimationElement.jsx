@@ -29,6 +29,10 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
+const Rounder = number => {
+  return Math.round((number + Number.EPSILON) * 10) / 10;
+};
+
 const TaskEstimationElement = ({ users, resultsAnalysis }) => {
   const classes = TaskEstimationElementStyles();
 
@@ -45,9 +49,9 @@ const TaskEstimationElement = ({ users, resultsAnalysis }) => {
           </TableHead>
           <TableBody>
             <StyledTableRow>
-              <StyledTableCell align="center">{resultsAnalysis.median}</StyledTableCell>
-              <StyledTableCell align="center">{resultsAnalysis.average}</StyledTableCell>
-              <StyledTableCell align="center">{resultsAnalysis.standardDeviation}</StyledTableCell>
+              <StyledTableCell align="center">{Rounder(resultsAnalysis.median)}</StyledTableCell>
+              <StyledTableCell align="center">{Rounder(resultsAnalysis.average)}</StyledTableCell>
+              <StyledTableCell align="center">{Rounder(resultsAnalysis.standardDeviation)}</StyledTableCell>
             </StyledTableRow>
           </TableBody>
         </Table>
