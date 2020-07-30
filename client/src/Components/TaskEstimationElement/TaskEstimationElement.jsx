@@ -30,7 +30,7 @@ const StyledTableRow = withStyles(theme => ({
 }))(TableRow);
 
 const Rounder = number => {
-  return Math.round((number + Number.EPSILON) * 10) / 10;
+  return Math.round((number + Number.EPSILON) * 100) / 100;
 };
 
 const TaskEstimationElement = ({ users, resultsAnalysis }) => {
