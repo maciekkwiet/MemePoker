@@ -1,7 +1,7 @@
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { TableCell } from '@material-ui/core';
 
-const TaskEstimatedChartStyles = makeStyles(theme => ({
+const TaskEstimatedAdminBoxStyles = makeStyles(theme => ({
   wrapper: {
     display: 'flex',
     flexDirection: 'column',
@@ -53,4 +53,4 @@ const HeadTableCell = withStyles(theme => ({
   },
 }))(TableCell);
 
-export { TaskEstimatedChartStyles, HeadTableCell };
+export { TaskEstimatedAdminBoxStyles, HeadTableCell };

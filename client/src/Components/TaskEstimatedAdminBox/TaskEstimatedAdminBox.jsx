@@ -1,10 +1,9 @@
 import React, { forwardRef } from 'react';
-import { useSocket } from 'socketio-hooks';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
 import { useBackend } from 'hooks/useBackend';
-import { TaskEstimatedChartStyles } from './TaskEstimatedChartStyles';
+import { TaskEstimatedAdminBoxStyles } from './TaskEstimatedAdminBoxStyles';
 import { useUserContext } from 'Contexts/UserContext';
 
 import { TextField, Button } from '@material-ui/core';
@@ -13,19 +12,14 @@ const Schema = yup.object().shape({
   result: yup.number().required(),
 });
 
-const TaskEstimatedChart = ({ onClose }) => {
-  const { register, handleSubmit, errors } = useForm({
-    validationSchema: Schema,
-  });
-  const classes = TaskEstimatedChartStyles({ errors });
-
+const TaskEstimatedAdminBox = ({ onClose }) => {
   const sendVotesShow = useBackend('SUBMIT_ESTIMATION');
   const sendVotesClear = useBackend('CLEAR_VOTES');
   const { isAdmin } = useUserContext().user;
-
-  useSocket('VOTES_CLEARED', () => {
-    onClose();
+  const { register, handleSubmit, errors } = useForm({
+    validationSchema: Schema,
   });
+  const classes = TaskEstimatedAdminBoxStyles({ errors });
 
   const onHandleClick = ({ result }) => {
     sendVotesShow({ result });
@@ -73,4 +67,4 @@ const TaskEstimatedChart = ({ onClose }) => {
     </>
   );
 };
-export default forwardRef((props, ref) => <TaskEstimatedChart {...props} forwardedRef={ref} />);
+export default forwardRef((props, ref) => <TaskEstimatedAdminBox {...props} forwardedRef={ref} />);
