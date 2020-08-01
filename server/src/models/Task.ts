@@ -1,12 +1,12 @@
 import { Analysis } from '@services/Analysis';
 export interface Result {
   name: string;
-  vote: number | null;
+  vote: string | null;
 }
 
 class Task {
   private timeStamp: number;
-  public readonly title: string;
+  readonly title: string;
   private results: Result[];
   private estimationTime: number | null;
   private finalResult: number | null;
@@ -24,23 +24,27 @@ class Task {
   setResults(votes: Result[]): void {
     this.results = votes;
   }
+
   setEstimationTime(): void {
     this.estimationTime = new Date().getTime() - this.timeStamp;
   }
+
   setFinalResult(): void {
-    const voteValues: number[] = [];
-    this.results.forEach(vote => {
-      if (vote.vote !== null) voteValues.push(vote.vote);
+    const voteValues: string[] = [];
+    this.results.map(result => {
+      if (result.vote !== null) voteValues.push(result.vote);
     });
-    this.finalResult = voteValues.reduce((a, b) => a + b, 0) / voteValues.length;
+    this.finalResult = voteValues.map(result => parseInt(result, 10)).reduce((a, b) => a + b, 0) / voteValues.length;
   }
+
   reassignFinalResult(reassignedResult: number): void {
     this.finalResult = reassignedResult;
   }
+
   analyzeResults(): void {
-    const voteValues: number[] = [];
-    this.results.forEach(vote => {
-      if (vote.vote !== null) voteValues.push(vote.vote);
+    const voteValues: string[] = [];
+    this.results.forEach(result => {
+      if (result.vote !== null) voteValues.push(result.vote);
     });
     this.analysis = new Analysis(voteValues);
   }
