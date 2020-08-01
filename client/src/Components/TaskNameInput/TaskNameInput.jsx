@@ -18,12 +18,13 @@ const TaskNameInput = () => {
   const sendTask = useBackend('NEW_TASK');
   const classes = TaskNameInputStyles();
 
-  const { register, handleSubmit, errors } = useForm({
+  const { register, reset, handleSubmit, errors } = useForm({
     validationSchema: Schema,
   });
 
   const onSubmitHandler = ({ task }) => {
     sendTask({ task });
+    reset();
   };
 
   if (!user.isAdmin) return null;
