@@ -9,6 +9,7 @@ import { useUserContext } from 'Contexts/UserContext';
 import { useRoomContext } from 'Contexts/RoomContext';
 import PromotedText from 'Components/PromotedText/PromotedText';
 import VoteButton from 'Components/VoteButton';
+import ObserverCheckbox from 'Components/ObserverCheckbox';
 import UserNameStyles from './UserNameStyles';
 import photo1 from 'Assets/pngfind.com-meme-faces-png-13834.png';
 import photo2 from 'Assets/pngfind.com-memes-png-401574.png';
@@ -54,6 +55,9 @@ const UserNameInput = () => {
             <img src={photo1} alt="twitter avatar" className={classes.img} />
           </div>
           <div className={classes.wrapper}>
+            <div className={classes.wrapper}>
+              <ObserverCheckbox />
+            </div>
             <div className={classes.wrapperInput}>
               <TextField
                 label="NAME"
