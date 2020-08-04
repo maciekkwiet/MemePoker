@@ -17,13 +17,13 @@ class Room {
   }
 
   getUser(name: string): User {
-    const user = this.users.find(user => user.name === name);
+    const user = this.allParticipaties().find(user => user.name === name);
     if (!user) throw new Error(`User ${name} does not belong to room ${this.id}`);
     return user;
   }
 
   getAdmin(id: string): User | null {
-    const roomAdmin = this.users.find(user => user.isAdmin === true) ?? null;
+    const roomAdmin = this.allParticipaties().find(user => user.isAdmin === true) ?? null;
     // if (roomAdmin?.socket === id) throw new Error('This user is admin in different room');
     return roomAdmin;
   }
@@ -39,17 +39,21 @@ class Room {
 
     name = userName;
     const user = new User(name, socket, isAdmin, isObserver);
-    isObserver ? this.users.push(user) : this.observer.push(user);
+    isObserver ? this.observer.push(user) : this.users.push(user);
     return user;
   }
 
   private isTaken(userName: string): boolean {
-    if (this.users.find(user => user.name === userName)) return true;
+    if (this.allParticipaties().find(user => user.name === userName)) return true;
     return false;
   }
 
   hasEveryoneVoted(): boolean {
     return !this.users.some(user => user.vote === null);
+  }
+
+  allParticipaties() {
+    return [...this.users, ...this.observer];
   }
 
   clearVotes() {
