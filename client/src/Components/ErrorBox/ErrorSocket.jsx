@@ -4,13 +4,10 @@ import MuiAlert from '@material-ui/lab/Alert';
 import CloseIcon from '@material-ui/icons/Close';
 import { useSocket } from 'socketio-hooks';
 
-import { useRoomContext } from 'Contexts/RoomContext';
-
-const ErrorBox = () => {
+const ErrorSocket = () => {
   const [snackPack, setSnackPack] = useState([]);
   const [open, setOpen] = useState(false);
   const [error, setError] = useState(undefined);
-  const { errorMsg, setErrorMsg } = useRoomContext();
 
   useEffect(() => {
     if (snackPack.length && !error) {
@@ -33,19 +30,8 @@ const ErrorBox = () => {
   };
 
   useSocket('EXCEPTION', message => {
-    sendError(message);
-  });
-
-  const sendError = message => {
     setSnackPack(prev => [...prev, { message, key: new Date().getTime() }]);
-    setErrorMsg(undefined);
-  };
-
-  useEffect(() => {
-    if (errorMsg) {
-      sendError(errorMsg);
-    }
-  }, [errorMsg]);
+  });
 
   return (
     <div>
@@ -63,7 +49,7 @@ const ErrorBox = () => {
         <MuiAlert
           severity="error"
           variant="filled"
-          elevation="6"
+          elevation={6}
           onClose={handleClose}
           action={
             <React.Fragment>
@@ -80,4 +66,4 @@ const ErrorBox = () => {
   );
 };
 
-export default ErrorBox;
+export default ErrorSocket;

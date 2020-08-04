@@ -9,7 +9,7 @@ import Room from 'views/Room';
 import RoomJoin from 'views/RoomJoin';
 import Template from 'Components/Template';
 import theme from 'theme';
-import ErrorBox from 'Components/ErrorBox/ErrorBox';
+import ErrorSocket from 'Components/ErrorBox/ErrorSocket';
 
 function App() {
   //Only for debug purposes
@@ -31,7 +31,7 @@ function App() {
               <Home />
             </Route>
           </Switch>
-          <ErrorBox />
+          <ErrorSocket />
         </Template>
       </BrowserRouter>
     </ThemeProvider>
