@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
 import { useEmit } from 'socketio-hooks';
 import { useForm } from 'react-hook-form';
@@ -39,11 +39,17 @@ const UserNameInput = () => {
   const onSubmitHandler = ({ name }) => {
     window.localStorage.setItem('DEFAULT_NAME', name);
 
-    joinRoom({ name, roomId, isAdmin: state?.isAdmin }, ({ room, token }) => {
+    joinRoom({ name, roomId, isAdmin: state?.isAdmin, isObserver }, ({ room, token }) => {
       saveToken(token);
       updateRoomInfo(room);
       history.push(`/room/${roomId}`);
     });
+  };
+
+  const [isObserver, setObserver] = useState(false);
+
+  const handleChange = () => {
+    setObserver(!isObserver);
   };
 
   return (
@@ -56,7 +62,7 @@ const UserNameInput = () => {
           </div>
           <div className={classes.wrapper}>
             <div className={classes.wrapper}>
-              <ObserverCheckbox />
+              <ObserverCheckbox handleChange={handleChange} checked={isObserver} />
             </div>
             <div className={classes.wrapperInput}>
               <TextField
