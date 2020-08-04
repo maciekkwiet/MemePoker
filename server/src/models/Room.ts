@@ -6,12 +6,14 @@ class Room {
   history: Task[];
   private task: Task;
   private users: User[];
+  private observer: User[];
 
   constructor(id: string) {
     this.id = id;
     this.task = new Task('Waiting for first task...');
     this.users = [];
     this.history = [];
+    this.observer = [];
   }
 
   getUser(name: string): User {
@@ -26,7 +28,7 @@ class Room {
     return roomAdmin;
   }
 
-  addUser(name: string, socket: string, isAdmin: boolean): User {
+  addUser(name: string, socket: string, isAdmin: boolean, isObserver: boolean): User {
     let userName = name;
     let numberUser = 0;
 
@@ -36,8 +38,8 @@ class Room {
     }
 
     name = userName;
-    const user = new User(name, socket, isAdmin);
-    this.users.push(user);
+    const user = new User(name, socket, isAdmin, isObserver);
+    isObserver ? this.users.push(user) : this.observer.push(user);
     return user;
   }
 
