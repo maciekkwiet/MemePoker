@@ -9,7 +9,6 @@ import { useUserContext } from 'Contexts/UserContext';
 import { useRoomContext } from 'Contexts/RoomContext';
 import PromotedText from 'Components/PromotedText/PromotedText';
 import VoteButton from 'Components/VoteButton';
-import Tooltip from 'Components/Tooltip';
 import ObserverCheckbox from 'Components/ObserverCheckbox';
 import UserNameStyles from './UserNameStyles';
 import photo1 from 'Assets/pngfind.com-meme-faces-png-13834.png';
