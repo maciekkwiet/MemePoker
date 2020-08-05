@@ -45,9 +45,10 @@ class Analysis {
   private checkArray(voteValues: Array<string | null>): number[] {
     const numberArray: Array<number> = [];
 
-    voteValues.map(vote => {
-      if (vote !== null && !isNaN(parseInt(vote, 10))) {
-        numberArray.push(parseInt(vote, 10));
+    voteValues.forEach(vote => {
+      vote = vote === '1/2' ? '0.5' : vote;
+      if (vote !== null && !isNaN(+vote)) {
+        numberArray.push(+vote);
       }
     });
 
