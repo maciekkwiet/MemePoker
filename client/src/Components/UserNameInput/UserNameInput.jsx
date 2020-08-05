@@ -9,6 +9,7 @@ import { useUserContext } from 'Contexts/UserContext';
 import { useRoomContext } from 'Contexts/RoomContext';
 import PromotedText from 'Components/PromotedText/PromotedText';
 import VoteButton from 'Components/VoteButton';
+import Tooltip from 'Components/Tooltip';
 import ObserverCheckbox from 'Components/ObserverCheckbox';
 import UserNameStyles from './UserNameStyles';
 import photo1 from 'Assets/pngfind.com-meme-faces-png-13834.png';
@@ -61,9 +62,6 @@ const UserNameInput = () => {
             <img src={photo1} alt="twitter avatar" className={classes.img} />
           </div>
           <div className={classes.wrapper}>
-            <div className={classes.wrapper}>
-              <ObserverCheckbox handleChange={handleChange} checked={isObserver} />
-            </div>
             <div className={classes.wrapperInput}>
               <TextField
                 label="NAME"
@@ -77,6 +75,9 @@ const UserNameInput = () => {
                 size="small"
                 fullWidth
               ></TextField>
+            </div>
+            <div className={classes.wrapper}>
+              <ObserverCheckbox handleChange={handleChange} checked={isObserver} />
             </div>
             <div className={classes.wrapperButton}>
               <VoteButton content={'JOIN SESSION'} height={2.8} className={classes.wrapperButton} />
