@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
 import { useEmit } from 'socketio-hooks';
 import { useForm } from 'react-hook-form';
@@ -12,6 +12,7 @@ import VoteButton from 'Components/VoteButton';
 import UserNameStyles from './UserNameStyles';
 import photo1 from 'Assets/pngfind.com-meme-faces-png-13834.png';
 import photo2 from 'Assets/pngfind.com-memes-png-401574.png';
+import Loader from 'Components/Loader/Loader';
 
 const Schema = yup.object().shape({
   name: yup.string().required(),
@@ -28,6 +29,8 @@ const UserNameInput = () => {
   const history = useHistory();
   const joinRoom = useEmit('USER_JOIN');
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const { register, handleSubmit, errors } = useForm({
     validationSchema: Schema,
     defaultValues: {
@@ -39,11 +42,16 @@ const UserNameInput = () => {
     window.localStorage.setItem('DEFAULT_NAME', name);
 
     joinRoom({ name, roomId, isAdmin: state?.isAdmin }, ({ room, token }) => {
+      setIsLoading(false);
       saveToken(token);
       updateRoomInfo(room);
       history.push(`/room/${roomId}`);
     });
+
+    setIsLoading(true);
   };
+
+  if (isLoading) return <Loader text="Loading..." />;
 
   return (
     <>

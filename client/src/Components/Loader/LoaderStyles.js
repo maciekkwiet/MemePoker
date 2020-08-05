@@ -12,6 +12,7 @@ const loaderStyles = makeStyles(theme => ({
     flexFlow: 'column nowrap',
     alignItems: 'center',
     justifyContent: 'center',
+    zIndex: 1000,
   },
   msg: {
     marginTop: theme.spacing(2),
