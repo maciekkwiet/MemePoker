@@ -33,13 +33,8 @@ class Task {
     this.finalResult = reassignedResult;
   }
 
-  // do new Analysis wrzucić jakoś wszystko xd albo tutaj odfiltrować zeby nie przenosić tam any xD
   analyzeResults(): void {
-    const voteValues: string[] = [];
-    this.results.map(result => {
-      if (result.vote !== null) voteValues.push(result.vote);
-    });
-    this.analysis = new Analysis(voteValues);
+    this.analysis = new Analysis(this.results.map(result => result.vote));
   }
 }
 export { Task };

@@ -3,7 +3,7 @@ class Analysis {
   median: number | string;
   standardDeviation: number | string;
 
-  constructor(voteValues: string[]) {
+  constructor(voteValues: Array<string | null>) {
     const fitered = this.checkArray(voteValues);
 
     if (fitered.length > 0) {
@@ -42,9 +42,16 @@ class Analysis {
     return avg;
   }
 
-  // trzeba odfiltrować nulle i NaN, a voteValues bedzie numberem
-  private checkArray(voteValues: string[]): number[] {
-    return voteValues.map(i => parseInt(i, 10)).filter(i => i >= 0);
+  private checkArray(voteValues: Array<string | null>): number[] {
+    const numberArray: Array<number> = [];
+
+    voteValues.map(vote => {
+      if (vote !== null && !isNaN(parseInt(vote, 10))) {
+        numberArray.push(parseInt(vote, 10));
+      }
+    });
+
+    return numberArray;
   }
 }
 export { Analysis };
