@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSocket } from 'socketio-hooks';
 
 import InfoBox from 'Components/InfoBox';
-import useInterval from './useInterval';
+import useInterval from 'Utils/Converters/useInterval';
 
 const Timer = () => {
   const [seconds, setSeconds] = useState(0);
