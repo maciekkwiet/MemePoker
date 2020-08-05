@@ -42,6 +42,7 @@ class Analysis {
     return avg;
   }
 
+  // trzeba odfiltrować nulle i NaN, a voteValues bedzie numberem
   private checkArray(voteValues: string[]): number[] {
     return voteValues.map(i => parseInt(i, 10)).filter(i => i >= 0);
   }

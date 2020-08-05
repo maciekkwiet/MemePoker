@@ -29,21 +29,14 @@ class Task {
     this.estimationTime = new Date().getTime() - this.timeStamp;
   }
 
-  setFinalResult(): void {
-    const voteValues: string[] = [];
-    this.results.map(result => {
-      if (result.vote !== null) voteValues.push(result.vote);
-    });
-    this.finalResult = voteValues.map(result => parseInt(result, 10)).reduce((a, b) => a + b, 0) / voteValues.length;
-  }
-
   reassignFinalResult(reassignedResult: number): void {
     this.finalResult = reassignedResult;
   }
 
+  // do new Analysis wrzucić jakoś wszystko xd albo tutaj odfiltrować zeby nie przenosić tam any xD
   analyzeResults(): void {
     const voteValues: string[] = [];
-    this.results.forEach(result => {
+    this.results.map(result => {
       if (result.vote !== null) voteValues.push(result.vote);
     });
     this.analysis = new Analysis(voteValues);
