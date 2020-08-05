@@ -11,6 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import TaskEstimationElementStyles from './TaskEstimationElementStyles';
 import Box from '@material-ui/core/Box';
 
+import roundNumber from 'Utils/Converters/roundNumber';
+
 const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.primary.main,
@@ -29,10 +31,6 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-const Rounder = number => {
-  return Math.round((number + Number.EPSILON) * 100) / 100;
-};
-
 const TaskEstimationElement = ({ users, resultsAnalysis }) => {
   const classes = TaskEstimationElementStyles();
 
@@ -49,9 +47,9 @@ const TaskEstimationElement = ({ users, resultsAnalysis }) => {
           </TableHead>
           <TableBody>
             <StyledTableRow>
-              <StyledTableCell align="center">{Rounder(resultsAnalysis.median)}</StyledTableCell>
-              <StyledTableCell align="center">{Rounder(resultsAnalysis.average)}</StyledTableCell>
-              <StyledTableCell align="center">{Rounder(resultsAnalysis.standardDeviation)}</StyledTableCell>
+              <StyledTableCell align="center">{roundNumber(resultsAnalysis.median)}</StyledTableCell>
+              <StyledTableCell align="center">{roundNumber(resultsAnalysis.average)}</StyledTableCell>
+              <StyledTableCell align="center">{roundNumber(resultsAnalysis.standardDeviation)}</StyledTableCell>
             </StyledTableRow>
           </TableBody>
         </Table>

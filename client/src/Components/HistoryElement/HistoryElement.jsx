@@ -6,6 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 import { historyElementStyles, StyledTableCell, StyledTableRow, MainTableCell } from './HistoryElementStyles';
+import roundNumber from 'Utils/Converters/roundNumber';
 
 const HistoryElement = ({ title, finalResult, estimationTime, analysis, results }) => {
   const [open, setOpen] = useState(false);
@@ -32,15 +33,15 @@ const HistoryElement = ({ title, finalResult, estimationTime, analysis, results 
               <Box className={classes.analysis}>
                 <Box>
                   <Typography component="div">Average:</Typography>
-                  <Typography component="div">{analysis.average}</Typography>
+                  <Typography component="div">{roundNumber(analysis.average)}</Typography>
                 </Box>
                 <Box>
                   <Typography component="div">Median:</Typography>
-                  <Typography component="div">{analysis.median}</Typography>
+                  <Typography component="div">{roundNumber(analysis.median)}</Typography>
                 </Box>
                 <Box>
                   <Typography component="div">Standard deviation:</Typography>
-                  <Typography component="div">{analysis.standardDeviation}</Typography>
+                  <Typography component="div">{roundNumber(analysis.standardDeviation)}</Typography>
                 </Box>
               </Box>
             </Box>
