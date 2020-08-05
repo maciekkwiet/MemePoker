@@ -5,6 +5,7 @@ export interface UserJoinPayload {
   name: string;
   roomId: string;
   isAdmin: boolean;
+  isObserver: boolean;
   callback: (data: any) => void;
 }
 

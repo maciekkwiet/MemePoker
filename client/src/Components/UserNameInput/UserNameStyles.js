@@ -5,7 +5,7 @@ const UserNameStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '2em',
+    marginTop: '1em',
     justifyContent: 'center',
   },
   root: {
@@ -28,7 +28,7 @@ const UserNameStyles = makeStyles(theme => ({
   wrapperInput: {
     width: '20em',
     display: 'flex',
-    marginBottom: '1em',
+    marginBottom: '3em',
     '& .MuiFormLabel-root': {
       textAlign: 'center',
       color: '#FFFF',
@@ -45,7 +45,7 @@ const UserNameStyles = makeStyles(theme => ({
       textAlign: 'center',
     },
   },
-  wrapperButton: { width: '20em', justifyContent: 'center' },
+  wrapperButton: { width: '20em', justifyContent: 'center', marginBottom: '1em' },
 }));
 
 export default UserNameStyles;
