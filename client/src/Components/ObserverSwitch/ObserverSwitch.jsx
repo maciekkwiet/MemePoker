@@ -1,7 +1,7 @@
 import React from 'react';
 import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined';
 import Tooltip from '@material-ui/core/Tooltip';
-import observerCheckboxStyles from './ObserverCheckboxStyles';
+import observerCheckboxStyles from './ObserverSwitchStyles';
 import { Grid, Switch, Typography } from '@material-ui/core';
 
 const CheckboxLabel = ({ checked, handleChange }) => {
@@ -24,7 +24,7 @@ const CheckboxLabel = ({ checked, handleChange }) => {
           <Typography>User</Typography>
         </Grid>
         <Grid item xs={1} className={classes.test}>
-          <Tooltip title="As an guest you are not allow to vote">
+          <Tooltip title="As a guest you are not allow to vote">
             <HelpOutlineOutlinedIcon />
           </Tooltip>
         </Grid>

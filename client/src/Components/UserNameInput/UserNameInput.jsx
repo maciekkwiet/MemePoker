@@ -9,7 +9,7 @@ import { useUserContext } from 'Contexts/UserContext';
 import { useRoomContext } from 'Contexts/RoomContext';
 import PromotedText from 'Components/PromotedText/PromotedText';
 import VoteButton from 'Components/VoteButton';
-import ObserverCheckbox from 'Components/ObserverCheckbox';
+import ObserverSwitch from 'Components/ObserverSwitch';
 import UserNameStyles from './UserNameStyles';
 import photo1 from 'Assets/pngfind.com-meme-faces-png-13834.png';
 import photo2 from 'Assets/pngfind.com-memes-png-401574.png';
@@ -75,7 +75,7 @@ const UserNameInput = () => {
                 fullWidth
               ></TextField>
             </div>
-            <ObserverCheckbox className={classes.checkBox} handleChange={handleChange} checked={isObserver} />
+            <ObserverSwitch className={classes.checkBox} handleChange={handleChange} checked={isObserver} />
             <div className={classes.wrapper}></div>
             <div className={classes.wrapperButton}>
               <VoteButton content={'JOIN SESSION'} height={2.8} />
