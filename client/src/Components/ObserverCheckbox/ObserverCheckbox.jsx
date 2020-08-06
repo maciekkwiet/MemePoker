@@ -9,30 +9,26 @@ const CheckboxLabel = ({ checked, handleChange }) => {
 
   return (
     <>
-      <Typography component="div">
-        <Grid container component="label" alignItems="center" spacing={1} className={classes.checkBox}>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={9}>
-            {' '}
-            <Typography>Guest</Typography>
-            <Grid item>
-              <Switch
-                className={classes.checkBox}
-                checked={!checked}
-                onChange={handleChange}
-                name="checkedA"
-                color="primary"
-              />
-              <Typography>User</Typography>
-            </Grid>
-          </Grid>
-          <Grid item xs={2} className={classes.test}>
-            <Tooltip title="FDDXXXXXG">
-              <HelpOutlineOutlinedIcon />
-            </Tooltip>
-          </Grid>
+      <Grid container component="label" alignItems="center" spacing={1} className={classes.main}>
+        <Grid item xs={1}></Grid>
+        <Grid item xs={10} className={classes.switch}>
+          {' '}
+          <Typography>Guest</Typography>
+          <Switch
+            className={classes.checkBox}
+            checked={!checked}
+            onChange={handleChange}
+            name="checkedA"
+            color="primary"
+          />
+          <Typography>User</Typography>
         </Grid>
-      </Typography>
+        <Grid item xs={1} className={classes.test}>
+          <Tooltip title="As an guest you are not allow to vote">
+            <HelpOutlineOutlinedIcon />
+          </Tooltip>
+        </Grid>
+      </Grid>
     </>
   );
 };

@@ -1,8 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const observerCheckboxStyles = makeStyles(theme => ({
-  checkBox: {
-    width: '100%',
+  main: {
     '& .MuiCheckbox-root': {
       color: '#FFFF',
     },
@@ -10,7 +9,11 @@ const observerCheckboxStyles = makeStyles(theme => ({
       border: `solid ${theme.palette.primary.main} 2px`,
     },
   },
-  test: { display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end', alignContent: 'flex-end' },
+  switch: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   tooltip: {
     '& .MuiTooltip-tooltip': {
       fontSize: 50,
