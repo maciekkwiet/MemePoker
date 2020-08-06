@@ -75,13 +75,13 @@ const UserNameInput = () => {
                 fullWidth
               ></TextField>
             </div>
-            <div className={classes.wrapper}>
-              <ObserverCheckbox handleChange={handleChange} checked={isObserver} />
-            </div>
+            <ObserverCheckbox className={classes.checkBox} handleChange={handleChange} checked={isObserver} />
+            <div className={classes.wrapper}></div>
             <div className={classes.wrapperButton}>
-              <VoteButton content={'JOIN SESSION'} height={2.8} className={classes.wrapperButton} />
+              <VoteButton content={'JOIN SESSION'} height={2.8} />
             </div>
           </div>
+
           <div>
             <img src={photo2} alt="twitter avatar" className={classes.img} />
           </div>
