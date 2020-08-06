@@ -4,7 +4,7 @@ class User {
   readonly isAdmin: boolean;
   readonly isObserver: boolean;
 
-  vote: number | null;
+  vote: string | null;
 
   constructor(name: string, id: string, isAdmin: boolean, isObserver: boolean) {
     this.name = name;

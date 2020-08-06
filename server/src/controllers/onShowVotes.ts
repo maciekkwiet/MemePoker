@@ -2,6 +2,7 @@ import { EventHandler, AuthPayload } from '@typings*';
 
 const onShowVotes: EventHandler<AuthPayload> = ({ io }, { room }) => {
   const message = `Votes: ${JSON.stringify(room.getVotes())} in room ${room.id}`;
+
   room.getTask().setResults(room.getVotes());
   room.getTask().analyzeResults();
 

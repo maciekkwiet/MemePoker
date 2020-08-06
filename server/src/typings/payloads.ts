@@ -15,7 +15,7 @@ export interface AuthPayload {
 }
 
 export interface UserVotePayload extends AuthPayload {
-  value: number;
+  value: string;
 }
 
 export interface NewTaskPayload extends AuthPayload {
