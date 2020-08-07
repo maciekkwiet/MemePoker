@@ -15,6 +15,7 @@ import TaskEstimatedBox from 'Components/TaskEstimatedBox';
 import { useRoomContext } from 'Contexts/RoomContext';
 import { useUserContext } from 'Contexts/UserContext';
 import { useBackend } from 'hooks/useBackend';
+import Loader from 'Components/Loader/Loader';
 
 const Room = () => {
   const classes = RoomStyles();
@@ -25,7 +26,7 @@ const Room = () => {
 
   if (!room && token) {
     reconnectUser({ token }, data => updateRoomInfo(data));
-    return <p>Reconnecting...</p>;
+    return <Loader text="Reconnecting..." />;
   } else if (!room) {
     return <Redirect to={`/room/${roomId}/join`} />;
   }
