@@ -4,6 +4,9 @@ const onUserVote: EventHandler<UserVotePayload> = ({ io }, { value, room, user }
   let message: string;
 
   user.vote = value;
+  user.hasVoted = true;
+
+  const userInfo = { name: user.name, hasVoted: user.hasVoted, socket: user.socket };
 
   if (room.hasEveryoneVoted()) {
     room.getTask().setResults(room.getVotes());
@@ -14,7 +17,7 @@ const onUserVote: EventHandler<UserVotePayload> = ({ io }, { value, room, user }
   } else {
     message = `${user.name} has voted in the room: ${room.id}`;
 
-    io.to(room.id).emit('USER_VOTED', user);
+    io.to(room.id).emit('USER_VOTED', userInfo);
   }
 
   io.to(room.id).emit('FEED', message);
