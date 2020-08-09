@@ -11,13 +11,15 @@ const MemeCard = ({ value, img, selected, selectCard, id }) => {
   const { user } = useUserContext();
 
   const onClickHandler = () => {
-    sendEstimation({ value });
-    selectCard(id);
+    if (!user.isObserver) {
+      sendEstimation({ value });
+      selectCard(id);
+    }
   };
 
   return (
     <Card className={selected ? classes.selected : classes.main} variant="outlined">
-      <CardActionArea onClick={onClickHandler} className={user.isObserver ? classes.cards : null}>
+      <CardActionArea onClick={onClickHandler} className={user.isObserver ? classes.cards : ''}>
         <CardMedia className={classes.media} component="img" alt={value} src={img} height="50" />
         <CardContent className={classes.content}>
           <Typography className={classes.contentText} variant="body2">

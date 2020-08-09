@@ -29,6 +29,8 @@ const UserNameInput = () => {
   const history = useHistory();
   const joinRoom = useEmit('USER_JOIN');
 
+  const [isObserver, setObserver] = useState(false);
+
   const { register, handleSubmit, errors } = useForm({
     validationSchema: Schema,
     defaultValues: {
@@ -45,8 +47,6 @@ const UserNameInput = () => {
       history.push(`/room/${roomId}`);
     });
   };
-
-  const [isObserver, setObserver] = useState(false);
 
   const handleChange = () => {
     setObserver(!isObserver);

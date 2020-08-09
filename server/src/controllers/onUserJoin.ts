@@ -12,8 +12,10 @@ const onUserJoin: EventHandler<UserJoinPayload> = ({ io, socket }, { name, roomI
 
   socket.join(roomId);
   if (callback) callback({ room, token });
-  isObserver ? null : io.to(roomId).emit('USER_JOINED', room.getUsers());
-  isObserver ? null : io.to(roomId).emit('FEED', message);
+  if (!isObserver) {
+    io.to(roomId).emit('USER_JOINED', room.getUsers());
+    io.to(roomId).emit('FEED', message);
+  }
 };
 
 export { onUserJoin };

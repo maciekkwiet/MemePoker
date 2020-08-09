@@ -13,9 +13,7 @@ const Cards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
 
   const selectCard = id => {
-    if (!user.isObserver) {
-      setSelectedCard(id);
-    }
+    setSelectedCard(id);
   };
 
   useSocket('VOTES_CLEARED', () => {
@@ -25,13 +23,7 @@ const Cards = () => {
   return (
     <div className={classes.root}>
       {cardsSchema.map(card => (
-        <Card
-          key={card.id}
-          {...card}
-          className={classes.cards}
-          selected={selectedCard === card.id}
-          selectCard={selectCard}
-        />
+        <Card key={card.id} {...card} selected={selectedCard === card.id} selectCard={selectCard} />
       ))}
     </div>
   );

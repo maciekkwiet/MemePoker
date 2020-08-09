@@ -9,11 +9,6 @@ const CardStyles = makeStyles(theme => ({
       gridTemplateColumns: 'repeat(2, 1fr)',
     },
   },
-  cards: {
-    '&:hover': {
-      cursor: 'none',
-    },
-  },
 }));
 
 export default CardStyles;
