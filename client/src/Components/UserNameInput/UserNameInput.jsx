@@ -1,17 +1,21 @@
-import * as yup from 'yup';
 
 import React, { useState } from 'react';
-import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
+import { useEmit } from 'socketio-hooks';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+
+import TextField from '@material-ui/core/TextField';
 
 import Loader from 'Components/Loader/Loader';
 import PromotedText from 'Components/PromotedText/PromotedText';
-import TextField from '@material-ui/core/TextField';
-import UserNameStyles from './UserNameStyles';
 import VoteButton from 'Components/VoteButton';
+import ObserverSwitch from 'Components/ObserverSwitch';
+import UserNameStyles from './UserNameStyles';
+
 import photo1 from 'Assets/pngfind.com-meme-faces-png-13834.png';
 import photo2 from 'Assets/pngfind.com-memes-png-401574.png';
-import { useEmit } from 'socketio-hooks';
-import { useForm } from 'react-hook-form';
+
 import { useRoomContext } from 'Contexts/RoomContext';
 import { useUserContext } from 'Contexts/UserContext';
 
@@ -30,6 +34,7 @@ const UserNameInput = () => {
   const history = useHistory();
   const joinRoom = useEmit('USER_JOIN');
 
+  const [isObserver, setObserver] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const { register, handleSubmit, errors } = useForm({
@@ -42,7 +47,7 @@ const UserNameInput = () => {
   const onSubmitHandler = ({ name }) => {
     window.localStorage.setItem('DEFAULT_NAME', name);
 
-    joinRoom({ name, roomId, isAdmin: state?.isAdmin }, ({ room, token }) => {
+    joinRoom({ name, roomId, isAdmin: state?.isAdmin, isObserver }, ({ room, token }) => {
       setIsLoading(false);
       saveToken(token);
       updateRoomInfo(room);
@@ -52,6 +57,9 @@ const UserNameInput = () => {
     setIsLoading(true);
   };
 
+  const handleChange = () => {
+    setObserver(!isObserver);
+  };
   if (isLoading) return <Loader text="Loading..." />;
 
   return (
@@ -77,10 +85,13 @@ const UserNameInput = () => {
                 fullWidth
               ></TextField>
             </div>
+            <ObserverSwitch className={classes.checkBox} handleChange={handleChange} checked={isObserver} />
+            <div className={classes.wrapper}></div>
             <div className={classes.wrapperButton}>
-              <VoteButton content={'JOIN SESSION'} height={2.8} className={classes.wrapperButton} />
+              <VoteButton content={'JOIN SESSION'} height={2.8} />
             </div>
           </div>
+
           <div>
             <img src={photo2} alt="twitter avatar" className={classes.img} />
           </div>

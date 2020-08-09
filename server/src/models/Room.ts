@@ -6,27 +6,28 @@ class Room {
   history: Task[];
   private task: Task;
   private users: User[];
+  private observers: User[];
 
   constructor(id: string) {
     this.id = id;
     this.task = new Task('Waiting for first task...');
     this.users = [];
     this.history = [];
+    this.observers = [];
   }
 
   getUser(name: string): User {
-    const user = this.users.find(user => user.name === name);
+    const user = this.allParticipaties.find(user => user.name === name);
     if (!user) throw new Error(`User ${name} does not belong to room ${this.id}`);
     return user;
   }
 
   getAdmin(id: string): User | null {
-    const roomAdmin = this.users.find(user => user.isAdmin === true) ?? null;
-    // if (roomAdmin?.socket === id) throw new Error('This user is admin in different room');
+    const roomAdmin = this.allParticipaties.find(user => user.isAdmin === true) ?? null;
     return roomAdmin;
   }
 
-  addUser(name: string, socket: string, isAdmin: boolean): User {
+  addUser(name: string, socket: string, isAdmin: boolean, isObserver: boolean): User {
     let userName = name;
     let numberUser = 0;
 
@@ -36,18 +37,22 @@ class Room {
     }
 
     name = userName;
-    const user = new User(name, socket, isAdmin);
-    this.users.push(user);
+    const user = new User(name, socket, isAdmin, isObserver);
+    isObserver ? this.observers.push(user) : this.users.push(user);
     return user;
   }
 
   private isTaken(userName: string): boolean {
-    if (this.users.find(user => user.name === userName)) return true;
+    if (this.allParticipaties.find(user => user.name === userName)) return true;
     return false;
   }
 
   hasEveryoneVoted(): boolean {
     return !this.users.some(user => user.vote === null);
+  }
+
+  get allParticipaties() {
+    return [...this.users, ...this.observers];
   }
 
   clearVotes() {

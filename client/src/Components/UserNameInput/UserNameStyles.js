@@ -4,9 +4,9 @@ const UserNameStyles = makeStyles(theme => ({
   wrapper: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    marginTop: '2em',
+    marginTop: '1em',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   root: {
     display: 'flex',
