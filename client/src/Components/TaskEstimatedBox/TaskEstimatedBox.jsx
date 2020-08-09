@@ -1,20 +1,20 @@
-import React, { useState, forwardRef } from 'react';
-import { useBackend } from 'hooks/useBackend';
 import { Dialog, DialogContent, DialogTitle } from '@material-ui/core';
-import TaskEstimatedBoxStyles from './TaskEstimatedBoxStyles';
-import TaskEstimatedChart from 'Components/TaskEstimatedChart/TaskEstimatedChart';
-import TaskEstimationElement from 'Components/TaskEstimationElement/TaskEstimationElement';
-import { IconButton } from '@material-ui/core';
+import React, { forwardRef, useState } from 'react';
+
 import CloseIcon from '@material-ui/icons/Close';
+import { IconButton } from '@material-ui/core';
+import TaskEstimatedAdminBox from 'Components/TaskEstimatedAdminBox/TaskEstimatedAdminBox';
+import TaskEstimatedBoxStyles from './TaskEstimatedBoxStyles';
+import TaskEstimationElement from 'Components/TaskEstimationElement/TaskEstimationElement';
 import { useSocket } from 'socketio-hooks';
+import { useUserContext } from 'Contexts/UserContext';
 
 const TaskEstimatedBox = () => {
   const classes = TaskEstimatedBoxStyles();
+  const { isAdmin } = useUserContext().user;
 
   const [open, setOpen] = useState(false);
   const [task, setTask] = useState(null);
-
-  const sendVotesClear = useBackend('CLEAR_VOTES');
   const handleClose = () => {
     setOpen(false);
   };
@@ -24,19 +24,30 @@ const TaskEstimatedBox = () => {
     setOpen(true);
   });
 
-  const onClickHandlerClear = () => {
-    sendVotesClear();
+  useSocket('VOTES_CLEARED', () => {
     setOpen(false);
-  };
+  });
+
   return (
-    <Dialog open={open} onClose={onClickHandlerClear} scroll="paper" fullWidth={true} maxWidth="md">
+    <Dialog
+      disableBackdropClick={isAdmin}
+      disableEscapeKeyDown={isAdmin}
+      open={open}
+      onClose={handleClose}
+      scroll="paper"
+      fullWidth={true}
+      maxWidth="md"
+    >
       <DialogContent className={classes.root}>
-        <IconButton aria-label="close" onClick={onClickHandlerClear} className={classes.closeButton}>
-          <CloseIcon />
-        </IconButton>
+        {!isAdmin && (
+          <IconButton aria-label="close" onClick={handleClose} className={classes.closeButton}>
+            <CloseIcon />
+          </IconButton>
+        )}
+
         <DialogTitle>{task?.title}</DialogTitle>
-        <TaskEstimationElement users={task?.results} resultsAnalysis={task?.analysis} onClose={onClickHandlerClear} />
-        <TaskEstimatedChart onClose={handleClose} />
+        <TaskEstimationElement users={task?.results} resultsAnalysis={task?.analysis} onClose={handleClose} />
+        {isAdmin && <TaskEstimatedAdminBox onClose={handleClose} />}
       </DialogContent>
     </Dialog>
   );
