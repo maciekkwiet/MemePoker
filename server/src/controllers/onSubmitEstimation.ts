@@ -11,5 +11,6 @@ const onSubmitEstimation: EventHandler<EstimationResult> = ({ io, socket }, { ro
   io.to(room.id).emit('FEED', message);
   io.to(room.id).emit('TASK_ARCHIVED', room.history);
   io.to(room.id).emit('ESTIMATION_SUBMITTED', room.getTask());
+  io.to(room.id).emit('VOTES_CLEARED', room.getUsers());
 };
 export { onSubmitEstimation };
