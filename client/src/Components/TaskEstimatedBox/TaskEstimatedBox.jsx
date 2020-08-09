@@ -1,14 +1,13 @@
-import React, { useState, forwardRef } from 'react';
-import { useSocket } from 'socketio-hooks';
-
-import TaskEstimatedBoxStyles from './TaskEstimatedBoxStyles';
-import { useUserContext } from 'Contexts/UserContext';
-import TaskEstimatedAdminBox from 'Components/TaskEstimatedAdminBox/TaskEstimatedAdminBox';
-import TaskEstimationElement from 'Components/TaskEstimationElement/TaskEstimationElement';
-
-import { IconButton } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
 import { Dialog, DialogContent, DialogTitle } from '@material-ui/core';
+import React, { forwardRef, useState } from 'react';
+
+import CloseIcon from '@material-ui/icons/Close';
+import { IconButton } from '@material-ui/core';
+import TaskEstimatedAdminBox from 'Components/TaskEstimatedAdminBox/TaskEstimatedAdminBox';
+import TaskEstimatedBoxStyles from './TaskEstimatedBoxStyles';
+import TaskEstimationElement from 'Components/TaskEstimationElement/TaskEstimationElement';
+import { useSocket } from 'socketio-hooks';
+import { useUserContext } from 'Contexts/UserContext';
 
 const TaskEstimatedBox = () => {
   const classes = TaskEstimatedBoxStyles();
@@ -48,7 +47,7 @@ const TaskEstimatedBox = () => {
 
         <DialogTitle>{task?.title}</DialogTitle>
         <TaskEstimationElement users={task?.results} resultsAnalysis={task?.analysis} onClose={handleClose} />
-        <TaskEstimatedAdminBox onClose={handleClose} />
+        {isAdmin && <TaskEstimatedAdminBox onClose={handleClose} />}
       </DialogContent>
     </Dialog>
   );
