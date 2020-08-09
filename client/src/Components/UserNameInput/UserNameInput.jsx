@@ -1,9 +1,10 @@
 import * as yup from 'yup';
 
+import React, { useState } from 'react';
 import { useHistory, useLocation, useParams } from 'react-router-dom';
 
+import Loader from 'Components/Loader/Loader';
 import PromotedText from 'Components/PromotedText/PromotedText';
-import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import UserNameStyles from './UserNameStyles';
 import VoteButton from 'Components/VoteButton';
@@ -29,6 +30,8 @@ const UserNameInput = () => {
   const history = useHistory();
   const joinRoom = useEmit('USER_JOIN');
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const { register, handleSubmit, errors } = useForm({
     validationSchema: Schema,
     defaultValues: {
@@ -40,11 +43,16 @@ const UserNameInput = () => {
     window.localStorage.setItem('DEFAULT_NAME', name);
 
     joinRoom({ name, roomId, isAdmin: state?.isAdmin }, ({ room, token }) => {
+      setIsLoading(false);
       saveToken(token);
       updateRoomInfo(room);
       history.push(`/room/${roomId}`);
     });
+
+    setIsLoading(true);
   };
+
+  if (isLoading) return <Loader text="Loading..." />;
 
   return (
     <>

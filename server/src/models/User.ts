@@ -3,7 +3,7 @@ class User {
   readonly name: string;
   readonly isAdmin: boolean;
 
-  vote: number | null;
+  vote: string | null;
 
   constructor(name: string, id: string, isAdmin: boolean) {
     this.name = name;

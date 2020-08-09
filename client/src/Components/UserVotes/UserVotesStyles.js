@@ -9,6 +9,12 @@ const UserVotesStyles = makeStyles(theme => ({
     border: `2px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',
     overflowY: 'auto',
+    '&::-webkit-scrollbar': {
+      width: '0.4em',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: theme.palette.primary.main,
+    },
     paddingTop: theme.spacing(1),
   },
   isAdmin: {
@@ -19,6 +25,12 @@ const UserVotesStyles = makeStyles(theme => ({
     border: `2px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',
     overflowY: 'auto',
+    '&::-webkit-scrollbar': {
+      width: '0.4em',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: theme.palette.primary.main,
+    },
     paddingTop: theme.spacing(1),
   },
   item: {
