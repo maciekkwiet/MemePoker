@@ -3,7 +3,7 @@ import { Snackbar, IconButton } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
 import CloseIcon from '@material-ui/icons/Close';
 
-const ErrorProp = props => {
+const ExceptionBox = props => {
   const [open, setOpen] = useState(true);
 
   const handleClose = (event, reason) => {
@@ -44,4 +44,4 @@ const ErrorProp = props => {
   );
 };
 
-export default ErrorProp;
+export default ExceptionBox;
