@@ -5,6 +5,7 @@ export interface UserJoinPayload {
   name: string;
   roomId: string;
   isAdmin: boolean;
+  isObserver: boolean;
   callback: (data: any) => void;
 }
 
@@ -14,7 +15,7 @@ export interface AuthPayload {
 }
 
 export interface UserVotePayload extends AuthPayload {
-  value: number;
+  value: string;
 }
 
 export interface NewTaskPayload extends AuthPayload {
