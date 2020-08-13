@@ -1,4 +1,4 @@
-import { InputLabel, InputBase } from '@material-ui/core';
+import { InputLabel } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/styles';
 
@@ -24,6 +24,35 @@ const TaskNameInputStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.light,
     color: theme.palette.text.primary,
   },
+
+  textField: {
+    '& .MuiOutlinedInput-notchedOutline': {
+      border: 'none',
+    },
+    '& .MuiInputBase-root': {
+      color: 'white',
+      backgroundColor: theme.palette.background.paper,
+      height: '38px',
+    },
+    '& .MuiFormLabel-root': {
+      fontSize: theme.typography.body1.fontSize,
+      color: 'white',
+    },
+    '& .label.Mui-focused': {
+      fontSize: '12px',
+    },
+    '& .MuiFilledInput-root': {
+      borderRadius: '8px',
+    },
+  },
+  textFieldError: {
+    '& .MuiInputBase-root': {
+      color: 'red',
+      backgroundColor: theme.palette.background.paper,
+      fontWeight: 'bold',
+      height: '38px',
+    },
+  },
 }));
 
 const CustomLabel = withStyles(theme => ({
@@ -34,21 +63,4 @@ const CustomLabel = withStyles(theme => ({
   },
 }))(InputLabel);
 
-const CustomInput = withStyles(theme => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    color: theme.palette.text.primary,
-    borderRadius: '5px',
-    '& > input': {
-      width: '100%',
-      padding: theme.spacing(1),
-      border: 'none',
-      textAlign: 'center',
-      '&::placeholder': {
-        fontSize: '0.9em',
-      },
-    },
-  },
-}))(InputBase);
-
-export { TaskNameInputStyles, CustomLabel, CustomInput };
+export { TaskNameInputStyles, CustomLabel };
