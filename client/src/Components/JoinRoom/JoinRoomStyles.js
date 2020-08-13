@@ -5,7 +5,8 @@ const JoinRoomStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'space-around',
+      alignItems: 'space-around',
       padding: '28px 38px 0px 38px',
     },
     [theme.breakpoints.down('xs')]: {
@@ -17,6 +18,7 @@ const JoinRoomStyles = makeStyles(theme => ({
   formWrapperInput: {
     [theme.breakpoints.up('sm')]: {
       marginTop: '2em',
+      display: 'flex',
     },
   },
   formWrapperText: {
