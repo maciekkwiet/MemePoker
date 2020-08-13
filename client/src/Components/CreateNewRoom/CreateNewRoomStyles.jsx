@@ -6,7 +6,7 @@ const CreateNewRoomStyles = makeStyles(theme => ({
   },
   buttonSession: {
     [theme.breakpoints.up('sm')]: {
-      marginTop: '2em',
+      padding: '28px 38px 0px 38px',
       textDecoration: 'none',
     },
     [theme.breakpoints.down('xs')]: {
