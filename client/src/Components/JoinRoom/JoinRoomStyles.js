@@ -2,25 +2,30 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const JoinRoomStyles = makeStyles(theme => ({
   formWrapper: {
-    display: 'flex',
-    flexDirection: 'row',
-    [theme.breakpoints.down('sm')]: {
-      flexWrap: 'wrap',
+    [theme.breakpoints.up('sm')]: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      padding: '28px 38px 0px 38px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '100%',
     },
   },
   formWrapperInput: {
-    width: '40%',
-    marginRight: '1em',
-    marginTop: '2em',
+    [theme.breakpoints.up('sm')]: {
+      marginTop: '2em',
+    },
   },
   formWrapperText: {
-    width: '60%',
-    marginTop: '2em',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.up('sm')]: {
       textAlign: 'center',
-      width: '120px',
       justifyContent: 'space-between',
-      marginLeft: '7px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '1em',
     },
   },
   input: {

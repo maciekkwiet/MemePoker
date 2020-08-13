@@ -5,10 +5,14 @@ const CreateNewRoomStyles = makeStyles(theme => ({
     textDecoration: 'none',
   },
   buttonSession: {
-    marginTop: '2em',
-    textDecoration: 'none',
-    [theme.breakpoints.down('sm')]: {
-      marginTop: '60px',
+    [theme.breakpoints.up('sm')]: {
+      marginTop: '2em',
+      textDecoration: 'none',
+    },
+    [theme.breakpoints.down('xs')]: {
+      margin: '1em 0em 2em 0em',
+      display: 'flex',
+      flexDirection: 'column',
     },
   },
 }));
