@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSocket } from 'socketio-hooks';
-import { Modal, Backdrop, Fade, Card } from '@material-ui/core';
+import { Modal, Backdrop, Fade } from '@material-ui/core';
 
 import MemeBoxStyles from './MemeBoxStyles';
-import { cardsSchema } from './../Cards/cardsSchema';
+import { memeSchema } from './memeSchema';
 
 const MemeBox = () => {
   const classes = MemeBoxStyles();
@@ -11,14 +11,55 @@ const MemeBox = () => {
   const [vote, setVote] = useState(null);
 
   useSocket('MEME', votes => {
-    // console.log(votes[0].vote)
     setOpen(true);
-    setVote(votes[0].vote);
+    setVote(votes.find(element => element.vote !== null).vote);
   });
 
   const handleClose = () => {
     setOpen(false);
   };
+
+  const getImg = vote => {
+    if (vote && open) {
+      let memes = memeSchema.filter(meme => meme.value === getDifficulty(vote));
+      return memes[Math.floor(Math.random() * memes.length)].img;
+    }
+  };
+
+  const getDifficulty = vote => {
+    let difficulty;
+    switch (true) {
+      case vote <= 2:
+        difficulty = 'easy';
+        break;
+      case vote <= 8:
+        difficulty = 'medium';
+        break;
+      case vote > 8:
+        difficulty = 'hard';
+        break;
+      case vote === '∞':
+        difficulty = '∞';
+        break;
+      case vote === ' ?':
+        difficulty = '?';
+        break;
+      case vote === 'C':
+        difficulty = 'C';
+        break;
+      default:
+        break;
+    }
+    return difficulty;
+  };
+
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => {
+        setOpen(false);
+      }, 2500);
+    }
+  }, [open]);
 
   return (
     <Modal
@@ -34,13 +75,7 @@ const MemeBox = () => {
       }}
     >
       <Fade in={open}>
-        <div className={classes.paper}>
-          <h2>
-            {cardsSchema.map(card => (
-              <Card key={card.id} {...card} selected={vote === card.id} />
-            ))}
-          </h2>
-        </div>
+        <img height="400" alt="Meme" src={getImg(vote)} />
       </Fade>
     </Modal>
   );

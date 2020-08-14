@@ -69,7 +69,9 @@ class Room {
 
   areVotesEqual() {
     return this.getVotes()
-      .map(user => user.vote)
+      .map(user => {
+        if (user.vote) user.vote;
+      })
       .every((value, index, arr) => {
         return arr[0] == value;
       });

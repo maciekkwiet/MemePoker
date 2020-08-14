@@ -7,6 +7,9 @@ const onShowVotes: EventHandler<AuthPayload> = ({ io }, { room }) => {
   room.getTask().analyzeResults();
 
   io.to(room.id).emit('ROOM_VOTES', { task: room.getTask(), votes: room.getVotes() });
+  if (room.areVotesEqual()) {
+    io.to(room.id).emit('MEME', room.getVotes());
+  }
   io.to(room.id).emit('FEED', message);
 };
 
