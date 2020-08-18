@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
 import TextField from '@material-ui/core/TextField';
+import { useTheme } from '@material-ui/styles';
+import { useMediaQuery } from '@material-ui/core';
 
 import Loader from 'Components/Loader/Loader';
 import PromotedText from 'Components/PromotedText/PromotedText';
@@ -43,6 +45,10 @@ const UserNameInput = () => {
     },
   });
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+  const isDesktop = !isMobile;
+
   const onSubmitHandler = ({ name }) => {
     window.localStorage.setItem('DEFAULT_NAME', name);
 
@@ -69,6 +75,12 @@ const UserNameInput = () => {
           <div>
             <img src={photo1} alt="twitter avatar" className={classes.img} />
           </div>
+          {/* {isMobile && (
+            <div className={classes.wrapperImage}>
+              <img src={photo1} alt="twitter avatar" className={classes.img} />
+              <img src={photo2} alt="twitter avatar" className={classes.img} />
+            </div>
+          )} */}
           <div className={classes.wrapper}>
             <div className={classes.wrapperInput}>
               <TextField
@@ -83,17 +95,15 @@ const UserNameInput = () => {
                 size="small"
                 fullWidth
               ></TextField>
+              <ObserverSwitch className={classes.checkBox} handleChange={handleChange} checked={isObserver} />
             </div>
-            <ObserverSwitch className={classes.checkBox} handleChange={handleChange} checked={isObserver} />
             <div className={classes.wrapper}></div>
             <div className={classes.wrapperButton}>
               <VoteButton content={'JOIN SESSION'} height={2.8} />
             </div>
           </div>
 
-          <div>
-            <img src={photo2} alt="twitter avatar" className={classes.img} />
-          </div>
+          <div>{isDesktop && <img src={photo2} alt="twitter avatar" className={classes.img} />}</div>
         </div>
       </form>
     </>

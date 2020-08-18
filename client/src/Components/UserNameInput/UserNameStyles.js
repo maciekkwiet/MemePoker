@@ -1,33 +1,57 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const UserNameStyles = makeStyles(theme => ({
-  wrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginTop: '1em',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   root: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    flexWrap: 'wrap',
+    flexWrap: 'nowrap',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+    },
+  },
+  wrapper: {
+    display: 'flex',
+    flexBasis: '50%',
+    flexDirection: 'column',
+    marginTop: '1em',
+    justifyContent: 'center',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      width: '50%',
+      padding: theme.spacing(0, 2),
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+    },
   },
   img: {
-    width: '15em',
-    height: '15em',
+    maxHeight: '15em',
+    flexBasis: '25%',
     alignItems: 'center',
     justifyContent: 'center',
     margin: 'auto',
     marginTop: '25px',
+    [theme.breakpoints.down('sm')]: {
+      maxHeight: '8em',
+      padding: theme.spacing(0, 1),
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(1),
+    },
   },
 
   //class=" MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-outlined"
-  wrapperInput: {
-    width: '20em',
+  wrapperImage: {
+    width: '100%',
     display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+  },
+  wrapperInput: {
+    width: '60%',
+    // display: 'flex',
     marginBottom: '1em',
     '& .MuiFormLabel-root': {
       textAlign: 'center',
@@ -44,8 +68,17 @@ const UserNameStyles = makeStyles(theme => ({
     '& .MuiInputLabel-outlined': {
       textAlign: 'center',
     },
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
   },
-  wrapperButton: { width: '20em', justifyContent: 'center' },
+  wrapperButton: {
+    width: '40%',
+    justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      width: '60%',
+    },
+  },
 }));
 
 export default UserNameStyles;
