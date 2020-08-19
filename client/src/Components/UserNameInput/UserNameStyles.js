@@ -51,7 +51,6 @@ const UserNameStyles = makeStyles(theme => ({
   },
   wrapperInput: {
     width: '60%',
-    // display: 'flex',
     marginBottom: '1em',
     '& .MuiFormLabel-root': {
       textAlign: 'center',

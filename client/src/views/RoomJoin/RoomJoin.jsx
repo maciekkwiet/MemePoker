@@ -16,7 +16,7 @@ const RoomJoin = () => {
           <UserNameInput />
         </MainBox>
       ) : (
-        <MainBox padding={2}>
+        <MainBox padding={2.5}>
           <UserNameInput />
         </MainBox>
       )}

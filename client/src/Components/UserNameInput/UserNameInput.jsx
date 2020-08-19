@@ -75,12 +75,6 @@ const UserNameInput = () => {
           <div>
             <img src={photo1} alt="twitter avatar" className={classes.img} />
           </div>
-          {/* {isMobile && (
-            <div className={classes.wrapperImage}>
-              <img src={photo1} alt="twitter avatar" className={classes.img} />
-              <img src={photo2} alt="twitter avatar" className={classes.img} />
-            </div>
-          )} */}
           <div className={classes.wrapper}>
             <div className={classes.wrapperInput}>
               <TextField
