@@ -11,10 +11,10 @@ const MemeBox = () => {
   const [vote, setVote] = useState(null);
 
   useSocket('MEME', votes => {
+    console.log(votes);
     setOpen(true);
     setVote(votes.find(element => element.vote !== null).vote);
   });
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -29,7 +29,7 @@ const MemeBox = () => {
   const getDifficulty = vote => {
     let difficulty;
     switch (true) {
-      case vote <= 2:
+      case vote <= 2 || vote === '1/2':
         difficulty = 'easy';
         break;
       case vote <= 8:
@@ -57,7 +57,7 @@ const MemeBox = () => {
     if (open) {
       setTimeout(() => {
         setOpen(false);
-      }, 2500);
+      }, 3000);
     }
   }, [open]);
 

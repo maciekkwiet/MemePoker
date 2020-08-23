@@ -68,13 +68,14 @@ class Room {
   }
 
   areVotesEqual() {
-    return this.getVotes()
-      .map(user => {
-        if (user.vote) user.vote;
-      })
-      .every((value, index, arr) => {
-        return arr[0] == value;
+    let votes = this.getVotes()
+      .map(user => user.vote)
+      .filter(vote => {
+        if (vote) return vote;
       });
+    return votes.every((value, index, arr) => {
+      return arr[0] == value;
+    });
   }
 
   getTask(): Task {

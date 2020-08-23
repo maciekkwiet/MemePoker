@@ -4,9 +4,10 @@ import img2 from 'Assets/memes/dog.gif';
 import img3 from 'Assets/memes/fire.gif';
 import img4 from 'Assets/memes/spiderman.jpg';
 
-// 0 - 2 easy
-// 3 - 8 medium
-// 13 - ... hard
+// vote to meme value
+// 0 - 2 -> easy
+// 3 - 8 -> medium
+// 13 - ... -> hard
 
 export const memeSchema = [
   {
@@ -32,6 +33,11 @@ export const memeSchema = [
   {
     id: 4,
     value: 'medium',
+    img: img4,
+  },
+  {
+    id: 4,
+    value: '∞',
     img: img4,
   },
 ];
