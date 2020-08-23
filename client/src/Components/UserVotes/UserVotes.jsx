@@ -22,10 +22,12 @@ const UserVotes = () => {
 
   useSocket('VOTES_CLEARED', users => {
     setUsers(users);
+    console.log(users);
   });
 
   useSocket('ROOM_VOTES', ({ votes }) => {
     setUsers(votes);
+    console.log(votes);
   });
 
   return (

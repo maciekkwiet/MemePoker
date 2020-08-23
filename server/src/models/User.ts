@@ -12,7 +12,7 @@ class User {
     this.socket = id;
     this.isAdmin = isAdmin;
     this.vote = null;
-    this.hasVoted = false;
+    this.hasVoted = this.vote ? true : false;
     this.isObserver = isObserver;
   }
 }

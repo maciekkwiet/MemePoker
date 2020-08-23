@@ -56,10 +56,7 @@ class Room {
   }
 
   clearVotes() {
-    this.users.map(user => {
-      user.vote = null;
-      user.hasVoted = false;
-    });
+    this.users.map(user => (user.vote = null));
   }
 
   getUsers(): User[] {
