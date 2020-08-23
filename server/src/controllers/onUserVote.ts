@@ -6,7 +6,6 @@ const onUserVote: EventHandler<UserVotePayload> = ({ io }, { value, room, user }
   if (room.getUser(user.name).isObserver) return;
 
   user.vote = value;
-  // user.hasVoted = true;
 
   const userInfo = { name: user.name, hasVoted: user.hasVoted };
 
