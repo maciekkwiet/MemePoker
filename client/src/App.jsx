@@ -9,6 +9,7 @@ import Room from 'views/Room';
 import RoomJoin from 'views/RoomJoin';
 import Template from 'Components/Template';
 import theme from 'theme';
+import ExceptionHandler from 'Components/ExceptionBox/ExceptionHandler';
 
 function App() {
   //Only for debug purposes
@@ -30,6 +31,7 @@ function App() {
               <Home />
             </Route>
           </Switch>
+          <ExceptionHandler />
         </Template>
       </BrowserRouter>
     </ThemeProvider>
