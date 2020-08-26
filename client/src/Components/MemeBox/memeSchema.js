@@ -3,6 +3,7 @@ import img1 from 'Assets/memes/calculating.gif';
 import img2 from 'Assets/memes/dog.gif';
 import img3 from 'Assets/memes/fire.gif';
 import img4 from 'Assets/memes/spiderman.jpg';
+import img5 from 'Assets/memes/confused-math.gif';
 
 // vote to meme value
 // 0 - 2 -> easy
@@ -36,8 +37,8 @@ export const memeSchema = [
     img: img4,
   },
   {
-    id: 4,
-    value: '∞',
-    img: img4,
+    id: 5,
+    value: 'deviation',
+    img: img5,
   },
 ];

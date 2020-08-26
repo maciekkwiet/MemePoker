@@ -12,8 +12,8 @@ const onUserVote: EventHandler<UserVotePayload> = ({ io }, { value, room, user }
     room.getTask().analyzeResults();
     message = `Everyone in room ${room.id} voted, votes: ${JSON.stringify(room.getVotes())}`;
 
-    io.to(room.id).emit('ROOM_VOTES', { task: room.getTask(), votes: room.getVotes(), isEqual: room.areVotesEqual() });
-    if (room.areVotesEqual()) io.to(room.id).emit('MEME', room.getVotes());
+    io.to(room.id).emit('ROOM_VOTES', { task: room.getTask(), votes: room.getVotes() });
+    io.to(room.id).emit('MEME', room.getVotes());
   } else {
     message = `${user.name} has voted in the room: ${room.id}`;
 

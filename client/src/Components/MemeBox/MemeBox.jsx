@@ -8,56 +8,83 @@ import { memeSchema } from './memeSchema';
 const MemeBox = () => {
   const classes = MemeBoxStyles();
   const [open, setOpen] = useState(false);
-  const [vote, setVote] = useState(null);
+  const [image, setImage] = useState(null);
 
   useSocket('MEME', votes => {
-    console.log(votes);
-    setOpen(true);
-    setVote(votes.find(element => element.vote !== null).vote);
+    if (areVotesEqual(votes)) votesEqual(votes);
+    else if (getStandardDeviation(votes.map(user => eval(user.vote))) > 5) votesDeviation();
   });
+
+  const votesEqual = votes => {
+    let vote = votes.find(element => element.vote !== null).vote;
+    setImage(getImg(vote));
+    setOpen(true);
+  };
+
+  const votesDeviation = () => {
+    setImage(getImg('deviation'));
+    setOpen(true);
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
 
   const getImg = vote => {
-    if (vote && open) {
+    if (vote) {
       let memes = memeSchema.filter(meme => meme.value === getDifficulty(vote));
       return memes[Math.floor(Math.random() * memes.length)].img;
     }
   };
 
+  const areVotesEqual = votes => {
+    let filtredVotes = votes.filter(user => user.vote !== null);
+    return filtredVotes.every((value, index, arr) => {
+      return arr[0].vote === value.vote;
+    });
+  };
+
+  const getStandardDeviation = array => {
+    const n = array.length;
+    const mean = array.reduce((a, b) => a + b) / n;
+    return Math.sqrt(array.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n);
+  };
+
   const getDifficulty = vote => {
-    let difficulty;
+    let voteType;
     switch (true) {
       case vote <= 2 || vote === '1/2':
-        difficulty = 'easy';
+        voteType = 'easy';
         break;
       case vote <= 8:
-        difficulty = 'medium';
+        voteType = 'medium';
         break;
       case vote > 8:
-        difficulty = 'hard';
+        voteType = 'hard';
         break;
       case vote === '∞':
-        difficulty = '∞';
+        voteType = '∞';
         break;
       case vote === ' ?':
-        difficulty = '?';
+        voteType = '?';
         break;
       case vote === 'C':
-        difficulty = 'C';
+        voteType = 'C';
+        break;
+      case vote === 'deviation':
+        voteType = 'deviation';
         break;
       default:
         break;
     }
-    return difficulty;
+    return voteType;
   };
 
   useEffect(() => {
     if (open) {
       setTimeout(() => {
         setOpen(false);
-      }, 3000);
+      }, 4000);
     }
   }, [open]);
 
@@ -75,7 +102,7 @@ const MemeBox = () => {
       }}
     >
       <Fade in={open}>
-        <img height="400" alt="Meme" src={getImg(vote)} />
+        <img height="400" alt="Meme" src={image} />
       </Fade>
     </Modal>
   );
