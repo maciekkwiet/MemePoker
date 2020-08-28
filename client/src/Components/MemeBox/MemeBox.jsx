@@ -11,12 +11,16 @@ const MemeBox = () => {
   const [image, setImage] = useState(null);
 
   useSocket('MEME', votes => {
-    if (areVotesEqual(votes)) votesEqual(votes);
-    else if (getStandardDeviation(votes.map(user => eval(user.vote))) > 5) votesDeviation();
+    const filteredVotes = filterOnlyNumbers(votes.map(user => user.vote));
+    if (filteredVotes?.length) {
+      console.log('tege nie');
+      if (areVotesEqual(filteredVotes)) votesEqual(filteredVotes);
+      else if (getStandardDeviation(filteredVotes.map(vote => vote)) > 5) votesDeviation();
+    }
   });
 
   const votesEqual = votes => {
-    let vote = votes.find(element => element.vote !== null).vote;
+    let vote = votes.find(element => element !== null);
     setImage(getImg(vote));
     setOpen(true);
   };
@@ -38,9 +42,8 @@ const MemeBox = () => {
   };
 
   const areVotesEqual = votes => {
-    let filtredVotes = votes.filter(user => user.vote !== null);
-    return filtredVotes.every((value, index, arr) => {
-      return arr[0].vote === value.vote;
+    return votes.every((value, index, arr) => {
+      return arr[0] === value;
     });
   };
 
@@ -50,10 +53,19 @@ const MemeBox = () => {
     return Math.sqrt(array.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n);
   };
 
+  const filterOnlyNumbers = input => {
+    const filtered = input.filter(vote => vote !== null);
+    return filtered
+      .filter(vote => !isNaN(vote) || vote === '1/2')
+      .map(vote => {
+        return vote === '1/2' ? 0.5 : parseInt(vote);
+      });
+  };
+
   const getDifficulty = vote => {
     let voteType;
     switch (true) {
-      case vote <= 2 || vote === '1/2':
+      case vote <= 2:
         voteType = 'easy';
         break;
       case vote <= 8:
@@ -61,15 +73,6 @@ const MemeBox = () => {
         break;
       case vote > 8:
         voteType = 'hard';
-        break;
-      case vote === '∞':
-        voteType = '∞';
-        break;
-      case vote === ' ?':
-        voteType = '?';
-        break;
-      case vote === 'C':
-        voteType = 'C';
         break;
       case vote === 'deviation':
         voteType = 'deviation';
