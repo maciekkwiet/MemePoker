@@ -1,35 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Typography, Avatar, Paper } from '@material-ui/core';
-import { useSocket } from 'socketio-hooks';
 import UserVotesStyles from './UserVotesStyles';
 import { useRoomContext } from 'Contexts/RoomContext';
 import { useUserContext } from 'Contexts/UserContext';
 
 const UserVotes = () => {
   const classes = UserVotesStyles();
-  const { room } = useRoomContext();
-  const [users, setUsers] = useState(room.users);
-  const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);
+  const { users } = useRoomContext().room;
+  const { hasEveryoneVoted } = useRoomContext();
   const { isAdmin } = useUserContext().user;
-
-  useSocket('USER_JOINED', users => {
-    setUsers(users);
-  });
-
-  useSocket('USER_VOTED', userVoted => {
-    const newUsers = users.map(user => (user.name === userVoted.name ? userVoted : user));
-    setUsers(newUsers);
-  });
-
-  useSocket('VOTES_CLEARED', users => {
-    setHasEveryoneVoted(false);
-    setUsers(users);
-  });
-
-  useSocket('ROOM_VOTES', ({ votes }) => {
-    setHasEveryoneVoted(true);
-    setUsers(votes);
-  });
 
   return (
     <Box className={isAdmin ? classes.isAdmin : classes.isNotAdmin}>

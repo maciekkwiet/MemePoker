@@ -47,9 +47,9 @@ const TaskEstimationElement = ({ users, resultsAnalysis }) => {
           </TableHead>
           <TableBody>
             <StyledTableRow>
-              <StyledTableCell align="center">{roundNumber(resultsAnalysis.median)}</StyledTableCell>
-              <StyledTableCell align="center">{roundNumber(resultsAnalysis.average)}</StyledTableCell>
-              <StyledTableCell align="center">{roundNumber(resultsAnalysis.standardDeviation)}</StyledTableCell>
+              <StyledTableCell align="center">{roundNumber(resultsAnalysis?.median)}</StyledTableCell>
+              <StyledTableCell align="center">{roundNumber(resultsAnalysis?.average)}</StyledTableCell>
+              <StyledTableCell align="center">{roundNumber(resultsAnalysis?.standardDeviation)}</StyledTableCell>
             </StyledTableRow>
           </TableBody>
         </Table>

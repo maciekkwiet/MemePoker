@@ -1,32 +1,19 @@
 import { Dialog, DialogContent, DialogTitle } from '@material-ui/core';
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef } from 'react';
 
 import CloseIcon from '@material-ui/icons/Close';
 import { IconButton } from '@material-ui/core';
 import TaskEstimatedAdminBox from 'Components/TaskEstimatedAdminBox/TaskEstimatedAdminBox';
 import TaskEstimatedBoxStyles from './TaskEstimatedBoxStyles';
 import TaskEstimationElement from 'Components/TaskEstimationElement/TaskEstimationElement';
-import { useSocket } from 'socketio-hooks';
 import { useUserContext } from 'Contexts/UserContext';
+import { useRoomContext } from 'Contexts/RoomContext';
 
 const TaskEstimatedBox = () => {
   const classes = TaskEstimatedBoxStyles();
   const { isAdmin } = useUserContext().user;
-
-  const [open, setOpen] = useState(false);
-  const [task, setTask] = useState(null);
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  useSocket('ROOM_VOTES', ({ task }) => {
-    setTask(task);
-    setOpen(true);
-  });
-
-  useSocket('VOTES_CLEARED', () => {
-    setOpen(false);
-  });
+  const { open, handleClose } = useRoomContext();
+  const { task } = useRoomContext().room;
 
   return (
     <Dialog

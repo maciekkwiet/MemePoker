@@ -9,13 +9,12 @@ import { UserContextProvider } from 'Contexts/UserContext';
 import { RoomContextProvider } from 'Contexts/RoomContext';
 
 ReactDOM.render(
-  <RoomContextProvider>
-    <UserContextProvider>
-      <SocketIOProvider url="/">
+  <SocketIOProvider url="/">
+    <RoomContextProvider>
+      <UserContextProvider>
         <App />
-      </SocketIOProvider>
-    </UserContextProvider>
-  </RoomContextProvider>,
-
+      </UserContextProvider>
+    </RoomContextProvider>
+  </SocketIOProvider>,
   document.getElementById('root')
 );
