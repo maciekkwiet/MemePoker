@@ -13,7 +13,6 @@ const MemeBox = () => {
   useSocket('MEME', votes => {
     const filteredVotes = filterOnlyNumbers(votes.map(user => user.vote));
     if (filteredVotes?.length) {
-      console.log('tege nie');
       if (areVotesEqual(filteredVotes)) votesEqual(filteredVotes);
       else if (getStandardDeviation(filteredVotes.map(vote => vote)) > 5) votesDeviation();
     }
