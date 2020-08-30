@@ -32,14 +32,14 @@ const Room = () => {
   }
 
   return (
-    <MainBox>
+    <MainBox padding={2}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={8} className={classes.main}>
           <Navigation />
           <Box className={classes.top} component="div">
             <TaskBox />
             <Timer />
-            <InfoBox title="ROOM ID" value={roomId} padding={0.25} />
+            <InfoBox title="ROOM&nbsp;ID" value={roomId} padding={0.25} />
           </Box>
           <Paper className={classes.cards}>
             <TaskNameInput />
