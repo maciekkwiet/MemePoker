@@ -42,6 +42,13 @@ class Room {
     return user;
   }
 
+  deleteUser(name: string) {
+    let userName = name;
+    if (this.isTaken(userName)) {
+      this.users = this.users.filter(user => user.name !== userName);
+    } else throw new Error('This user does not exists.');
+  }
+
   private isTaken(userName: string): boolean {
     if (this.allParticipaties.find(user => user.name === userName)) return true;
     return false;

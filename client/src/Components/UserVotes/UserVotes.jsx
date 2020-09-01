@@ -15,6 +15,10 @@ const UserVotes = () => {
     setUsers(users);
   });
 
+  useSocket('USER_DELETED', users => {
+    setUsers(users);
+  });
+
   useSocket('USER_VOTED', userVoted => {
     const newUsers = users.map(user => (user.name === userVoted.name ? userVoted : user));
     setUsers(newUsers);

@@ -8,6 +8,7 @@ import { onNewTask } from '@controllers/onNewTask';
 import { onSubmitEstimation } from '@controllers/onSubmitEstimation';
 import { onClearVotes } from '@controllers/onClearVotes';
 import { onShowVotes } from '@controllers/onShowVotes';
+import { onUserDelete } from '@controllers/onUserDelete';
 
 import { eventHandlerWrapper } from '@middleware/eventHandlerWrapper';
 import { auth } from '@middleware/auth';
@@ -25,6 +26,7 @@ const socketRouter = (server: http.Server): void => {
     socket.on('SUBMIT_ESTIMATION', eventHandlerWrapper({ io, socket }, onSubmitEstimation));
     socket.on('CLEAR_VOTES', eventHandlerWrapper({ io, socket }, onClearVotes));
     socket.on('SHOW_VOTES', eventHandlerWrapper({ io, socket }, onShowVotes));
+    socket.on('USER_DELETE', eventHandlerWrapper({ io, socket }, onUserDelete));
   });
 };
 

@@ -4,6 +4,7 @@ import CopyUrl from '../CopyURL/CopyURL';
 
 import navigationStyles from './NavigationStyles';
 import HistoryBox from 'Components/HistoryBox';
+import LeaveRoomButton from 'Components/LeaveRoomButton/LeaveRoomButton';
 
 const Navigation = () => {
   const classes = navigationStyles();
@@ -12,6 +13,7 @@ const Navigation = () => {
     <Box className={classes.root}>
       <HistoryBox />
       <CopyUrl />
+      <LeaveRoomButton />
     </Box>
   );
 };
