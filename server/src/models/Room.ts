@@ -42,10 +42,12 @@ class Room {
     return user;
   }
 
-  deleteUser(name: string) {
+  deleteUser(name: string, isObserver: boolean) {
     let userName = name;
     if (this.isTaken(userName)) {
-      this.users = this.users.filter(user => user.name !== userName);
+      if (isObserver) {
+        this.observers = this.observers.filter(user => user.name !== userName);
+      } else this.users = this.users.filter(user => user.name !== userName);
     } else throw new Error('This user does not exists.');
   }
 
