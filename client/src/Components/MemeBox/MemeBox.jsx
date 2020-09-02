@@ -14,7 +14,7 @@ const MemeBox = () => {
     const filteredVotes = filterOnlyNumbers(votes.map(user => user.vote));
     if (filteredVotes?.length) {
       if (areVotesEqual(filteredVotes)) votesEqual(filteredVotes);
-      else if (getStandardDeviation(filteredVotes.map(vote => vote)) > 5) votesDeviation();
+      else if (getStandardDeviation(filteredVotes.map(vote => vote)) > 2.5) votesDeviation();
     }
   });
 
