@@ -5,9 +5,14 @@ const navigationStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(2),
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-between',
     '& .MuiChip-root': {
       marginRight: theme.spacing(1),
     },
+  },
+  div: {
+    display: 'flex',
+    flexDirection: 'row',
   },
 }));
 

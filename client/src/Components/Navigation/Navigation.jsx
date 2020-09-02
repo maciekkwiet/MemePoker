@@ -11,8 +11,10 @@ const Navigation = () => {
 
   return (
     <Box className={classes.root}>
-      <HistoryBox />
-      <CopyUrl />
+      <div className={classes.div}>
+        <HistoryBox />
+        <CopyUrl />
+      </div>
       <LeaveRoomButton />
     </Box>
   );
