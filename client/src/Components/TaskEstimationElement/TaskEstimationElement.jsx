@@ -11,6 +11,8 @@ import TaskEstimationElementStyles from './TaskEstimationElementStyles';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
+import roundNumber from 'Utils/Converters/roundNumber';
+
 const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.primary.main,
@@ -45,9 +47,9 @@ const TaskEstimationElement = ({ users, resultsAnalysis }) => {
           </TableHead>
           <TableBody>
             <StyledTableRow>
-              <StyledTableCell align="center">{resultsAnalysis.median}</StyledTableCell>
-              <StyledTableCell align="center">{resultsAnalysis.average}</StyledTableCell>
-              <StyledTableCell align="center">{resultsAnalysis.standardDeviation}</StyledTableCell>
+              <StyledTableCell align="center">{roundNumber(resultsAnalysis.median)}</StyledTableCell>
+              <StyledTableCell align="center">{roundNumber(resultsAnalysis.average)}</StyledTableCell>
+              <StyledTableCell align="center">{roundNumber(resultsAnalysis.standardDeviation)}</StyledTableCell>
             </StyledTableRow>
           </TableBody>
         </Table>
