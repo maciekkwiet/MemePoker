@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const ResultsStyles = makeStyles(theme => ({
   root: {
+    maxHeight: '100%',
     width: '100%',
     height: '100%',
     display: 'flex',

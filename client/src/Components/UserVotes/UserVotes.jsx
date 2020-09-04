@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography, Avatar, Paper } from '@material-ui/core';
 import { useSocket } from 'socketio-hooks';
 import UserVotesStyles from './UserVotesStyles';
@@ -10,6 +10,7 @@ const UserVotes = () => {
   const { room } = useRoomContext();
   const [users, setUsers] = useState(room.users);
   const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);
+  const [boxHeight, setBoxHeight] = useState();
   const { isAdmin } = useUserContext().user;
 
   useSocket('USER_JOINED', users => {
@@ -31,8 +32,12 @@ const UserVotes = () => {
     setUsers(votes);
   });
 
+  useEffect(() => {
+    setBoxHeight(document.getElementById('admin').offsetHeight);
+  });
+
   return (
-    <Box className={isAdmin ? classes.isAdmin : classes.isNotAdmin}>
+    <Box id="admin" className={isAdmin ? classes.isAdmin : classes.isNotAdmin} maxHeight={boxHeight}>
       {users.map(user => (
         <Paper key={user.name} className={classes.item} elevation={4}>
           <Box className={user.vote ? classes.userInfoVoted : classes.userInfo}>
