@@ -33,7 +33,21 @@ const UserVotes = () => {
   });
 
   useEffect(() => {
-    setBoxHeight(document.getElementById('admin').offsetHeight);
+    const hide = document.getElementsByClassName(classes.item);
+    const element = document.getElementById('admin');
+    if (hide.length >= 2) {
+      [...hide].map(item => {
+        item.style.display = 'none';
+      });
+
+      setBoxHeight(element.offsetHeight);
+
+      [...hide].map(item => {
+        item.style.display = 'flex';
+      });
+    } else {
+      setBoxHeight(element.offsetHeight);
+    }
   });
 
   return (
