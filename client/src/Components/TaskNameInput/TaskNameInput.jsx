@@ -46,7 +46,7 @@ const TaskNameInput = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton color="primary">
+                <IconButton color="primary" type="submit">
                   <SendIcon />
                 </IconButton>
               </InputAdornment>

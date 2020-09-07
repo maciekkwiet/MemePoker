@@ -1,37 +1,39 @@
 import { makeStyles } from '@material-ui/styles';
 
 const UserVotesStyles = makeStyles(theme => ({
-  isNotAdmin: {
+  root: {
+    marginBottom: theme.spacing(2),
     width: '100%',
-    height: '32vh',
     display: 'flex',
     flexDirection: 'column',
     border: `2px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',
     overflowY: 'auto',
+    paddingTop: theme.spacing(1),
     '&::-webkit-scrollbar': {
       width: '0.4em',
+      '&::-webkit-scrollbar-thumb': {
+        background: theme.palette.primary.main,
+      },
     },
-    '&::-webkit-scrollbar-thumb': {
-      background: theme.palette.primary.main,
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: 0,
+      padding: theme.spacing(1, 0),
+      border: 'none',
+      borderRadius: 0,
     },
-    paddingTop: theme.spacing(1),
+  },
+  isNotAdmin: {
+    height: '32vh',
+    [theme.breakpoints.down('xs')]: {
+      height: 'auto',
+    },
   },
   isAdmin: {
-    width: '100%',
     height: '27vh',
-    display: 'flex',
-    flexDirection: 'column',
-    border: `2px solid ${theme.palette.primary.main}`,
-    borderRadius: '5px',
-    overflowY: 'auto',
-    '&::-webkit-scrollbar': {
-      width: '0.4em',
+    [theme.breakpoints.down('xs')]: {
+      height: 'auto',
     },
-    '&::-webkit-scrollbar-thumb': {
-      background: theme.palette.primary.main,
-    },
-    paddingTop: theme.spacing(1),
   },
   item: {
     backgroundColor: theme.palette.secondary.main,
@@ -41,6 +43,9 @@ const UserVotesStyles = makeStyles(theme => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      background: 'none',
+    },
   },
   userInfo: {
     display: 'flex',

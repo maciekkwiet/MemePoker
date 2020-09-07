@@ -28,8 +28,10 @@ const UserVotes = () => {
     setUsers(votes);
   });
 
+  console.log(users);
+
   return (
-    <Box className={isAdmin ? classes.isAdmin : classes.isNotAdmin}>
+    <Box className={`${classes.root} ${isAdmin ? classes.isAdmin : classes.isNotAdmin}`}>
       {users.map(user => (
         <Paper key={user.name} className={classes.item} elevation={4}>
           <Box className={user.hasVoted ? classes.userInfoVoted : classes.userInfo}>

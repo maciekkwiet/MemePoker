@@ -23,11 +23,19 @@ const ResultsStyles = makeStyles(theme => ({
   btnWrap: {
     width: '100%',
     marginTop: 'auto',
-    padding: theme.spacing(1, 1, 0),
-    border: `2px solid ${theme.palette.primary.main}`,
-    borderRadius: '5px',
     '& button': {
       marginBottom: theme.spacing(1),
+    },
+  },
+  fixedButtons: {
+    position: 'fixed',
+    bottom: theme.spacing(2),
+    right: theme.spacing(1),
+    '& > :nth-child(n)': {
+      marginRight: theme.spacing(1),
+    },
+    '& > :last-child': {
+      marginRight: 0,
     },
   },
 }));

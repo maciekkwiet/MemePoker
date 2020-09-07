@@ -18,11 +18,11 @@ const MemeCard = ({ value, img, selected, selectCard, id }) => {
   };
 
   return (
-    <Card className={selected ? classes.selected : classes.main} variant="outlined">
-      <CardActionArea onClick={onClickHandler} className={user.isObserver ? classes.cards : ''}>
-        <CardMedia className={classes.media} component="img" alt={value} src={img} height="50" />
+    <Card className={`${classes.root} ${selected ? classes.selected : classes.main}`} variant="outlined">
+      <CardActionArea onClick={onClickHandler} className={`${classes.button} ${user.isObserver ? classes.cards : ''}`}>
+        <CardMedia className={classes.media} component="img" alt={value} src={img} />
         <CardContent className={classes.content}>
-          <Typography className={classes.contentText} variant="body2">
+          <Typography className={classes.contentText} variant="h6">
             {value}
           </Typography>
         </CardContent>
