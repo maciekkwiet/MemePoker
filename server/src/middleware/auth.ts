@@ -19,7 +19,7 @@ export const auth: Middlewere = ctx => ([eventName, payload], next) => {
 
     return next();
   } catch (ex) {
-    ctx.io.to(ctx.socket.id).emit('EXCEPTION', 'AUTHORIZATION ERROR' + ex);
+    ctx.io.to(ctx.socket.id).emit('EXCEPTION', 'AUTHORIZATION ERROR - ' + ex);
     log.info(ex);
   }
 };

@@ -9,7 +9,6 @@ const UserVotes = () => {
   const classes = UserVotesStyles();
   const { room } = useRoomContext();
   const [users, setUsers] = useState(room.users);
-  const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);
   const { isAdmin } = useUserContext().user;
 
   useSocket('USER_JOINED', users => {
@@ -22,12 +21,10 @@ const UserVotes = () => {
   });
 
   useSocket('VOTES_CLEARED', users => {
-    setHasEveryoneVoted(false);
     setUsers(users);
   });
 
   useSocket('ROOM_VOTES', ({ votes }) => {
-    setHasEveryoneVoted(true);
     setUsers(votes);
   });
 
@@ -35,12 +32,12 @@ const UserVotes = () => {
     <Box className={isAdmin ? classes.isAdmin : classes.isNotAdmin}>
       {users.map(user => (
         <Paper key={user.name} className={classes.item} elevation={4}>
-          <Box className={user.vote ? classes.userInfoVoted : classes.userInfo}>
+          <Box className={user.hasVoted ? classes.userInfoVoted : classes.userInfo}>
             <Avatar>{user.name.charAt(0).toUpperCase()}</Avatar>
-            <Typography>{user.vote ? <b>{user.name} - [Voted]</b> : user.name}</Typography>
+            <Typography>{user.hasVoted ? <b>{user.name} - [Voted]</b> : user.name}</Typography>
           </Box>
           <Box>
-            <Typography>{hasEveryoneVoted ? user.vote : ''}</Typography>
+            <Typography>{user.vote}</Typography>
           </Box>
         </Paper>
       ))}
