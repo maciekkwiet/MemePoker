@@ -36,7 +36,7 @@ const UserVotesStyles = makeStyles(theme => ({
   item: {
     backgroundColor: theme.palette.secondary.main,
     margin: theme.spacing(0, 1, 1, 1),
-    padding: theme.spacing(1, 1, 1, 0),
+    // padding: theme.spacing(1, 1, 1, 0),
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -49,6 +49,7 @@ const UserVotesStyles = makeStyles(theme => ({
     '& > div': {
       margin: theme.spacing(0, 1, 0, 1),
     },
+    color: 'white',
   },
   userInfoVoted: {
     display: 'flex',
@@ -58,6 +59,15 @@ const UserVotesStyles = makeStyles(theme => ({
       margin: theme.spacing(0, 1, 0, 1),
     },
     color: theme.palette.primary.main,
+  },
+  vote: {
+    marginRight: theme.spacing(1),
+  },
+  kickButton: {
+    opacity: '0',
+    '&:hover': {
+      opacity: '1',
+    },
   },
 }));
 
