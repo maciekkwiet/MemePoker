@@ -8,7 +8,6 @@ import { useUserContext } from 'Contexts/UserContext';
 
 const Cards = () => {
   const classes = CardsStyles();
-  const { user } = useUserContext();
 
   const [selectedCard, setSelectedCard] = useState(null);
 
