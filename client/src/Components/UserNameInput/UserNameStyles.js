@@ -42,7 +42,6 @@ const UserNameStyles = makeStyles(theme => ({
     },
   },
 
-  //class=" MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-outlined"
   wrapperImage: {
     width: '100%',
     display: 'flex',

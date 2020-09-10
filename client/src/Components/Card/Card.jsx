@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core';
+import { useSocket } from 'socketio-hooks';
 
 import cardStyles from './CardStyles';
 import { useBackend } from 'hooks/useBackend';
 import { useUserContext } from 'Contexts/UserContext';
-import { useSocket } from 'socketio-hooks';
 
 const MemeCard = ({ value, img, selected, selectCard, id }) => {
   const classes = cardStyles();
