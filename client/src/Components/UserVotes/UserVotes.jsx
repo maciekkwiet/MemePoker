@@ -7,12 +7,13 @@ import { useUserContext } from 'Contexts/UserContext';
 
 const UserVotes = () => {
   const classes = UserVotesStyles();
-  const { room } = useRoomContext();
+  const { room, updateRoomInfo } = useRoomContext();
   const [users, setUsers] = useState(room.users);
   const { isAdmin } = useUserContext().user;
 
   useSocket('USER_JOINED', users => {
     setUsers(users);
+    updateRoomInfo({ ...room, users });
   });
 
   useSocket('USER_VOTED', userVoted => {
@@ -27,8 +28,6 @@ const UserVotes = () => {
   useSocket('ROOM_VOTES', ({ votes }) => {
     setUsers(votes);
   });
-
-  console.log(users);
 
   return (
     <Box className={`${classes.root} ${isAdmin ? classes.isAdmin : classes.isNotAdmin}`}>
