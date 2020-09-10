@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.18",
-    "simple-node-logger": "^18.12.24",
+    "node-loggly-bulk": "^2.2.4",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {

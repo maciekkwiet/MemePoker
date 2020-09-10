@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { rooms } from '@models/Rooms';
-import { log } from '@services/logger';
+import { client } from '@services/logger';
 
 const router = Router();
 
@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
     res.json({ room });
   } catch (ex) {
     res.status(500).json(ex.message);
-    log.error(ex);
+    client.log(ex);
   }
 });
 

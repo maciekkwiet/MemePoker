@@ -1,8 +1,11 @@
-const SimpleNodeLogger = require('simple-node-logger'),
-  opts = {
-    logFilePath: 'logs/mylogfile.log',
-    timestampFormat: 'YYYY-MM-DD HH:mm:ss.SSS',
-  },
-  log = process.env.NODE_ENV == 'production' ? SimpleNodeLogger.createSimpleLogger(opts) : console;
+const loggly = require('node-loggly-bulk');
 
-export { log };
+const client =
+  process.env.NODE_ENV == 'production'
+    ? loggly.createClient({
+        token: 'YOUR_APPLICATION_TOKEN',
+        subdomain: 'YOUR_SUBDOMAIN',
+      })
+    : console;
+
+export { client };
