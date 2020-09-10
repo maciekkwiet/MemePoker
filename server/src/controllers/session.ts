@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
     const room = rooms.createRoom();
     res.json({ room });
   } catch (ex) {
-    res.json(ex.message);
+    res.status(500).json(ex.message);
     log.error(ex);
   }
 });

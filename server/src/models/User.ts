@@ -13,5 +13,9 @@ class User {
     this.vote = null;
     this.isObserver = isObserver;
   }
+
+  get hasVoted() {
+    return this.vote ? true : false;
+  }
 }
 export { User };
