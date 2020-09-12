@@ -19,7 +19,7 @@ class Room {
   }
 
   howLongInactive(actualTime: any) {
-    if (actualTime - this.inactiveTime > 10000) {
+    if (actualTime - this.inactiveTime > 30000) {
       // ile czasu nieaktywne?  3600000 - 1h
       return this.id;
     }
