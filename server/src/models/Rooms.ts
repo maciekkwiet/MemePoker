@@ -24,7 +24,7 @@ class Rooms {
   }
 
   isRoomFree(): boolean {
-    return this.rooms.length === 2 ? false : true;
+    return this.rooms.length === 9000 ? false : true;
   }
 
   private createRandomId(): string {
@@ -37,16 +37,35 @@ class Rooms {
 
   inactiveRooms() {
     const deleteInactiveRooms = setInterval(() => this.deleteRooms(), 10000);
-    //3600 000 - 1h
+    //3600000 - 1h
   }
 
   deleteRooms() {
+    const roomsToDelete: string[] = [];
+    let inactiveRooms = null;
     if (this.rooms) {
       this.rooms.map(room => {
-        const inactiveRooms = room.howLongInactive(new Date().getTime()); //moze to pushować do jakiejs tablicy
-        console.log(inactiveRooms); //ten pokój do usunięcia
+        inactiveRooms = room.howLongInactive(new Date().getTime());
+        if (inactiveRooms && typeof inactiveRooms != 'undefined') {
+          roomsToDelete.push(inactiveRooms);
+          inactiveRooms = null;
+        }
       });
+      if (roomsToDelete.length) {
+        roomsToDelete.map(room => {
+          const index = this.getRoomId().indexOf(room);
+          this.rooms.splice(index, 1);
+        });
+      }
     }
+  }
+
+  private getRoomId() {
+    const allRoomsId: any = [];
+    this.rooms.map(room => {
+      allRoomsId.push(room.id);
+    });
+    return allRoomsId;
   }
 }
 
