@@ -4,7 +4,7 @@ import { Task } from '@models/Task';
 class Room {
   id: string;
   history: Task[];
-  inactiveTime: any;
+  inactiveTime: number;
   private task: Task;
   private users: User[];
   private observers: User[];
