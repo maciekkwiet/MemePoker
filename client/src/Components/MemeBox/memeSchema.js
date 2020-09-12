@@ -33,7 +33,7 @@ export const memeSchema = [
   },
   {
     id: 4,
-    value: 'medium',
+    value: 'deviation',
     img: img4,
   },
   {
