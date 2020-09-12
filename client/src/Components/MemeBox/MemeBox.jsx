@@ -13,10 +13,14 @@ const MemeBox = () => {
   useSocket('MEME', votes => {
     const filteredVotes = filterOnlyNumbers(votes.map(user => user.vote));
     if (filteredVotes?.length) {
-      if (areVotesEqual(filteredVotes)) votesEqual(filteredVotes);
-      else if (getStandardDeviation(filteredVotes.map(vote => vote)) > 5) votesDeviation();
+      chooseMemeType(filteredVotes);
     }
   });
+
+  const chooseMemeType = filteredVotes => {
+    if (areVotesEqual(filteredVotes)) votesEqual(filteredVotes);
+    else if (getStandardDeviation(filteredVotes.map(vote => vote)) > 5) votesDeviation();
+  };
 
   const votesEqual = votes => {
     let vote = votes.find(element => element !== null);
