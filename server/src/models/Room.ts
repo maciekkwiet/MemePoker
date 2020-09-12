@@ -18,11 +18,8 @@ class Room {
     this.inactiveTime = new Date().getTime();
   }
 
-  howLongInactive(actualTime: any) {
-    if (actualTime - this.inactiveTime > 30000) {
-      // ile czasu nieaktywne?  3600000 - 1h
-      return this.id;
-    }
+  howLongInactive(actualTime: number) {
+    return actualTime - this.inactiveTime > 3600000 ? this.id : null;
   }
 
   getUser(name: string): User {

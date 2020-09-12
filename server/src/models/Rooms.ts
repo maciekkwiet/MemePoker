@@ -36,21 +36,22 @@ class Rooms {
   }
 
   inactiveRooms() {
-    const deleteInactiveRooms = setInterval(() => this.deleteRooms(), 10000);
-    //3600000 - 1h
+    setInterval(() => this.deleteRooms(), 1800000);
   }
 
   deleteRooms() {
     const roomsToDelete: string[] = [];
-    let inactiveRooms = null;
+    let inactiveRooms: string | null = null;
+
     if (this.rooms) {
       this.rooms.map(room => {
         inactiveRooms = room.howLongInactive(new Date().getTime());
-        if (inactiveRooms && typeof inactiveRooms != 'undefined') {
+        if (inactiveRooms) {
           roomsToDelete.push(inactiveRooms);
           inactiveRooms = null;
         }
       });
+
       if (roomsToDelete.length) {
         roomsToDelete.map(room => {
           const index = this.getRoomId().indexOf(room);
@@ -61,7 +62,7 @@ class Rooms {
   }
 
   private getRoomId() {
-    const allRoomsId: any = [];
+    const allRoomsId: string[] = [];
     this.rooms.map(room => {
       allRoomsId.push(room.id);
     });
