@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography, Avatar, Paper } from '@material-ui/core';
+import { Box, Typography, Avatar, Paper, Dialog, DialogActions, DialogTitle, Button } from '@material-ui/core';
 import { useSocket } from 'socketio-hooks';
 import UserVotesStyles from './UserVotesStyles';
 import { useRoomContext } from 'Contexts/RoomContext';
@@ -19,6 +19,9 @@ const UserVotes = () => {
   const [users, setUsers] = useState(room.users);
   const { isAdmin } = useUserContext().user;
   const kickUser = useBackend('USER_KICK');
+  const [isHover, setIsHover] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [kickedUserName, setKickedUserName] = useState('');
 
   useSocket('USER_JOINED', users => {
     setUsers(users);
@@ -41,16 +44,33 @@ const UserVotes = () => {
     setUsers(votes);
   });
 
-  const handleClick = name => () => {
+  const onMouseOver = () => setIsHover(true);
+
+  const onMouseOut = () => setIsHover(false);
+
+  const handleKick = name => () => {
     kickUser({ name });
-    console.log('handle');
+    setOpen(false);
   };
+
+  const handleKickOpen = name => () => {
+    setKickedUserName(name);
+    setOpen(true);
+  };
+
+  const handleKickClose = () => setOpen(false);
 
   return (
     <Box className={isAdmin ? classes.isAdmin : classes.isNotAdmin}>
       <List>
         {users.map(user => (
-          <Paper key={user.name} className={classes.item} elevation={4}>
+          <Paper
+            key={user.name}
+            className={classes.item}
+            elevation={4}
+            onMouseOver={onMouseOver}
+            onMouseOut={onMouseOut}
+          >
             <ListItem>
               <ListItemIcon>
                 <Avatar> {user.name.charAt(0).toUpperCase()}</Avatar>
@@ -61,21 +81,28 @@ const UserVotes = () => {
               />
             </ListItem>
             <Typography className={classes.vote}>{user.vote}</Typography>
-            <IconButton className={classes.kickButton} onClick={handleClick(user.name)}>
-              <ClearIcon />
-            </IconButton>
+            {isAdmin && (
+              <IconButton
+                className={isHover ? classes.kickButtonHover : classes.kickButton}
+                onClick={handleKickOpen(user.name)}
+              >
+                <ClearIcon />
+              </IconButton>
+            )}
           </Paper>
-          // <Paper key={user.name} className={classes.item} elevation={4}>
-          //   <Box className={user.hasVoted ? classes.userInfoVoted : classes.userInfo}>
-          //     <Avatar>{user.name.charAt(0).toUpperCase()}</Avatar>
-          //     <Typography>{user.hasVoted ? <b>{user.name} - [Voted]</b> : user.name}</Typography>
-          //   </Box>
-          //   <Box>
-          //     <Typography>{user.vote}</Typography>
-          //   </Box>
-          // </Paper>
         ))}
       </List>
+      <Dialog open={open} onClose={handleKickClose}>
+        <DialogTitle>{`Are you sure you want to kick ${kickedUserName}?`}</DialogTitle>
+        <DialogActions>
+          <Button onClick={handleKickClose} color="primary">
+            No
+          </Button>
+          <Button onClick={handleKick(kickedUserName)} color="primary" autoFocus>
+            Yes
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };
