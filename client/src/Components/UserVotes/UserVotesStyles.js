@@ -2,10 +2,8 @@ import { makeStyles } from '@material-ui/styles';
 
 const UserVotesStyles = makeStyles(theme => ({
   isNotAdmin: {
-    width: '100%',
-    height: '32vh',
-    display: 'flex',
-    flexDirection: 'column',
+    flexBasis: '90%',
+    marginTop: theme.spacing(2),
     border: `2px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',
     overflowY: 'auto',
@@ -18,10 +16,8 @@ const UserVotesStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(1),
   },
   isAdmin: {
-    width: '100%',
-    height: '27vh',
-    display: 'flex',
-    flexDirection: 'column',
+    flexBasis: '70%',
+    margin: theme.spacing(2, 0),
     border: `2px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',
     overflowY: 'auto',

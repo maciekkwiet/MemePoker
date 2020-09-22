@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography, Avatar, Paper } from '@material-ui/core';
 import { useSocket } from 'socketio-hooks';
 import UserVotesStyles from './UserVotesStyles';
@@ -9,13 +9,13 @@ const UserVotes = () => {
   const classes = UserVotesStyles();
   const { room } = useRoomContext();
   const [users, setUsers] = useState(room.users);
+
+  const [hasEveryoneVoted, setHasEveryoneVoted] = useState(false);
+  const [boxHeight, setBoxHeight] = useState();
+
   const { isAdmin } = useUserContext().user;
 
   useSocket('USER_JOINED', users => {
-    setUsers(users);
-  });
-
-  useSocket('USER_DELETED', users => {
     setUsers(users);
   });
 
@@ -32,8 +32,26 @@ const UserVotes = () => {
     setUsers(votes);
   });
 
+  useEffect(() => {
+    const hide = document.getElementsByClassName(classes.item);
+    const element = document.getElementById('admin');
+    if (hide.length >= 2) {
+      [...hide].map(item => {
+        item.style.display = 'none';
+      });
+
+      setBoxHeight(element.offsetHeight);
+
+      [...hide].map(item => {
+        item.style.display = 'flex';
+      });
+    } else {
+      setBoxHeight(element.offsetHeight);
+    }
+  });
+
   return (
-    <Box className={isAdmin ? classes.isAdmin : classes.isNotAdmin}>
+    <Box id="admin" className={isAdmin ? classes.isAdmin : classes.isNotAdmin} maxHeight={boxHeight}>
       {users.map(user => (
         <Paper key={user.name} className={classes.item} elevation={4}>
           <Box className={user.hasVoted ? classes.userInfoVoted : classes.userInfo}>
