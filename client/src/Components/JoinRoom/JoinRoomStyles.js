@@ -2,12 +2,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const JoinRoomStyles = makeStyles(theme => ({
   formWrapper: {
-    [theme.breakpoints.up('sm')]: {
-      display: 'flex',
-      flexDirection: 'row',
+    display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
       justifyContent: 'space-around',
       alignItems: 'space-around',
-      padding: '28px 38px 0px 38px',
     },
     [theme.breakpoints.down('xs')]: {
       display: 'flex',
@@ -23,8 +22,15 @@ const JoinRoomStyles = makeStyles(theme => ({
   },
   formWrapperText: {
     [theme.breakpoints.up('sm')]: {
+      width: '60%',
+      marginLeft: theme.spacing(2),
       textAlign: 'center',
       justifyContent: 'space-between',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      marginLeft: theme.spacing(0),
+      marginTop: '1em',
     },
     [theme.breakpoints.down('xs')]: {
       marginTop: '1em',
@@ -39,12 +45,6 @@ const JoinRoomStyles = makeStyles(theme => ({
     '& .MuiOutlinedInput-notchedOutline': {
       textAlign: 'center',
       borderColor: theme.palette.primary.main,
-    },
-    '& .MuiInputBase-input': {
-      [theme.breakpoints.down('sm')]: {
-        height: '25px',
-        width: '80px',
-      },
     },
   },
 }));
