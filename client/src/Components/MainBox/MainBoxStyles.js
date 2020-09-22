@@ -6,7 +6,7 @@ const mainBoxStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(4),
     borderColor: theme.palette.primary.main,
     [theme.breakpoints.down('sm')]: {
-      padding: theme.spacing(2),
+      padding: theme.spacing(1),
     },
   },
 }));
