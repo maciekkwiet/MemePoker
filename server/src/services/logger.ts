@@ -4,5 +4,4 @@ const SimpleNodeLogger = require('simple-node-logger'),
     timestampFormat: 'YYYY-MM-DD HH:mm:ss.SSS',
   },
   log = process.env.NODE_ENV == 'production' ? SimpleNodeLogger.createSimpleLogger(opts) : console;
-
 export { log };

@@ -7,6 +7,7 @@ const cardStyles = makeStyles(theme => ({
   },
   main: {
     backgroundColor: 'black',
+    cursor: 'default',
   },
   selected: {
     backgroundColor: 'yellow',
@@ -28,8 +29,6 @@ const cardStyles = makeStyles(theme => ({
     height: 60,
     marginRight: theme.spacing(0.5),
     marginBottom: '5px',
-    // borderRadius: '3px',
-    // padding: '1px',
     [theme.breakpoints.down('xs')]: {
       width: '60%',
       height: '100%',
@@ -40,7 +39,6 @@ const cardStyles = makeStyles(theme => ({
   content: {
     height: 40,
     backgroundColor: theme.palette.secondary.main,
-    // borderRadius: '5px',
     padding: '3px',
     [theme.breakpoints.down('xs')]: {
       width: '40%',
@@ -50,8 +48,6 @@ const cardStyles = makeStyles(theme => ({
   contentText: {
     backgroundColor: 'rgba(0,15,0,0.4)',
     height: '100%',
-    /* borderRadius: '3px',
-    border: `1px solid #FFFF`, */
     fontWeight: 'medium',
     display: 'flex',
     alignItems: 'center',

@@ -16,6 +16,7 @@ import { useRoomContext } from 'Contexts/RoomContext';
 import { useUserContext } from 'Contexts/UserContext';
 import { useBackend } from 'hooks/useBackend';
 import Loader from 'Components/Loader/Loader';
+import MemeBox from 'Components/MemeBox';
 
 const Room = () => {
   const classes = RoomStyles();
@@ -58,6 +59,7 @@ const Room = () => {
         )}
       </Grid>
       <TaskEstimatedBox />
+      <MemeBox />
     </MainBox>
   );
 };

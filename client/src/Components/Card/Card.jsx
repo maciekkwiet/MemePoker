@@ -5,7 +5,7 @@ import cardStyles from './CardStyles';
 import { useBackend } from 'hooks/useBackend';
 import { useUserContext } from 'Contexts/UserContext';
 
-const MemeCard = ({ value, img, selected, selectCard, id }) => {
+const MemeCard = ({ value, img, selected, selectCard, id, analysis }) => {
   const classes = cardStyles();
   const sendEstimation = useBackend('USER_VOTE');
   const { user } = useUserContext();
@@ -19,7 +19,10 @@ const MemeCard = ({ value, img, selected, selectCard, id }) => {
 
   return (
     <Card className={`${classes.root} ${selected ? classes.selected : classes.main}`} variant="outlined">
-      <CardActionArea onClick={onClickHandler} className={`${classes.button} ${user.isObserver ? classes.cards : ''}`}>
+      <CardActionArea
+        onClick={analysis && !selected ? '' : onClickHandler}
+        className={`${classes.button} ${user.isObserver ? classes.cards : ''}`}
+      >
         <CardMedia className={classes.media} component="img" alt={value} src={img} />
         <CardContent className={classes.content}>
           <Typography className={classes.contentText} variant="h6">
