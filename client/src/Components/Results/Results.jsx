@@ -17,7 +17,8 @@ const Results = () => {
   const { isAdmin } = useUserContext().user;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
-  const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
+  // const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
+  const isDesktop = !isMobile;
 
   const onClickHandlerShow = () => {
     sendVotesShow();

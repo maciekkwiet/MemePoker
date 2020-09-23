@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography, Avatar, Paper, useMediaQuery, Drawer, Chip } from '@material-ui/core';
 import { useTheme } from '@material-ui/styles';
 import ListAltIcon from '@material-ui/icons/ListAlt';
@@ -11,6 +11,9 @@ const UserVotes = () => {
   const classes = UserVotesStyles();
   const { room, updateRoomInfo } = useRoomContext();
   const [users, setUsers] = useState(room.users);
+
+  const [boxHeight, setBoxHeight] = useState();
+
   const { isAdmin } = useUserContext().user;
 
   const theme = useTheme();
@@ -45,10 +48,30 @@ const UserVotes = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
+  useEffect(() => {
+    const hide = document.getElementsByClassName(classes.item);
+    const element = document.getElementById('admin');
+    if (window.innerWidth > '960px') {
+      if (hide.length) {
+        [...hide].map(item => (item.style.display = 'none'));
+
+        setBoxHeight(element.offsetHeight);
+
+        [...hide].map(item => (item.style.display = 'flex'));
+      } else {
+        setBoxHeight(element.offsetHeight);
+      }
+    }
+  });
+
   return (
     <>
       {isDesktop && (
-        <Box className={`${classes.root} ${isAdmin ? classes.isAdmin : classes.isNotAdmin}`}>
+        <Box
+          id="admin"
+          className={`${classes.root} ${isAdmin ? classes.isAdmin : classes.isNotAdmin}`}
+          maxHeight={boxHeight}
+        >
           {users.map(user => (
             <Paper key={user.name} className={classes.item} elevation={4}>
               <Box className={user.hasVoted ? classes.userInfoVoted : classes.userInfo}>

@@ -24,13 +24,25 @@ const UserVotesStyles = makeStyles(theme => ({
     },
   },
   isNotAdmin: {
-    height: '32vh',
+    flexBasis: '90%',
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(0),
     [theme.breakpoints.down('xs')]: {
       height: 'auto',
     },
   },
   isAdmin: {
-    height: '27vh',
+    flexBasis: '70%',
+    margin: theme.spacing(2, 0),
+    border: `2px solid ${theme.palette.primary.main}`,
+    borderRadius: '5px',
+    overflowY: 'auto',
+    '&::-webkit-scrollbar': {
+      width: '0.4em',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: theme.palette.primary.main,
+    },
     [theme.breakpoints.down('xs')]: {
       height: 'auto',
     },

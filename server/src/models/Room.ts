@@ -4,6 +4,7 @@ import { Task } from '@models/Task';
 class Room {
   id: string;
   history: Task[];
+  inactiveTime: number;
   private task: Task;
   private users: User[];
   private observers: User[];
@@ -14,6 +15,11 @@ class Room {
     this.users = [];
     this.history = [];
     this.observers = [];
+    this.inactiveTime = new Date().getTime();
+  }
+
+  howLongInactive(actualTime: number) {
+    return actualTime - this.inactiveTime > 3600000 ? this.id : null;
   }
 
   getUser(name: string): User {
