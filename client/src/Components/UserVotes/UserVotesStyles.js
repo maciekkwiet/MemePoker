@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/styles';
 
 const UserVotesStyles = makeStyles(theme => ({
   root: {
+    marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
     width: '100%',
     display: 'flex',
@@ -17,7 +18,9 @@ const UserVotesStyles = makeStyles(theme => ({
       },
     },
     [theme.breakpoints.down('xs')]: {
-      marginBottom: 0,
+      maxHeight: '40vh',
+      overflowY: 'scroll',
+      margin: theme.spacing(0, 0),
       padding: theme.spacing(1, 0),
       border: 'none',
       borderRadius: 0,
@@ -25,7 +28,6 @@ const UserVotesStyles = makeStyles(theme => ({
   },
   isNotAdmin: {
     flexBasis: '90%',
-    marginTop: theme.spacing(2),
     marginBottom: theme.spacing(0),
     [theme.breakpoints.down('xs')]: {
       height: 'auto',
@@ -33,9 +35,6 @@ const UserVotesStyles = makeStyles(theme => ({
   },
   isAdmin: {
     flexBasis: '70%',
-    margin: theme.spacing(2, 0),
-    border: `2px solid ${theme.palette.primary.main}`,
-    borderRadius: '5px',
     overflowY: 'auto',
     '&::-webkit-scrollbar': {
       width: '0.4em',
