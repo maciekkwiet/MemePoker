@@ -29,6 +29,13 @@ const UserVotesStyles = makeStyles(theme => ({
   isNotAdmin: {
     flexBasis: '90%',
     marginBottom: theme.spacing(0),
+    overflowY: 'auto',
+    '&::-webkit-scrollbar': {
+      width: '0.4em',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: theme.palette.primary.main,
+    },
     [theme.breakpoints.down('xs')]: {
       height: 'auto',
     },

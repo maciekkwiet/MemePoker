@@ -48,19 +48,21 @@ const UserVotes = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
-  const measuredRef = useCallback(node => {
-    const hide = document.getElementsByClassName(classes.item);
-    console.log(window.innerWidth);
-    if (window.innerWidth > 960 && node !== null) {
-      if (hide.length) {
-        [...hide].map(item => (item.style.display = 'none'));
-        setBoxHeight(node.getBoundingClientRect().height);
-        [...hide].map(item => (item.style.display = 'flex'));
-      } else {
-        setBoxHeight(node.getBoundingClientRect().height);
+  const measuredRef = useCallback(
+    node => {
+      const hide = document.getElementsByClassName(classes.item);
+      if (window.innerWidth > 960 && node !== null) {
+        if (hide.length) {
+          [...hide].map(item => (item.style.display = 'none'));
+          setBoxHeight(node.getBoundingClientRect().height);
+          [...hide].map(item => (item.style.display = 'flex'));
+        } else {
+          setBoxHeight(node.getBoundingClientRect().height);
+        }
       }
-    }
-  }, []);
+    },
+    [isDesktop]
+  );
 
   return (
     <>
