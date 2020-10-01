@@ -51,7 +51,7 @@ const UserVotes = () => {
   useEffect(() => {
     const hide = document.getElementsByClassName(classes.item);
     const element = document.getElementById('admin');
-    if (window.innerWidth > '960px') {
+    if (isDesktop) {
       if (hide.length) {
         [...hide].map(item => (item.style.display = 'none'));
 

@@ -29,8 +29,12 @@ const UserVotesStyles = makeStyles(theme => ({
   isNotAdmin: {
     flexBasis: '90%',
     marginBottom: theme.spacing(0),
-    [theme.breakpoints.down('xs')]: {
-      height: 'auto',
+    overflowY: 'auto',
+    '&::-webkit-scrollbar': {
+      width: '0.4em',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: theme.palette.primary.main,
     },
   },
   isAdmin: {
@@ -42,9 +46,6 @@ const UserVotesStyles = makeStyles(theme => ({
     '&::-webkit-scrollbar-thumb': {
       background: theme.palette.primary.main,
     },
-    [theme.breakpoints.down('xs')]: {
-      height: 'auto',
-    },
   },
   item: {
     backgroundColor: theme.palette.secondary.main,
@@ -55,6 +56,7 @@ const UserVotesStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
+      display: 'flex',
       background: 'none',
     },
   },
