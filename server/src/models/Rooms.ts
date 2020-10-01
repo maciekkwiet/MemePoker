@@ -34,7 +34,42 @@ class Rooms {
   private checkId(roomId: string): boolean {
     return this.rooms.some(({ id }) => id === roomId) ? true : false;
   }
+
+  inactiveRooms() {
+    setInterval(() => this.deleteRooms(), 1800000);
+  }
+
+  deleteRooms() {
+    const roomsToDelete: string[] = [];
+    let inactiveRooms: string | null = null;
+
+    if (this.rooms) {
+      this.rooms.map(room => {
+        inactiveRooms = room.howLongInactive(new Date().getTime());
+        if (inactiveRooms) {
+          roomsToDelete.push(inactiveRooms);
+          inactiveRooms = null;
+        }
+      });
+
+      if (roomsToDelete.length) {
+        roomsToDelete.map(room => {
+          const index = this.getRoomId().indexOf(room);
+          this.rooms.splice(index, 1);
+        });
+      }
+    }
+  }
+
+  private getRoomId() {
+    const allRoomsId: string[] = [];
+    this.rooms.map(room => {
+      allRoomsId.push(room.id);
+    });
+    return allRoomsId;
+  }
 }
 
 const rooms = new Rooms();
+rooms.inactiveRooms();
 export { rooms };

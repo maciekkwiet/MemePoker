@@ -4,7 +4,10 @@ const cardStyles = makeStyles(theme => ({
   main: {
     backgroundColor: 'black',
     padding: 5,
+    cursor: 'default',
   },
+
+  disabled: { background: 'green' },
   selected: {
     backgroundColor: 'yellow',
     padding: 5,
@@ -22,7 +25,6 @@ const cardStyles = makeStyles(theme => ({
     height: 60,
     padding: '1px',
   },
-
   content: {
     height: 40,
     backgroundColor: theme.palette.primary.main,

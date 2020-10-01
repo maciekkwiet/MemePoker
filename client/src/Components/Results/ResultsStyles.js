@@ -2,27 +2,25 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const ResultsStyles = makeStyles(theme => ({
   root: {
+    maxHeight: '100%',
+    width: '100%',
+    height: '100%',
     display: 'flex',
-    flexFlow: 'column nowrap',
+    flexDirection: 'column',
     backgroundColor: theme.palette.secondary.main,
-    minHeight: '100%',
     padding: theme.spacing(2),
     border: `1px solid ${theme.palette.primary.main}`,
   },
   header: {
-    display: 'inline-block',
-    width: '100%',
     padding: theme.spacing(0.5, 1),
-    marginBottom: theme.spacing(2),
-    alignSelf: 'flex-start',
+    flexBasis: '10%',
     fontWeight: theme.typography.fontWeightBold,
     textTransform: 'uppercase',
     border: `2px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',
   },
   btnWrap: {
-    width: '100%',
-    marginTop: 'auto',
+    flexBasis: '20%',
     padding: theme.spacing(1, 1, 0),
     border: `2px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',

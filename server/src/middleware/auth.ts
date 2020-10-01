@@ -14,6 +14,8 @@ export const auth: Middlewere = ctx => ([eventName, payload], next) => {
     const room = rooms.getRoom(decodedToken.roomId);
     const user = room.getUser(decodedToken.user.name);
 
+    room.inactiveTime = new Date().getTime();
+
     payload.room = room;
     payload.user = user;
 
