@@ -51,7 +51,7 @@ const UserVotes = () => {
   const measuredRef = useCallback(
     node => {
       const hide = document.getElementsByClassName(classes.item);
-      if (window.innerWidth >= 960 && node !== null) {
+      if (window.innerWidth > 960 && node !== null) {
         if (hide.length) {
           [...hide].map(item => (item.style.display = 'none'));
           setBoxHeight(node.getBoundingClientRect().height);
