@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Box, Typography, Avatar, Paper, useMediaQuery, Drawer, Chip } from '@material-ui/core';
 import { useTheme } from '@material-ui/styles';
 import ListAltIcon from '@material-ui/icons/ListAlt';
@@ -48,27 +48,27 @@ const UserVotes = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
-  useEffect(() => {
-    const hide = document.getElementsByClassName(classes.item);
-    const element = document.getElementById('admin');
-    if (isDesktop) {
-      if (hide.length) {
-        [...hide].map(item => (item.style.display = 'none'));
-
-        setBoxHeight(element.offsetHeight);
-
-        [...hide].map(item => (item.style.display = 'flex'));
-      } else {
-        setBoxHeight(element.offsetHeight);
+  const measuredRef = useCallback(
+    node => {
+      const hide = document.getElementsByClassName(classes.item);
+      if (window.innerWidth >= 960 && node !== null) {
+        if (hide.length) {
+          [...hide].map(item => (item.style.display = 'none'));
+          setBoxHeight(node.getBoundingClientRect().height);
+          [...hide].map(item => (item.style.display = 'flex'));
+        } else {
+          setBoxHeight(node.getBoundingClientRect().height);
+        }
       }
-    }
-  });
+    },
+    [isDesktop]
+  );
 
   return (
     <>
       {isDesktop && (
         <Box
-          id="admin"
+          ref={measuredRef}
           className={`${classes.root} ${isAdmin ? classes.isAdmin : classes.isNotAdmin}`}
           maxHeight={boxHeight}
         >

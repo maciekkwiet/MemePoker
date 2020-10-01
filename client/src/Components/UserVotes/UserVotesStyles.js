@@ -18,6 +18,7 @@ const UserVotesStyles = makeStyles(theme => ({
       },
     },
     [theme.breakpoints.down('xs')]: {
+      height: 'auto',
       maxHeight: '40vh',
       overflowY: 'scroll',
       margin: theme.spacing(0, 0),
