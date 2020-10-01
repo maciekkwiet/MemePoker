@@ -62,12 +62,6 @@ const UserVotesStyles = makeStyles(theme => ({
   vote: {
     marginRight: theme.spacing(1),
   },
-  kickButton: {
-    opacity: '0',
-  },
-  kickButtonHover: {
-    opacity: '1',
-  },
 }));
 
 export default UserVotesStyles;
