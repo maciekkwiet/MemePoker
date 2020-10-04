@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
-import { Grid, Paper, Box } from '@material-ui/core';
+import { Grid, Paper, Box, useTheme, useMediaQuery } from '@material-ui/core';
 
 import RoomStyles from './RoomStyles';
 import Cards from 'Components/Cards';
@@ -24,6 +24,9 @@ const Room = () => {
   const { room, updateRoomInfo } = useRoomContext();
   const { roomId } = useParams();
   const reconnectUser = useBackend('USER_RECONNECT');
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+  const isDesktop = !isMobile;
 
   if (!room && token) {
     reconnectUser({ token }, data => updateRoomInfo(data));
@@ -33,23 +36,27 @@ const Room = () => {
   }
 
   return (
-    <MainBox>
+    <MainBox padding={2}>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={8} className={classes.main}>
+        <Grid item sm={12} md={8} className={classes.main}>
           <Navigation />
           <Box className={classes.top} component="div">
             <TaskBox />
             <Timer />
-            <InfoBox title="ROOM ID" value={roomId} padding={0.25} />
+            <InfoBox title="ROOM&nbsp;ID" value={roomId} padding={0.25} />
           </Box>
           <Paper className={classes.cards}>
             <TaskNameInput />
             <Cards />
           </Paper>
         </Grid>
-        <Grid item xs={12} md={4}>
+        {isDesktop ? (
+          <Grid item sm={12} md={4}>
+            <Results />
+          </Grid>
+        ) : (
           <Results />
-        </Grid>
+        )}
       </Grid>
       <TaskEstimatedBox />
       <MemeBox />

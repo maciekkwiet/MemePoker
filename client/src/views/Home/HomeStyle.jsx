@@ -34,6 +34,7 @@ const HomeStyles = makeStyles(theme => ({
   },
 
   wrapperItemColumn: {
+    marginTop: theme.spacing(3),
     [theme.breakpoints.up('sm')]: {
       width: '40%',
       textAlign: 'center',
@@ -41,6 +42,7 @@ const HomeStyles = makeStyles(theme => ({
       alignContent: 'center',
     },
     [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(0),
       width: '100%',
       textAlign: 'center',
       justifyContent: 'center',

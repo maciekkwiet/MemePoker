@@ -11,13 +11,13 @@ const TaskNameInputStyles = makeStyles(theme => ({
     flexFlow: 'row nowrap',
     alignItems: 'center',
     borderRadius: '5px',
-    '& > label, div': {
-      marginRight: theme.spacing(1),
-    },
     '& > label': {
       [theme.breakpoints.down('xs')]: {
         display: 'none',
       },
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: 0,
     },
   },
   btn: {
@@ -32,7 +32,10 @@ const TaskNameInputStyles = makeStyles(theme => ({
     '& .MuiInputBase-root': {
       color: 'white',
       backgroundColor: theme.palette.background.paper,
-      height: '38px',
+      padding: 0,
+    },
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1.5),
     },
     '& .MuiFormLabel-root': {
       fontSize: theme.typography.body1.fontSize,
@@ -50,7 +53,10 @@ const TaskNameInputStyles = makeStyles(theme => ({
       color: 'red',
       backgroundColor: theme.palette.background.paper,
       fontWeight: 'bold',
-      height: '38px',
+      padding: 0,
+    },
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1.5),
     },
   },
 }));

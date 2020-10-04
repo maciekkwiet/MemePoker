@@ -8,11 +8,18 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 
 import { useBackend } from 'hooks/useBackend';
+import leaveRoomButtonStyles from './LeaveRoomButtonStyles';
+import { IconButton, useMediaQuery, useTheme } from '@material-ui/core';
 
 const LeaveRoomButton = () => {
+  const classes = leaveRoomButtonStyles();
   const leaveRoom = useBackend('USER_DELETE');
   const history = useHistory();
   const [open, setOpen] = useState(false);
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+  const isDesktop = !isMobile;
 
   const handleClick = () => {
     setOpen(true);
@@ -29,14 +36,22 @@ const LeaveRoomButton = () => {
   };
 
   return (
-    <div>
-      <Chip
-        icon={<ExitToAppOutlinedIcon />}
-        label="Leave room"
-        onClick={handleClick}
-        variant="outlined"
-        color="primary"
-      />
+    <>
+      {isDesktop && (
+        <Chip
+          icon={<ExitToAppOutlinedIcon />}
+          label="Leave room"
+          onClick={handleClick}
+          variant="outlined"
+          color="primary"
+          className={classes.root}
+        />
+      )}
+      {isMobile && (
+        <IconButton onClick={handleClick} color="primary" className={classes.root} size="small">
+          <ExitToAppOutlinedIcon />
+        </IconButton>
+      )}
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>{'Are you sure you want to leave?'}</DialogTitle>
         <DialogActions>
@@ -48,7 +63,7 @@ const LeaveRoomButton = () => {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 };
 
