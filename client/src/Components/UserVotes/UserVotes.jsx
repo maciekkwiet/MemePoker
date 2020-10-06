@@ -64,7 +64,7 @@ const UserVotes = () => {
         >
           <List>
             {users.map(user => (
-              <UserBox key={user.name} user={user} />
+              <UserBox user={user} isMobile={isMobile} key={user.name} />
             ))}
           </List>
         </Box>
@@ -89,7 +89,7 @@ const UserVotes = () => {
             <Box className={`${classes.root} ${isAdmin ? classes.isAdmin : classes.isNotAdmin}`}>
               <List>
                 {users.map(user => (
-                  <UserBox user={user} />
+                  <UserBox user={user} isMobile={isMobile} key={user.name} />
                 ))}
               </List>
             </Box>

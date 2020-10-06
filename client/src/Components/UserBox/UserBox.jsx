@@ -5,14 +5,18 @@ import { useUserContext } from 'Contexts/UserContext';
 import UserBoxStyles from './UserBoxStyles';
 import KickButton from './../KickButton';
 
-const UserBox = ({ user }) => {
+const UserBox = ({ user, isMobile }) => {
   const classes = UserBoxStyles();
   const { isAdmin, name } = useUserContext().user;
-  const [isHover, setIsHover] = useState(false);
+  const [isHover, setIsHover] = useState(isMobile);
 
-  const onMouseOver = () => setIsHover(true);
+  const onMouseOver = () => {
+    if (!isMobile) setIsHover(true);
+  };
 
-  const onMouseOut = () => setIsHover(false);
+  const onMouseOut = () => {
+    if (!isMobile) setIsHover(false);
+  };
 
   return (
     <Paper
