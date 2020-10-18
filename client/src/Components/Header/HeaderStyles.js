@@ -6,6 +6,7 @@ const headerStyles = makeStyles(theme => ({
     padding: theme.spacing(2, 2),
     marginBottom: theme.spacing(4),
     [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(1),
       marginBottom: theme.spacing(2),
     },
   },
@@ -16,7 +17,7 @@ const headerStyles = makeStyles(theme => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     [theme.breakpoints.down('xs')]: {
-      height: '4em',
+      height: '3em',
     },
   },
 }));

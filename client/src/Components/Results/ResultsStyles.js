@@ -16,16 +16,27 @@ const ResultsStyles = makeStyles(theme => ({
     flexBasis: '10%',
     fontWeight: theme.typography.fontWeightBold,
     textTransform: 'uppercase',
-    border: `2px solid ${theme.palette.primary.main}`,
-    borderRadius: '5px',
   },
   btnWrap: {
+    width: '100%',
+    marginTop: 'auto',
     flexBasis: '20%',
-    padding: theme.spacing(1, 1, 0),
-    border: `2px solid ${theme.palette.primary.main}`,
-    borderRadius: '5px',
     '& button': {
       marginBottom: theme.spacing(1),
+      '&:last-child': {
+        marginBottom: 0,
+      },
+    },
+  },
+  fixedButtons: {
+    position: 'fixed',
+    bottom: theme.spacing(2),
+    right: theme.spacing(1),
+    '& > :nth-child(n)': {
+      marginRight: theme.spacing(1),
+    },
+    '& > :last-child': {
+      marginRight: 0,
     },
   },
 }));

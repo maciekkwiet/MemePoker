@@ -26,3 +26,8 @@ export interface EstimationResult extends AuthPayload {
   result: string;
   roomId: string;
 }
+
+export interface UserKickPayload extends AuthPayload {
+  name: string;
+  id: string;
+}

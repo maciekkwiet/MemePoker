@@ -6,7 +6,7 @@ import { useUserContext } from 'Contexts/UserContext';
 import { TaskNameInputStyles, CustomLabel } from './TaskNameInputStyles';
 import { useBackend } from 'hooks/useBackend';
 
-import { Box, Button, TextField } from '@material-ui/core';
+import { Box, Button, TextField, Input, InputAdornment, IconButton } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 
 const Schema = yup.object().shape({
@@ -43,11 +43,16 @@ const TaskNameInput = () => {
           autoComplete="off"
           inputRef={register}
           error={!!errors.task}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton color="primary" type="submit">
+                  <SendIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
         />
-
-        <Button className={classes.btn} color="primary" variant="contained" type="submit">
-          <SendIcon />
-        </Button>
       </Box>
     </form>
   );
